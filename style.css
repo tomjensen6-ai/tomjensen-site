@@ -218,11 +218,12 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 .hero-photo img {
   width: 100%;
+  max-width: 460px;
   height: auto;
-  border-radius: var(--radius-lg);
+  display: block;
+  border-radius: 18px;
   object-fit: cover;
-  aspect-ratio: 4 / 5;
-  filter: saturate(0.95) contrast(1.02);
+  margin-left: auto;
 }
 
 /* ----- Section label ----- */
