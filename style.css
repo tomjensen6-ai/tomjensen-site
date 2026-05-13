@@ -218,11 +218,12 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 .hero-photo img {
   width: 100%;
-  max-width: 460px;
+  max-width: 440px;
   height: auto;
   display: block;
   border-radius: 18px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
   margin-left: auto;
 }
 
