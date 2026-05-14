@@ -1602,18 +1602,18 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 <!-- OPERATING PRINCIPLES -->
 .principles {
-  padding: 7rem 0;
+  padding: 5rem 0;
   border-top: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
   background: rgba(255,255,255,0.18);
 }
 
 .principles .container {
-  max-width: 980px;
+  max-width: 920px;
 }
 
 .principles-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.4rem;
 }
 
 .principles-header .section-label {
@@ -1622,8 +1622,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 .principles-header h2 {
   font-family: var(--serif);
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
-  line-height: 1.08;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--ink);
   max-width: 760px;
@@ -1632,15 +1632,15 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .principles-list {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 0;
 }
 
 .principle-item {
   display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 1.4rem;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
   align-items: start;
-  padding-bottom: 2rem;
+  padding: 1.35rem 0;
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -1658,16 +1658,16 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 
 .principle-content h3 {
-  margin: 0 0 0.55rem;
-  font-size: 1.12rem;
+  margin: 0 0 0.3rem;
+  font-size: 1.02rem;
   line-height: 1.3;
   color: var(--ink);
 }
 
 .principle-content p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.96rem;
+  line-height: 1.55;
   color: var(--ink-soft);
   max-width: 760px;
 }
