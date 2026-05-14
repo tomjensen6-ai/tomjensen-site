@@ -414,6 +414,19 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   margin-top: 0.75rem;
 }
 
+.web-presence-text {
+  display: block;
+  width: 100%;
+}
+
+.web-presence-standout {
+  display: block;
+  text-align: center;
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* ----- Experience timeline ----- */
 .experience {
   padding: clamp(4rem, 7vw, 6rem) 0;
