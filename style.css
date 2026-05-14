@@ -426,6 +426,41 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   color: var(--ink);
   font-weight: 600;
 }
+.service-card-link,
+.mentoring-banner-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-card-link:focus-visible,
+.mentoring-banner-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.mentoring-banner-link:hover {
+  border-color: var(--gold-pale);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px -12px rgba(27, 36, 51, 0.12);
+}
+
+.web-presence-banner {
+  margin-top: 0.75rem;
+}
+
+.web-presence-text {
+  display: block;
+  width: 100%;
+}
+
+.web-presence-standout {
+  display: block;
+  text-align: center;
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-weight: 600;
+}
 
 /* ----- Experience timeline ----- */
 .experience {
@@ -758,39 +793,4 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 @keyframes fadeIn {
   to { opacity: 1; }
-}
-.service-card-link,
-.mentoring-banner-link {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.service-card-link:focus-visible,
-.mentoring-banner-link:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 4px;
-}
-
-.mentoring-banner-link:hover {
-  border-color: var(--gold-pale);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px -12px rgba(27, 36, 51, 0.12);
-}
-
-.web-presence-banner {
-  margin-top: 0.75rem;
-}
-
-.web-presence-text {
-  display: block;
-  width: 100%;
-}
-
-.web-presence-standout {
-  display: block;
-  text-align: center;
-  margin-top: 0.45rem;
-  color: var(--ink);
-  font-weight: 600;
 }
