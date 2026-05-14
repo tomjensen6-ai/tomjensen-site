@@ -1204,6 +1204,31 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
     width: 1px;
     height: auto;
   }
+   .accent-box {
+     background-color: var(--cream-deep);
+     padding: 2.5rem;
+     border-radius: var(--radius);
+     border-left: 4px solid var(--gold);
+     margin: 3rem 0;
+   }
+   
+   .subpage .nav-minimal {
+     padding: 2rem 0;
+     margin-bottom: 2rem;
+   }
+   
+   .nav-back {
+     text-decoration: none;
+     color: var(--muted);
+     font-family: var(--sans);
+     font-size: 0.9rem;
+     font-weight: 500;
+     transition: color 0.2s var(--ease);
+   }
+   
+   .nav-back:hover {
+     color: var(--gold);
+   }
 }
 
 @media (max-width: 640px) {
