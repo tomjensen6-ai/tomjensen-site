@@ -1600,3 +1600,43 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
   .page-tagline { font-size: 0.7rem; gap: 0.25rem 0.6rem; }
 }
+<!-- OPERATING PRINCIPLES -->
+<section class="principles" id="principles">
+  <div class="container principles-grid">
+
+    <div class="principles-heading">
+      <div class="section-label">Operating principles</div>
+      <h2>Practical principles shaped by real operational responsibility.</h2>
+    </div>
+
+    <div class="principles-list">
+
+      <div class="principle-item">
+        <span>01</span>
+        <p><strong>Reliability before complexity.</strong> Solutions should strengthen operations, not create unnecessary dependency or overhead.</p>
+      </div>
+
+      <div class="principle-item">
+        <span>02</span>
+        <p><strong>Clear ownership and accountability.</strong> Good infrastructure depends on knowing who owns decisions, systems and follow-up.</p>
+      </div>
+
+      <div class="principle-item">
+        <span>03</span>
+        <p><strong>Calm operational decision-making.</strong> Pressure is managed through preparation, structure and disciplined communication.</p>
+      </div>
+
+      <div class="principle-item">
+        <span>04</span>
+        <p><strong>Documentation should support operations.</strong> Documentation must be useful, current and understandable when it matters.</p>
+      </div>
+
+      <div class="principle-item">
+        <span>05</span>
+        <p><strong>Technology must remain maintainable.</strong> The best solution is often the one people can operate safely over time.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
