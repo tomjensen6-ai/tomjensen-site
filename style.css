@@ -1816,3 +1816,24 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
     overflow-x: auto;
   }
 }
+.execution-table th,
+.execution-table td {
+  font-size: 0.9rem;
+}
+
+.execution-table th:nth-child(1),
+.execution-table td:nth-child(1) {
+  width: 55px;
+}
+
+.execution-table th:nth-child(2),
+.execution-table td:nth-child(2) {
+  width: 210px;
+}
+
+.execution-table th:nth-child(5),
+.execution-table td:nth-child(5),
+.execution-table th:nth-child(6),
+.execution-table td:nth-child(6) {
+  width: 80px;
+}
