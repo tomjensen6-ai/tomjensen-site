@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>UPS Maintenance Bypass Operation | SOP Example | Tom Jensen</title>
-  <meta name="description" content="Example Standard Operating Procedure for controlled UPS maintenance bypass operations in critical environments." />
+  <meta name="description" content="Example Standard Operating Procedure for controlled UPS maintenance bypass operations in critical infrastructure environments." />
 
   <link rel="stylesheet" href="../../style.css" />
 </head>
@@ -32,8 +32,8 @@
           <p class="eyebrow">SOP Example</p>
           <h1>UPS Maintenance Bypass Operation</h1>
           <p class="advisory-note-lead">
-            Example structure for controlled transition of a UPS system
-            into maintenance bypass state in a critical environment.
+            Example structure for controlled transition of a UPS system into
+            maintenance bypass state in a critical environment.
           </p>
         </div>
 
@@ -52,35 +52,32 @@
         <article class="advisory-article">
 
           <div class="code-like-box">
-            Document ID: SOP-UPS-001
-            Revision: 1.0
-            Status: Example
+            Document ID: SOP-UPS-001<br>
+            Revision: 1.0<br>
+            Status: Example<br>
             Approval: Operational Governance Review
           </div>
 
           <h2>1. Purpose</h2>
-
           <p>
-            Define the controlled process for transferring a UPS system
-            into maintenance bypass mode while minimizing operational risk
-            to protected critical loads.
+            Define the controlled process for transferring a UPS system into
+            maintenance bypass mode while minimizing operational risk to protected
+            critical loads.
           </p>
 
           <h2>2. Scope</h2>
-
           <p>
             Applies to planned maintenance activities involving UPS systems
             supporting critical infrastructure environments.
           </p>
 
           <h2>3. Preconditions</h2>
-
           <ul>
             <li>Approved maintenance window</li>
             <li>Change authorization completed</li>
             <li>Relevant stakeholders informed</li>
             <li>No active infrastructure alarms affecting redundancy</li>
-            <li>Generator systems verified available</li>
+            <li>Generator systems verified available, where applicable</li>
             <li>Operational monitoring active</li>
           </ul>
 
@@ -93,65 +90,103 @@
                 <th>Responsibility</th>
               </tr>
             </thead>
-
             <tbody>
               <tr>
                 <td>Operations Lead</td>
-                <td>Approve execution and supervise activity</td>
+                <td>Approve execution and supervise operational activity.</td>
               </tr>
-
               <tr>
                 <td>Authorized Technician</td>
-                <td>Perform switching operations</td>
+                <td>Perform approved switching or operational actions.</td>
               </tr>
-
               <tr>
-                <td>Control Room</td>
-                <td>Monitor alarms and operational state</td>
+                <td>Verifier</td>
+                <td>Independently confirm each critical step before and after execution.</td>
+              </tr>
+              <tr>
+                <td>Control Room / Monitoring Function</td>
+                <td>Monitor alarms, load state and operational stability.</td>
               </tr>
             </tbody>
           </table>
 
           <h2>5. Execution Procedure</h2>
 
-          <table class="ops-table">
+          <table class="ops-table execution-table">
             <thead>
               <tr>
                 <th>Step</th>
+                <th>Room/Tag</th>
                 <th>Action</th>
                 <th>Verification</th>
+                <th>Sign-1</th>
+                <th>Sign-2</th>
               </tr>
             </thead>
-
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Confirm approved maintenance window</td>
-                <td>Operations Lead confirmation</td>
+                <td>ER-2 / OSL-DC1-ER2-UPS-001-01</td>
+                <td>Verify UPS is operating in normal online mode with no active critical alarms.</td>
+                <td>Load percentage, bypass availability and alarm state confirmed.</td>
+                <td></td>
+                <td></td>
               </tr>
-
               <tr>
                 <td>2</td>
-                <td>Verify UPS operational status</td>
-                <td>No active critical alarms</td>
+                <td>ER-2 / OSL-DC1-ER2-MBP-001-01</td>
+                <td>Confirm maintenance bypass path is available, correctly identified and ready for controlled operation.</td>
+                <td>Asset tag and bypass source verified by operator and verifier.</td>
+                <td></td>
+                <td></td>
               </tr>
-
               <tr>
                 <td>3</td>
-                <td>Notify affected operational teams</td>
-                <td>Communication log updated</td>
+                <td>NOC / OSL-DC1-NOC-MON-001-01</td>
+                <td>Notify monitoring function before switching activity begins.</td>
+                <td>Monitoring team confirms awareness and active observation.</td>
+                <td></td>
+                <td></td>
               </tr>
-
               <tr>
                 <td>4</td>
-                <td>Transfer load to maintenance bypass</td>
-                <td>Stable load verification</td>
+                <td>ER-2 / OSL-DC1-ER2-UPS-001-01</td>
+                <td>Transfer load to bypass according to approved manufacturer and site procedure.</td>
+                <td>Load remains stable and supported without downstream interruption.</td>
+                <td></td>
+                <td></td>
               </tr>
-
               <tr>
                 <td>5</td>
-                <td>Confirm bypass operational state</td>
-                <td>Control room confirmation</td>
+                <td>ER-2 / OSL-DC1-ER2-MBP-001-01</td>
+                <td>Engage maintenance bypass according to approved switching sequence.</td>
+                <td>Bypass state confirmed locally and through monitoring system.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>ER-2 / OSL-DC1-ER2-UPS-001-01</td>
+                <td>Confirm UPS is isolated for maintenance where applicable.</td>
+                <td>Isolation state confirmed before maintenance work begins.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>NOC / OSL-DC1-NOC-MON-001-01</td>
+                <td>Confirm monitoring systems show stable operating state.</td>
+                <td>No downstream critical alarms or customer-impacting events observed.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>ER-2 / Operations Lead</td>
+                <td>Confirm maintenance activity may begin.</td>
+                <td>Operations Lead gives approval to proceed.</td>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -165,25 +200,39 @@
             </p>
           </div>
 
-          <h2>7. Rollback</h2>
+          <ul>
+            <li>Reduced UPS protection may expose downstream load to increased operational risk.</li>
+            <li>Incorrect switching sequence may cause interruption to supported load.</li>
+            <li>All actions must be performed by authorized personnel only.</li>
+            <li>Any abnormal alarm or unexpected state shall stop the procedure immediately.</li>
+          </ul>
 
+          <h2>7. Rollback</h2>
           <p>
             If abnormal alarms, instability or unexpected operational conditions
-            occur, the procedure shall stop immediately and rollback actions
-            initiated according to operational authority.
+            occur, the procedure shall stop immediately. Further action shall be
+            approved by the Operations Lead before continuation or rollback.
           </p>
 
-          <h2>8. Post Verification</h2>
-
           <ul>
-            <li>UPS returned to normal operational state</li>
-            <li>Alarm status verified normal</li>
-            <li>Operational log updated</li>
-            <li>Maintenance documentation completed</li>
+            <li>Stop active work immediately.</li>
+            <li>Notify monitoring function and affected stakeholders.</li>
+            <li>Assess current system state before any further switching.</li>
+            <li>Return to approved operational state if safe and authorized.</li>
+            <li>Record alarm state, timeline and operational observations.</li>
+          </ul>
+
+          <h2>8. Post Verification</h2>
+          <ul>
+            <li>System returned to approved operational state</li>
+            <li>Alarm and monitoring status verified normal</li>
+            <li>Operational logs and records updated</li>
+            <li>Maintenance or change activity formally closed</li>
+            <li>Stakeholders informed of completion status</li>
+            <li>No unresolved operational exceptions remain</li>
           </ul>
 
           <h2>9. Operational Notes</h2>
-
           <p>
             This example intentionally avoids vendor-specific instructions,
             switching sequences and site-specific infrastructure details.
@@ -198,7 +247,7 @@
             <h3>Document Metadata</h3>
             <ul>
               <li>Type: SOP</li>
-              <li>Category: Electrical</li>
+              <li>Category: Electrical / Critical Infrastructure</li>
               <li>Criticality: High</li>
               <li>Status: Example</li>
             </ul>
@@ -208,10 +257,22 @@
             <h3>Key Principles</h3>
             <ul>
               <li>Controlled execution</li>
-              <li>Verification at each step</li>
+              <li>Dual verification</li>
               <li>Clear ownership</li>
               <li>Defined rollback path</li>
+              <li>Traceable asset references</li>
             </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Asset Tag Model</h3>
+            <p>
+              SITE-BUILDING-ROOM-SYSTEM-ASSET-RUNNINGNO
+            </p>
+            <p>
+              Example:<br>
+              <strong>OSL-DC1-ER2-UPS-001-01</strong>
+            </p>
           </div>
 
           <div class="sidebar-box">
