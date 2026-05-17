@@ -1,6 +1,6 @@
 /* =========================================================
-   Tom Jensen — Personal advisor site
-   Refined editorial · warm cream · gold accents · serif display
+   Tom Jensen â€” Personal advisor site
+   Refined editorial Â· warm cream Â· gold accents Â· serif display
    ========================================================= */
 
 :root {
@@ -1927,4 +1927,175 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .execution-table th:nth-child(6),
 .execution-table td:nth-child(6) {
   width: 80px;
+}
+
+/* =========================================================
+   Operational Risk Assessment Cards
+   Used on /operational/risk/
+   ========================================================= */
+
+.risk-register {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.risk-item {
+  border: 1px solid rgba(25, 35, 55, 0.10);
+  border-radius: 16px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: 0 14px 34px rgba(25, 35, 55, 0.05);
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(25, 35, 55, 0.09);
+}
+
+.risk-number {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.risk-header h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.risk-badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.risk-badge.low {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2e7d32;
+}
+
+.risk-badge.medium {
+  background: rgba(178, 106, 0, 0.13);
+  color: #b26a00;
+}
+
+.risk-badge.high {
+  background: rgba(198, 40, 40, 0.12);
+  color: #c62828;
+}
+
+.risk-badge.critical {
+  background: rgba(123, 27, 27, 0.14);
+  color: #7b1b1b;
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 1.25rem;
+}
+
+.risk-box {
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(25, 35, 55, 0.08);
+  border-radius: 13px;
+  padding: 1.2rem;
+}
+
+.risk-box h4 {
+  margin: 0 0 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.risk-box p {
+  margin: 0 0 0.55rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.risk-box p:last-child {
+  margin-bottom: 0;
+}
+
+.risk-box ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.risk-box li {
+  margin-bottom: 0.45rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.risk-box li:last-child {
+  margin-bottom: 0;
+}
+
+.risk-score {
+  margin-top: 1rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.risk-score.low {
+  color: #2e7d32;
+}
+
+.risk-score.medium {
+  color: #b26a00;
+}
+
+.risk-score.high {
+  color: #c62828;
+}
+
+.risk-score.critical {
+  color: #7b1b1b;
+}
+
+.compact-table th,
+.compact-table td {
+  vertical-align: top;
+}
+
+@media (max-width: 720px) {
+  .risk-item {
+    padding: 1.35rem;
+  }
+
+  .risk-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .risk-badge {
+    align-self: flex-start;
+  }
 }
