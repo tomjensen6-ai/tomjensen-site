@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MOP Example — UPS Module Replacement | Tom Jensen</title>
+  <meta name="description" content="Public-facing MOP example for controlled UPS module replacement in critical infrastructure environments." />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="MOP Example — UPS Module Replacement | Tom Jensen" />
+  <meta property="og:description" content="A structured public-facing Method of Procedure example for UPS module replacement, approvals, rollback planning and operational risk control." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/mop/ups-module-replacement.html" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">TOM JENSEN</a>
+
+      <nav class="main-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#advisory">Advisory Areas</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / MOP Example</p>
+
+          <h1>UPS Module Replacement Procedure</h1>
+
+          <p class="advisory-note-lead">
+            A simplified example of a controlled Method of Procedure (MOP)
+            for planned replacement of a UPS power module in a critical
+            infrastructure environment.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Classification</span>
+          <p>
+            Example public-facing operational documentation structure.
+            Simplified and generalized.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+
+          <div class="metadata-table">
+            <div><strong>Document ID:</strong> MOP-UPS-001</div>
+            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Status:</strong> Example</div>
+            <div><strong>Approval:</strong> Demonstration only</div>
+          </div>
+
+          <h2>1. Purpose</h2>
+
+          <p>
+            Define a controlled process for planned replacement of a UPS power
+            module while minimizing operational risk to protected critical loads
+            and maintaining visibility of system redundancy and operating state.
+          </p>
+
+          <h2>2. Scope</h2>
+
+          <p>
+            Applies to planned replacement activities involving modular UPS
+            systems supporting critical infrastructure environments such as
+            data centers, technical facilities or other continuously operated
+            systems.
+          </p>
+
+          <p>
+            This example does not replace manufacturer instructions, electrical
+            safety procedures, lockout/tagout requirements, local regulations,
+            commissioning procedures or site-specific operational controls.
+          </p>
+
+          <h2>3. Preconditions</h2>
+
+          <ul class="checklist">
+            <li>☐ Approved maintenance window confirmed</li>
+            <li>☐ Formal change approval completed</li>
+            <li>☐ Stakeholders informed according to communication plan</li>
+            <li>☐ UPS operating normally with no unresolved critical alarms</li>
+            <li>☐ Required redundancy verified available</li>
+            <li>☐ Spare module verified compatible and available onsite</li>
+            <li>☐ Vendor and operational responsibilities confirmed</li>
+            <li>☐ Rollback plan reviewed and understood</li>
+            <li>☐ Monitoring systems operational</li>
+            <li>☐ Required PPE and electrical safety controls available</li>
+          </ul>
+
+          <h2>4. Responsibilities</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Responsibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Operations Lead</td>
+                  <td>Coordinate activity, verify operational readiness and approve progression between phases.</td>
+                </tr>
+                <tr>
+                  <td>UPS Vendor / Specialist</td>
+                  <td>Perform module replacement according to approved technical procedure.</td>
+                </tr>
+                <tr>
+                  <td>Facility Operations</td>
+                  <td>Monitor alarms, environmental conditions and infrastructure impact.</td>
+                </tr>
+                <tr>
+                  <td>Change Manager</td>
+                  <td>Ensure approvals, communication and documentation requirements are completed.</td>
+                </tr>
+                <tr>
+                  <td>Electrical Responsible Person</td>
+                  <td>Confirm electrical safety controls and work authorization requirements.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>5. Execution Procedure</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Room/Tag</th>
+                  <th>Action</th>
+                  <th>Verification</th>
+                  <th>Sign-1</th>
+                  <th>Sign-2</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>UPS-ROOM / UPS-A</td>
+                  <td>Conduct pre-job review with all participating personnel.</td>
+                  <td>Roles, communication path, escalation path and rollback reviewed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>UPS-A</td>
+                  <td>Verify UPS system operating state, load level and redundancy status.</td>
+                  <td>System stable with acceptable redundancy margin before work begins.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>BMS / EPMS</td>
+                  <td>Verify monitoring visibility and active alarm monitoring.</td>
+                  <td>UPS alarms, events and environmental monitoring operational.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>UPS-A / MODULE-03</td>
+                  <td>Identify the correct UPS module scheduled for replacement.</td>
+                  <td>Asset tag and serial reference confirmed against approved work scope.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>UPS-A</td>
+                  <td>Confirm UPS load can tolerate temporary redundancy reduction if applicable.</td>
+                  <td>Operations Lead authorizes progression to replacement phase.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>UPS-A / MODULE-03</td>
+                  <td>Place affected module into approved maintenance or isolation state according to manufacturer procedure.</td>
+                  <td>No unexpected alarm, load transfer or instability observed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>UPS-A / MODULE-03</td>
+                  <td>Remove the designated UPS module using approved handling procedure.</td>
+                  <td>Module removed without visible damage or operational impact.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>UPS-A / MODULE-03</td>
+                  <td>Install replacement module and confirm correct seating and connection.</td>
+                  <td>Module physically secured and installation verified.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>UPS-A</td>
+                  <td>Return module to approved operational state according to manufacturer procedure.</td>
+                  <td>Module recognized correctly and synchronization normal.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>BMS / EPMS</td>
+                  <td>Review alarms, events and UPS operating status after replacement.</td>
+                  <td>No unresolved alarm or abnormal operating condition present.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>11</td>
+                  <td>UPS-A</td>
+                  <td>Confirm UPS redundancy restored to approved operational level.</td>
+                  <td>Operations Lead confirms stable post-maintenance condition.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>12</td>
+                  <td>CMMS / CHANGE RECORD</td>
+                  <td>Update maintenance records, module serial references and change documentation.</td>
+                  <td>Documentation completed and maintenance activity formally recorded.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. Risk Considerations</h2>
+
+          <p>
+            UPS module replacement is a planned activity involving temporary
+            operational exposure. The level of risk depends on system design,
+            redundancy configuration, current loading conditions and the ability
+            of the remaining infrastructure to tolerate component loss.
+          </p>
+
+          <ul>
+            <li>Loss of redundancy may increase operational exposure during maintenance.</li>
+            <li>Incorrect module identification can affect the wrong UPS path.</li>
+            <li>Unexpected alarms or synchronization issues may occur during isolation or reintegration.</li>
+            <li>Human error during maintenance activities can affect protected loads.</li>
+            <li>Improper handling may damage replacement modules or connectors.</li>
+            <li>All electrical safety controls must follow approved site and legal requirements.</li>
+          </ul>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Operational rule:</strong> Stop the activity immediately if
+              system behavior differs from the expected operating state or if
+              redundancy becomes uncertain.
+            </p>
+          </div>
+
+          <h2>7. Rollback Procedure</h2>
+
+          <p>
+            If the replacement module cannot be returned to stable operation,
+            stop progression and evaluate rollback options before continuing.
+          </p>
+
+          <ul>
+            <li>Reinstall original module if technically safe and approved</li>
+            <li>Return UPS to previously verified operating state</li>
+            <li>Escalate unresolved alarms immediately</li>
+            <li>Delay additional maintenance activity until stability is confirmed</li>
+            <li>Update stakeholders regarding operational risk or reduced redundancy</li>
+          </ul>
+
+          <p>
+            Rollback decisions should be made by the responsible operational and
+            technical authority according to site governance requirements.
+          </p>
+
+          <h2>8. Post Verification</h2>
+
+          <ul class="checklist">
+            <li>☐ Replacement module operating normally</li>
+            <li>☐ UPS redundancy restored to approved level</li>
+            <li>☐ No unresolved alarm or event condition remains</li>
+            <li>☐ Monitoring and alarm visibility confirmed</li>
+            <li>☐ CMMS and maintenance records updated</li>
+            <li>☐ Stakeholders informed of completion status</li>
+            <li>☐ Work area left clean and secure</li>
+          </ul>
+
+          <h2>9. Operational Notes</h2>
+
+          <p>
+            Planned UPS maintenance should be treated as a controlled operational
+            event, not only a technical activity. Communication, verification,
+            escalation readiness and rollback planning are part of the procedure,
+            not separate administrative tasks.
+          </p>
+
+          <p>
+            Real UPS maintenance procedures must always follow manufacturer
+            instructions, electrical safety regulations, site operational
+            governance and the approved maintenance strategy for the facility.
+          </p>
+
+          <p>
+            Modular UPS systems are commonly designed to support maintainability
+            and redundancy, but maintenance activities can still reduce resilience
+            temporarily if not planned and controlled carefully.
+          </p>
+
+          <div class="metadata-table">
+            <div><strong>Type:</strong> MOP Example</div>
+            <div><strong>Category:</strong> Electrical / UPS Infrastructure</div>
+            <div><strong>Criticality:</strong> High</div>
+            <div><strong>Status:</strong> Public example — not for direct production use</div>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Key principles:</strong> planned execution, verification,
+              redundancy awareness, rollback readiness, controlled communication
+              and formal signoff.
+            </p>
+          </div>
+
+          <p class="small-note">
+            Template provided by © Tom Jensen | tomjensen.no
+          </p>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+
+          <div class="sidebar-box">
+            <h3>Procedure Focus</h3>
+            <ul>
+              <li>Planned maintenance</li>
+              <li>Operational approvals</li>
+              <li>Redundancy awareness</li>
+              <li>Rollback planning</li>
+              <li>Alarm monitoring</li>
+              <li>Controlled execution</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Areas</h3>
+            <ul>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="./" class="text-link">MOP Examples</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Example Asset References</h3>
+            <ul>
+              <li>UPS-A — UPS system</li>
+              <li>MODULE-03 — UPS power module</li>
+              <li>BMS / EPMS — Monitoring systems</li>
+              <li>UPS-ROOM — Electrical room</li>
+              <li>CHANGE RECORD — Approved maintenance activity</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Public Example Notice</h3>
+            <p>
+              This is a simplified example document. Live UPS maintenance
+              procedures must be reviewed against manufacturer instructions,
+              electrical safety requirements, site design and responsible
+              operational authority.
+            </p>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
+      <a href="./">Back to MOP examples</a>
+    </div>
+  </footer>
+</body>
+</html>
