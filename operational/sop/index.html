@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SOP Library | Tom Jensen</title>
-  <meta name="description" content="Standard Operating Procedure examples and operational documentation structures for critical infrastructure environments." />
+  <title>SOP Examples — Standard Operating Procedures | Tom Jensen</title>
+  <meta name="description" content="Standard Operating Procedure examples for recurring operational tasks, inspections, access control and critical infrastructure routines." />
 
   <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="SOP Examples — Standard Operating Procedures | Tom Jensen" />
+  <meta property="og:description" content="Public-facing SOP examples for repeatable operational tasks in critical infrastructure environments." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/sop/" />
+  <meta property="og:type" content="website" />
 </head>
 
 <body>
@@ -29,19 +36,22 @@
     <section class="advisory-note-hero">
       <div class="container advisory-note-layout">
         <div class="advisory-note-main">
-          <p class="eyebrow">SOP Library</p>
-          <h1>Standard Operating Procedures</h1>
+          <p class="eyebrow">Operational Library / SOP</p>
+
+          <h1>Standard Operating Procedure Examples</h1>
+
           <p class="advisory-note-lead">
-            Example structures for recurring operational activities in
-            critical infrastructure and data center environments.
+            Public-facing examples of structured SOPs for recurring operational
+            activities where repeatability, ownership, verification and records
+            matter.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Purpose</span>
           <p>
-            SOPs create repeatability, reduce ambiguity and support
-            consistent operational execution.
+            SOPs help make normal operations predictable, auditable and less
+            dependent on memory or informal local habits.
           </p>
         </aside>
       </div>
@@ -50,116 +60,209 @@
     <section class="advisory-note-content">
       <div class="container advisory-content-grid">
         <article class="advisory-article">
-          <h2>What defines a good SOP?</h2>
+
+          <h2>What a SOP is used for</h2>
 
           <p>
-            A Standard Operating Procedure should make normal operations
-            predictable and maintainable. It should clearly define scope,
-            ownership, prerequisites, execution steps and verification.
+            A Standard Operating Procedure is used for repeatable work performed
+            under known and normal operating conditions. It should define the
+            purpose, scope, responsibilities, preconditions, action steps,
+            verification points and required records.
           </p>
 
           <p>
-            In operational environments, consistency is often more important
-            than speed. Good procedures reduce dependency on memory,
-            assumptions and undocumented tribal knowledge.
+            A good SOP does not try to be an emergency response plan or a planned
+            change document. It supports controlled routine execution and helps
+            different competent personnel perform the same task in a consistent
+            way.
           </p>
 
           <div class="principle-callout">
             <p>
-              <strong>Core principle:</strong> If a recurring task is operationally
-              important, it should be documented, reviewable and repeatable.
+              <strong>Working principle:</strong> If a recurring task affects
+              reliability, safety, security or operational continuity, it should
+              be documented, reviewable and repeatable.
             </p>
           </div>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Free download:</strong> Use this editable SOP template as a
-              starting point for controlled operational procedures, including
-              ownership, preconditions, execution steps, verification and signoff.
-            </p>
-            <p>
-              <a href="../documents/SOP_Template_v1.docx" class="text-link" download>
-                Download SOP Template v1 (.docx) →
-              </a>
-            </p>
-          </div>
-
-          <h2>Example SOP Categories</h2>
+          <h2>Example SOP documents</h2>
 
           <div class="operational-card-grid">
+
             <a class="operational-card" href="ups-maintenance-bypass.html">
               <span>SOP-001</span>
               <h3>UPS Maintenance Bypass Operation</h3>
               <p>
-                Controlled operational transition of UPS systems into maintenance bypass state.
+                Controlled operational procedure for transferring a UPS system
+                into maintenance bypass mode with verification and signoff.
               </p>
             </a>
 
-            <div class="operational-card">
+            <a class="operational-card" href="generator-weekly-inspection.html">
               <span>SOP-002</span>
-              <h3>Critical Alarm Escalation</h3>
-              <p>
-                Example structure for alarm handling, classification and escalation.
-              </p>
-            </div>
-
-            <div class="operational-card">
-              <span>SOP-003</span>
-              <h3>Visitor Access Control</h3>
-              <p>
-                Procedure structure for visitor authorization and escorted access.
-              </p>
-            </div>
-
-            <div class="operational-card">
-              <span>SOP-004</span>
               <h3>Generator Weekly Inspection</h3>
               <p>
-                Example recurring inspection structure with verification and signoff.
+                Routine inspection example for standby generator readiness,
+                visible condition, alarms, fuel, battery and records.
               </p>
-            </div>
+            </a>
+
+            <a class="operational-card" href="datahall-access-control.html">
+              <span>SOP-003</span>
+              <h3>Data Hall Access Control</h3>
+              <p>
+                Controlled access example covering identity verification,
+                approved scope, escort responsibility and access logging.
+              </p>
+            </a>
+
+            <a class="operational-card" href="cooling-system-inspection.html">
+              <span>SOP-004</span>
+              <h3>Cooling System Visual Inspection</h3>
+              <p>
+                Visual inspection example for cooling readiness, airflow,
+                environmental status, alarms, leaks and documentation.
+              </p>
+            </a>
+
           </div>
+
+          <h2>Typical SOP structure</h2>
+
+          <div class="responsive-table">
+            <table class="compact-table">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Purpose</td>
+                  <td>Defines why the procedure exists and what it should achieve.</td>
+                </tr>
+                <tr>
+                  <td>Scope</td>
+                  <td>Defines where, when and to which systems the SOP applies.</td>
+                </tr>
+                <tr>
+                  <td>Preconditions</td>
+                  <td>Defines what must be true before the task begins.</td>
+                </tr>
+                <tr>
+                  <td>Responsibilities</td>
+                  <td>Defines who performs, verifies, reviews and approves the activity.</td>
+                </tr>
+                <tr>
+                  <td>Execution Steps</td>
+                  <td>Defines the controlled action sequence and verification points.</td>
+                </tr>
+                <tr>
+                  <td>Post Verification</td>
+                  <td>Confirms the final operating state and required records.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>SOP versus MOP and EOP</h2>
+
+          <ul>
+            <li>
+              <strong>SOP:</strong> repeatable standard activity under normal operating conditions.
+            </li>
+            <li>
+              <strong>MOP:</strong> planned maintenance or change activity requiring approval, sequencing and rollback planning.
+            </li>
+            <li>
+              <strong>EOP:</strong> abnormal or emergency condition requiring incident control, escalation, communication and reporting.
+            </li>
+          </ul>
+
+          <h2>Downloadable template</h2>
+
+          <p>
+            An editable SOP template is available in the templates section. It is
+            intended as a starting structure only and must be adapted to the
+            actual facility, risks, assets, roles and approval requirements.
+          </p>
+
+          <p>
+            <a href="../templates/SOP_Template_v1.docx"
+               class="text-link"
+               download>
+              Download SOP Template v1 (.docx) →
+            </a>
+          </p>
+
+          <h2>Public examples and limitations</h2>
+
+          <p>
+            These SOP examples are simplified and generalized. Real procedures
+            must be reviewed against facility design, local regulations, safety
+            requirements, manufacturer instructions, client standards and the
+            responsible organization’s governance process.
+          </p>
+
         </article>
 
         <aside class="advisory-sidebar">
+
           <div class="sidebar-box">
             <h3>Download</h3>
             <p>
               Editable SOP template for controlled operational documentation.
             </p>
-            <a href="../documents/SOP_Template_v1.docx" class="text-link" download>
-              Download template →
+            <a href="../templates/SOP_Template_v1.docx"
+               class="text-link"
+               download>
+              Download SOP template →
             </a>
           </div>
 
           <div class="sidebar-box">
-            <h3>SOP Structure</h3>
+            <h3>SOP Focus</h3>
             <ul>
-              <li>Purpose</li>
-              <li>Scope</li>
-              <li>Responsibilities</li>
-              <li>Prerequisites</li>
-              <li>Execution Steps</li>
+              <li>Repeatable tasks</li>
+              <li>Normal operation</li>
+              <li>Preconditions</li>
+              <li>Controlled steps</li>
               <li>Verification</li>
-              <li>Documentation</li>
+              <li>Records and signoff</li>
             </ul>
           </div>
 
           <div class="sidebar-box">
-            <h3>Operational Focus</h3>
+            <h3>Related Areas</h3>
             <ul>
-              <li>Repeatability</li>
-              <li>Clarity</li>
-              <li>Verification</li>
-              <li>Risk reduction</li>
-              <li>Operational continuity</li>
+              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
+              <li><a href="../eop/" class="text-link">EOP Examples</a></li>
+              <li><a href="../risk/" class="text-link">Risk Assessment</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
             </ul>
           </div>
 
           <div class="sidebar-box">
-            <h3>Navigation</h3>
-            <a href="../index.html" class="text-link">← Back to Operational Library</a>
+            <h3>Operational Rule</h3>
+            <p>
+              A SOP should describe a repeatable task clearly enough that another
+              competent person can perform it without relying on undocumented
+              local memory.
+            </p>
           </div>
+
+          <div class="sidebar-box">
+            <h3>Public Example Notice</h3>
+            <p>
+              These examples are not live procedures. Real SOPs must be reviewed,
+              approved and maintained by the responsible organization.
+            </p>
+          </div>
+
         </aside>
       </div>
     </section>
@@ -168,7 +271,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
-      <a href="../index.html">Operational Library</a>
+      <a href="../">Back to operational library</a>
     </div>
   </footer>
 </body>
