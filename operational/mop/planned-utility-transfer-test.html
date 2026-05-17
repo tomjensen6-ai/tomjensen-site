@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MOP Example — Planned Utility Transfer Test | Tom Jensen</title>
+  <meta name="description" content="Public-facing MOP example for a planned utility transfer test in critical infrastructure and data center environments." />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="MOP Example — Planned Utility Transfer Test | Tom Jensen" />
+  <meta property="og:description" content="A structured Method of Procedure example for a planned utility transfer test, including approvals, monitoring, stop conditions, rollback and post-verification." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/mop/planned-utility-transfer-test.html" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">TOM JENSEN</a>
+
+      <nav class="main-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#advisory">Advisory Areas</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / MOP Example</p>
+
+          <h1>Planned Utility Transfer Test</h1>
+
+          <p class="advisory-note-lead">
+            A simplified example of a controlled Method of Procedure for planned
+            verification of utility-to-generator transfer behavior in a critical
+            infrastructure environment.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Classification</span>
+          <p>
+            Example public-facing operational documentation structure.
+            Simplified and generalized.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+
+          <div class="metadata-table">
+            <div><strong>Document ID:</strong> MOP-PWR-002</div>
+            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Status:</strong> Example</div>
+            <div><strong>Approval:</strong> Demonstration only</div>
+          </div>
+
+          <h2>1. Purpose</h2>
+
+          <p>
+            Define a controlled process for a planned utility transfer test to
+            verify that standby power systems, transfer equipment, monitoring
+            systems and operational response routines perform as expected under
+            approved test conditions.
+          </p>
+
+          <h2>2. Scope</h2>
+
+          <p>
+            Applies to planned testing of utility-to-generator and generator-to-
+            utility transfer behavior for critical infrastructure facilities,
+            including standby generators, automatic transfer equipment, UPS
+            systems, monitoring systems and affected operational areas.
+          </p>
+
+          <p>
+            This example does not replace electrical switching procedures,
+            manufacturer instructions, statutory testing requirements, NFPA 110
+            requirements where applicable, site-specific emergency power
+            procedures or approval from the responsible electrical authority.
+          </p>
+
+          <h2>3. Preconditions</h2>
+
+          <ul class="checklist">
+            <li>☐ Approved maintenance or test window confirmed</li>
+            <li>☐ Formal change approval completed</li>
+            <li>☐ Test scope, affected systems and expected behavior reviewed</li>
+            <li>☐ Responsible electrical authority has approved the activity</li>
+            <li>☐ Stakeholders informed according to communication plan</li>
+            <li>☐ Generator fuel level and readiness verified</li>
+            <li>☐ UPS systems verified normal with no unresolved critical alarms</li>
+            <li>☐ Transfer equipment status verified normal</li>
+            <li>☐ Monitoring, alarm handling and communication channels active</li>
+            <li>☐ Stop conditions and rollback plan reviewed before execution</li>
+          </ul>
+
+          <h2>4. Responsibilities</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Responsibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Operations Lead</td>
+                  <td>Coordinate the test, confirm readiness and authorize progression between phases.</td>
+                </tr>
+                <tr>
+                  <td>Electrical Responsible Person</td>
+                  <td>Approve and supervise switching-related activity according to site rules and legal requirements.</td>
+                </tr>
+                <tr>
+                  <td>Generator Vendor / Specialist</td>
+                  <td>Support standby generator monitoring, fault response and technical assessment.</td>
+                </tr>
+                <tr>
+                  <td>UPS / Power Specialist</td>
+                  <td>Monitor UPS behavior, load conditions and post-transfer power quality indicators where available.</td>
+                </tr>
+                <tr>
+                  <td>Facility Operations</td>
+                  <td>Monitor alarms, cooling, security, customer impact and operational conditions.</td>
+                </tr>
+                <tr>
+                  <td>Change Manager</td>
+                  <td>Ensure approvals, notifications, records and completion documentation are maintained.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>5. Execution Procedure</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Room/Tag</th>
+                  <th>Action</th>
+                  <th>Verification</th>
+                  <th>Sign-1</th>
+                  <th>Sign-2</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>OPS-BRIDGE</td>
+                  <td>Conduct pre-test briefing with all participating personnel.</td>
+                  <td>Roles, communication path, stop authority and rollback approach confirmed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>CHANGE RECORD</td>
+                  <td>Confirm approved change window and test scope.</td>
+                  <td>Approved work scope matches planned activity and affected systems.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>GEN-001 / GEN-002</td>
+                  <td>Verify standby generator readiness, including local status and fuel availability.</td>
+                  <td>Generators available with no unresolved readiness alarms.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>UPS-A / UPS-B</td>
+                  <td>Verify UPS systems are operating normally before transfer test.</td>
+                  <td>UPS systems normal, load level acceptable and no critical alarms present.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>ATS / SWITCHGEAR</td>
+                  <td>Verify transfer equipment status before test.</td>
+                  <td>Equipment status normal and ready for approved test sequence.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>BMS / EPMS / DCIM</td>
+                  <td>Confirm monitoring screens, alarm handling and event logging are active.</td>
+                  <td>Power, UPS, generator, transfer and environmental monitoring available.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>OPS-BRIDGE</td>
+                  <td>Announce start of controlled transfer test.</td>
+                  <td>All required roles acknowledge readiness to proceed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>UTILITY / ATS</td>
+                  <td>Initiate approved utility transfer test according to site-specific switching procedure.</td>
+                  <td>Action performed only by authorized personnel under approved conditions.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>GEN-001 / GEN-002</td>
+                  <td>Observe generator start, stabilization and acceptance of load where applicable.</td>
+                  <td>Generator operation remains stable with expected alarms/events only.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>UPS-A / UPS-B</td>
+                  <td>Monitor UPS behavior during transfer event.</td>
+                  <td>UPS systems support protected load without abnormal alarm or unexpected discharge condition.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>11</td>
+                  <td>EPMS / DCIM</td>
+                  <td>Observe load, voltage, frequency and transfer event data where monitoring is available.</td>
+                  <td>Measured values remain within site-defined acceptable limits.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>12</td>
+                  <td>DATAHALL / CRITICAL AREAS</td>
+                  <td>Confirm no visible impact to critical rooms, cooling systems or operational areas.</td>
+                  <td>No abnormal operational condition reported by facility operations.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>13</td>
+                  <td>UTILITY / ATS</td>
+                  <td>Return system to normal utility supply according to site-specific approved sequence.</td>
+                  <td>Transfer completed by authorized personnel with stable return to normal source.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>14</td>
+                  <td>GEN-001 / GEN-002</td>
+                  <td>Observe generator cooldown and return-to-standby behavior.</td>
+                  <td>Generators return to approved standby state with no unresolved alarms.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>15</td>
+                  <td>BMS / EPMS / DCIM</td>
+                  <td>Review post-test alarms, events and system state.</td>
+                  <td>No unresolved alarm, abnormal event or degraded operating condition remains.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>16</td>
+                  <td>CMMS / CHANGE RECORD</td>
+                  <td>Record test result, observations, timing, exceptions and follow-up actions.</td>
+                  <td>Change record and maintenance/test records completed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. Risk Considerations</h2>
+
+          <p>
+            A planned utility transfer test intentionally exercises critical
+            electrical infrastructure. Even when designed for this purpose, the
+            activity can temporarily increase operational exposure if equipment
+            does not behave as expected.
+          </p>
+
+          <ul>
+            <li>Unexpected generator failure to start, stabilize or accept load</li>
+            <li>Unexpected transfer equipment alarm or failure to transfer</li>
+            <li>UPS battery discharge or abnormal UPS behavior during transition</li>
+            <li>Loss of redundancy or reduced power path resilience during the test</li>
+            <li>Unexpected impact to cooling, monitoring, controls or security systems</li>
+            <li>Human error caused by unclear communication or incorrect sequence</li>
+          </ul>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Operational rule:</strong> Stop the test if expected
+              system behavior is not observed, if redundancy becomes uncertain,
+              or if any critical alarm appears that is not part of the approved
+              test expectation.
+            </p>
+          </div>
+
+          <h2>7. Rollback Procedure</h2>
+
+          <p>
+            Rollback should follow the approved site-specific electrical
+            procedure and be directed by the responsible electrical and
+            operational authority.
+          </p>
+
+          <ul>
+            <li>Stop further test progression</li>
+            <li>Stabilize the active power source</li>
+            <li>Return to normal utility source if safe and approved</li>
+            <li>Escalate unresolved generator, UPS or transfer equipment alarms</li>
+            <li>Notify stakeholders of abnormal result or delayed return to normal</li>
+            <li>Record the event and assign corrective action ownership</li>
+          </ul>
+
+          <p>
+            If the system cannot be returned to the expected normal state, the
+            activity should be treated as an operational incident or degraded
+            operating condition according to site governance.
+          </p>
+
+          <h2>8. Post Verification</h2>
+
+          <ul class="checklist">
+            <li>☐ Utility supply restored as approved normal source</li>
+            <li>☐ Generators returned to approved standby condition</li>
+            <li>☐ UPS systems stable with no unresolved critical alarms</li>
+            <li>☐ Transfer equipment normal and ready</li>
+            <li>☐ Monitoring and alarm systems normal</li>
+            <li>☐ Cooling and critical facility support systems normal</li>
+            <li>☐ Event logs, timing and observations recorded</li>
+            <li>☐ Exceptions escalated and corrective actions assigned</li>
+            <li>☐ Stakeholders informed of test completion status</li>
+          </ul>
+
+          <h2>9. Operational Notes</h2>
+
+          <p>
+            A planned transfer test should validate more than equipment behavior.
+            It should also validate communication, monitoring visibility,
+            operator readiness, escalation discipline and the organization’s
+            ability to detect and manage abnormal conditions.
+          </p>
+
+          <p>
+            Emergency power systems may be subject to NFPA 110 or other local
+            codes, regulations and insurance requirements depending on facility
+            type and jurisdiction. Real test procedures must be aligned with the
+            applicable legal, technical and operational requirements.
+          </p>
+
+          <p>
+            Uptime Institute guidance on MOPs emphasizes that a good MOP defines
+            a repeatable sequence and helps reduce human error by controlling the
+            interaction between people and equipment. This is especially relevant
+            during planned power system testing.
+          </p>
+
+          <div class="metadata-table">
+            <div><strong>Type:</strong> MOP Example</div>
+            <div><strong>Category:</strong> Electrical / Emergency Power</div>
+            <div><strong>Criticality:</strong> High</div>
+            <div><strong>Status:</strong> Public example — not for direct production use</div>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Key principles:</strong> approved test window, authorized
+              switching, live monitoring, stop conditions, rollback readiness,
+              event logging and verified return to normal.
+            </p>
+          </div>
+
+          <p class="small-note">
+            Template provided by © Tom Jensen | tomjensen.no
+          </p>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+
+          <div class="sidebar-box">
+            <h3>Procedure Focus</h3>
+            <ul>
+              <li>Planned power testing</li>
+              <li>Emergency power readiness</li>
+              <li>Transfer equipment behavior</li>
+              <li>UPS support during transfer</li>
+              <li>Monitoring and event logging</li>
+              <li>Controlled return to normal</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Areas</h3>
+            <ul>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="./" class="text-link">MOP Examples</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Example Asset References</h3>
+            <ul>
+              <li>GEN-001 / GEN-002 — Standby generators</li>
+              <li>ATS — Automatic transfer equipment</li>
+              <li>UPS-A / UPS-B — UPS systems</li>
+              <li>EPMS — Electrical power monitoring system</li>
+              <li>DCIM — Data center infrastructure monitoring</li>
+              <li>OPS-BRIDGE — Operational coordination point</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Public Example Notice</h3>
+            <p>
+              This is a simplified example document. Live transfer testing must
+              be planned, reviewed and approved according to the facility design,
+              electrical safety requirements, manufacturer instructions, local
+              regulations and responsible operational authority.
+            </p>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
+      <a href="./">Back to MOP examples</a>
+    </div>
+  </footer>
+</body>
+</html>
