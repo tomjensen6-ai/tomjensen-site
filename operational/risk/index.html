@@ -15,6 +15,148 @@
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/risk/" />
   <meta property="og:type" content="website" />
+
+  <style>
+    .risk-register {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .risk-item {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .risk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding-bottom: 1.25rem;
+    }
+
+    .risk-number {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 0.45rem;
+    }
+
+    .risk-header h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .risk-badge {
+      white-space: nowrap;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .risk-badge.high {
+      background: rgba(198,40,40,0.12);
+      color: #c62828;
+    }
+
+    .risk-badge.medium {
+      background: rgba(178,106,0,0.12);
+      color: #b26a00;
+    }
+
+    .risk-badge.low {
+      background: rgba(46,125,50,0.12);
+      color: #2e7d32;
+    }
+
+    .risk-badge.critical {
+      background: rgba(123,27,27,0.14);
+      color: #7b1b1b;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .risk-box {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 13px;
+      padding: 1.2rem;
+    }
+
+    .risk-box h4 {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .risk-box p {
+      margin: 0 0 0.55rem 0;
+    }
+
+    .risk-box ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .risk-box li {
+      margin-bottom: 0.45rem;
+    }
+
+    .risk-score {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 1.08rem;
+    }
+
+    .risk-score.high {
+      color: #c62828;
+    }
+
+    .risk-score.medium {
+      color: #b26a00;
+    }
+
+    .risk-score.low {
+      color: #2e7d32;
+    }
+
+    .risk-score.critical {
+      color: #7b1b1b;
+    }
+
+    .compact-table td,
+    .compact-table th {
+      vertical-align: top;
+    }
+
+    @media (max-width: 720px) {
+      .risk-header {
+        flex-direction: column;
+      }
+
+      .risk-badge {
+        align-self: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -87,7 +229,7 @@
           <h2>Assessment flow</h2>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
                   <th>Phase</th>
@@ -150,7 +292,7 @@
           </p>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
                   <th>Score</th>
@@ -196,7 +338,7 @@
           </p>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
                   <th>Score</th>
@@ -237,90 +379,146 @@
           <h2>Risk assessment register</h2>
 
           <p>
-            The table below follows the practical structure: original risk,
-            probability, impact, mitigation, residual risk, responsibility and
-            completion date.
+            The examples below show the same structure as a traditional risk
+            register, but arranged as separate risk cards for better readability:
+            original risk, probability, impact, mitigation, residual risk,
+            responsibility and completion date.
           </p>
 
-          <div class="responsive-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Risk Description</th>
-                  <th>Initial Score</th>
-                  <th>Mitigation Tasks</th>
-                  <th>Residual Score</th>
-                  <th>Owner</th>
-                  <th>Completion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Loss of redundancy during planned UPS maintenance</td>
-                  <td>
-                    Probability: 3<br />
-                    Impact: 4<br />
-                    <strong><span style="color:#c62828;">● 12 / High</span></strong>
-                  </td>
-                  <td>
-                    Approved MOP, verified load level, active monitoring,
-                    reviewed rollback plan and defined stop conditions.
-                  </td>
-                  <td>
-                    Probability: 2<br />
-                    Impact: 4<br />
-                    <strong><span style="color:#b26a00;">● 8 / Medium</span></strong>
-                  </td>
-                  <td>Operations Lead</td>
-                  <td>Before work start</td>
-                </tr>
+          <section class="risk-register">
 
-                <tr>
-                  <td>2</td>
-                  <td>Cooling capacity reduced during planned CRAC/CRAH maintenance</td>
-                  <td>
-                    Probability: 3<br />
-                    Impact: 4<br />
-                    <strong><span style="color:#c62828;">● 12 / High</span></strong>
-                  </td>
-                  <td>
-                    Verify redundant cooling, monitor temperature trend,
-                    define escalation criteria and stop conditions.
-                  </td>
-                  <td>
-                    Probability: 2<br />
-                    Impact: 3<br />
-                    <strong><span style="color:#b26a00;">● 6 / Medium</span></strong>
-                  </td>
-                  <td>Facility Operations</td>
-                  <td>Before maintenance window</td>
-                </tr>
+            <div class="risk-item">
+              <div class="risk-header">
+                <div>
+                  <span class="risk-number">Risk 01</span>
+                  <h3>Loss of redundancy during planned UPS maintenance</h3>
+                </div>
 
-                <tr>
-                  <td>3</td>
-                  <td>Incorrect asset identified during technical work</td>
-                  <td>
-                    Probability: 2<br />
-                    Impact: 5<br />
-                    <strong><span style="color:#c62828;">● 10 / High</span></strong>
-                  </td>
-                  <td>
-                    Use approved asset ID, physical label verification,
-                    procedure reference and second-person confirmation.
-                  </td>
-                  <td>
-                    Probability: 1<br />
-                    Impact: 5<br />
-                    <strong><span style="color:#b26a00;">● 5 / Medium</span></strong>
-                  </td>
-                  <td>Technical Lead</td>
-                  <td>Before execution</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                <div class="risk-badge high">High Risk</div>
+              </div>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Initial Assessment</h4>
+                  <p><strong>Probability:</strong> 3</p>
+                  <p><strong>Impact:</strong> 4</p>
+                  <div class="risk-score high">● 12 / High</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Mitigation Tasks</h4>
+                  <ul>
+                    <li>Approved MOP reviewed</li>
+                    <li>Load level verified</li>
+                    <li>Monitoring confirmed active</li>
+                    <li>Rollback plan reviewed</li>
+                    <li>Stop conditions defined</li>
+                  </ul>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Residual Risk</h4>
+                  <p><strong>Probability:</strong> 2</p>
+                  <p><strong>Impact:</strong> 4</p>
+                  <div class="risk-score medium">● 8 / Medium</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Ownership</h4>
+                  <p><strong>Owner:</strong><br />Operations Lead</p>
+                  <p><strong>Completion:</strong><br />Before work start</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="risk-item">
+              <div class="risk-header">
+                <div>
+                  <span class="risk-number">Risk 02</span>
+                  <h3>Cooling capacity reduced during planned CRAC/CRAH maintenance</h3>
+                </div>
+
+                <div class="risk-badge high">High Risk</div>
+              </div>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Initial Assessment</h4>
+                  <p><strong>Probability:</strong> 3</p>
+                  <p><strong>Impact:</strong> 4</p>
+                  <div class="risk-score high">● 12 / High</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Mitigation Tasks</h4>
+                  <ul>
+                    <li>Redundant cooling verified</li>
+                    <li>Temperature trend monitored</li>
+                    <li>Escalation criteria defined</li>
+                    <li>Stop conditions defined</li>
+                    <li>Maintenance window confirmed</li>
+                  </ul>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Residual Risk</h4>
+                  <p><strong>Probability:</strong> 2</p>
+                  <p><strong>Impact:</strong> 3</p>
+                  <div class="risk-score medium">● 6 / Medium</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Ownership</h4>
+                  <p><strong>Owner:</strong><br />Facility Operations</p>
+                  <p><strong>Completion:</strong><br />Before maintenance window</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="risk-item">
+              <div class="risk-header">
+                <div>
+                  <span class="risk-number">Risk 03</span>
+                  <h3>Incorrect asset identified during technical work</h3>
+                </div>
+
+                <div class="risk-badge high">High Risk</div>
+              </div>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Initial Assessment</h4>
+                  <p><strong>Probability:</strong> 2</p>
+                  <p><strong>Impact:</strong> 5</p>
+                  <div class="risk-score high">● 10 / High</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Mitigation Tasks</h4>
+                  <ul>
+                    <li>Approved asset ID used</li>
+                    <li>Physical label verified</li>
+                    <li>Procedure reference checked</li>
+                    <li>Second-person confirmation completed</li>
+                  </ul>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Residual Risk</h4>
+                  <p><strong>Probability:</strong> 1</p>
+                  <p><strong>Impact:</strong> 5</p>
+                  <div class="risk-score medium">● 5 / Medium</div>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Ownership</h4>
+                  <p><strong>Owner:</strong><br />Technical Lead</p>
+                  <p><strong>Completion:</strong><br />Before execution</p>
+                </div>
+              </div>
+            </div>
+
+          </section>
 
           <h2>Stop conditions</h2>
 
@@ -331,10 +529,10 @@
           </p>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
-                  <th>Symbol</th>
+                  <th>Marker</th>
                   <th>Stop Condition</th>
                   <th>Required Response</th>
                 </tr>
@@ -389,7 +587,7 @@
           </p>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
                   <th>Role</th>
@@ -432,7 +630,7 @@
           </p>
 
           <div class="responsive-table">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
                   <th>Exposure Type</th>
