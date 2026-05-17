@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EOP Example — Utility Power Loss Response | Tom Jensen</title>
+  <meta name="description" content="Public-facing Emergency Operating Procedure example for utility power loss response in critical infrastructure and data center environments." />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="EOP Example — Utility Power Loss Response | Tom Jensen" />
+  <meta property="og:description" content="Structured emergency response example for utility power loss, emergency power verification, escalation, communication and incident control." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/eop/utility-power-loss.html" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">TOM JENSEN</a>
+
+      <nav class="main-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#advisory">Advisory Areas</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / EOP Example</p>
+
+          <h1>Utility Power Loss Response</h1>
+
+          <p class="advisory-note-lead">
+            A simplified example of an Emergency Operating Procedure for loss of
+            normal utility power in a critical infrastructure environment.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Classification</span>
+          <p>
+            Example public-facing emergency response documentation structure.
+            Simplified and generalized.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+
+          <div class="metadata-table">
+            <div><strong>Document ID:</strong> EOP-PWR-001</div>
+            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Status:</strong> Example</div>
+            <div><strong>Activation:</strong> Utility Power Loss</div>
+          </div>
+
+          <h2>1. Purpose</h2>
+
+          <p>
+            Provide a structured response framework for utility power loss events
+            affecting critical infrastructure operations, with focus on personnel
+            safety, operational overview, emergency power verification,
+            communication, escalation and incident control.
+          </p>
+
+          <h2>2. Scope</h2>
+
+          <p>
+            Applies to abnormal conditions involving total or partial loss of
+            normal utility power to critical facilities, including data centers,
+            technical infrastructure spaces and supporting operational systems.
+          </p>
+
+          <p>
+            This example does not replace electrical switching procedures,
+            emergency evacuation procedures, manufacturer instructions, utility
+            coordination requirements, local regulations or site-specific
+            emergency plans.
+          </p>
+
+          <h2>3. Activation Criteria</h2>
+
+          <p>
+            This EOP may be activated when one or more of the following conditions
+            are observed:
+          </p>
+
+          <ul>
+            <li>Loss of utility power to critical systems or infrastructure</li>
+            <li>Unexpected transfer to generator or battery-supported operation</li>
+            <li>UPS systems operating on battery due to upstream utility loss</li>
+            <li>Generator startup following utility failure</li>
+            <li>Partial facility blackout or abnormal electrical condition</li>
+            <li>Loss of redundancy affecting critical power infrastructure</li>
+            <li>Unclear or unstable power system operating state</li>
+          </ul>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Emergency principle:</strong> Stabilize first. Diagnose
+              second. Maintain operational overview throughout the event.
+            </p>
+          </div>
+
+          <h2>4. Immediate Response Priorities</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Priority</th>
+                  <th>Focus Area</th>
+                  <th>Objective</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Life Safety</td>
+                  <td>Protect personnel and confirm no immediate safety hazard exists.</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Operational Overview</td>
+                  <td>Determine current infrastructure state and affected systems.</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>Emergency Power</td>
+                  <td>Confirm generator, UPS and transfer system behavior.</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Impact Control</td>
+                  <td>Limit escalation, instability or secondary failures.</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Communication</td>
+                  <td>Inform responsible stakeholders and maintain updates.</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>Incident Logging</td>
+                  <td>Maintain timeline and record key observations/actions.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>5. Initial Response Procedure</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Area/Tag</th>
+                  <th>Action</th>
+                  <th>Verification</th>
+                  <th>Owner</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1</td>
+                  <td>OPS-BRIDGE</td>
+                  <td>Declare operational incident and assign response lead.</td>
+                  <td>Single responsible coordinator established.</td>
+                  <td>Operations Lead</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>FACILITY</td>
+                  <td>Confirm personnel safety and identify any immediate hazard.</td>
+                  <td>No active life-safety emergency identified.</td>
+                  <td>Operations / Security</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>BMS / EPMS / DCIM</td>
+                  <td>Review active alarms, event logs and current infrastructure state.</td>
+                  <td>Affected systems and current operating mode identified.</td>
+                  <td>Operations</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>UPS-A / UPS-B</td>
+                  <td>Verify UPS operating condition and battery status.</td>
+                  <td>UPS systems supporting load as expected.</td>
+                  <td>Power Specialist</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>GEN-001 / GEN-002</td>
+                  <td>Verify generator startup, stabilization and load acceptance.</td>
+                  <td>Generators operating normally or issue escalated immediately.</td>
+                  <td>Generator Specialist</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>ATS / SWITCHGEAR</td>
+                  <td>Confirm transfer equipment state and power-path condition.</td>
+                  <td>Power path status understood and recorded.</td>
+                  <td>Electrical Responsible Person</td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>DATAHALL / TECH AREAS</td>
+                  <td>Verify cooling systems, monitoring systems and critical operational areas remain stable.</td>
+                  <td>No secondary infrastructure failure observed.</td>
+                  <td>Facility Operations</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>COMMUNICATION</td>
+                  <td>Notify required stakeholders according to incident communication plan.</td>
+                  <td>Stakeholder notification completed and logged.</td>
+                  <td>Incident Lead</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>INCIDENT LOG</td>
+                  <td>Start or maintain incident timeline and event log.</td>
+                  <td>Actions, alarms and decisions continuously recorded.</td>
+                  <td>Assigned Recorder</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>OPS-BRIDGE</td>
+                  <td>Establish next update interval and escalation threshold.</td>
+                  <td>Response cadence agreed and communicated.</td>
+                  <td>Incident Lead</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. Stop Conditions / Escalation Triggers</h2>
+
+          <p>
+            Immediate escalation is required if one or more of the following
+            conditions occur:
+          </p>
+
+          <ul>
+            <li>Generator fails to start or remain stable</li>
+            <li>UPS runtime becomes uncertain or battery autonomy degrades unexpectedly</li>
+            <li>Critical load shutdown occurs or appears likely</li>
+            <li>Loss of cooling or secondary infrastructure begins</li>
+            <li>Smoke, electrical smell, fire alarm or arc-related concern observed</li>
+            <li>Power-path state cannot be confirmed</li>
+            <li>Personnel safety becomes uncertain</li>
+            <li>Facility redundancy falls below approved operational limits</li>
+          </ul>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Control rule:</strong> If the operating state is unclear,
+              assume increased risk until verified otherwise.
+            </p>
+          </div>
+
+          <h2>7. Communication Structure</h2>
+
+          <p>
+            During utility loss events, communication should remain structured,
+            factual and time-based.
+          </p>
+
+          <ul>
+            <li>Use one operational lead for coordination</li>
+            <li>Separate technical investigation from stakeholder communication</li>
+            <li>Avoid unverified assumptions during updates</li>
+            <li>Record times for all major changes and decisions</li>
+            <li>Maintain regular update intervals during unstable conditions</li>
+          </ul>
+
+          <p>
+            Example update structure:
+          </p>
+
+          <div class="code-like-box">
+            Time → Current State → Impact → Actions → Risk Level → Next Update
+          </div>
+
+          <h2>8. Recovery and Return to Normal</h2>
+
+          <p>
+            Return to normal operation should be controlled and verified.
+            Utility restoration alone does not automatically mean the incident
+            is resolved.
+          </p>
+
+          <ul>
+            <li>Confirm utility stability before normalization</li>
+            <li>Verify UPS systems returned to approved operating state</li>
+            <li>Verify generators returned to standby condition</li>
+            <li>Review alarms, events and abnormal conditions</li>
+            <li>Confirm cooling and monitoring systems stable</li>
+            <li>Confirm no hidden degraded condition remains</li>
+            <li>Complete incident documentation and closeout review</li>
+          </ul>
+
+          <h2>9. Related Procedures</h2>
+
+          <ul>
+            <li>Planned Utility Transfer Test (MOP)</li>
+            <li>UPS Maintenance Bypass Procedure (SOP)</li>
+            <li>Generator Weekly Inspection Procedure (SOP)</li>
+            <li>Cooling Failure Response (EOP)</li>
+            <li>Site Electrical Switching Procedure (Site-Specific)</li>
+          </ul>
+
+          <h2>10. Operational Notes</h2>
+
+          <p>
+            Utility power loss events often create secondary operational risks
+            beyond the initial outage itself. Cooling stability, battery runtime,
+            transfer behavior, monitoring visibility and human communication
+            quality all influence the final outcome.
+          </p>
+
+          <p>
+            Strong incident response depends on maintaining operational overview,
+            avoiding uncontrolled parallel action and escalating uncertainty early.
+          </p>
+
+          <p>
+            Real emergency response procedures must align with facility design,
+            utility agreements, local regulations, electrical safety requirements,
+            emergency management structure and approved operational governance.
+          </p>
+
+          <div class="metadata-table">
+            <div><strong>Type:</strong> EOP Example</div>
+            <div><strong>Category:</strong> Emergency Power / Incident Response</div>
+            <div><strong>Criticality:</strong> Critical</div>
+            <div><strong>Status:</strong> Public example — not for direct production use</div>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Key principles:</strong> establish control, verify the
+              power path, protect critical load, communicate clearly, escalate
+              uncertainty early and maintain a structured incident timeline.
+            </p>
+          </div>
+
+          <p class="small-note">
+            Template provided by © Tom Jensen | tomjensen.no
+          </p>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+
+          <div class="sidebar-box">
+            <h3>EOP Focus</h3>
+            <ul>
+              <li>Incident control</li>
+              <li>Emergency power verification</li>
+              <li>Operational overview</li>
+              <li>Structured escalation</li>
+              <li>Stakeholder communication</li>
+              <li>Incident timeline management</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Areas</h3>
+            <ul>
+              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
+              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Example Asset References</h3>
+            <ul>
+              <li>UPS-A / UPS-B — UPS systems</li>
+              <li>GEN-001 / GEN-002 — Standby generators</li>
+              <li>ATS — Transfer equipment</li>
+              <li>BMS / EPMS / DCIM — Monitoring systems</li>
+              <li>OPS-BRIDGE — Incident coordination point</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Emergency Reminder</h3>
+            <p>
+              The first goal is not detailed troubleshooting. The first goal is
+              to establish a known safe operating state and maintain control of
+              the incident.
+            </p>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Public Example Notice</h3>
+            <p>
+              This is a simplified example document. Real emergency response
+              procedures must be reviewed and approved according to the facility
+              design, legal requirements and responsible operational authority.
+            </p>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
+      <a href="./">Back to EOP examples</a>
+    </div>
+  </footer>
+</body>
+</html>
