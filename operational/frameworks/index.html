@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Operational Frameworks | Tom Jensen</title>
+  <meta name="description" content="Operational framework examples for criticality models, escalation, change severity, lifecycle control and documentation hierarchy." />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="Operational Frameworks | Tom Jensen" />
+  <meta property="og:description" content="Practical operational frameworks for criticality, escalation, change severity, lifecycle control and documentation hierarchy." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/frameworks/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">TOM JENSEN</a>
+
+      <nav class="main-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#advisory">Advisory Areas</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / Frameworks</p>
+
+          <h1>Operational Frameworks</h1>
+
+          <p class="advisory-note-lead">
+            Practical control models for criticality, escalation, change severity,
+            lifecycle control and documentation hierarchy in critical infrastructure
+            operations.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Purpose</span>
+          <p>
+            To show how operational decisions can be made more consistent through
+            simple, visible and governed frameworks.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+
+          <h2>Why frameworks matter</h2>
+
+          <p>
+            Operational procedures describe what to do. Frameworks help decide
+            how important something is, who must be involved, how quickly it must
+            be escalated and what level of control is required.
+          </p>
+
+          <p>
+            In critical environments, inconsistent judgment can create risk. A
+            structured framework helps teams classify work, prioritize incidents,
+            assign authority and maintain documentation discipline.
+          </p>
+
+          <p>
+            The frameworks below are generalized examples. Real organizations
+            should adapt them to their facility design, legal requirements,
+            service commitments, customer obligations and operating model.
+          </p>
+
+          <h2>1. Criticality model</h2>
+
+          <p>
+            A criticality model helps classify systems, assets and procedures by
+            their operational importance. The purpose is not to make every system
+            “critical,” but to identify where failure would create the greatest
+            operational impact.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Description</th>
+                  <th>Typical Examples</th>
+                  <th>Control Expectation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Critical</td>
+                  <td>Failure may directly affect life safety, critical load, major service continuity or facility operation.</td>
+                  <td>Utility power, UPS, generators, main cooling, fire systems, core monitoring</td>
+                  <td>Strict approval, tested procedures, defined escalation, frequent review</td>
+                </tr>
+                <tr>
+                  <td>High</td>
+                  <td>Failure may reduce redundancy, capacity, security or operational resilience.</td>
+                  <td>Secondary cooling units, transfer equipment, access systems, major support systems</td>
+                  <td>Controlled procedures, risk review, documented ownership</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>Failure may affect local operations, maintenance efficiency or support functions.</td>
+                  <td>Local sensors, non-critical panels, supporting documentation, local room systems</td>
+                  <td>Standard procedures and periodic review</td>
+                </tr>
+                <tr>
+                  <td>Low</td>
+                  <td>Failure has limited operational impact and does not affect critical services directly.</td>
+                  <td>Non-critical accessories, administrative support items</td>
+                  <td>Basic documentation and owner awareness</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Working principle:</strong> Criticality should be based on
+              operational impact, not equipment cost alone.
+            </p>
+          </div>
+
+          <h2>2. Escalation model</h2>
+
+          <p>
+            Escalation defines when an issue must move from local handling to
+            wider operational, technical or management attention.
+          </p>
+
+          <p>
+            Escalation should be based on impact, uncertainty, time pressure,
+            safety and loss of redundancy. A team should not wait for full failure
+            before escalating if the operating state is unclear.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Escalation Level</th>
+                  <th>Typical Condition</th>
+                  <th>Expected Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Level 1 — Local Handling</td>
+                  <td>Known minor issue, no service impact, no safety concern, clear procedure exists.</td>
+                  <td>Handle locally, record action, monitor for recurrence.</td>
+                </tr>
+                <tr>
+                  <td>Level 2 — Operational Attention</td>
+                  <td>Reduced redundancy, repeated alarms, unclear cause or local operational impact.</td>
+                  <td>Notify operations lead, increase monitoring, assign owner.</td>
+                </tr>
+                <tr>
+                  <td>Level 3 — Incident Control</td>
+                  <td>Critical system affected, environmental/power risk, customer impact possible, or operating state uncertain.</td>
+                  <td>Activate incident coordination, stakeholder communication and technical escalation.</td>
+                </tr>
+                <tr>
+                  <td>Level 4 — Emergency / Crisis</td>
+                  <td>Life-safety concern, major service impact, uncontrolled failure or multiple critical systems affected.</td>
+                  <td>Activate emergency response, management escalation and external support as required.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>3. Change severity model</h2>
+
+          <p>
+            Planned work should be classified by potential impact, not by how
+            routine it feels. A familiar task can still be high risk if it affects
+            redundancy, critical load or recovery options.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>Description</th>
+                  <th>Typical Control Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Minor</td>
+                  <td>No expected impact to critical systems, no redundancy loss and simple rollback.</td>
+                  <td>Local approval, standard SOP, normal logging.</td>
+                </tr>
+                <tr>
+                  <td>Standard</td>
+                  <td>Planned work with limited operational exposure and known procedure.</td>
+                  <td>Approved MOP or work instruction, defined verification.</td>
+                </tr>
+                <tr>
+                  <td>Major</td>
+                  <td>Redundancy reduction, critical system involvement, customer visibility or complex coordination.</td>
+                  <td>Formal change approval, MOP, rollback plan, stakeholder notification.</td>
+                </tr>
+                <tr>
+                  <td>Emergency Change</td>
+                  <td>Urgent action required to restore, stabilize or protect operations.</td>
+                  <td>Emergency approval path, incident log, post-event review.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Change rule:</strong> If rollback is unclear, the change is
+              not ready for controlled execution.
+            </p>
+          </div>
+
+          <h2>4. Lifecycle control model</h2>
+
+          <p>
+            Operational documents should be managed throughout their lifecycle.
+            A document may start as a draft, become approved, later require
+            revision, and eventually be retired or superseded.
+          </p>
+
+          <div class="code-like-box">
+            Draft → Review → Approval → Controlled Use → Review → Revision or Retirement
+          </div>
+
+          <p>
+            Lifecycle control helps prevent outdated procedures from remaining
+            in use after equipment, risks, responsibilities or operating
+            conditions have changed.
+          </p>
+
+          <ul>
+            <li><strong>Draft:</strong> document is being developed and is not approved for live use.</li>
+            <li><strong>Review:</strong> technical and operational reviewers check content.</li>
+            <li><strong>Approval:</strong> authorized role releases the document for controlled use.</li>
+            <li><strong>Controlled Use:</strong> approved document is available to the right users.</li>
+            <li><strong>Periodic Review:</strong> document is checked against current reality.</li>
+            <li><strong>Revision:</strong> document is updated due to change, incident or improvement.</li>
+            <li><strong>Retirement:</strong> obsolete document is removed from active use.</li>
+          </ul>
+
+          <h2>5. Documentation hierarchy</h2>
+
+          <p>
+            Documentation hierarchy helps users understand which document governs
+            which activity. A policy or governance standard should not contain
+            every operational step, and an SOP should not override site governance.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Document Type</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Policy / Governance Standard</td>
+                  <td>Defines authority, principles, ownership and mandatory controls.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Framework / Standard</td>
+                  <td>Defines models for classification, escalation, risk and documentation structure.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>SOP / MOP / EOP</td>
+                  <td>Defines operational execution, planned work or emergency response structure.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Work Instruction / Checklist</td>
+                  <td>Defines detailed task-level steps or verification points.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Records / Logs</td>
+                  <td>Provides evidence of execution, review, incident response or maintenance history.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. Severity and response alignment</h2>
+
+          <p>
+            A practical framework connects criticality, escalation and change
+            severity. If these models are disconnected, the organization may
+            under-control high-risk work or over-control low-risk work.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th>Typical Classification</th>
+                  <th>Expected Control</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Routine inspection of stable system</td>
+                  <td>Low to Medium</td>
+                  <td>SOP or checklist</td>
+                </tr>
+                <tr>
+                  <td>Planned work affecting redundancy</td>
+                  <td>High</td>
+                  <td>MOP, approval, rollback, monitoring</td>
+                </tr>
+                <tr>
+                  <td>Unplanned loss of critical infrastructure</td>
+                  <td>Critical</td>
+                  <td>EOP, incident lead, escalation, communication</td>
+                </tr>
+                <tr>
+                  <td>Emergency correction during active incident</td>
+                  <td>Critical / Emergency Change</td>
+                  <td>Emergency authority, incident log, post-event review</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>7. Review triggers</h2>
+
+          <p>
+            Frameworks should not be static forever. They should be reviewed
+            when reality changes.
+          </p>
+
+          <ul>
+            <li>Incident or near miss</li>
+            <li>Major equipment change</li>
+            <li>Change in operating model</li>
+            <li>New regulatory or client requirement</li>
+            <li>Audit finding</li>
+            <li>Repeated confusion during execution</li>
+            <li>New site, room or system added</li>
+            <li>Vendor or maintenance strategy changed</li>
+          </ul>
+
+          <h2>8. Practical minimum framework set</h2>
+
+          <p>
+            A small organization does not need unnecessary bureaucracy. But even
+            a lean operational model should define the basics clearly.
+          </p>
+
+          <ul>
+            <li>How system criticality is classified</li>
+            <li>When issues must be escalated</li>
+            <li>How planned work is classified</li>
+            <li>Who can approve changes</li>
+            <li>Who can stop work</li>
+            <li>How documents are reviewed and retired</li>
+            <li>How incidents are recorded and closed</li>
+          </ul>
+
+          <h2>Public examples and limitations</h2>
+
+          <p>
+            These framework examples are generalized. Real operational frameworks
+            must be adapted to the organization’s facility design, safety
+            requirements, customer commitments, local regulations, contractual
+            obligations, risk appetite and management system.
+          </p>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+          <div class="sidebar-box">
+            <h3>Framework Focus</h3>
+            <ul>
+              <li>Criticality model</li>
+              <li>Escalation model</li>
+              <li>Change severity</li>
+              <li>Lifecycle control</li>
+              <li>Documentation hierarchy</li>
+              <li>Review triggers</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Areas</h3>
+            <ul>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
+              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
+              <li><a href="../eop/" class="text-link">EOP Examples</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Core Rule</h3>
+            <p>
+              Frameworks should make operational decisions more consistent,
+              not create paperwork that people avoid during real work.
+            </p>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Decision Test</h3>
+            <p>
+              If a team cannot agree on severity, authority or escalation path,
+              the framework is either missing or not clear enough.
+            </p>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Public Example Notice</h3>
+            <p>
+              This is a generalized framework example. Live frameworks must be
+              reviewed and approved by the responsible organization.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
+      <a href="../">Back to operational library</a>
+    </div>
+  </footer>
+</body>
+</html>
