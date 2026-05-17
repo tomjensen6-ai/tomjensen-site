@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Asset Identification & Operational Traceability | Tom Jensen</title>
+  <meta name="description" content="Asset identification, physical labeling, QR codes, naming standards, CMMS integration and operational traceability principles for critical infrastructure." />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="Asset Identification & Operational Traceability | Tom Jensen" />
+  <meta property="og:description" content="Practical asset identification principles for critical infrastructure: naming standards, physical labeling, QR codes, CMMS integration and lifecycle traceability." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/asset-identification/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">TOM JENSEN</a>
+
+      <nav class="main-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#advisory">Advisory Areas</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / Asset Identification</p>
+
+          <h1>Asset Identification & Operational Traceability</h1>
+
+          <p class="advisory-note-lead">
+            Reliable operations depend on knowing exactly which physical asset,
+            system or component a procedure, alarm, maintenance task or incident
+            record refers to.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Purpose</span>
+          <p>
+            To show how clear asset identification supports safe execution,
+            accurate documentation, maintenance history and lifecycle control.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+          <h2>Why asset identification matters</h2>
+
+          <p>
+            In critical infrastructure, vague asset references create risk.
+            Instructions such as “check the UPS,” “isolate the pump,” or
+            “reset the controller” are not sufficient when several similar
+            systems may exist in the same facility.
+          </p>
+
+          <p>
+            A good asset identification model connects the physical environment
+            to the documentation set. It allows operators, technicians, vendors
+            and managers to refer to the same asset using the same controlled
+            identifier.
+          </p>
+
+          <p>
+            The goal is simple: the asset named in the procedure must be the
+            same asset found in the room, shown in the drawings, listed in the
+            asset register, maintained in the CMMS and referenced in operational
+            records.
+          </p>
+
+          <h2>Core identification principle</h2>
+
+          <p>
+            A mature identification structure normally answers three operational
+            questions:
+          </p>
+
+          <ul>
+            <li><strong>Where is it?</strong> The site, building, area, floor, room or location.</li>
+            <li><strong>What system does it belong to?</strong> The electrical, mechanical, control, fire, security or IT system.</li>
+            <li><strong>What component is it?</strong> The specific asset, unit, sensor, valve, breaker, pump, fan, panel or device.</li>
+          </ul>
+
+          <p>
+            The exact format may vary between countries, sectors and clients,
+            but the operational purpose remains the same: every asset identifier
+            should be clear, unique, stable and usable across the asset lifecycle.
+          </p>
+
+          <h2>Norwegian example: NS-TFM logic</h2>
+
+          <p>
+            In Norway, building and infrastructure projects often use TFM —
+            Tverrfaglig Merkesystem. In the NS 3457 series, TFM identification
+            is based on a combined structure using location, system and component
+            coding.
+          </p>
+
+          <div class="code-like-box">
+            +001.02 =360.001 -VIF01
+          </div>
+
+          <p>
+            This type of structure allows the same asset to be referenced in
+            design documents, BIM models, physical labels, maintenance systems
+            and operating procedures.
+          </p>
+
+          <p>
+            For international or non-Norwegian projects, the same principle can
+            be applied through the relevant client, national or sector standard.
+            The important point is not that every project uses the same code,
+            but that each project uses one approved and controlled identification
+            logic.
+          </p>
+
+          <h2>Fallback internal naming structure</h2>
+
+          <p>
+            Where no approved client or national standard exists, an internal
+            asset naming structure may be used. It should be simple enough to
+            understand in the field, but structured enough to support maintenance,
+            audits and future expansion.
+          </p>
+
+          <div class="code-like-box">
+            SITE-BUILDING-ROOM-SYSTEM-ASSET-RUNNINGNO
+          </div>
+
+          <p>Example:</p>
+
+          <div class="code-like-box">
+            OSL-DC1-ER2-UPS-001-01
+          </div>
+
+          <p>
+            This should be treated as a fallback model only. If the facility has
+            an approved TFM, BIM, CMMS or client asset register structure, that
+            structure should take priority.
+          </p>
+
+          <h2>Physical asset tags</h2>
+
+          <p>
+            An asset identifier must work in the real environment, not only in a
+            spreadsheet. Physical labels should be placed so that personnel can
+            identify the asset without guessing, removing unrelated covers or
+            relying on memory.
+          </p>
+
+          <p>
+            Good physical marking is normally:
+          </p>
+
+          <ul>
+            <li>Visible during normal inspection and operation</li>
+            <li>Durable enough for the local environment</li>
+            <li>Readable under realistic lighting conditions</li>
+            <li>Placed on or directly associated with the correct asset</li>
+            <li>Consistent with drawings, registers and procedures</li>
+            <li>Updated when equipment is replaced or reconfigured</li>
+          </ul>
+
+          <p>
+            Labels should not create confusion by being placed on removable
+            covers, temporary parts or nearby equipment that could later be
+            separated from the asset.
+          </p>
+
+          <h2>Human-readable and machine-readable identifiers</h2>
+
+          <p>
+            A strong identification system normally supports both human-readable
+            and machine-readable use.
+          </p>
+
+          <p>
+            The human-readable identifier allows an operator to verify the asset
+            directly in the field. The machine-readable identifier, such as a QR
+            code or barcode, can connect the asset to digital records, manuals,
+            maintenance history or work orders.
+          </p>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Operational rule:</strong> A QR code should support the
+              visible asset ID, not replace it. Personnel must still be able to
+              identify critical equipment without relying only on a scanner,
+              network connection or mobile device.
+            </p>
+          </div>
+
+          <h2>QR codes and barcode integration</h2>
+
+          <p>
+            QR codes and barcodes can improve access to information when they are
+            connected to controlled systems. A scan may open the asset record,
+            maintenance history, procedure library, spare parts list, risk notes
+            or documentation package.
+          </p>
+
+          <p>
+            However, machine-readable systems must be governed carefully. The
+            scanned link or reference should point to approved information, not
+            uncontrolled files, outdated documents or personal storage locations.
+          </p>
+
+          <p>
+            For critical environments, the label should normally include both:
+          </p>
+
+          <ul>
+            <li>A visible asset identifier readable by personnel</li>
+            <li>A machine-readable code connected to the correct controlled record</li>
+          </ul>
+
+          <h2>CMMS, BIM and asset register integration</h2>
+
+          <p>
+            The best asset identification systems connect the same identifier
+            across operational platforms. This reduces ambiguity and improves
+            the quality of maintenance and incident records.
+          </p>
+
+          <ul>
+            <li><strong>CMMS:</strong> work orders, preventive maintenance, corrective actions and asset history</li>
+            <li><strong>BIM:</strong> digital model references, spatial location and handover information</li>
+            <li><strong>FDV/O&M documentation:</strong> manuals, datasheets, certificates and service instructions</li>
+            <li><strong>Monitoring systems:</strong> alarms, events and operational status</li>
+            <li><strong>Procedures:</strong> SOPs, MOPs, EOPs and risk assessments</li>
+          </ul>
+
+          <p>
+            When these systems are aligned, personnel can move from an alarm to
+            the physical asset, from the physical asset to the procedure, and
+            from the procedure back to maintenance records without losing
+            context.
+          </p>
+
+          <h2>Asset lifecycle control</h2>
+
+          <p>
+            Asset identification should be managed throughout the full lifecycle:
+            design, procurement, installation, commissioning, operation,
+            maintenance, replacement and decommissioning.
+          </p>
+
+          <p>
+            The identifier should not disappear when the project ends. It should
+            continue to support the people responsible for operating and
+            maintaining the facility.
+          </p>
+
+          <p>
+            When assets are replaced, moved, renamed or removed, the asset
+            register, physical label, drawings, procedures and maintenance
+            system must be updated together. Otherwise the documentation slowly
+            stops matching reality.
+          </p>
+
+          <h2>Procedure readiness</h2>
+
+          <p>
+            SOPs, MOPs and EOPs should not rely on informal asset descriptions.
+            A controlled procedure should state the asset ID, system, location,
+            operating state and verification method clearly enough that another
+            competent person can follow it without local guesswork.
+          </p>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Readiness check:</strong> If the asset cannot be identified
+              clearly in the field, the procedure is not ready for controlled
+              execution.
+            </p>
+          </div>
+
+          <h2>Practical checklist</h2>
+
+          <p>
+            Before an asset identification model is accepted for operational use,
+            it should be checked against practical field conditions.
+          </p>
+
+          <ul>
+            <li>Does every critical asset have a unique identifier?</li>
+            <li>Does the identifier match drawings and asset registers?</li>
+            <li>Can personnel read the label in the real operating environment?</li>
+            <li>Is the label placed on the correct asset, not on a removable part?</li>
+            <li>Does the identifier connect to CMMS, BIM, FDV or O&M records?</li>
+            <li>Are replaced or modified assets updated in all relevant systems?</li>
+            <li>Can procedures reference the asset without ambiguity?</li>
+            <li>Can an external technician understand the identifier logic?</li>
+          </ul>
+
+          <h2>Public examples and limitations</h2>
+
+          <p>
+            This page describes general operational principles. Live asset
+            identification systems must be designed and approved according to
+            the responsible organization’s standards, local regulations,
+            safety requirements, project documentation and facility conditions.
+          </p>
+        </article>
+
+        <aside class="advisory-sidebar">
+          <div class="sidebar-box">
+            <h3>Page Focus</h3>
+            <ul>
+              <li>Asset tags</li>
+              <li>Naming standards</li>
+              <li>Physical labeling</li>
+              <li>QR and barcode use</li>
+              <li>CMMS integration</li>
+              <li>BIM and FDV links</li>
+              <li>Lifecycle traceability</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Identifier Logic</h3>
+            <ul>
+              <li>Location</li>
+              <li>System</li>
+              <li>Component</li>
+              <li>Unique instance</li>
+              <li>Operational record</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Areas</h3>
+            <ul>
+              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../governance/" class="text-link">Governance</a></li>
+              <li><a href="../templates/" class="text-link">Templates</a></li>
+              <li><a href="../sop/" class="text-link">SOP</a></li>
+              <li><a href="../mop/" class="text-link">MOP</a></li>
+              <li><a href="../eop/" class="text-link">EOP</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Operational Principle</h3>
+            <p>
+              The asset ID used in the procedure should match the physical label,
+              asset register, maintenance record and operational documentation.
+            </p>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Field Rule</h3>
+            <p>
+              A scan code can help personnel reach the right record, but the
+              visible asset ID should remain readable without digital tools.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tom Jensen. Independent advisor based in Norway.</p>
+      <a href="../">Back to operational library</a>
+    </div>
+  </footer>
+</body>
+</html>
