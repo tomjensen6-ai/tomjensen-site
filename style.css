@@ -756,6 +756,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
     flex-direction: column;
     gap: 0.5rem;
   }
+   .section-link {
+  display: inline-block;
+  margin-top: 2rem;
+}
 }
 
 /* ----- Subtle entrance ----- */
