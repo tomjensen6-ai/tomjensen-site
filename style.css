@@ -378,6 +378,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   border-radius: 50%;
 }
 
+.expertise {
+  padding: clamp(4rem, 7vw, 6rem) 0;
+  border-top: 1px solid var(--line-soft);
+  background: var(--cream-light);
+
 /* Mentoring banner */
 .mentoring-banner {
   margin-top: 1rem;
