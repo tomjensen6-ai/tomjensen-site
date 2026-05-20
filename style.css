@@ -307,9 +307,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 
 /* ----- Advisory areas ----- */
-.advisory {
+.advisory,
+.expertise {
   padding: clamp(4rem, 7vw, 6rem) 0;
   border-top: 1px solid var(--line-soft);
+  background: rgba(255,255,255,0.18);
 }
 
 .service-grid {
