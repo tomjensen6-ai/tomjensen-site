@@ -1,2 +1,2 @@
 # tomjensen-site
-Personal advisory website for Tom Jensen
+Personal website for Tom Jensen
