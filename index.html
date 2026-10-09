@@ -24,7 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -33,7 +35,9 @@
   <div class="container header-inner">
     <a href="/" class="site-name">TOM JENSEN</a>
 
-    <nav class="primary-nav" aria-label="Primary">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#principles">Principles</a>
       <a href="#expertise">Focus Areas</a>
@@ -135,7 +139,7 @@
 
         <p>
           In 2011 I moved into data centers. From 2016 to 2024 I was Critical Facility Manager
-          at OS-IX in Oslo, responsible for power, cooling, DCIM, security, staff and vendors.
+          at OS&#8209;IX in Oslo, responsible for power, cooling, DCIM, security, staff and vendors.
         </p>
 
         <p>
@@ -391,10 +395,10 @@
           <div class="timeline-years">2016 &ndash; 2024</div>
           <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-body">
-            <h4><strong>Critical Facility Manager (CFM)</strong> &mdash; OS-IX (Oslo Internet Exchange)</h4>
+            <h4><strong>Critical Facility Manager (CFM)</strong> &mdash; OS&#8209;IX (Oslo Internet Exchange)</h4>
             <p>
               Ran the critical facility: power, cooling, DCIM, security, staff and vendors.
-              OS-IX is a carrier-neutral data center in Oslo that hosts several internet exchanges.
+              OS&#8209;IX is a carrier-neutral data center in Oslo that hosts several internet exchanges.
             </p>
           </div>
         </li>
@@ -496,6 +500,27 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!btn || !nav) return;
+    function setOpen(open) {
+      btn.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
+    }
+    btn.addEventListener('click', function () {
+      setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
 
 </body>
 </html>

@@ -23,7 +23,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css?v=2">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="../style.css?v=3">
 </head>
 <body>
 
@@ -31,7 +33,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-name">TOM JENSEN</a>
-      <nav class="primary-nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <a href="/#about">About</a>
         <a href="/#experience">Experience</a>
         <a href="/#advisory">Advisory Areas</a>
@@ -361,6 +364,27 @@
       </div>
     </div>
   </footer>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!btn || !nav) return;
+    function setOpen(open) {
+      btn.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
+    }
+    btn.addEventListener('click', function () {
+      setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
 
 </body>
 </html>
