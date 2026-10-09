@@ -315,7 +315,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -437,24 +437,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   box-shadow: 0 6px 24px -12px rgba(27, 36, 51, 0.12);
 }
 
-/* Web-presence variant of the mentoring banner */
-.web-presence-banner {
-  margin-top: 0.75rem;
-}
-
-.web-presence-text {
-  display: block;
-  width: 100%;
-}
-
-.web-presence-standout {
-  display: block;
-  text-align: center;
-  margin-top: 0.45rem;
-  color: var(--ink);
-  font-weight: 600;
-}
-
 /* ----- Experience timeline ----- */
 .experience {
   padding: clamp(4rem, 7vw, 6rem) 0;
@@ -500,7 +482,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: var(--ink);
+  background: var(--gold);
   margin-top: 0.45rem;
   margin-left: 0;
   position: relative;
@@ -529,6 +511,28 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   max-width: 52rem;
 }
 
+.certification {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.certification .section-label {
+  margin-bottom: 0.6rem;
+}
+
+.certification p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.58;
+}
+
+.certification strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 /* ----- Footer ----- */
 .site-footer {
   background: var(--cream);
@@ -541,6 +545,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   grid-template-columns: 1.1fr 1fr 1.2fr;
   gap: clamp(2rem, 5vw, 4rem);
   padding-bottom: clamp(2.5rem, 4vw, 3.25rem);
+}
+
+.footer-grid--two {
+  grid-template-columns: 1.1fr 1fr;
 }
 
 .footer-col .section-label {
@@ -1627,6 +1635,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 
 .operational-preview-content h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  line-height: 1.13;
+  color: var(--ink);
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
   max-width: 720px;
 }
