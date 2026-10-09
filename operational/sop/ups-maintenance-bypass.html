@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=5" />
+  <link rel="stylesheet" href="../../style.css?v=7" />
 
   <link rel="icon" type="image/png" href="../../images/favicon.png" />
 </head>
@@ -26,7 +26,7 @@
         <a href="../../index.html#about">About</a>
         <a href="../../index.html#principles">Principles</a>
         <a href="../../index.html#expertise">Focus Areas</a>
-        <a href="../../operational/">Operational Library</a>
+        <a href="../../operational/" aria-current="page">Operational Library</a>
         <a href="../../index.html#experience">Experience</a>
         <a href="../../index.html#contact">Contact</a>
       </nav>
@@ -91,113 +91,117 @@
 
           <h2>4. Responsibilities</h2>
 
-          <table class="ops-table">
-            <thead>
-              <tr>
-                <th>Role</th>
-                <th>Responsibility</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Operations Lead</td>
-                <td>Approve execution and supervise operational activity.</td>
-              </tr>
-              <tr>
-                <td>Authorized Technician</td>
-                <td>Perform approved switching or operational actions.</td>
-              </tr>
-              <tr>
-                <td>Verifier</td>
-                <td>Independently confirm each critical step before and after execution.</td>
-              </tr>
-              <tr>
-                <td>Control Room / Monitoring Function</td>
-                <td>Monitor alarms, load state and operational stability.</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="responsive-table">
+              <table class="ops-table">
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Responsibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Operations Lead</td>
+                  <td>Approve execution and supervise operational activity.</td>
+                </tr>
+                <tr>
+                  <td>Authorized Technician</td>
+                  <td>Perform approved switching or operational actions.</td>
+                </tr>
+                <tr>
+                  <td>Verifier</td>
+                  <td>Independently confirm each critical step before and after execution.</td>
+                </tr>
+                <tr>
+                  <td>Control Room / Monitoring Function</td>
+                  <td>Monitor alarms, load state and operational stability.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h2>5. Execution Procedure</h2>
 
-          <table class="ops-table execution-table">
-            <thead>
-              <tr>
-                <th>Step</th>
-                <th>Room/Tag</th>
-                <th>Action</th>
-                <th>Verification</th>
-                <th>Sign-1</th>
-                <th>Sign-2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                <td>Verify UPS is operating in normal online mode with no active critical alarms.</td>
-                <td>Load percentage, bypass availability and alarm state confirmed.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
-                <td>Confirm maintenance bypass path is available, correctly identified and ready for controlled operation.</td>
-                <td>Asset tag and bypass source verified by operator and verifier.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>NOC / SITE1-B1-NOC-MON-001-01</td>
-                <td>Notify monitoring function before switching activity begins.</td>
-                <td>Monitoring team confirms awareness and active observation.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                <td>Transfer load to bypass according to approved manufacturer and site procedure.</td>
-                <td>Load remains stable and supported without downstream interruption.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
-                <td>Engage maintenance bypass according to approved switching sequence.</td>
-                <td>Bypass state confirmed locally and through monitoring system.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                <td>Confirm UPS is isolated for maintenance where applicable.</td>
-                <td>Isolation state confirmed before maintenance work begins.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>NOC / SITE1-B1-NOC-MON-001-01</td>
-                <td>Confirm monitoring systems show stable operating state.</td>
-                <td>No downstream critical alarms or customer-impacting events observed.</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>ER-2 / Operations Lead</td>
-                <td>Confirm maintenance activity may begin.</td>
-                <td>Operations Lead gives approval to proceed.</td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="responsive-table">
+              <table class="ops-table execution-table">
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Room/Tag</th>
+                  <th>Action</th>
+                  <th>Verification</th>
+                  <th>Sign-1</th>
+                  <th>Sign-2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td>Verify UPS is operating in normal online mode with no active critical alarms.</td>
+                  <td>Load percentage, bypass availability and alarm state confirmed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
+                  <td>Confirm maintenance bypass path is available, correctly identified and ready for controlled operation.</td>
+                  <td>Asset tag and bypass source verified by operator and verifier.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>NOC / SITE1-B1-NOC-MON-001-01</td>
+                  <td>Notify monitoring function before switching activity begins.</td>
+                  <td>Monitoring team confirms awareness and active observation.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td>Transfer load to bypass according to approved manufacturer and site procedure.</td>
+                  <td>Load remains stable and supported without downstream interruption.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
+                  <td>Engage maintenance bypass according to approved switching sequence.</td>
+                  <td>Bypass state confirmed locally and through monitoring system.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td>Confirm UPS is isolated for maintenance where applicable.</td>
+                  <td>Isolation state confirmed before maintenance work begins.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>NOC / SITE1-B1-NOC-MON-001-01</td>
+                  <td>Confirm monitoring systems show stable operating state.</td>
+                  <td>No downstream critical alarms or customer-impacting events observed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>ER-2 / Operations Lead</td>
+                  <td>Confirm maintenance activity may begin.</td>
+                  <td>Operations Lead gives approval to proceed.</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h2>6. Risk Considerations</h2>
 

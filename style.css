@@ -147,6 +147,12 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 .primary-nav a:hover { color: var(--gold-text); }
 
+/* Current section in the nav (e.g. Operational Library on library pages) */
+.primary-nav a[aria-current="page"] {
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
 /* Mobile menu button (shown below 700px when JS is on) */
 .nav-toggle {
   display: none;
@@ -1930,7 +1936,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 .operational-card span {
   display: inline-block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.3rem;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1940,9 +1946,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 
 .operational-card h3 {
   margin: 0 0 0.55rem;
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  color: var(--navy);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--ink);
 }
 
 .operational-card p {
@@ -2009,7 +2016,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .text-link {
   display: inline-block;
   margin-top: 0.6rem;
-  color: var(--navy);
+  color: var(--ink);
   font-weight: 700;
   text-decoration: none;
 }
@@ -2021,41 +2028,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 @media (max-width: 760px) {
   .operational-card-grid {
     grid-template-columns: 1fr;
-  }
-}
-.ops-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0 2rem;
-  overflow: hidden;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.45);
-}
-
-.ops-table th {
-  text-align: left;
-  padding: 1rem;
-  background: rgba(25,35,55,0.92);
-  color: #f8f5ed;
-  font-size: 0.92rem;
-  letter-spacing: 0.03em;
-}
-
-.ops-table td {
-  padding: 1rem;
-  border-bottom: 1px solid rgba(25,35,55,0.08);
-  vertical-align: top;
-  line-height: 1.5;
-}
-
-.ops-table tr:last-child td {
-  border-bottom: none;
-}
-
-@media (max-width: 760px) {
-  .ops-table {
-    display: block;
-    overflow-x: auto;
   }
 }
 .execution-table th,
@@ -2249,4 +2221,363 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   .risk-badge {
     align-self: flex-start;
   }
+}
+
+/* =========================================================
+   Library pages (operational/)
+   Same look as the homepage: serif H1/H2, Manrope body and H3.
+   Article + sticky sidebar on desktop, one column on mobile.
+   ========================================================= */
+
+/* Hero: breadcrumb label, title, lead, classification card */
+.advisory-note-hero {
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.advisory-note-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: end;
+}
+
+.eyebrow,
+.operational-page .eyebrow {
+  margin: 0 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.advisory-note-main h1,
+.operational-page .page-hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.advisory-note-lead,
+.operational-page .lead {
+  margin: 1.1rem 0 0;
+  max-width: 44rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.advisory-note-card {
+  padding: 1.1rem 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+}
+
+.note-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.advisory-note-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* Article + sidebar */
+.advisory-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.advisory-article {
+  min-width: 0;
+}
+
+.advisory-article > :first-child {
+  margin-top: 0;
+}
+
+.advisory-article h2,
+.operational-page h2 {
+  margin: 2.6rem 0 0.9rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.advisory-article h3,
+.operational-page h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.advisory-article p,
+.operational-page p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.advisory-article ul,
+.operational-page ul {
+  margin: 0 0 1.25rem;
+}
+
+.advisory-article ul li,
+.operational-page ul li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.advisory-article ul li::before,
+.operational-page ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* Checklists carry their own ☐ in the text, so no dot */
+.advisory-article ul.checklist li {
+  padding-left: 0;
+}
+
+.advisory-article ul.checklist li::before {
+  content: none;
+}
+
+.advisory-article a:not(.operational-card):not(.text-link) {
+  color: var(--gold-text);
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.advisory-article a:not(.operational-card):not(.text-link):hover {
+  border-bottom-color: var(--gold);
+}
+
+/* Sidebar: sticky on desktop */
+.advisory-sidebar {
+  position: sticky;
+  top: 6.5rem;
+  align-self: start;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  padding: 1.5rem 1.35rem;
+  background: var(--cream-deep);
+  border-radius: var(--radius-lg);
+}
+
+.sidebar-box {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-box:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.sidebar-box h3 {
+  margin: 0 0 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.sidebar-box p,
+.sidebar-box li {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.sidebar-box p:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-box .text-link {
+  margin-top: 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.sidebar-box .text-link:hover {
+  color: var(--gold-text);
+}
+
+/* Tables: clean lines; wide tables scroll inside their own box */
+.responsive-table,
+.principle-table-wrap {
+  margin: 1.25rem 0 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+}
+
+.responsive-table table,
+.principle-table-wrap table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+/* Four or more columns: keep a readable width and scroll sideways on phones */
+.responsive-table table:has(th:nth-child(4)) {
+  min-width: 40rem;
+}
+
+.responsive-table th,
+.principle-table-wrap th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: bottom;
+  font-weight: 600;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--cream-light);
+  border-bottom: 1px solid var(--line);
+}
+
+.responsive-table td,
+.principle-table-wrap td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.responsive-table tr:last-child td,
+.principle-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Operating principles page */
+.operational-page {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.operational-page .content-section {
+  max-width: 52rem;
+}
+
+.principle-detail {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 1rem;
+  max-width: 52rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.principle-detail .principle-number {
+  font-size: 1.6rem;
+  padding-top: 0.35rem;
+}
+
+.principle-body h2 {
+  margin-top: 0;
+}
+
+.operational-box {
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.25rem 0.6rem;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+}
+
+.operational-box h3 {
+  margin-top: 0;
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.related-links a {
+  color: var(--gold-text);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.disclaimer-note p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+@media (max-width: 960px) {
+  .advisory-note-layout,
+  .advisory-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .advisory-note-layout {
+    align-items: start;
+  }
+
+  /* Sidebar after the article, not sticky */
+  .advisory-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 640px) {
+  .principle-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+}
+
+/* Library cards sit inside the article: keep their own compact spacing */
+.advisory-article .operational-card h3 {
+  margin-top: 0;
+}
+
+.advisory-article .operational-card p {
+  margin-bottom: 0;
 }
