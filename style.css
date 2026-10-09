@@ -333,7 +333,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   transition: border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
 }
 
-.service-card:hover {
+.service-card-link:hover {
   border-color: var(--gold-pale);
   transform: translateY(-2px);
   box-shadow: 0 6px 24px -12px rgba(27, 36, 51, 0.12);
