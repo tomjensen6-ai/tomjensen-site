@@ -2013,6 +2013,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   overflow-x: auto;
 }
 
+.code-like-box--tag {
+  white-space: nowrap;
+}
+
 .text-link {
   display: inline-block;
   margin-top: 0.6rem;
