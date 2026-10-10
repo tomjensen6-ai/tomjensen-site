@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MOP Example — Planned Utility Transfer Test | Tom Jensen</title>
-  <meta name="description" content="Public-facing MOP example for a planned utility transfer test in critical infrastructure and data center environments." />
+  <title>MOP Example: Planned Utility Transfer Test | Tom Jensen</title>
+  <meta name="description" content="An example method of procedure for a planned test where a data center moves from utility power to generators and back." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="MOP Example — Planned Utility Transfer Test | Tom Jensen" />
-  <meta property="og:description" content="A structured Method of Procedure example for a planned utility transfer test, including approvals, monitoring, stop conditions, rollback and post-verification." />
+  <meta property="og:title" content="MOP Example: Planned Utility Transfer Test | Tom Jensen" />
+  <meta property="og:description" content="How I would run a planned utility transfer test: checks, roles, hold points, what to do if it goes wrong, and a careful return to utility." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/mop/planned-utility-transfer-test.html" />
   <meta property="og:type" content="website" />
@@ -47,17 +47,19 @@
           <h1>Planned Utility Transfer Test</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled Method of Procedure for planned
-            verification of utility-to-generator transfer behavior in a critical
-            infrastructure environment.
+            How I would run a planned test where the site moves from utility
+            power to generators and back. The point is to find weak spots on a
+            day you chose, with people in place, before a real outage finds
+            them for you.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. Real switching must follow the
+            manufacturer's procedure, the site design and local electrical
+            safety rules.
           </p>
         </aside>
       </div>
@@ -69,403 +71,464 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> MOP-PWR-002</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled process for a planned utility transfer test to
-            verify that standby power systems, transfer equipment, monitoring
-            systems and operational response routines perform as expected under
-            approved test conditions.
-          </p>
-
-          <h2>2. Scope</h2>
-
-          <p>
-            Applies to planned testing of utility-to-generator and generator-to-
-            utility transfer behavior for critical infrastructure facilities,
-            including standby generators, automatic transfer equipment, UPS
-            systems, monitoring systems and affected operational areas.
+            This test checks the whole chain: the utility loss is detected, the
+            generators start and take load, the UPS carries the IT load through
+            the gap, cooling restarts, and the site returns to utility without
+            trouble.
           </p>
 
           <p>
-            This example does not replace electrical switching procedures,
-            manufacturer instructions, statutory testing requirements, NFPA 110
-            requirements where applicable, site-specific emergency power
-            procedures or approval from the responsible electrical authority.
+            It also tests people. Does everyone know their task, can they see
+            what is happening, and do they stop when something looks wrong?
           </p>
 
-          <h2>3. Preconditions</h2>
+          <h2>2. The real risk</h2>
 
-          <ul class="checklist">
-            <li>☐ Approved maintenance or test window confirmed</li>
-            <li>☐ Formal change approval completed</li>
-            <li>☐ Test scope, affected systems and expected behavior reviewed</li>
-            <li>☐ Responsible electrical authority has approved the activity</li>
-            <li>☐ Stakeholders informed according to communication plan</li>
-            <li>☐ Generator fuel level and readiness verified</li>
-            <li>☐ UPS systems verified normal with no unresolved critical alarms</li>
-            <li>☐ Transfer equipment status verified normal</li>
-            <li>☐ Monitoring, alarm handling and communication channels active</li>
-            <li>☐ Stop conditions and rollback plan reviewed before execution</li>
+          <p>
+            During the test you give up your normal power source on purpose.
+            Three things can go wrong.
+          </p>
+
+          <p>
+            The automation fails and you can't get back fast. The controller,
+            transfer switch or breaker logic does something unexpected, and the
+            way back depends on someone switching by hand. This is the worst
+            case. If that person isn't trained, or isn't in the building, a
+            short test becomes a long outage. Manual switching has to be drilled
+            before the test, not learned during it. In a real outage you don't
+            choose the hour. At night the specialists may still be on their way,
+            so the people on site must be able to switch by hand alone.
+          </p>
+
+          <p>
+            A generator fails to start or trips. The UPS batteries hold the IT
+            load for minutes, not hours.
+          </p>
+
+          <p>
+            Cooling doesn't come back quickly. This is the one most likely to
+            happen. Most sites transfer with a short break (open transition). The
+            UPS carries the IT load through it, but anything not on UPS stops and
+            has to restart on generator, and again when you go back to utility.
+            Chillers can take several minutes to restart, and the data halls warm
+            up meanwhile.
+          </p>
+
+          <p>
+            Some sites put pumps, valves and CRAH fans on their own UPS, so water
+            and air keep moving through the break. That helps a lot. The chillers
+            still have to restart.
+          </p>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> Some sites go back to utility with a closed
+              transition. The generator runs in parallel with the grid for a
+              moment, so the load sees no second break. This needs synchronising
+              equipment, protection, and approval from the grid company. Know
+              which method your site uses before you start.
+            </p>
+          </div>
+
+          <h2>3. How the test is started</h2>
+
+          <p>
+            There are three common ways:
+          </p>
+
+          <ul>
+            <li>Open the utility incoming breaker by hand. Simple, and close to a real outage.</li>
+            <li>Make the generator controller or power management system see a mains failure, for example by removing its mains voltage signal. The system then trips the incoming breaker itself and runs its normal sequence. This tests the automatic chain the way a real outage would. Take the steps from the system supplier, and put the signal back exactly as it was afterwards.</li>
+            <li>Use the test function on the transfer switch. Gentler, but depending on the design it may not test the full chain.</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <p>
+            Pick the method on purpose and write it in the plan. The way back
+            depends on it. If you opened a breaker, someone has to close it. If
+            you removed a signal, someone has to restore it.
+          </p>
+
+          <h2>4. Before the test</h2>
+
+          <ul class="checklist">
+            <li>☐ Change approved, with a test window and a written switching sequence</li>
+            <li>☐ The Electrical responsible person has approved the switching sequence</li>
+            <li>☐ Test lead named in the plan, and everyone knows who can call stop</li>
+            <li>☐ Incident categories agreed: which events mean a full return to utility, and who makes the call</li>
+            <li>☐ No other work going on, and nothing else reducing redundancy (no UPS on bypass, no generator out of service)</li>
+            <li>☐ Weather and grid checked: no storms forecast, no planned grid work nearby</li>
+            <li>☐ Test timed for when specialists are on site, never at night with support on call only</li>
+            <li>☐ Manual switching procedure up to date, and drilled by the people who will be on site</li>
+            <li>☐ Automation specialist on site for the test</li>
+            <li>☐ High-voltage sites: everyone who will enter switch rooms or generator rooms has documented access, and the person responsible for the high-voltage installation has approved the plan</li>
+            <li>☐ Generators in automatic, no alarms, fuel above the site minimum, engine heaters working, starter batteries charged</li>
+            <li>☐ UPS: all modules online, not on bypass, batteries charged, no alarms, recent battery test results good</li>
+            <li>☐ ATS and switchgear in automatic with no alarms; retransfer delay and generator cooldown settings known</li>
+            <li>☐ Cooling: all units running, temperatures noted as a baseline, chiller restart time known</li>
+            <li>☐ BMS, EPMS and DCIM logging, with one person assigned to watch them</li>
+            <li>☐ Security and the alarm centre told that alarms during the test are expected</li>
+            <li>☐ Customers and others informed according to the communication plan</li>
+            <li>☐ Radios or phones tested, with one agreed channel for the test</li>
+          </ul>
+
+          <h2>5. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Task</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Lead</td>
-                  <td data-label="Responsibility">Coordinate the test, confirm readiness and authorize progression between phases.</td>
+                  <td data-label="Role" data-role="main">Test lead (named in the plan; often the Shift lead or Facility manager)</td>
+                  <td data-label="Task">Runs the briefing, gives the go at each hold point, calls stop.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
-                  <td data-label="Responsibility">Approve and supervise switching-related activity according to site rules and legal requirements.</td>
+                  <td data-label="Role" data-role="main">Electrical responsible person</td>
+                  <td data-label="Task">Does or supervises all switching, under the local electrical safety rules.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Generator Vendor / Specialist</td>
-                  <td data-label="Responsibility">Support standby generator monitoring, fault response and technical assessment.</td>
+                  <td data-label="Role" data-role="main">Person responsible for the high-voltage installation (if the site has one)</td>
+                  <td data-label="Task">Approves the plan and who may enter and switch in high-voltage rooms.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">UPS / Power Specialist</td>
-                  <td data-label="Responsibility">Monitor UPS behavior, load conditions and post-transfer power quality indicators where available.</td>
+                  <td data-label="Role" data-role="main">Automation specialist (vendor or in-house)</td>
+                  <td data-label="Task">On site. Knows the controller and power management logic. Restores any test signals.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Facility Operations</td>
-                  <td data-label="Responsibility">Monitor alarms, cooling, security, customer impact and operational conditions.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Task">Watches BMS, EPMS and DCIM. Logs times and values.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Change Manager</td>
-                  <td data-label="Responsibility">Ensure approvals, notifications, records and completion documentation are maintained.</td>
+                  <td data-label="Role" data-role="main">Generator specialist (vendor)</td>
+                  <td data-label="Task">At the generators: local checks, start, load, cooldown.</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">UPS specialist (vendor, if used)</td>
+                  <td data-label="Task">Watches the UPS during both transfers.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Change manager</td>
+                  <td data-label="Task">Approvals, notifications and records.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Task">Keeps access open for the test team, routes alarm-centre calls to the Test lead.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">On-call person</td>
+                  <td data-label="Task">Told about the test and reachable throughout.</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: never run this test. Remote start being possible does not change that.</li>
+            <li>One person: don't run it. One person cannot watch the switchgear, the UPS and the cooling at once and still make the call to stop.</li>
+            <li>Two or more: the minimum. The Electrical responsible person at the switchgear, at least one person watching UPS and cooling, and the Test lead in one place with the overview. Vendor specialists at the generators where you have them.</li>
+            <li>Security: told in advance. They know alarms are expected, keep routes to the switch rooms and generators open, and let no one walk into the generator area unannounced while the test runs.</li>
+            <li>High voltage: if generators or switchgear run above 1000 V AC, stricter rules apply to who may enter the rooms and who may switch. In Norway, FSE requires routines for access to electrical installations, and a documented record of who has access to high-voltage installations. Operators and security often may not enter these rooms alone. Plan every task, including the manual way back, so it is done by someone allowed to do it.</li>
+          </ul>
+
+          <h2>6. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
 
               <tbody>
+
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Conduct pre-test briefing with all participating personnel.</td>
-                  <td data-label="Verification">Roles, communication path, stop authority and rollback approach confirmed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Brief everyone: method, sequence, expected behaviour, stop rule, incident categories, radio channel.</td>
+                  <td data-label="Check">Everyone can say their own task and who calls stop.</td>
+                  <td data-label="Owner">Test lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">CHANGE RECORD</td>
-                  <td data-label="Action" data-role="main">Confirm approved change window and test scope.</td>
-                  <td data-label="Verification">Approved work scope matches planned activity and affected systems.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Confirm the change is approved and nothing else is going on.</td>
+                  <td data-label="Check">No other work. No reduced redundancy.</td>
+                  <td data-label="Owner">Test lead, Change manager</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
-                  <td data-label="Action" data-role="main">Verify standby generator readiness, including local status and fuel availability.</td>
-                  <td data-label="Verification">Generators available with no unresolved readiness alarms.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the generators locally.</td>
+                  <td data-label="Check">In automatic, no alarms, fuel and heaters OK.</td>
+                  <td data-label="Owner">Generator specialist</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">UPS-A / UPS-B</td>
-                  <td data-label="Action" data-role="main">Verify UPS systems are operating normally before transfer test.</td>
-                  <td data-label="Verification">UPS systems normal, load level acceptable and no critical alarms present.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the UPS.</td>
+                  <td data-label="Check">All modules online, not on bypass, no alarms.</td>
+                  <td data-label="Owner">UPS specialist or Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">ATS / SWITCHGEAR</td>
-                  <td data-label="Action" data-role="main">Verify transfer equipment status before test.</td>
-                  <td data-label="Verification">Equipment status normal and ready for approved test sequence.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the ATS and switchgear.</td>
+                  <td data-label="Check">In automatic, utility present, no alarms.</td>
+                  <td data-label="Owner">Electrical responsible person</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">BMS / EPMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Confirm monitoring screens, alarm handling and event logging are active.</td>
-                  <td data-label="Verification">Power, UPS, generator, transfer and environmental monitoring available.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check cooling and note start temperatures.</td>
+                  <td data-label="Check">All units running. Baseline recorded.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Announce start of controlled transfer test.</td>
-                  <td data-label="Verification">All required roles acknowledge readiness to proceed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check monitoring and note start values: load, voltage, frequency.</td>
+                  <td data-label="Check">Logging active. Values recorded.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">UTILITY / ATS</td>
-                  <td data-label="Action" data-role="main">Initiate approved utility transfer test according to site-specific switching procedure.</td>
-                  <td data-label="Verification">Action performed only by authorized personnel under approved conditions.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> the Test lead asks each person if they are ready.</td>
+                  <td data-label="Check">Every role confirms. No go without all of them.</td>
+                  <td data-label="Owner">Test lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
-                  <td data-label="Action" data-role="main">Observe generator start, stabilization and acceptance of load where applicable.</td>
-                  <td data-label="Verification">Generator operation remains stable with expected alarms/events only.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Start the test with the approved method. Note the time.</td>
+                  <td data-label="Check">Utility supply lost, or mains failure seen by the controller, as planned.</td>
+                  <td data-label="Owner">Electrical responsible person, Automation specialist</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">UPS-A / UPS-B</td>
-                  <td data-label="Action" data-role="main">Monitor UPS behavior during transfer event.</td>
-                  <td data-label="Verification">UPS systems support protected load without abnormal alarm or unexpected discharge condition.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch the generators start and take load. Note the time to start and to take load.</td>
+                  <td data-label="Check">Within the times the site expects.</td>
+                  <td data-label="Owner">Generator specialist</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">11</td>
-                  <td data-label="Room/Tag">EPMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Observe load, voltage, frequency and transfer event data where monitoring is available.</td>
-                  <td data-label="Verification">Measured values remain within site-defined acceptable limits.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch the UPS. It runs on battery during the gap, then goes back to normal on generator power.</td>
+                  <td data-label="Check">Battery discharge stops after transfer. No module alarms.</td>
+                  <td data-label="Owner">UPS specialist or Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">12</td>
-                  <td data-label="Room/Tag">DATAHALL / CRITICAL AREAS</td>
-                  <td data-label="Action" data-role="main">Confirm no visible impact to critical rooms, cooling systems or operational areas.</td>
-                  <td data-label="Verification">No abnormal operational condition reported by facility operations.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch cooling restart.</td>
+                  <td data-label="Check">All units back. Temperatures within the site limit.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">13</td>
-                  <td data-label="Room/Tag">UTILITY / ATS</td>
-                  <td data-label="Action" data-role="main">Return system to normal utility supply according to site-specific approved sequence.</td>
-                  <td data-label="Verification">Transfer completed by authorized personnel with stable return to normal source.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Run on generator for the planned time. Log load, voltage, frequency and temperatures at the agreed interval.</td>
+                  <td data-label="Check">Stable values. Only expected alarms.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">14</td>
-                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
-                  <td data-label="Action" data-role="main">Observe generator cooldown and return-to-standby behavior.</td>
-                  <td data-label="Verification">Generators return to approved standby state with no unresolved alarms.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> before returning, check that the utility side is healthy.</td>
+                  <td data-label="Check">Utility voltage present and normal. Test lead gives the go.</td>
+                  <td data-label="Owner">Electrical responsible person, Test lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">15</td>
-                  <td data-label="Room/Tag">BMS / EPMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review post-test alarms, events and system state.</td>
-                  <td data-label="Verification">No unresolved alarm, abnormal event or degraded operating condition remains.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Return to utility with the approved sequence. Expect the retransfer delay and, with open transition, a second short break.</td>
+                  <td data-label="Check">Load back on utility. UPS back to normal.</td>
+                  <td data-label="Owner">Electrical responsible person</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">16</td>
-                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
-                  <td data-label="Action" data-role="main">Record test result, observations, timing, exceptions and follow-up actions.</td>
-                  <td data-label="Verification">Change record and maintenance/test records completed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">If a signal was removed to start the test, restore it exactly as it was.</td>
+                  <td data-label="Check">Controller shows mains normal, no test alarms left, back in automatic.</td>
+                  <td data-label="Owner">Automation specialist</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">17</td>
+                  <td data-label="Action" data-role="main">Watch the generators cool down and return to standby.</td>
+                  <td data-label="Check">Generators back in automatic. A generator left in manual or off after a test is a common miss.</td>
+                  <td data-label="Owner">Generator specialist</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">18</td>
+                  <td data-label="Action" data-role="main">Walk round: switchgear, UPS, cooling.</td>
+                  <td data-label="Check">All breakers in their normal position. No new alarms. Cooling stable.</td>
+                  <td data-label="Owner">Electrical responsible person, Operator on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">19</td>
+                  <td data-label="Action" data-role="main">Record the result and close the change.</td>
+                  <td data-label="Check">Times, values, alarms and follow-ups recorded.</td>
+                  <td data-label="Owner">Test lead, Change manager</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
+          <h2>7. If it goes wrong during the test</h2>
 
           <p>
-            A planned utility transfer test intentionally exercises critical
-            electrical infrastructure. Even when designed for this purpose, the
-            activity can temporarily increase operational exposure if equipment
-            does not behave as expected.
+            Before the test, agree which events mean a full return to utility. My
+            list: any generator failure, any UPS alarm that isn't expected, any
+            cooling limit passed, any automation fault, anyone hurt. Smaller
+            deviations are written down and looked at afterwards.
           </p>
-
-          <ul>
-            <li>Unexpected generator failure to start, stabilize or accept load</li>
-            <li>Unexpected transfer equipment alarm or failure to transfer</li>
-            <li>UPS battery discharge or abnormal UPS behavior during transition</li>
-            <li>Loss of redundancy or reduced power path resilience during the test</li>
-            <li>Unexpected impact to cooling, monitoring, controls or security systems</li>
-            <li>Human error caused by unclear communication or incorrect sequence</li>
-          </ul>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Operational rule:</strong> Stop the test if expected
-              system behavior is not observed, if redundancy becomes uncertain,
-              or if any critical alarm appears that is not part of the approved
-              test expectation.
-            </p>
-          </div>
-
-          <h2>7. Rollback Procedure</h2>
 
           <p>
-            Rollback should follow the approved site-specific electrical
-            procedure and be directed by the responsible electrical and
-            operational authority.
+            <strong>Anyone can call stop. When someone does, the default is to
+            return to utility, then find out why.</strong>
           </p>
-
-          <ul>
-            <li>Stop further test progression</li>
-            <li>Stabilize the active power source</li>
-            <li>Return to normal utility source if safe and approved</li>
-            <li>Escalate unresolved generator, UPS or transfer equipment alarms</li>
-            <li>Notify stakeholders of abnormal result or delayed return to normal</li>
-            <li>Record the event and assign corrective action ownership</li>
-          </ul>
 
           <p>
-            If the system cannot be returned to the expected normal state, the
-            activity should be treated as an operational incident or degraded
-            operating condition according to site governance.
+            Generator does not start or does not take load: the UPS is on battery
+            and the clock is running. Return to utility at once: close the breaker
+            you opened, restore the signal, or end the test mode. Don't
+            troubleshoot first.
           </p>
 
-          <h2>8. Post Verification</h2>
+          <p>
+            Generator trips after taking load: same. If you opened the utility
+            breaker or removed the mains signal, the system cannot go back on its
+            own. Someone has to close that breaker or restore that signal.
+          </p>
+
+          <p>
+            One of several generators fails and the rest carry the load: the Test
+            lead decides. My default is still to go back to utility and
+            investigate on a normal day.
+          </p>
+
+          <p>
+            UPS alarm, a module trips, or the battery keeps discharging after the
+            generators took load: stop and return to utility.
+          </p>
+
+          <p>
+            Cooling does not restart, or temperatures pass the site limit: stop,
+            return to utility and restart cooling by the site's own procedure.
+            Don't wait for temperatures to recover on generator.
+          </p>
+
+          <p>
+            The automation does not respond: the controller or transfer switch
+            won't go back, or a breaker won't close from the control system.
+            Switch by hand, using the drilled procedure. This is where training
+            matters most. The manual way back only works if the right person is
+            in the right room and has done it before.
+          </p>
+
+          <p>
+            The grid fails for real during the test: there is no way back to
+            utility. You are in a real outage now. Switch to
+            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>,
+            with the people already on site.
+          </p>
+
+          <p>
+            Someone is hurt, or there is smoke or fire: people first. Stop the
+            test and call for help. Follow the site's fire plan; see
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+          </p>
+
+          <p>
+            If the site cannot get back to its normal state, treat it as an
+            incident under the site's own plan.
+          </p>
+
+          <h2>8. After the test</h2>
 
           <ul class="checklist">
-            <li>☐ Utility supply restored as approved normal source</li>
-            <li>☐ Generators returned to approved standby condition</li>
-            <li>☐ UPS systems stable with no unresolved critical alarms</li>
-            <li>☐ Transfer equipment normal and ready</li>
-            <li>☐ Monitoring and alarm systems normal</li>
-            <li>☐ Cooling and critical facility support systems normal</li>
-            <li>☐ Event logs, timing and observations recorded</li>
-            <li>☐ Exceptions escalated and corrective actions assigned</li>
-            <li>☐ Stakeholders informed of test completion status</li>
+            <li>☐ Load on utility, all breakers in their normal position</li>
+            <li>☐ Any test signals restored, controller back in automatic</li>
+            <li>☐ Generators in automatic and ready, fuel noted</li>
+            <li>☐ UPS normal, batteries recharging, no alarms</li>
+            <li>☐ ATS and switchgear in automatic</li>
+            <li>☐ Cooling normal, temperatures back to baseline</li>
+            <li>☐ Alarms reviewed; every unexpected one explained or turned into a follow-up</li>
+            <li>☐ Times recorded: utility loss, generator start, load taken, return to utility</li>
+            <li>☐ Anything that did not go as expected written down, with an owner</li>
+            <li>☐ Everyone informed that the test is finished</li>
           </ul>
 
-          <h2>9. Operational Notes</h2>
-
           <p>
-            A planned transfer test should validate more than equipment behavior.
-            It should also validate communication, monitoring visibility,
-            operator readiness, escalation discipline and the organization’s
-            ability to detect and manage abnormal conditions.
+            The times you record are the most useful part of the test. Compare
+            them with the last test. A generator that takes longer to take load
+            each time is telling you something.
           </p>
 
-          <p>
-            Emergency power systems may be subject to NFPA 110 or other local
-            codes, regulations and insurance requirements depending on facility
-            type and jurisdiction. Real test procedures must be aligned with the
-            applicable legal, technical and operational requirements.
-          </p>
+          <h2>9. Rules and standards</h2>
 
           <p>
-            Uptime Institute guidance on MOPs emphasizes that a good MOP defines
-            a repeatable sequence and helps reduce human error by controlling the
-            interaction between people and equipment. This is especially relevant
-            during planned power system testing.
+            The rules for this test vary by country and by site. In the US,
+            NFPA 110 (Standard for Emergency and Standby Power Systems) covers
+            these systems, including how they are tested. For work on the
+            electrical installation itself, Europe has EN 50110-1, Norway has FSE
+            (Forskrift om sikkerhet ved arbeid i og drift av elektriske anlegg),
+            the UK has the Electricity at Work Regulations 1989 and the US has
+            NFPA 70E. Generator
+            makers, insurers and the site's own design add their own
+            requirements. Where they differ from this example, they win.
           </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> MOP Example</div>
-            <div><strong>Category:</strong> Electrical / Emergency Power</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> approved test window, authorized
-              switching, live monitoring, stop conditions, rollback readiness,
-              event logging and verified return to normal.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
 
           <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Planned power testing</li>
-              <li>Emergency power readiness</li>
-              <li>Transfer equipment behavior</li>
-              <li>UPS support during transfer</li>
-              <li>Monitoring and event logging</li>
-              <li>Controlled return to normal</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">MOP Examples</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>GEN-001 / GEN-002 — Standby generators</li>
-              <li>ATS — Automatic transfer equipment</li>
-              <li>UPS-A / UPS-B — UPS systems</li>
-              <li>EPMS — Electrical power monitoring system</li>
-              <li>DCIM — Data center infrastructure monitoring</li>
-              <li>OPS-BRIDGE — Operational coordination point</li>
+              <li>SITE1-B1-GR1-GEN-001-01 / GEN-002-01: Standby generators</li>
+              <li>SITE1-B1-ER1-ATS-001-01: Automatic transfer switch</li>
+              <li>SITE1-B1-ER2-UPS-001-01 / UPS-002-01: UPS systems</li>
+              <li>BMS: Building management system</li>
+              <li>EPMS: Electrical power monitoring system</li>
+              <li>DCIM: Data Center Infrastructure Management</li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live transfer testing must
-              be planned, reviewed and approved according to the facility design,
-              electrical safety requirements, manufacturer instructions, local
-              regulations and responsible operational authority.
-            </p>
           </div>
 
         </aside>
