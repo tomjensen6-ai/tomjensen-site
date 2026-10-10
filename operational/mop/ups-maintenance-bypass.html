@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MOP Example — UPS Transfer to Maintenance Bypass | Tom Jensen</title>
+  <meta name="description" content="An example method statement for moving a UPS to maintenance bypass for planned work, and back again. While on bypass, the load has no UPS protection." />
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="../../style.css?v=8" />
+  <link rel="icon" href="../../images/favicon.png" />
+
+  <meta property="og:title" content="MOP Example — UPS Transfer to Maintenance Bypass | Tom Jensen" />
+  <meta property="og:description" content="An example method statement for moving a UPS to maintenance bypass for planned work, and back again. While on bypass, the load has no UPS protection." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/mop/ups-maintenance-bypass.html" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="site-name">TOM JENSEN</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#principles">Principles</a>
+        <a href="../../index.html#expertise">Focus Areas</a>
+        <a href="../../operational/" aria-current="page">Operational Library</a>
+        <a href="../../index.html#experience">Experience</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / MOP Example</p>
+
+          <h1>UPS Transfer to Maintenance Bypass</h1>
+
+          <p class="advisory-note-lead">
+            An example method statement for moving a UPS to maintenance bypass
+            for planned work, and back again. While on bypass, the load has no
+            UPS protection.
+          </p>
+        </div>
+
+        <aside class="advisory-note-card">
+          <span class="note-label">Classification</span>
+          <p>
+            An example I wrote for this site. Real switching must follow the
+            manufacturer's procedure, the site design and local electrical
+            safety rules.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
+
+          <div class="metadata-table">
+            <div><strong>Document ID:</strong> MOP-UPS-001</div>
+            <div><strong>Revision:</strong> 2.1</div>
+            <div><strong>Status:</strong> Example</div>
+            <div><strong>Type:</strong> Planned change</div>
+          </div>
+
+          <h2>1. Purpose</h2>
+
+          <p>
+            Move the load from the UPS to maintenance bypass so the UPS can be
+            serviced, and back again, without dropping the load.
+          </p>
+
+          <h2>2. Scope</h2>
+
+          <p>
+            Planned work on a UPS that has a maintenance bypass. Not for
+            emergencies, and not for UPS systems without a bypass.
+          </p>
+
+          <h2>3. What bypass means for the load</h2>
+
+          <p>
+            On maintenance bypass, the load runs straight on the supply: utility,
+            or generator if the utility fails. There is no UPS and no battery in
+            between.
+          </p>
+
+          <ul>
+            <li>A dip or outage on the utility reaches the load directly.</li>
+            <li>If the utility fails, the load drops until the generator has started and taken over.</li>
+            <li>Keep the time on bypass as short as possible, and plan for the worst case.</li>
+          </ul>
+
+          <h2>4. Before you start</h2>
+
+          <ul class="checklist">
+            <li>☐ Change approved, maintenance window agreed, customers informed as agreed</li>
+            <li>☐ Single-corded loads on this UPS are known, and their owners informed</li>
+            <li>☐ Dual-corded loads: the other power path is healthy, with no alarms</li>
+            <li>☐ Generator tested recently and available, fuel level OK</li>
+            <li>☐ UPS battery runtime checked, with no battery alarms</li>
+            <li>☐ No active alarms in the BMS, across the whole facility</li>
+            <li>☐ No other work on the power system in the same window</li>
+            <li>☐ No severe weather or known grid risk in the window</li>
+            <li>☐ Manufacturer's procedure and the site single-line diagram at hand</li>
+            <li>☐ Service engineer on site, if the work needs one</li>
+            <li>☐ Radio or phone contact tested between the switch room and monitoring</li>
+            <li>☐ Walk-down done before the window: breakers, labels and positions checked against the single-line diagram</li>
+            <li>☐ Everyone needed is on site and on this task only: change lead, switching pair, monitoring and service engineer</li>
+          </ul>
+
+          <h2>5. Roles</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Responsibility</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Change lead</td>
+                  <td data-label="Responsibility">Owns the change. Gives go or no-go at each hold point.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Authorised person</td>
+                  <td data-label="Responsibility">Does the switching, following the approved sequence.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Second person</td>
+                  <td data-label="Responsibility">Reads each step aloud before it is done and checks the result. Never the person doing the switching.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Monitoring</td>
+                  <td data-label="Responsibility">Watches alarms and load during the work. Stops the work if anything unexpected shows up.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Electrical responsible person</td>
+                  <td data-label="Responsibility">Makes sure the work follows the electrical safety rules where the site is, for example FSE in Norway, EN 50110 in Europe, the Electricity at Work Regulations in the UK or NFPA 70E in the US.</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. To maintenance bypass</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Action</th>
+                  <th>Check</th>
+                  <th>Sign-1</th>
+                  <th>Sign-2</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> the change lead confirms everything in section 4. Go or no-go.</td>
+                  <td data-label="Check">Go recorded with time.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Action" data-role="main">Tell monitoring that switching starts.</td>
+                  <td data-label="Check">Monitoring confirms.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Action" data-role="main">Check that the UPS is normal: on inverter, no alarms, bypass supply available and in sync.</td>
+                  <td data-label="Check">Readings recorded.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Action" data-role="main">Transfer the UPS to static bypass from the UPS panel.</td>
+                  <td data-label="Check">UPS shows load on static bypass. No interruption.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Action" data-role="main">Close the maintenance bypass breaker. Use the key interlock if fitted.</td>
+                  <td data-label="Check">Breaker closed. Load fed through both paths.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Action" data-role="main">Open the UPS output breaker.</td>
+                  <td data-label="Check">Load on maintenance bypass only. No interruption.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Action" data-role="main">Isolate the UPS as the manufacturer describes: input, bypass input and battery breakers.</td>
+                  <td data-label="Check">UPS isolated. Lock and tag applied.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Action" data-role="main">Wait the capacitor discharge time the manufacturer gives. Check for no voltage before work starts.</td>
+                  <td data-label="Check">Dead check done and recorded.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> the change lead confirms the load is stable on bypass and work may start.</td>
+                  <td data-label="Check">Go recorded with time.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> UPS builds vary: single modules, parallel
+              systems, external bypass panels and different interlocks. Bypass is
+              bypass, but the way there is not the same everywhere. Always follow
+              the manufacturer's sequence and the site's single-line diagram. One
+              rule is the same everywhere: never close the maintenance bypass
+              breaker unless the UPS is on static bypass, or an interlock
+              guarantees it.
+            </p>
+          </div>
+
+          <h2>7. Back to UPS</h2>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Action</th>
+                  <th>Check</th>
+                  <th>Sign-1</th>
+                  <th>Sign-2</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> work finished, UPS tested by the service engineer, locks and tags removed. Go or no-go.</td>
+                  <td data-label="Check">Go recorded with time.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Action" data-role="main">Restore the UPS as the manufacturer describes: input, bypass input and battery breakers closed, UPS started on static bypass.</td>
+                  <td data-label="Check">UPS ready, in sync, no alarms.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Action" data-role="main">Close the UPS output breaker.</td>
+                  <td data-label="Check">Load fed through both paths.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Action" data-role="main">Open the maintenance bypass breaker.</td>
+                  <td data-label="Check">Load on UPS static bypass only. No interruption.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Action" data-role="main">Transfer the UPS from static bypass to inverter.</td>
+                  <td data-label="Check">UPS on inverter. Load protected.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Action" data-role="main">Check that batteries are charging and there are no alarms. Tell monitoring that switching is finished.</td>
+                  <td data-label="Check">Normal state recorded.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <h2>8. Stop if</h2>
+
+          <ul>
+            <li>any unexpected alarm, reading or sound</li>
+            <li>the load is interrupted or unstable</li>
+            <li>the UPS will not transfer to static bypass</li>
+            <li>the utility or generator supply becomes unstable</li>
+            <li>anyone is unsure what the next step does</li>
+          </ul>
+
+          <p>
+            Stop, make the situation safe and tell the change lead. No more
+            switching until the change lead and the electrical responsible person
+            agree on the next step.
+          </p>
+
+          <h2>9. If the utility fails while on bypass</h2>
+
+          <p>
+            The load drops until the generator takes over. Do not start new
+            switching. Confirm the generator has taken the load, and inform
+            monitoring and customers as agreed. Then the change lead decides:
+            finish the work, or go back to UPS as soon as it is safe.
+          </p>
+
+          <h2>10. Close the change</h2>
+
+          <ul class="checklist">
+            <li>☐ UPS on inverter, batteries charging, no alarms</li>
+            <li>☐ All breakers in normal position, locks and tags removed</li>
+            <li>☐ Readings, times and decisions recorded</li>
+            <li>☐ Change closed and customers told as agreed</li>
+            <li>☐ Anything unexpected recorded for review</li>
+          </ul>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+
+          <div class="sidebar-box">
+            <h3>Asset Tag Model</h3>
+            <p>
+              SITE-BUILDING-ROOM-SYSTEM-ASSET-RUNNINGNO
+            </p>
+            <p>
+              Example:<br>
+              <strong>SITE1-B1-ER2-UPS-001-01</strong>
+            </p>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Example Asset References</h3>
+            <ul>
+              <li>UPS-001 — UPS module</li>
+              <li>MBB-001 — Maintenance bypass breaker</li>
+              <li>SLD — Single-line diagram</li>
+            </ul>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="container page-back">
+    <a class="footer-link" href="./"><span aria-hidden="true">←</span> Back to MOP examples</a>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid footer-grid--two">
+
+      <div class="footer-col">
+        <div class="section-label">Professional Contact</div>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:tom@tomjensen.no">tom@tomjensen.no</a>
+          </li>
+
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            <a href="https://www.linkedin.com/in/tom-jensen-8529a33" target="_blank" rel="noopener">
+              linkedin.com/in/tom-jensen-8529a33
+            </a>
+          </li>
+
+          <li class="contact-location">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Based in Norway</strong>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="section-label">Selected creative work</div>
+        <p>
+          My writing and side projects live at VeylorCraft.
+        </p>
+        <a href="https://veylorcraft.com" target="_blank" rel="noopener" class="footer-link">
+          Visit VeylorCraft.com <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&copy; 2026 Tom Jensen</span>
+        <a href="../../privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('primary-nav');
+      if (!btn || !nav) return;
+      function setOpen(open) {
+        btn.setAttribute('aria-expanded', String(open));
+        nav.classList.toggle('is-open', open);
+      }
+      btn.addEventListener('click', function () {
+        setOpen(btn.getAttribute('aria-expanded') !== 'true');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
