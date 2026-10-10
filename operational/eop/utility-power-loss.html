@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EOP Example — Utility Power Loss Response | Tom Jensen</title>
-  <meta name="description" content="Public-facing Emergency Operating Procedure example for utility power loss response in critical infrastructure and data center environments." />
+  <title>EOP Example — Utility Power Loss | Tom Jensen</title>
+  <meta name="description" content="An example emergency procedure for the first hours after the utility supply is lost. People first, then the power path, then time: battery, cooling and fuel." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="EOP Example — Utility Power Loss Response | Tom Jensen" />
-  <meta property="og:description" content="Structured emergency response example for utility power loss, emergency power verification, escalation, communication and incident control." />
+  <meta property="og:title" content="EOP Example — Utility Power Loss | Tom Jensen" />
+  <meta property="og:description" content="An example emergency procedure for the first hours after the utility supply is lost. People first, then the power path, then time: battery, cooling and fuel." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/eop/utility-power-loss.html" />
   <meta property="og:type" content="website" />
@@ -44,19 +44,20 @@
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / EOP Example</p>
 
-          <h1>Utility Power Loss Response</h1>
+          <h1>Utility Power Loss</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of an Emergency Operating Procedure for loss of
-            normal utility power in a critical infrastructure environment.
+            An example emergency procedure for the first hours after the utility
+            supply is lost. People first, then the power path, then time:
+            battery, cooling and fuel.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing emergency response documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real procedure must follow the
+            site's design, its emergency plan and local rules.
           </p>
         </aside>
       </div>
@@ -68,121 +69,63 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> EOP-PWR-001</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Activation:</strong> Utility Power Loss</div>
+            <div><strong>Activation:</strong> Loss of utility supply, full or partial</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Provide a structured response framework for utility power loss events
-            affecting critical infrastructure operations, with focus on personnel
-            safety, operational overview, emergency power verification,
-            communication, escalation and incident control.
+            What to do when the utility supply is lost: keep people safe, confirm
+            the load is carried, and watch the three clocks: battery, cooling and
+            fuel.
           </p>
 
           <h2>2. Scope</h2>
 
           <p>
-            Applies to abnormal conditions involving total or partial loss of
-            normal utility power to critical facilities, including data centers,
-            technical infrastructure spaces and supporting operational systems.
+            Full or partial loss of the utility supply, including loss of one of
+            two feeds. It does not replace switching procedures, evacuation plans
+            or the manufacturer's instructions.
           </p>
 
-          <p>
-            This example does not replace electrical switching procedures,
-            emergency evacuation procedures, manufacturer instructions, utility
-            coordination requirements, local regulations or site-specific
-            emergency plans.
-          </p>
+          <h2>3. When to use it</h2>
 
-          <h2>3. Activation Criteria</h2>
+          <ul>
+            <li>Utility supply lost, fully or on one feed</li>
+            <li>UPS running on battery</li>
+            <li>Generators started without a planned test</li>
+            <li>Unexpected transfer or abnormal electrical state</li>
+            <li>You cannot tell what feeds the load</li>
+          </ul>
+
+          <h2>4. The three clocks</h2>
 
           <p>
-            This EOP may be activated when one or more of the following conditions
-            are observed:
+            When the utility goes, time starts running on three things:
           </p>
 
           <ul>
-            <li>Loss of utility power to critical systems or infrastructure</li>
-            <li>Unexpected transfer to generator or battery-supported operation</li>
-            <li>UPS systems operating on battery due to upstream utility loss</li>
-            <li>Generator startup following utility failure</li>
-            <li>Partial facility blackout or abnormal electrical condition</li>
-            <li>Loss of redundancy affecting critical power infrastructure</li>
-            <li>Unclear or unstable power system operating state</li>
+            <li><strong>Battery:</strong> if the generators do not take the load, the UPS batteries usually last minutes, not hours.</li>
+            <li><strong>Cooling:</strong> chillers and cooling units may stop during the transfer and need time to restart. Meanwhile, temperatures rise, fast in dense rooms.</li>
+            <li><strong>Fuel:</strong> on generators, how long you can run depends on fuel on site and the load. In a long or regional outage, deliveries can be slow.</li>
           </ul>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Emergency principle:</strong> Stabilize first. Diagnose
-              second. Maintain operational overview throughout the event.
-            </p>
-          </div>
+          <p>
+            Know your numbers before an outage: battery runtime at current load,
+            cooling restart time and fuel hours at current load.
+          </p>
 
-          <h2>4. Immediate Response Priorities</h2>
-
-          <div class="responsive-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Priority</th>
-                  <th>Focus Area</th>
-                  <th>Objective</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td data-label="Priority" data-role="lead">1</td>
-                  <td data-label="Focus Area" data-role="main">Life Safety</td>
-                  <td data-label="Objective">Protect personnel and confirm no immediate safety hazard exists.</td>
-                </tr>
-
-                <tr>
-                  <td data-label="Priority" data-role="lead">2</td>
-                  <td data-label="Focus Area" data-role="main">Operational Overview</td>
-                  <td data-label="Objective">Determine current infrastructure state and affected systems.</td>
-                </tr>
-
-                <tr>
-                  <td data-label="Priority" data-role="lead">3</td>
-                  <td data-label="Focus Area" data-role="main">Emergency Power</td>
-                  <td data-label="Objective">Confirm generator, UPS and transfer system behavior.</td>
-                </tr>
-
-                <tr>
-                  <td data-label="Priority" data-role="lead">4</td>
-                  <td data-label="Focus Area" data-role="main">Impact Control</td>
-                  <td data-label="Objective">Limit escalation, instability or secondary failures.</td>
-                </tr>
-
-                <tr>
-                  <td data-label="Priority" data-role="lead">5</td>
-                  <td data-label="Focus Area" data-role="main">Communication</td>
-                  <td data-label="Objective">Inform responsible stakeholders and maintain updates.</td>
-                </tr>
-
-                <tr>
-                  <td data-label="Priority" data-role="lead">6</td>
-                  <td data-label="Focus Area" data-role="main">Incident Logging</td>
-                  <td data-label="Objective">Maintain timeline and record key observations/actions.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2>5. Initial Response Procedure</h2>
+          <h2>5. First steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Area/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
+                  <th>Check</th>
                   <th>Owner</th>
                 </tr>
               </thead>
@@ -191,255 +134,150 @@
 
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Declare operational incident and assign response lead.</td>
-                  <td data-label="Verification">Single responsible coordinator established.</td>
-                  <td data-label="Owner">Operations Lead</td>
+                  <td data-label="Action" data-role="main">Check people: anyone hurt, stuck in a lift, or in an area without emergency lighting.</td>
+                  <td data-label="Check">People safe, or help called.</td>
+                  <td data-label="Owner">Operator on duty / Security</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Area/Tag">FACILITY</td>
-                  <td data-label="Action" data-role="main">Confirm personnel safety and identify any immediate hazard.</td>
-                  <td data-label="Verification">No active life-safety emergency identified.</td>
-                  <td data-label="Owner">Operations / Security</td>
+                  <td data-label="Action" data-role="main">Read the power state in BMS/EPMS: utility, UPS, generators, transfer switches.</td>
+                  <td data-label="Check">Power path known: what feeds the load now.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Area/Tag">BMS / EPMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review active alarms, event logs and current infrastructure state.</td>
-                  <td data-label="Verification">Affected systems and current operating mode identified.</td>
-                  <td data-label="Owner">Operations</td>
+                  <td data-label="Action" data-role="main">Confirm the generators started and took the load. If not, start them as the site procedure says, and escalate at once.</td>
+                  <td data-label="Check">Load on generator, or escalation started.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Area/Tag">UPS-A / UPS-B</td>
-                  <td data-label="Action" data-role="main">Verify UPS operating condition and battery status.</td>
-                  <td data-label="Verification">UPS systems supporting load as expected.</td>
-                  <td data-label="Owner">Power Specialist</td>
+                  <td data-label="Action" data-role="main">Check the UPS: on battery or back on input, battery runtime left, alarms.</td>
+                  <td data-label="Check">Runtime known and logged.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Area/Tag">GEN-001 / GEN-002</td>
-                  <td data-label="Action" data-role="main">Verify generator startup, stabilization and load acceptance.</td>
-                  <td data-label="Verification">Generators operating normally or issue escalated immediately.</td>
-                  <td data-label="Owner">Generator Specialist</td>
+                  <td data-label="Action" data-role="main">Check that cooling restarted: chillers, cooling units, pumps. Watch room temperatures.</td>
+                  <td data-label="Check">Cooling running, temperatures stable.</td>
+                  <td data-label="Owner">Operator on duty / Facility operations</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Area/Tag">ATS / SWITCHGEAR</td>
-                  <td data-label="Action" data-role="main">Confirm transfer equipment state and power-path condition.</td>
-                  <td data-label="Verification">Power path status understood and recorded.</td>
-                  <td data-label="Owner">Electrical Responsible Person</td>
+                  <td data-label="Action" data-role="main">The incident lead named in the site's emergency plan takes charge. Call in the on-call person and specialists as needed. If you are alone, you lead until someone takes over.</td>
+                  <td data-label="Check">Everyone knows who is in charge.</td>
+                  <td data-label="Owner">Incident lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Area/Tag">DATAHALL / TECH AREAS</td>
-                  <td data-label="Action" data-role="main">Verify cooling systems, monitoring systems and critical operational areas remain stable.</td>
-                  <td data-label="Verification">No secondary infrastructure failure observed.</td>
-                  <td data-label="Owner">Facility Operations</td>
+                  <td data-label="Action" data-role="main">Find out if the cause is outside or inside the site: call the grid operator, check your own switchgear. Ask how long the outage may last.</td>
+                  <td data-label="Check">Cause and expected duration known, or logged as unknown.</td>
+                  <td data-label="Owner">Incident lead / Electrical responsible person</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Area/Tag">COMMUNICATION</td>
-                  <td data-label="Action" data-role="main">Notify required stakeholders according to incident communication plan.</td>
-                  <td data-label="Verification">Stakeholder notification completed and logged.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Check fuel: level, use at current load, hours left. Call the fuel supplier early if the outage may be long.</td>
+                  <td data-label="Check">Fuel hours known. Delivery agreed if needed.</td>
+                  <td data-label="Owner">Facility operations</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Area/Tag">INCIDENT LOG</td>
-                  <td data-label="Action" data-role="main">Start or maintain incident timeline and event log.</td>
-                  <td data-label="Verification">Actions, alarms and decisions continuously recorded.</td>
-                  <td data-label="Owner">Assigned Recorder</td>
+                  <td data-label="Action" data-role="main">Walk the generator room: no leaks, smell, unusual noise or alarms. Check ventilation.</td>
+                  <td data-label="Check">Generators running normally.</td>
+                  <td data-label="Owner">Operator on duty / Generator service company</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Establish next update interval and escalation threshold.</td>
-                  <td data-label="Verification">Response cadence agreed and communicated.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Start the incident log. Inform stakeholders as the communication plan says. Set the time for the next update.</td>
+                  <td data-label="Check">Log running, updates sent.</td>
+                  <td data-label="Owner">Incident lead / Recorder</td>
                 </tr>
 
               </tbody>
             </table>
           </div>
 
-          <h2>6. Stop Conditions / Escalation Triggers</h2>
-
-          <p>
-            Immediate escalation is required if one or more of the following
-            conditions occur:
-          </p>
-
-          <ul>
-            <li>Generator fails to start or remain stable</li>
-            <li>UPS runtime becomes uncertain or battery autonomy degrades unexpectedly</li>
-            <li>Critical load shutdown occurs or appears likely</li>
-            <li>Loss of cooling or secondary infrastructure begins</li>
-            <li>Smoke, electrical smell, fire alarm or arc-related concern observed</li>
-            <li>Power-path state cannot be confirmed</li>
-            <li>Personnel safety becomes uncertain</li>
-            <li>Facility redundancy falls below approved operational limits</li>
-          </ul>
-
           <div class="principle-callout">
             <p>
-              <strong>Control rule:</strong> If the operating state is unclear,
-              assume increased risk until verified otherwise.
+              <strong>Staffing:</strong> With one person on site, steps 1 to 5
+              come first. Call in help early. A long outage is too much for one
+              person.
             </p>
           </div>
 
-          <h2>7. Communication Structure</h2>
+          <h2>6. Escalate at once if</h2>
+
+          <ul>
+            <li>A generator fails to start, stops, or cannot take the load</li>
+            <li>Battery runtime is short or falling faster than expected</li>
+            <li>Room temperatures keep rising</li>
+            <li>Fuel hours fall below the site's limit, with no delivery confirmed</li>
+            <li>The grid operator expects a long outage</li>
+            <li>Smoke, a burning smell, a fire alarm or signs of arcing</li>
+            <li>You cannot tell what feeds the load</li>
+            <li>Redundancy falls below the site's limit</li>
+          </ul>
+
+          <h2>7. Updates</h2>
 
           <p>
-            During utility loss events, communication should remain structured,
-            factual and time-based.
+            One person leads. If possible, someone else handles communication.
+          </p>
+
+          <p>
+            Keep updates short, factual and timed: Time — power state — impact —
+            actions — fuel hours — next update.
+          </p>
+
+          <h2>8. Back to utility</h2>
+
+          <p>
+            Do not rush back. A grid that has just come back can fail again.
           </p>
 
           <ul>
-            <li>Use one operational lead for coordination</li>
-            <li>Separate technical investigation from stakeholder communication</li>
-            <li>Avoid unverified assumptions during updates</li>
-            <li>Record times for all major changes and decisions</li>
-            <li>Maintain regular update intervals during unstable conditions</li>
+            <li>Wait until the utility has been stable for the time the site design sets.</li>
+            <li>Transfer back in a controlled way, when the incident lead decides.</li>
+            <li>Let the generators run their cool-down and return to standby.</li>
+            <li>Check that the UPS is back on normal input and the batteries are charging. Until they are full, runtime is reduced, so avoid planned work.</li>
+            <li>Refuel the generators.</li>
+            <li>Check cooling and all alarms.</li>
+            <li>Write the incident report, with what we learned.</li>
           </ul>
 
-          <p>
-            Example update structure:
-          </p>
-
-          <div class="code-like-box">
-            Time → Current State → Impact → Actions → Risk Level → Next Update
-          </div>
-
-          <h2>8. Recovery and Return to Normal</h2>
-
-          <p>
-            Return to normal operation should be controlled and verified.
-            Utility restoration alone does not automatically mean the incident
-            is resolved.
-          </p>
+          <h2>9. Related procedures</h2>
 
           <ul>
-            <li>Confirm utility stability before normalization</li>
-            <li>Verify UPS systems returned to approved operating state</li>
-            <li>Verify generators returned to standby condition</li>
-            <li>Review alarms, events and abnormal conditions</li>
-            <li>Confirm cooling and monitoring systems stable</li>
-            <li>Confirm no hidden degraded condition remains</li>
-            <li>Complete incident documentation and closeout review</li>
+            <li><a href="../sop/generator-weekly-inspection.html">Generator Weekly Inspection</a> (SOP)</li>
+            <li><a href="../mop/planned-utility-transfer-test.html">Planned Utility Transfer Test</a> (MOP)</li>
+            <li><a href="../mop/ups-maintenance-bypass.html">UPS Transfer to Maintenance Bypass</a> (MOP)</li>
+            <li><a href="cooling-failure.html">Cooling Failure</a> (EOP)</li>
+            <li><a href="fire-alarm-response.html">Fire Alarm Response</a> (EOP)</li>
+            <li>Fuel supply agreement (site-specific)</li>
+            <li>Site emergency plan (site-specific)</li>
           </ul>
-
-          <h2>9. Related Procedures</h2>
-
-          <ul>
-            <li>Planned Utility Transfer Test (MOP)</li>
-            <li>UPS Transfer to Maintenance Bypass (MOP)</li>
-            <li>Generator Weekly Inspection Procedure (SOP)</li>
-            <li>Cooling Failure Response (EOP)</li>
-            <li>Site Electrical Switching Procedure (Site-Specific)</li>
-          </ul>
-
-          <h2>10. Operational Notes</h2>
-
-          <p>
-            Utility power loss events often create secondary operational risks
-            beyond the initial outage itself. Cooling stability, battery runtime,
-            transfer behavior, monitoring visibility and human communication
-            quality all influence the final outcome.
-          </p>
-
-          <p>
-            Strong incident response depends on maintaining operational overview,
-            avoiding uncontrolled parallel action and escalating uncertainty early.
-          </p>
-
-          <p>
-            Real emergency response procedures must align with facility design,
-            utility agreements, local regulations, electrical safety requirements,
-            emergency management structure and approved operational governance.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> EOP Example</div>
-            <div><strong>Category:</strong> Emergency Power / Incident Response</div>
-            <div><strong>Criticality:</strong> Critical</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> establish control, verify the
-              power path, protect critical load, communicate clearly, escalate
-              uncertainty early and maintain a structured incident timeline.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
 
           <div class="sidebar-box">
-            <h3>EOP Focus</h3>
-            <ul>
-              <li>Incident control</li>
-              <li>Emergency power verification</li>
-              <li>Operational overview</li>
-              <li>Structured escalation</li>
-              <li>Stakeholder communication</li>
-              <li>Incident timeline management</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
-              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
               <li>UPS-A / UPS-B — UPS systems</li>
               <li>GEN-001 / GEN-002 — Standby generators</li>
-              <li>ATS — Transfer equipment</li>
-              <li>BMS / EPMS / DCIM — Monitoring systems</li>
-              <li>OPS-BRIDGE — Incident coordination point</li>
+              <li>ATS — Automatic transfer switch</li>
+              <li>BMS / EPMS — Monitoring systems</li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Emergency Reminder</h3>
-            <p>
-              The first goal is not detailed troubleshooting. The first goal is
-              to establish a known safe operating state and maintain control of
-              the incident.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Real emergency response
-              procedures must be reviewed and approved according to the facility
-              design, legal requirements and responsible operational authority.
-            </p>
           </div>
 
         </aside>
