@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Operational Standards & Structure | Tom Jensen</title>
-  <meta name="description" content="Operational standards, NS-TFM, asset identification, BIM, CMMS and documentation structure principles for critical infrastructure environments." />
+  <title>Standards &amp; Structure | Tom Jensen</title>
+  <meta name="description" content="Which asset identification standard to use, and in what order: client standard first, then national, then an internal fallback. With TFM and NS 3457 as the Norwegian example." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="Operational Standards & Structure | Tom Jensen" />
-  <meta property="og:description" content="A practical overview of operational standards, NS-TFM, asset identification, BIM, CMMS integration and documentation structure." />
+  <meta property="og:title" content="Standards &amp; Structure | Tom Jensen" />
+  <meta property="og:description" content="How I choose an identification standard for a site, with the Norwegian TFM system and NS 3457 as an example." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/standards/" />
   <meta property="og:type" content="website" />
@@ -37,270 +37,138 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="advisory-note-hero">
       <div class="container advisory-note-layout">
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / Standards</p>
 
-          <h1>Operational Standards & Structure</h1>
+          <h1>Standards &amp; Structure</h1>
 
           <p class="advisory-note-lead">
-            Operational documentation becomes reliable when procedures, assets,
-            systems and records follow a consistent structure across the full
-            lifecycle of the facility.
+            Which identification standard to use, and in what order. Most of the
+            work is picking the right one, then sticking to it.
           </p>
         </div>
-
-        <aside class="advisory-note-card">
-          <span class="note-label">Purpose</span>
-          <p>
-            To explain how standards, asset identification and documentation
-            structure support safe, traceable and maintainable operations.
-          </p>
-        </aside>
       </div>
     </section>
 
     <section class="advisory-note-content">
       <div class="container advisory-content-grid">
         <article class="advisory-article">
-          <h2>Why standardization matters</h2>
+
+          <h2>1. Use the standard that already exists</h2>
 
           <p>
-            Critical infrastructure cannot rely on memory, informal naming or
-            local habits alone. Operational work must be connected to clear
-            identifiers, controlled documents, known systems and verifiable
-            records.
-          </p>
-
-          <p>
-            A good documentation structure makes it easier to understand what
-            asset is involved, where it is located, which system it belongs to,
-            what procedure applies, and how the result should be verified.
-          </p>
-
-          <p>
-            This is especially important in environments where many disciplines
-            interact: electrical systems, mechanical systems, control systems,
-            fire safety, security, network infrastructure and building operations.
-          </p>
-
-          <h2>Client and national standards first</h2>
-
-          <p>
-            The correct standard is normally determined by the owner, client,
-            country, project requirements and operational system landscape.
-            A strong operational documentation model should therefore be
-            adaptable, not locked to one private naming convention.
-          </p>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Working principle:</strong> Client standard first.
-              National or sector standard second. Internal naming structure only
-              where no approved standard exists.
-            </p>
-          </div>
-
-          <p>
-            This means that an operational procedure should not invent asset
-            names if the facility already has an approved naming, BIM, FDV,
-            CMMS or asset register structure.
-          </p>
-
-          <h2>Norwegian reference model: NS-TFM</h2>
-
-          <p>
-            In Norwegian building and infrastructure projects, a common reference
-            model is TFM — Tverrfaglig Merkesystem. TFM was developed by
-            Statsbygg and has later been formalized through the NS 3457 series.
-          </p>
-
-          <p>
-            NS-TFM uses a structured identification principle where an asset can
-            be described through location, system and component coding. This
-            allows the same physical object to be referenced consistently in
-            drawings, digital models, labels, procedures, maintenance systems
-            and operational records.
-          </p>
-
-          <div class="code-like-box">
-            +001.02 =360.001 -VIF01
-          </div>
-
-          <p>
-            In this example, the identifier expresses where the asset is located,
-            which technical system it belongs to, and which component is being
-            referenced.
-          </p>
-
-          <h2>Location, system and component logic</h2>
-
-          <p>
-            A structured asset identifier should help operations personnel answer
-            three practical questions:
+            Most sites already have a naming standard, even if it is badly written
+            down. The order I follow:
           </p>
 
           <ul>
-            <li><strong>Where is it?</strong> The location, building, area, floor or room.</li>
-            <li><strong>What system does it belong to?</strong> The technical system or functional group.</li>
-            <li><strong>What component is it?</strong> The specific equipment item, sensor, valve, panel, pump or unit.</li>
+            <li>The owner's or client's standard.</li>
+            <li>The national or sector standard.</li>
+            <li>An internal structure, only where neither exists.</li>
           </ul>
 
           <p>
-            The exact code format may vary, but the operational goal is the same:
-            the identifier must be unique, understandable, maintainable and
-            usable across disciplines.
+            A new naming scheme on a site that already has one gives you two names
+            for the same breaker. That is worse than one imperfect name.
           </p>
 
-          <h2>Physical marking and digital traceability</h2>
+          <h2>2. The Norwegian example: TFM</h2>
 
           <p>
-            Asset identification must work both in documents and in the physical
-            environment. A procedure is only useful if the operator can identify
-            the correct equipment in the field.
-          </p>
-
-          <p>
-            Physical labels should be visible, durable and placed so they remain
-            meaningful during inspection, maintenance and fault response. Where
-            appropriate, human-readable identifiers can be combined with QR codes
-            or barcodes linked to asset registers, documentation systems or
-            maintenance platforms.
+            TFM (Tverrfaglig merkesystem) was developed by Statsbygg and is widely
+            used in Norwegian buildings. It is now part of the NS 3457 series:
+            NS 3457-7 covers identification of systems, NS 3457-8 covers component
+            classes, and NS 3457-9 covers marking of systems and components in
+            buildings. System codes come from NS 3451.
           </p>
 
           <p>
-            Statsbygg’s PA-0803 gives guidance for ID numbering, physical marking
-            and sign design, including the use of TFM as one ID-numbering system.
-          </p>
-
-          <h2>BIM, CMMS and FDV integration</h2>
-
-          <p>
-            The strongest operational structures connect the same asset identity
-            across several systems:
-          </p>
-
-          <ul>
-            <li>BIM models and digital building information</li>
-            <li>FDV documentation and handover material</li>
-            <li>CMMS or maintenance management systems</li>
-            <li>Alarm and monitoring platforms</li>
-            <li>SOP, MOP, EOP and risk documentation</li>
-            <li>Maintenance history and incident records</li>
-          </ul>
-
-          <p>
-            When these systems use consistent identifiers, it becomes easier to
-            find the correct document, verify the correct component, review past
-            maintenance and understand the operational impact of a change.
-          </p>
-
-          <h2>Asset lifecycle philosophy</h2>
-
-          <p>
-            Asset identification should not be treated as a project-only activity.
-            It must survive design, construction, commissioning, handover,
-            operation, maintenance, replacement and eventual decommissioning.
-          </p>
-
-          <p>
-            A weak naming structure creates long-term friction. A strong structure
-            reduces ambiguity, improves training, supports audits and helps
-            operators make better decisions under pressure.
-          </p>
-
-          <h2>International adaptability</h2>
-
-          <p>
-            NS-TFM is a strong Norwegian reference model, but international
-            projects may use other client, sector or country-specific standards.
-            The operational documentation structure should therefore describe the
-            principle, not force one national format into every environment.
-          </p>
-
-          <p>
-            Where no formal external standard exists, an internal asset structure
-            may be used. It should still follow the same core logic: location,
-            system, asset type and unique running number.
+            A TFM tag has three parts, each with its own sign:
           </p>
 
           <div class="code-like-box">
-            SITE-BUILDING-ROOM-SYSTEM-ASSET-RUNNINGNO
+            +building =system.number -component
           </div>
 
           <p>
-            This internal format should be treated as a fallback model, not a
-            replacement for approved client or national standards.
-          </p>
-
-          <h2>How this affects procedures</h2>
-
-          <p>
-            SOPs, MOPs and EOPs should reference assets using the approved
-            identification structure. This avoids vague instructions such as
-            “the UPS in electrical room 2” when several similar systems may exist.
+            + where it is: the building<br>
+            = which system: the system code from NS 3451, plus a number for each system of that type<br>
+            - which component: a letter code for the type of component, plus a running number
           </p>
 
           <p>
-            A mature procedure should clearly state which system and component
-            it applies to, which documents support it, and which records must be
-            updated when the work is completed.
+            Owners use different versions of TFM, so the exact codes vary. Always
+            use the owner's own TFM rules and code lists.
           </p>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Operational rule:</strong> If the asset cannot be identified
-              clearly, the procedure is not ready for controlled execution.
-            </p>
-          </div>
+          <p>
+            For physical marking and sign design, Statsbygg's design guide PA 0803
+            is a useful reference. It names TFM as one of the ID numbering systems
+            it supports.
+          </p>
+
+          <h2>3. Outside Norway</h2>
+
+          <p>
+            Standards and rules vary from country to country, and many owners have
+            their own scheme. The most common ones I would look at:
+          </p>
+
+          <ul>
+            <li>IEC 81346: an international standard for reference designations, common in industry and energy.</li>
+            <li>ISO 19650: information management for buildings over their whole life, including BIM.</li>
+            <li>IFC (ISO 16739): the open format for the building model itself, so geometry and data can move between tools.</li>
+            <li>COBie: a common format for handing over asset data from building projects, used mostly in the UK and US. In Norway, public owners such as Statsbygg usually ask for IFC models instead.</li>
+          </ul>
+
+          <p>
+            Classification tables vary too: Uniclass in the UK, OmniClass in North
+            America, NS 3451 in Norway.
+          </p>
+
+          <p>
+            Whichever standard a site uses, the principle is the same: one approved
+            logic for the whole site.
+          </p>
+
+          <h2>4. What this means for procedures</h2>
+
+          <p>
+            A procedure names the asset by its approved tag, never "the UPS in
+            electrical room 2". If the asset can't be identified clearly in the
+            field, the procedure isn't ready to use.
+          </p>
+
+          <p>
+            If the tag in the procedure doesn't match the label on the equipment,
+            stop. Find out which one is wrong before you touch anything.
+          </p>
+
+          <p>
+            How tags are built and used in this library: see
+            <a href="../asset-identification/index.html">Asset Identification</a>.
+          </p>
+
         </article>
 
         <aside class="advisory-sidebar">
+
           <div class="sidebar-box">
-            <h3>Page Focus</h3>
+            <h3>References</h3>
             <ul>
-              <li>NS-TFM concepts</li>
-              <li>Client standards</li>
-              <li>Asset traceability</li>
-              <li>BIM and CMMS links</li>
-              <li>Lifecycle documentation</li>
-              <li>Operational consistency</li>
+              <li>NS 3451: Building elements and system codes</li>
+              <li>NS 3457-7, -8 and -9: Classification of construction works (TFM)</li>
+              <li>Statsbygg PA 0803: ID numbering, physical marking and signs</li>
+              <li>IEC 81346: Reference designation systems</li>
+              <li>ISO 19650: Information management with BIM</li>
+              <li>ISO 16739: IFC</li>
+              <li>COBie: Asset data handover</li>
             </ul>
           </div>
 
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="../sop/" class="text-link">SOP</a></li>
-              <li><a href="../mop/" class="text-link">MOP</a></li>
-              <li><a href="../eop/" class="text-link">EOP</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Reference Principle</h3>
-            <p>
-              Asset identification should follow the approved client, national
-              or project standard before any local internal naming structure is used.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Typical Identifier Logic</h3>
-            <ul>
-              <li>Location</li>
-              <li>System</li>
-              <li>Component</li>
-              <li>Unique instance</li>
-              <li>Lifecycle record</li>
-            </ul>
-          </div>
         </aside>
       </div>
     </section>
