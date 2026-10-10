@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Operational Risk Assessment | Tom Jensen</title>
-  <meta name="description" content="Operational risk assessment method for probability, impact, mitigation, residual risk, ownership and completion control." />
+  <title>Risk Assessment | Tom Jensen</title>
+  <meta name="description" content="How I would assess the risk of work in a data center: concrete scales, a matrix with a severity rule, controls that actually reduce risk, and worked examples." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="Operational Risk Assessment | Tom Jensen" />
-  <meta property="og:description" content="Practical operational risk assessment structure for probability, impact, mitigation, residual risk, ownership and follow-up." />
+  <meta property="og:title" content="Risk Assessment | Tom Jensen" />
+  <meta property="og:description" content="A practical risk assessment method for data center work, with clear scales, a severity rule, stop conditions and three worked examples from the library." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/risk/" />
   <meta property="og:type" content="website" />
-
 </head>
 
 <body>
@@ -38,29 +37,20 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="advisory-note-hero">
       <div class="container advisory-note-layout">
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / Risk</p>
 
-          <h1>Operational Risk Assessment</h1>
+          <h1>Risk Assessment</h1>
 
           <p class="advisory-note-lead">
-            A practical method for identifying operational risk, assessing
-            probability and impact, defining mitigation tasks, reassessing
-            residual risk and assigning clear ownership until completion.
+            How I would assess the risk of a task before the work starts. The score
+            is the easy part. The value is in agreeing what could go wrong, what you
+            will do about it, and who accepts what is left.
           </p>
         </div>
-
-        <aside class="advisory-note-card">
-          <span class="note-label">Purpose</span>
-          <p>
-            To make operational risk visible, structured, prioritized and
-            traceable before work begins or before an abnormal condition escalates.
-          </p>
-        </aside>
       </div>
     </section>
 
@@ -68,376 +58,137 @@
       <div class="container advisory-content-grid">
         <article class="advisory-article">
 
-          <h2>Risk assessment principle</h2>
+          <h2>1. When to do it</h2>
 
           <p>
-            Operational risk assessment should be simple enough to use during real
-            work, but structured enough to support responsible decisions. The goal
-            is not paperwork. The goal is controlled awareness before exposure
-            increases.
+            Do a written risk assessment for any planned work on live power, cooling
+            or fire systems, any work that reduces redundancy, and any task the team
+            hasn't done before. Do it again when the plan changes, after an incident,
+            and when the same task goes wrong somewhere else.
           </p>
 
           <p>
-            A practical risk assessment identifies the risk, scores probability
-            and impact, defines mitigation tasks, reassesses the remaining risk,
-            assigns ownership and tracks completion.
+            The people who will do the work take part. At least one person who won't
+            do the work reviews it. Someone who only wants the work done should never
+            be the one who accepts the risk.
           </p>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Working principle:</strong> Identify risk → Assess
-              probability and impact → Define mitigation → Reassess residual risk
-              → Assign owner → Track completion.
-            </p>
-          </div>
-
-          <h2>Assessment flow</h2>
-
-          <div class="responsive-table">
-            <table class="compact-table">
-              <thead>
-                <tr>
-                  <th>Phase</th>
-                  <th>Question</th>
-                  <th>Output</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Phase" data-role="lead">1. Identify</td>
-                  <td data-label="Question" data-role="main">What can go wrong?</td>
-                  <td data-label="Output">Clear risk description</td>
-                </tr>
-                <tr>
-                  <td data-label="Phase" data-role="lead">2. Assess</td>
-                  <td data-label="Question" data-role="main">How likely is it, and how serious would it be?</td>
-                  <td data-label="Output">Probability, impact and initial risk score</td>
-                </tr>
-                <tr>
-                  <td data-label="Phase" data-role="lead">3. Mitigate</td>
-                  <td data-label="Question" data-role="main">What controls reduce the risk?</td>
-                  <td data-label="Output">Defined mitigation tasks</td>
-                </tr>
-                <tr>
-                  <td data-label="Phase" data-role="lead">4. Reassess</td>
-                  <td data-label="Question" data-role="main">What risk remains after mitigation?</td>
-                  <td data-label="Output">Residual probability, impact and risk score</td>
-                </tr>
-                <tr>
-                  <td data-label="Phase" data-role="lead">5. Own</td>
-                  <td data-label="Question" data-role="main">Who is responsible, and by when?</td>
-                  <td data-label="Output">Named owner and completion date</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2>Basic risk formula</h2>
+          <h2>2. The steps</h2>
 
           <p>
-            A simple operational model can use:
+            The method follows the process in ISO 31000, the international guideline
+            for risk management:
           </p>
 
-          <div class="code-like-box">
-            Risk Score = Probability × Impact
-          </div>
+          <ul>
+            <li>Describe the work: what, where, when, and which systems are affected.</li>
+            <li>Find what can go wrong: for people, for the load, for the equipment, and the cost.</li>
+            <li>Score each risk: likelihood and consequence (<span lang="no">sannsynlighet og konsekvens</span>).</li>
+            <li>Decide: is the risk acceptable as it is?</li>
+            <li>Add controls, and score again.</li>
+            <li>Get the remaining risk accepted by the right person.</li>
+            <li>Watch for changes during the work, and stop if the picture changes.</li>
+          </ul>
+
+          <h2>3. Likelihood</h2>
 
           <p>
-            In Norwegian operational language, probability is often described as
-            <strong>sannsynlighet</strong>. The method is the same: estimate how
-            likely the event is and how serious the consequence would be.
-          </p>
-
-          <h2>Scoring model</h2>
-
-          <p>
-            The scale below is a practical example. Real organizations should
-            adapt definitions to their own safety requirements, contractual
-            commitments, operational environment and risk appetite.
+            How likely is it that this happens during this work, or in this period?
           </p>
 
           <div class="responsive-table">
-            <table class="compact-table">
+            <table>
               <thead>
                 <tr>
-                  <th>Score</th>
-                  <th>Probability / Sannsynlighet</th>
-                  <th>Impact</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Score" data-role="lead"><strong>1</strong></td>
-                  <td data-label="Probability / Sannsynlighet" data-role="main">Rare / unlikely under normal conditions</td>
-                  <td data-label="Impact">Minor local effect, no critical operational impact</td>
-                </tr>
-                <tr>
-                  <td data-label="Score" data-role="lead"><strong>2</strong></td>
-                  <td data-label="Probability / Sannsynlighet" data-role="main">Possible, but not expected</td>
-                  <td data-label="Impact">Limited disturbance or local operational inconvenience</td>
-                </tr>
-                <tr>
-                  <td data-label="Score" data-role="lead"><strong>3</strong></td>
-                  <td data-label="Probability / Sannsynlighet" data-role="main">Possible during the activity or condition</td>
-                  <td data-label="Impact">Operational impact, reduced redundancy or service concern</td>
-                </tr>
-                <tr>
-                  <td data-label="Score" data-role="lead"><strong>4</strong></td>
-                  <td data-label="Probability / Sannsynlighet" data-role="main">Likely if controls are not applied</td>
-                  <td data-label="Impact">Major operational impact or serious degradation</td>
-                </tr>
-                <tr>
-                  <td data-label="Score" data-role="lead"><strong>5</strong></td>
-                  <td data-label="Probability / Sannsynlighet" data-role="main">Very likely or already developing</td>
-                  <td data-label="Impact">Critical impact, safety concern or major service loss</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2>Risk level identification</h2>
-
-          <p>
-            Color should make the risk level easier to read quickly. It should
-            support the decision, not replace the explanation behind the score.
-          </p>
-
-          <div class="responsive-table">
-            <table class="compact-table">
-              <thead>
-                <tr>
-                  <th>Score</th>
                   <th>Level</th>
-                  <th>Visual Marker</th>
-                  <th>Typical Action</th>
+                  <th>Likelihood</th>
+                  <th>What it means</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
-                  <td data-label="Score" data-role="lead">1–4</td>
-                  <td data-label="Level" data-role="main"><strong>Low</strong></td>
-                  <td data-label="Visual Marker"><span class="risk-badge low">Low</span></td>
-                  <td data-label="Typical Action">Proceed with normal controls and monitoring.</td>
+                  <td data-label="Level" data-role="lead">1</td>
+                  <td data-label="Likelihood" data-role="main">Very unlikely</td>
+                  <td data-label="What it means">Not seen in this kind of work. It would take several failures at once.</td>
                 </tr>
                 <tr>
-                  <td data-label="Score" data-role="lead">5–9</td>
-                  <td data-label="Level" data-role="main"><strong>Medium</strong></td>
-                  <td data-label="Visual Marker"><span class="risk-badge medium">Medium</span></td>
-                  <td data-label="Typical Action">Proceed only with defined controls and clear ownership.</td>
+                  <td data-label="Level" data-role="lead">2</td>
+                  <td data-label="Likelihood" data-role="main">Unlikely</td>
+                  <td data-label="What it means">It has happened in the industry, but nobody expects it here.</td>
                 </tr>
                 <tr>
-                  <td data-label="Score" data-role="lead">10–16</td>
-                  <td data-label="Level" data-role="main"><strong>High</strong></td>
-                  <td data-label="Visual Marker"><span class="risk-badge high">High</span></td>
-                  <td data-label="Typical Action">Requires mitigation, approval and escalation awareness.</td>
+                  <td data-label="Level" data-role="lead">3</td>
+                  <td data-label="Likelihood" data-role="main">Possible</td>
+                  <td data-label="What it means">It has happened on sites like this one. It could happen this time.</td>
                 </tr>
                 <tr>
-                  <td data-label="Score" data-role="lead">17–25</td>
-                  <td data-label="Level" data-role="main"><strong>Critical</strong></td>
-                  <td data-label="Visual Marker"><span class="risk-badge critical">Critical</span></td>
-                  <td data-label="Typical Action">Do not proceed without senior approval and risk reduction.</td>
+                  <td data-label="Level" data-role="lead">4</td>
+                  <td data-label="Likelihood" data-role="main">Likely</td>
+                  <td data-label="What it means">Expected at some point if nothing changes.</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="lead">5</td>
+                  <td data-label="Likelihood" data-role="main">Almost certain</td>
+                  <td data-label="What it means">Already happening, or will happen without action.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Risk assessment register</h2>
+          <h2>4. Consequence</h2>
 
           <p>
-            The examples below show the same structure as a traditional risk
-            register, but arranged as separate risk cards for better readability:
-            original risk, probability, impact, mitigation, residual risk,
-            responsibility and completion date.
-          </p>
-
-          <section class="risk-register">
-
-            <div class="risk-item">
-              <div class="risk-header">
-                <div>
-                  <span class="risk-number">Risk 01</span>
-                  <h3>Loss of redundancy during planned UPS maintenance</h3>
-                </div>
-
-                <div class="risk-badge high">High Risk</div>
-              </div>
-
-              <div class="risk-grid">
-                <div class="risk-box">
-                  <h4>Initial Assessment</h4>
-                  <p><strong>Probability:</strong> 3</p>
-                  <p><strong>Impact:</strong> 4</p>
-                  <p><strong>Score:</strong> 12</p>
-                  <span class="risk-badge high">High</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Mitigation Tasks</h4>
-                  <ul>
-                    <li>Approved MOP reviewed</li>
-                    <li>Load level verified</li>
-                    <li>Monitoring confirmed active</li>
-                    <li>Rollback plan reviewed</li>
-                    <li>Stop conditions defined</li>
-                  </ul>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Residual Risk</h4>
-                  <p><strong>Probability:</strong> 2</p>
-                  <p><strong>Impact:</strong> 4</p>
-                  <p><strong>Score:</strong> 8</p>
-                  <span class="risk-badge medium">Medium</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Ownership</h4>
-                  <p><strong>Owner:</strong><br />Operations Lead</p>
-                  <p><strong>Completion:</strong><br />Before work start</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="risk-item">
-              <div class="risk-header">
-                <div>
-                  <span class="risk-number">Risk 02</span>
-                  <h3>Cooling capacity reduced during planned CRAC/CRAH maintenance</h3>
-                </div>
-
-                <div class="risk-badge high">High Risk</div>
-              </div>
-
-              <div class="risk-grid">
-                <div class="risk-box">
-                  <h4>Initial Assessment</h4>
-                  <p><strong>Probability:</strong> 3</p>
-                  <p><strong>Impact:</strong> 4</p>
-                  <p><strong>Score:</strong> 12</p>
-                  <span class="risk-badge high">High</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Mitigation Tasks</h4>
-                  <ul>
-                    <li>Redundant cooling verified</li>
-                    <li>Temperature trend monitored</li>
-                    <li>Escalation criteria defined</li>
-                    <li>Stop conditions defined</li>
-                    <li>Maintenance window confirmed</li>
-                  </ul>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Residual Risk</h4>
-                  <p><strong>Probability:</strong> 2</p>
-                  <p><strong>Impact:</strong> 3</p>
-                  <p><strong>Score:</strong> 6</p>
-                  <span class="risk-badge medium">Medium</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Ownership</h4>
-                  <p><strong>Owner:</strong><br />Facility Operations</p>
-                  <p><strong>Completion:</strong><br />Before maintenance window</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="risk-item">
-              <div class="risk-header">
-                <div>
-                  <span class="risk-number">Risk 03</span>
-                  <h3>Incorrect asset identified during technical work</h3>
-                </div>
-
-                <div class="risk-badge high">High Risk</div>
-              </div>
-
-              <div class="risk-grid">
-                <div class="risk-box">
-                  <h4>Initial Assessment</h4>
-                  <p><strong>Probability:</strong> 2</p>
-                  <p><strong>Impact:</strong> 5</p>
-                  <p><strong>Score:</strong> 10</p>
-                  <span class="risk-badge high">High</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Mitigation Tasks</h4>
-                  <ul>
-                    <li>Approved asset ID used</li>
-                    <li>Physical label verified</li>
-                    <li>Procedure reference checked</li>
-                    <li>Second-person confirmation completed</li>
-                  </ul>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Residual Risk</h4>
-                  <p><strong>Probability:</strong> 1</p>
-                  <p><strong>Impact:</strong> 5</p>
-                  <p><strong>Score:</strong> 5</p>
-                  <span class="risk-badge medium">Medium</span>
-                </div>
-
-                <div class="risk-box">
-                  <h4>Ownership</h4>
-                  <p><strong>Owner:</strong><br />Technical Lead</p>
-                  <p><strong>Completion:</strong><br />Before execution</p>
-                </div>
-              </div>
-            </div>
-
-          </section>
-
-          <h2>Stop conditions</h2>
-
-          <p>
-            A risk assessment should define when work must stop. Stop conditions
-            protect the team from continuing only because the activity has already
-            started.
+            Score all four columns and use the worst one.
           </p>
 
           <div class="responsive-table">
-            <table class="compact-table">
+            <table>
               <thead>
                 <tr>
-                  <th>Marker</th>
-                  <th>Stop Condition</th>
-                  <th>Required Response</th>
+                  <th>Level</th>
+                  <th>People</th>
+                  <th>Service and load</th>
+                  <th>Equipment</th>
+                  <th>Cost</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Actual conditions do not match the approved plan</td>
-                  <td data-label="Required Response">Stop, reassess and confirm whether the plan remains valid.</td>
+                  <td data-label="Level" data-role="lead">1</td>
+                  <td data-label="People">No injury</td>
+                  <td data-label="Service and load">No effect</td>
+                  <td data-label="Equipment">No damage</td>
+                  <td data-label="Cost">Negligible</td>
                 </tr>
                 <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Redundancy becomes uncertain</td>
-                  <td data-label="Required Response">Stop work and escalate to operational authority.</td>
+                  <td data-label="Level" data-role="lead">2</td>
+                  <td data-label="People">First aid</td>
+                  <td data-label="Service and load">One redundant component lost, no load affected</td>
+                  <td data-label="Equipment">Minor repair</td>
+                  <td data-label="Cost">Covered by the normal operating budget</td>
                 </tr>
                 <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Critical alarm appears unexpectedly</td>
-                  <td data-label="Required Response">Stabilize, investigate and record the condition.</td>
+                  <td data-label="Level" data-role="lead">3</td>
+                  <td data-label="People">Medical treatment</td>
+                  <td data-label="Service and load">A system runs without redundancy, or margins near their limits (temperature, battery time)</td>
+                  <td data-label="Equipment">Component replaced</td>
+                  <td data-label="Cost">Needs approval outside the budget</td>
                 </tr>
                 <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Asset identity or system state cannot be confirmed</td>
-                  <td data-label="Required Response">Do not proceed until correct asset and state are verified.</td>
+                  <td data-label="Level" data-role="lead">4</td>
+                  <td data-label="People">Serious injury</td>
+                  <td data-label="Service and load">Load dropped in any room, critical or not, or for some customers</td>
+                  <td data-label="Equipment">Major unit damaged, long repair</td>
+                  <td data-label="Cost">Large unplanned cost, or contract penalties</td>
                 </tr>
                 <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Rollback path is no longer available</td>
-                  <td data-label="Required Response">Stop progression and reassess operational exposure.</td>
-                </tr>
-                <tr>
-                  <td data-label="Marker" data-role="lead">■</td>
-                  <td data-label="Stop Condition" data-role="main">Residual risk is higher than accepted</td>
-                  <td data-label="Required Response">Escalate for approval, additional mitigation or cancellation.</td>
+                  <td data-label="Level" data-role="lead">5</td>
+                  <td data-label="People">Fatality or life-changing injury</td>
+                  <td data-label="Service and load">Load dropped across the site or for many customers</td>
+                  <td data-label="Equipment">Major system destroyed, or fire</td>
+                  <td data-label="Cost">Threatens the contract, the customer or the business</td>
                 </tr>
               </tbody>
             </table>
@@ -445,136 +196,396 @@
 
           <div class="principle-callout">
             <p>
-              <strong>Stop rule:</strong> If the risk picture changes, stop and
-              reassess before continuing.
+              <strong>Note:</strong> The site sets the amounts for each cost level.
+              Cost alone can raise the consequence: a repair bill or contract penalty
+              at level 4 makes it a 4, even if no load was lost.
             </p>
           </div>
 
-          <h2>Risk ownership</h2>
+          <h2>5. The matrix</h2>
 
           <p>
-            Risk ownership must be explicit. A mitigation task without an owner
-            is only a suggestion.
+            Likelihood × consequence gives a score from 1 to 25. It's a way to rank
+            risks, not a measurement, so the levels matter more than the numbers.
           </p>
 
-          <div class="responsive-table">
-            <table class="compact-table">
+          <div class="risk-matrix">
+            <table aria-label="Risk matrix: consequence 5 to 1 by likelihood 1 to 5">
               <thead>
                 <tr>
-                  <th>Role</th>
-                  <th>Responsibility</th>
+                  <td colspan="2"></td>
+                  <th colspan="5" scope="colgroup" class="risk-axis">Likelihood</th>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
-                  <td data-label="Role" data-role="main"><strong>Risk Owner</strong></td>
-                  <td data-label="Responsibility">Accountable for accepting, reducing or escalating the risk.</td>
+                  <th rowspan="5" scope="rowgroup" class="risk-axis risk-axis--rows">Consequence</th>
+                  <th scope="row">5</th>
+                  <td class="risk-cell high"><span class="risk-cell-score">5</span><span class="risk-cell-level">High*</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">10</span><span class="risk-cell-level">High</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">15</span><span class="risk-cell-level">High</span></td>
+                  <td class="risk-cell critical"><span class="risk-cell-score">20</span><span class="risk-cell-level">Critical</span></td>
+                  <td class="risk-cell critical"><span class="risk-cell-score">25</span><span class="risk-cell-level">Critical</span></td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main"><strong>Action Owner</strong></td>
-                  <td data-label="Responsibility">Responsible for completing a defined mitigation task.</td>
+                  <th scope="row">4</th>
+                  <td class="risk-cell low"><span class="risk-cell-score">4</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">8</span><span class="risk-cell-level">Medium</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">12</span><span class="risk-cell-level">High</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">16</span><span class="risk-cell-level">High</span></td>
+                  <td class="risk-cell critical"><span class="risk-cell-score">20</span><span class="risk-cell-level">Critical</span></td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main"><strong>Technical Reviewer</strong></td>
-                  <td data-label="Responsibility">Confirms that the proposed controls are technically valid.</td>
+                  <th scope="row">3</th>
+                  <td class="risk-cell low"><span class="risk-cell-score">3</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">6</span><span class="risk-cell-level">Medium</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">9</span><span class="risk-cell-level">Medium</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">12</span><span class="risk-cell-level">High</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">15</span><span class="risk-cell-level">High</span></td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main"><strong>Operational Approver</strong></td>
-                  <td data-label="Responsibility">Confirms that the remaining risk is acceptable for execution.</td>
+                  <th scope="row">2</th>
+                  <td class="risk-cell low"><span class="risk-cell-score">2</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell low"><span class="risk-cell-score">4</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">6</span><span class="risk-cell-level">Medium</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">8</span><span class="risk-cell-level">Medium</span></td>
+                  <td class="risk-cell high"><span class="risk-cell-score">10</span><span class="risk-cell-level">High</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="risk-cell low"><span class="risk-cell-score">1</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell low"><span class="risk-cell-score">2</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell low"><span class="risk-cell-score">3</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell low"><span class="risk-cell-score">4</span><span class="risk-cell-level">Low</span></td>
+                  <td class="risk-cell medium"><span class="risk-cell-score">5</span><span class="risk-cell-level">Medium</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p>
-            Risk should not be accepted only by the person who wants the work
-            completed. Acceptance should sit with the role responsible for the
-            operational consequence.
-          </p>
-
-          <h2>Operational exposure</h2>
-
-          <p>
-            Operational exposure is the period where the facility is more
-            vulnerable than normal. This can be more important than the task
-            duration itself.
+            <strong>Severity rule: a consequence of 5 is never below High, however
+            unlikely it is.</strong> Without this rule, an event that could drop the
+            whole site scores the same as a near-certain nuisance. That is the
+            best-known weakness of risk matrices. (* marks the cell this rule raises.)
           </p>
 
           <div class="responsive-table">
-            <table class="compact-table">
+            <table>
               <thead>
                 <tr>
-                  <th>Exposure Type</th>
+                  <th>Level</th>
+                  <th>Score</th>
+                  <th>What happens next</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td data-label="Level" data-role="main"><span class="risk-badge low">Low</span></td>
+                  <td data-label="Score">1–4</td>
+                  <td data-label="What happens next">Go ahead with normal controls. The Shift lead can accept.</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="main"><span class="risk-badge medium">Medium</span></td>
+                  <td data-label="Score">5–9</td>
+                  <td data-label="What happens next">Go ahead with the listed controls and a named owner for each. The Facility manager accepts.</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="main"><span class="risk-badge high">High</span></td>
+                  <td data-label="Score">10–16, or any consequence 5</td>
+                  <td data-label="What happens next">Only with controls in place, hold points and stop conditions. The risk owner, often the Site manager or above, accepts in writing before the work starts.</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="main"><span class="risk-badge critical">Critical</span></td>
+                  <td data-label="Score">17–25</td>
+                  <td data-label="What happens next">Don't start. Change the plan until the risk is lower. If it can't be lowered, the decision goes to the highest management level.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> Who may accept each level is set by the site's
+              own governance. The roles above are an example.
+            </p>
+          </div>
+
+          <h2>6. Controls: what actually reduces risk</h2>
+
+          <p>
+            Controls are not equal. From strongest to weakest:
+          </p>
+
+          <ul>
+            <li>Remove the hazard: don't do the work on a live system, or do it another way.</li>
+            <li>Design: redundancy, interlocks, a second supply.</li>
+            <li>Procedures: a MOP, hold points, a second person checking the asset tag.</li>
+            <li>Protective equipment: arc-flash gear, gloves, hearing protection.</li>
+          </ul>
+
+          <p>
+            Most procedure controls only make an event less likely. Very few make it
+            less serious. If the load drops, a good MOP doesn't make it drop more
+            gently. So after controls, likelihood usually goes down and consequence
+            often stays the same. Be suspicious of an assessment where consequence
+            drops because of paperwork.
+          </p>
+
+          <p>
+            Only count a control that is in place on the day. "Generators will be
+            checked" is a plan. "Generators checked, in automatic, fuel above minimum"
+            is a control.
+          </p>
+
+          <h2>7. The exposure window</h2>
+
+          <p>
+            The exposure window is the time the site is more vulnerable than normal:
+            from when redundancy is reduced until it is back. It often matters more
+            than how long the task itself takes. Keep it short, and plan the work so
+            it can stop safely at any point inside it.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Exposure</th>
                   <th>Example</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
-                  <td data-label="Exposure Type" data-role="main">Power exposure</td>
-                  <td data-label="Example">Reduced UPS or generator redundancy</td>
+                  <td data-label="Exposure" data-role="main">Power</td>
+                  <td data-label="Example">UPS on maintenance bypass, a generator out of service</td>
                 </tr>
                 <tr>
-                  <td data-label="Exposure Type" data-role="main">Cooling exposure</td>
-                  <td data-label="Example">Reduced cooling capacity or uncertain thermal margin</td>
+                  <td data-label="Exposure" data-role="main">Cooling</td>
+                  <td data-label="Example">A cooling unit stopped, less thermal margin</td>
                 </tr>
                 <tr>
-                  <td data-label="Exposure Type" data-role="main">Monitoring exposure</td>
-                  <td data-label="Example">Temporary loss of alarm visibility or sensor reliability</td>
+                  <td data-label="Exposure" data-role="main">Monitoring</td>
+                  <td data-label="Example">Alarms suppressed, a sensor out of service</td>
                 </tr>
                 <tr>
-                  <td data-label="Exposure Type" data-role="main">Access exposure</td>
-                  <td data-label="Example">Restricted access routes, open panels or active work zones</td>
+                  <td data-label="Exposure" data-role="main">Recovery</td>
+                  <td data-label="Example">No quick way back if something fails</td>
                 </tr>
                 <tr>
-                  <td data-label="Exposure Type" data-role="main">Recovery exposure</td>
-                  <td data-label="Example">Delayed rollback capability or unclear return-to-normal path</td>
-                </tr>
-                <tr>
-                  <td data-label="Exposure Type" data-role="main">Human exposure</td>
-                  <td data-label="Example">Increased dependency on coordination, handover or manual action</td>
+                  <td data-label="Exposure" data-role="main">People</td>
+                  <td data-label="Example">Fewer people on site, a handover during the work</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Residual risk</h2>
+          <h2>8. Stop conditions</h2>
 
           <p>
-            Residual risk is the risk remaining after mitigation tasks are applied.
-            It should be reviewed before work starts or before an incident response
-            is considered stable.
+            Agree before the work starts when it stops. Without that, people keep
+            going because they have already started.
           </p>
 
           <p>
-            If residual risk remains high or critical, it should not be hidden by
-            wording. It should be escalated to the correct authority for decision,
-            acceptance, further mitigation or cancellation.
+            Stop and reassess when:
           </p>
 
-          <h2>Downloadable template</h2>
+          <ul>
+            <li>conditions don't match the approved plan</li>
+            <li>redundancy becomes uncertain</li>
+            <li>an unexpected alarm appears</li>
+            <li>the asset or its state can't be confirmed</li>
+            <li>the way back is no longer available</li>
+            <li>anyone is unsure</li>
+          </ul>
 
           <p>
-            A downloadable Excel template is available for practical use as a
-            starting structure. It includes probability, impact, initial risk,
-            mitigation tasks, residual risk, ownership, due date and color-based
-            risk level identification.
+            <strong>If the risk picture changes, stop first and reassess. Continuing
+            is a new decision, not the default.</strong>
+          </p>
+
+          <h2>9. Worked examples</h2>
+
+          <div class="risk-register">
+
+            <div class="risk-item">
+              <div class="risk-header">
+                <span class="risk-number">Example 1</span>
+                <h3>UPS to maintenance bypass (<a href="../mop/ups-maintenance-bypass.html">MOP-UPS-001</a>)</h3>
+              </div>
+
+              <p>
+                <strong>Risk:</strong> the utility fails while the load is on
+                maintenance bypass. The UPS can't carry the load, so the IT load drops
+                until the generators take over.
+              </p>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Before controls</h4>
+                  <span class="risk-badge high">High</span>
+                  <p>Likelihood 2, consequence 5. Score 10, High.</p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Controls</h4>
+                  <p>
+                    Work in a planned window, with no storms forecast and no known grid
+                    work; generators checked and in automatic; the exposure window kept
+                    as short as possible; the switching sequence rehearsed so the way
+                    back is quick.
+                  </p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>After controls</h4>
+                  <span class="risk-badge high">High</span>
+                  <p>Likelihood 1, consequence 5. Score 5, still High under the severity rule.</p>
+                </div>
+              </div>
+
+              <p>
+                <strong>Why it can't go lower:</strong> the consequence is set by the
+                design. While the UPS is on maintenance bypass, only the generators
+                stand between a utility failure and the load, and they need time to
+                start. Only a second supply path would lower the consequence, and a
+                procedure can't add one. The work can't be skipped either, because the
+                UPS needs maintenance.
+              </p>
+
+              <p>
+                <strong>Decision:</strong> the risk owner accepts a High risk knowingly,
+                in writing, for the shortest possible window, with the stop conditions
+                in the MOP.
+              </p>
+
+              <div class="principle-callout">
+                <p>
+                  <strong>Note:</strong> On a site where every IT device has two
+                  supplies from separate UPS systems, the same work scores consequence
+                  3, because the other side carries the load.
+                </p>
+              </div>
+            </div>
+
+            <div class="risk-item">
+              <div class="risk-header">
+                <span class="risk-number">Example 2</span>
+                <h3>Planned utility transfer test (<a href="../mop/planned-utility-transfer-test.html">MOP-PWR-002</a>)</h3>
+              </div>
+
+              <p>
+                <strong>Risk:</strong> cooling is slow to restart after the transfer to
+                generator, and data hall temperatures pass their limit.
+              </p>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Before controls</h4>
+                  <span class="risk-badge medium">Medium</span>
+                  <p>Likelihood 3, consequence 3. Score 9, Medium.</p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Controls</h4>
+                  <p>
+                    Pumps and CRAH fans on their own UPS; chiller restart time known
+                    from the last test; the test done in cool weather; a temperature
+                    limit agreed as a stop condition.
+                  </p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>After controls</h4>
+                  <span class="risk-badge medium">Medium</span>
+                  <p>Likelihood 2, consequence 3. Score 6, Medium.</p>
+                </div>
+              </div>
+
+              <p>
+                <strong>Decision:</strong> the Facility manager accepts. The same test
+                also carries a High risk (the automation fails and the way back depends
+                on manual switching), assessed on its own line.
+              </p>
+            </div>
+
+            <div class="risk-item">
+              <div class="risk-header">
+                <span class="risk-number">Example 3</span>
+                <h3>Vendor work in a data hall (<a href="../sop/datahall-access-control.html">SOP-SEC-003</a>)</h3>
+              </div>
+
+              <p>
+                <strong>Risk:</strong> the vendor works on the wrong rack or pulls the
+                wrong cable, and drops customer equipment.
+              </p>
+
+              <div class="risk-grid">
+                <div class="risk-box">
+                  <h4>Before controls</h4>
+                  <span class="risk-badge high">High</span>
+                  <p>Likelihood 3, consequence 4. Score 12, High.</p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>Controls</h4>
+                  <p>
+                    The work approval names the rack and asset tags; the label is
+                    checked against the approval before anything is touched; an escort
+                    from operations stays for work on critical equipment.
+                  </p>
+                </div>
+
+                <div class="risk-box">
+                  <h4>After controls</h4>
+                  <span class="risk-badge medium">Medium</span>
+                  <p>Likelihood 2, consequence 4. Score 8, Medium.</p>
+                </div>
+              </div>
+
+              <p>
+                <strong>Decision:</strong> the Facility manager accepts.
+              </p>
+            </div>
+
+          </div>
+
+          <h2>10. Common mistakes</h2>
+
+          <ul>
+            <li>Scoring to fit the plan: the score is decided first, the reasons afterwards.</li>
+            <li>Counting controls that aren't in place yet.</li>
+            <li>Lowering consequence with procedures instead of design.</li>
+            <li>Leaving out cost: contract penalties and repair bills are consequences too.</li>
+            <li>One generic assessment reused for every job.</li>
+            <li>Accepting the risk yourself because you want the work done.</li>
+            <li>Never looking at it again after the work has started.</li>
+          </ul>
+
+          <h2>11. The template</h2>
+
+          <p>
+            An Excel template with the same scales, matrix and severity rule is
+            available:
+            <a href="../templates/Operational_Risk_Assessment_Template.xlsx" download>Download the risk assessment template</a>.
           </p>
 
           <p>
-            <a href="../templates/Operational_Risk_Assessment_Template.xlsx"
-               class="text-link"
-               download>
-              Download Operational Risk Assessment Template
-            </a>
-          </p>
-
-          <h2>Public examples and limitations</h2>
-
-          <p>
-            This page describes a generalized operational risk assessment method.
-            Real risk models must be aligned with the organization’s safety
-            requirements, legal obligations, contractual commitments, risk
-            appetite, management system and operational governance.
+            Methods and standards: ISO 31000 describes the risk management process.
+            IEC 31010 describes the techniques, including risk matrices and their
+            limits.
           </p>
 
         </article>
@@ -582,67 +593,20 @@
         <aside class="advisory-sidebar">
 
           <div class="sidebar-box">
-            <h3>Download Template</h3>
+            <h3>Template</h3>
+            <p>Risk assessment template (Excel)</p>
             <p>
-              XLSX template with probability, impact, mitigation tasks, residual
-              risk, ownership and color-based risk levels.
-            </p>
-            <p>
-              <a href="../templates/Operational_Risk_Assessment_Template.xlsx"
-                 class="text-link"
-                 download>
-                Download Excel template →
-              </a>
+              <a href="../templates/Operational_Risk_Assessment_Template.xlsx" class="text-link" download>Download <span aria-hidden="true">→</span></a>
             </p>
           </div>
 
           <div class="sidebar-box">
-            <h3>Risk Focus</h3>
+            <h3>Worked examples in the library</h3>
             <ul>
-              <li>■ Risk identification</li>
-              <li>■ Probability / sannsynlighet</li>
-              <li>■ Impact</li>
-              <li>■ Mitigation tasks</li>
-              <li>■ Residual risk</li>
-              <li>■ Ownership</li>
-              <li>■ Completion date</li>
+              <li><a href="../mop/ups-maintenance-bypass.html" class="text-link">MOP-UPS-001: UPS Transfer to Maintenance Bypass</a></li>
+              <li><a href="../mop/planned-utility-transfer-test.html" class="text-link">MOP-PWR-002: Planned Utility Transfer Test</a></li>
+              <li><a href="../sop/datahall-access-control.html" class="text-link">SOP-SEC-003: Data Hall Access Control</a></li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../frameworks/" class="text-link">Frameworks</a></li>
-              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
-              <li><a href="../eop/" class="text-link">EOP Examples</a></li>
-              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Core Rule</h3>
-            <p>
-              Risk assessment is only useful when mitigation tasks have owners,
-              due dates and visible residual risk.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Color Rule</h3>
-            <p>
-              Colors help clarify risk level, but the decision must still be
-              based on probability, impact, mitigation and residual risk.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a generalized risk example. Live risk assessments must be
-              reviewed and approved by the responsible organization.
-            </p>
           </div>
 
         </aside>
