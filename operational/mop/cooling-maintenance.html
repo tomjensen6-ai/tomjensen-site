@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example — CRAC/CRAH Planned Maintenance | Tom Jensen" />
@@ -125,24 +125,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Lead</td>
-                  <td>Coordinate maintenance activity, confirm readiness and approve progression between phases.</td>
+                  <td data-label="Role" data-role="main">Operations Lead</td>
+                  <td data-label="Responsibility">Coordinate maintenance activity, confirm readiness and approve progression between phases.</td>
                 </tr>
                 <tr>
-                  <td>HVAC Vendor / Specialist</td>
-                  <td>Perform technical maintenance according to manufacturer and approved site requirements.</td>
+                  <td data-label="Role" data-role="main">HVAC Vendor / Specialist</td>
+                  <td data-label="Responsibility">Perform technical maintenance according to manufacturer and approved site requirements.</td>
                 </tr>
                 <tr>
-                  <td>Facility Operations</td>
-                  <td>Monitor room conditions, alarms, airflow paths and operational impact.</td>
+                  <td data-label="Role" data-role="main">Facility Operations</td>
+                  <td data-label="Responsibility">Monitor room conditions, alarms, airflow paths and operational impact.</td>
                 </tr>
                 <tr>
-                  <td>Change Manager</td>
-                  <td>Ensure approvals, notifications, records and closeout documentation are completed.</td>
+                  <td data-label="Role" data-role="main">Change Manager</td>
+                  <td data-label="Responsibility">Ensure approvals, notifications, records and closeout documentation are completed.</td>
                 </tr>
                 <tr>
-                  <td>Electrical Responsible Person</td>
-                  <td>Confirm electrical isolation or safety control requirements where applicable.</td>
+                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
+                  <td data-label="Responsibility">Confirm electrical isolation or safety control requirements where applicable.</td>
                 </tr>
               </tbody>
             </table>
@@ -165,129 +165,129 @@
 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>OPS-BRIDGE</td>
-                  <td>Conduct pre-job briefing with operations and maintenance personnel.</td>
-                  <td>Roles, communication path, stop authority and rollback approach confirmed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">OPS-BRIDGE</td>
+                  <td data-label="Action" data-role="main">Conduct pre-job briefing with operations and maintenance personnel.</td>
+                  <td data-label="Verification">Roles, communication path, stop authority and rollback approach confirmed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>CHANGE RECORD</td>
-                  <td>Confirm approved maintenance window, affected unit and scope of work.</td>
-                  <td>Work scope matches approved change and site maintenance plan.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">CHANGE RECORD</td>
+                  <td data-label="Action" data-role="main">Confirm approved maintenance window, affected unit and scope of work.</td>
+                  <td data-label="Verification">Work scope matches approved change and site maintenance plan.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>BMS / DCIM</td>
-                  <td>Review current temperature, humidity and cooling-related alarms for the affected zone.</td>
-                  <td>Environmental conditions are stable and within site-defined operating limits.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">BMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Review current temperature, humidity and cooling-related alarms for the affected zone.</td>
+                  <td data-label="Verification">Environmental conditions are stable and within site-defined operating limits.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>4</td>
-                  <td>CLG-ZONE</td>
-                  <td>Verify available cooling redundancy or alternative capacity before removing unit from service.</td>
-                  <td>Operations Lead confirms sufficient cooling capacity for the maintenance window.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">CLG-ZONE</td>
+                  <td data-label="Action" data-role="main">Verify available cooling redundancy or alternative capacity before removing unit from service.</td>
+                  <td data-label="Verification">Operations Lead confirms sufficient cooling capacity for the maintenance window.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>5</td>
-                  <td>CRAC/CRAH-003</td>
-                  <td>Identify the exact cooling unit scheduled for maintenance.</td>
-                  <td>Asset tag and location confirmed against approved work scope.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
+                  <td data-label="Action" data-role="main">Identify the exact cooling unit scheduled for maintenance.</td>
+                  <td data-label="Verification">Asset tag and location confirmed against approved work scope.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>6</td>
-                  <td>DATAHALL / CLG-ZONE</td>
-                  <td>Check airflow paths, containment boundaries and access route before work begins.</td>
-                  <td>No blocked airflow path, displaced containment or access restriction observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
+                  <td data-label="Action" data-role="main">Check airflow paths, containment boundaries and access route before work begins.</td>
+                  <td data-label="Verification">No blocked airflow path, displaced containment or access restriction observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>7</td>
-                  <td>CRAC/CRAH-003</td>
-                  <td>Place affected unit into approved maintenance state according to site and manufacturer procedure.</td>
-                  <td>Unit state confirmed and no unexpected alarm or environmental impact observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
+                  <td data-label="Action" data-role="main">Place affected unit into approved maintenance state according to site and manufacturer procedure.</td>
+                  <td data-label="Verification">Unit state confirmed and no unexpected alarm or environmental impact observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>8</td>
-                  <td>BMS / DCIM</td>
-                  <td>Monitor room temperature and humidity after unit is removed from normal service.</td>
-                  <td>Environmental trend remains stable during the defined observation period.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">BMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Monitor room temperature and humidity after unit is removed from normal service.</td>
+                  <td data-label="Verification">Environmental trend remains stable during the defined observation period.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>9</td>
-                  <td>CRAC/CRAH-003</td>
-                  <td>Perform planned maintenance task according to approved technical procedure.</td>
-                  <td>Maintenance completed by qualified personnel with no unresolved abnormal condition.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
+                  <td data-label="Action" data-role="main">Perform planned maintenance task according to approved technical procedure.</td>
+                  <td data-label="Verification">Maintenance completed by qualified personnel with no unresolved abnormal condition.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>10</td>
-                  <td>PIPE / DRAIN / FILTER</td>
-                  <td>Inspect visible drain, filter, airflow and accessible connection areas after maintenance.</td>
-                  <td>No visible leak, blockage, loose panel, abnormal vibration or obstruction observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">PIPE / DRAIN / FILTER</td>
+                  <td data-label="Action" data-role="main">Inspect visible drain, filter, airflow and accessible connection areas after maintenance.</td>
+                  <td data-label="Verification">No visible leak, blockage, loose panel, abnormal vibration or obstruction observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>11</td>
-                  <td>CRAC/CRAH-003</td>
-                  <td>Return cooling unit to approved operating mode according to site and manufacturer procedure.</td>
-                  <td>Unit starts or returns to service normally with expected status indication.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
+                  <td data-label="Action" data-role="main">Return cooling unit to approved operating mode according to site and manufacturer procedure.</td>
+                  <td data-label="Verification">Unit starts or returns to service normally with expected status indication.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>12</td>
-                  <td>BMS / DCIM</td>
-                  <td>Review post-maintenance alarms, environmental trends and unit status.</td>
-                  <td>No unresolved alarm, abnormal temperature trend or humidity concern remains.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Room/Tag">BMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Review post-maintenance alarms, environmental trends and unit status.</td>
+                  <td data-label="Verification">No unresolved alarm, abnormal temperature trend or humidity concern remains.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>13</td>
-                  <td>DATAHALL / CLG-ZONE</td>
-                  <td>Confirm airflow paths, containment and work area are restored after maintenance.</td>
-                  <td>Work area clean, access restored and no material left in airflow paths.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
+                  <td data-label="Action" data-role="main">Confirm airflow paths, containment and work area are restored after maintenance.</td>
+                  <td data-label="Verification">Work area clean, access restored and no material left in airflow paths.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>14</td>
-                  <td>CMMS / CHANGE RECORD</td>
-                  <td>Update maintenance record, observations, replaced parts and exceptions.</td>
-                  <td>CMMS or approved record updated and change ready for closeout.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">14</td>
+                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
+                  <td data-label="Action" data-role="main">Update maintenance record, observations, replaced parts and exceptions.</td>
+                  <td data-label="Verification">CMMS or approved record updated and change ready for closeout.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

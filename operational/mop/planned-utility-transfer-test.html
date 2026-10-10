@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example — Planned Utility Transfer Test | Tom Jensen" />
@@ -126,28 +126,28 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Lead</td>
-                  <td>Coordinate the test, confirm readiness and authorize progression between phases.</td>
+                  <td data-label="Role" data-role="main">Operations Lead</td>
+                  <td data-label="Responsibility">Coordinate the test, confirm readiness and authorize progression between phases.</td>
                 </tr>
                 <tr>
-                  <td>Electrical Responsible Person</td>
-                  <td>Approve and supervise switching-related activity according to site rules and legal requirements.</td>
+                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
+                  <td data-label="Responsibility">Approve and supervise switching-related activity according to site rules and legal requirements.</td>
                 </tr>
                 <tr>
-                  <td>Generator Vendor / Specialist</td>
-                  <td>Support standby generator monitoring, fault response and technical assessment.</td>
+                  <td data-label="Role" data-role="main">Generator Vendor / Specialist</td>
+                  <td data-label="Responsibility">Support standby generator monitoring, fault response and technical assessment.</td>
                 </tr>
                 <tr>
-                  <td>UPS / Power Specialist</td>
-                  <td>Monitor UPS behavior, load conditions and post-transfer power quality indicators where available.</td>
+                  <td data-label="Role" data-role="main">UPS / Power Specialist</td>
+                  <td data-label="Responsibility">Monitor UPS behavior, load conditions and post-transfer power quality indicators where available.</td>
                 </tr>
                 <tr>
-                  <td>Facility Operations</td>
-                  <td>Monitor alarms, cooling, security, customer impact and operational conditions.</td>
+                  <td data-label="Role" data-role="main">Facility Operations</td>
+                  <td data-label="Responsibility">Monitor alarms, cooling, security, customer impact and operational conditions.</td>
                 </tr>
                 <tr>
-                  <td>Change Manager</td>
-                  <td>Ensure approvals, notifications, records and completion documentation are maintained.</td>
+                  <td data-label="Role" data-role="main">Change Manager</td>
+                  <td data-label="Responsibility">Ensure approvals, notifications, records and completion documentation are maintained.</td>
                 </tr>
               </tbody>
             </table>
@@ -170,147 +170,147 @@
 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>OPS-BRIDGE</td>
-                  <td>Conduct pre-test briefing with all participating personnel.</td>
-                  <td>Roles, communication path, stop authority and rollback approach confirmed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">OPS-BRIDGE</td>
+                  <td data-label="Action" data-role="main">Conduct pre-test briefing with all participating personnel.</td>
+                  <td data-label="Verification">Roles, communication path, stop authority and rollback approach confirmed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>CHANGE RECORD</td>
-                  <td>Confirm approved change window and test scope.</td>
-                  <td>Approved work scope matches planned activity and affected systems.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">CHANGE RECORD</td>
+                  <td data-label="Action" data-role="main">Confirm approved change window and test scope.</td>
+                  <td data-label="Verification">Approved work scope matches planned activity and affected systems.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>GEN-001 / GEN-002</td>
-                  <td>Verify standby generator readiness, including local status and fuel availability.</td>
-                  <td>Generators available with no unresolved readiness alarms.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
+                  <td data-label="Action" data-role="main">Verify standby generator readiness, including local status and fuel availability.</td>
+                  <td data-label="Verification">Generators available with no unresolved readiness alarms.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>4</td>
-                  <td>UPS-A / UPS-B</td>
-                  <td>Verify UPS systems are operating normally before transfer test.</td>
-                  <td>UPS systems normal, load level acceptable and no critical alarms present.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">UPS-A / UPS-B</td>
+                  <td data-label="Action" data-role="main">Verify UPS systems are operating normally before transfer test.</td>
+                  <td data-label="Verification">UPS systems normal, load level acceptable and no critical alarms present.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>5</td>
-                  <td>ATS / SWITCHGEAR</td>
-                  <td>Verify transfer equipment status before test.</td>
-                  <td>Equipment status normal and ready for approved test sequence.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">ATS / SWITCHGEAR</td>
+                  <td data-label="Action" data-role="main">Verify transfer equipment status before test.</td>
+                  <td data-label="Verification">Equipment status normal and ready for approved test sequence.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>6</td>
-                  <td>BMS / EPMS / DCIM</td>
-                  <td>Confirm monitoring screens, alarm handling and event logging are active.</td>
-                  <td>Power, UPS, generator, transfer and environmental monitoring available.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">BMS / EPMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Confirm monitoring screens, alarm handling and event logging are active.</td>
+                  <td data-label="Verification">Power, UPS, generator, transfer and environmental monitoring available.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>7</td>
-                  <td>OPS-BRIDGE</td>
-                  <td>Announce start of controlled transfer test.</td>
-                  <td>All required roles acknowledge readiness to proceed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">OPS-BRIDGE</td>
+                  <td data-label="Action" data-role="main">Announce start of controlled transfer test.</td>
+                  <td data-label="Verification">All required roles acknowledge readiness to proceed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>8</td>
-                  <td>UTILITY / ATS</td>
-                  <td>Initiate approved utility transfer test according to site-specific switching procedure.</td>
-                  <td>Action performed only by authorized personnel under approved conditions.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">UTILITY / ATS</td>
+                  <td data-label="Action" data-role="main">Initiate approved utility transfer test according to site-specific switching procedure.</td>
+                  <td data-label="Verification">Action performed only by authorized personnel under approved conditions.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>9</td>
-                  <td>GEN-001 / GEN-002</td>
-                  <td>Observe generator start, stabilization and acceptance of load where applicable.</td>
-                  <td>Generator operation remains stable with expected alarms/events only.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
+                  <td data-label="Action" data-role="main">Observe generator start, stabilization and acceptance of load where applicable.</td>
+                  <td data-label="Verification">Generator operation remains stable with expected alarms/events only.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>10</td>
-                  <td>UPS-A / UPS-B</td>
-                  <td>Monitor UPS behavior during transfer event.</td>
-                  <td>UPS systems support protected load without abnormal alarm or unexpected discharge condition.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">UPS-A / UPS-B</td>
+                  <td data-label="Action" data-role="main">Monitor UPS behavior during transfer event.</td>
+                  <td data-label="Verification">UPS systems support protected load without abnormal alarm or unexpected discharge condition.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>11</td>
-                  <td>EPMS / DCIM</td>
-                  <td>Observe load, voltage, frequency and transfer event data where monitoring is available.</td>
-                  <td>Measured values remain within site-defined acceptable limits.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Room/Tag">EPMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Observe load, voltage, frequency and transfer event data where monitoring is available.</td>
+                  <td data-label="Verification">Measured values remain within site-defined acceptable limits.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>12</td>
-                  <td>DATAHALL / CRITICAL AREAS</td>
-                  <td>Confirm no visible impact to critical rooms, cooling systems or operational areas.</td>
-                  <td>No abnormal operational condition reported by facility operations.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Room/Tag">DATAHALL / CRITICAL AREAS</td>
+                  <td data-label="Action" data-role="main">Confirm no visible impact to critical rooms, cooling systems or operational areas.</td>
+                  <td data-label="Verification">No abnormal operational condition reported by facility operations.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>13</td>
-                  <td>UTILITY / ATS</td>
-                  <td>Return system to normal utility supply according to site-specific approved sequence.</td>
-                  <td>Transfer completed by authorized personnel with stable return to normal source.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Room/Tag">UTILITY / ATS</td>
+                  <td data-label="Action" data-role="main">Return system to normal utility supply according to site-specific approved sequence.</td>
+                  <td data-label="Verification">Transfer completed by authorized personnel with stable return to normal source.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>14</td>
-                  <td>GEN-001 / GEN-002</td>
-                  <td>Observe generator cooldown and return-to-standby behavior.</td>
-                  <td>Generators return to approved standby state with no unresolved alarms.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">14</td>
+                  <td data-label="Room/Tag">GEN-001 / GEN-002</td>
+                  <td data-label="Action" data-role="main">Observe generator cooldown and return-to-standby behavior.</td>
+                  <td data-label="Verification">Generators return to approved standby state with no unresolved alarms.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>15</td>
-                  <td>BMS / EPMS / DCIM</td>
-                  <td>Review post-test alarms, events and system state.</td>
-                  <td>No unresolved alarm, abnormal event or degraded operating condition remains.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">15</td>
+                  <td data-label="Room/Tag">BMS / EPMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Review post-test alarms, events and system state.</td>
+                  <td data-label="Verification">No unresolved alarm, abnormal event or degraded operating condition remains.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>16</td>
-                  <td>CMMS / CHANGE RECORD</td>
-                  <td>Record test result, observations, timing, exceptions and follow-up actions.</td>
-                  <td>Change record and maintenance/test records completed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">16</td>
+                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
+                  <td data-label="Action" data-role="main">Record test result, observations, timing, exceptions and follow-up actions.</td>
+                  <td data-label="Verification">Change record and maintenance/test records completed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

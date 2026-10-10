@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example — UPS Module Replacement | Tom Jensen" />
@@ -124,24 +124,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Lead</td>
-                  <td>Coordinate activity, verify operational readiness and approve progression between phases.</td>
+                  <td data-label="Role" data-role="main">Operations Lead</td>
+                  <td data-label="Responsibility">Coordinate activity, verify operational readiness and approve progression between phases.</td>
                 </tr>
                 <tr>
-                  <td>UPS Vendor / Specialist</td>
-                  <td>Perform module replacement according to approved technical procedure.</td>
+                  <td data-label="Role" data-role="main">UPS Vendor / Specialist</td>
+                  <td data-label="Responsibility">Perform module replacement according to approved technical procedure.</td>
                 </tr>
                 <tr>
-                  <td>Facility Operations</td>
-                  <td>Monitor alarms, environmental conditions and infrastructure impact.</td>
+                  <td data-label="Role" data-role="main">Facility Operations</td>
+                  <td data-label="Responsibility">Monitor alarms, environmental conditions and infrastructure impact.</td>
                 </tr>
                 <tr>
-                  <td>Change Manager</td>
-                  <td>Ensure approvals, communication and documentation requirements are completed.</td>
+                  <td data-label="Role" data-role="main">Change Manager</td>
+                  <td data-label="Responsibility">Ensure approvals, communication and documentation requirements are completed.</td>
                 </tr>
                 <tr>
-                  <td>Electrical Responsible Person</td>
-                  <td>Confirm electrical safety controls and work authorization requirements.</td>
+                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
+                  <td data-label="Responsibility">Confirm electrical safety controls and work authorization requirements.</td>
                 </tr>
               </tbody>
             </table>
@@ -164,111 +164,111 @@
 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>UPS-ROOM / UPS-A</td>
-                  <td>Conduct pre-job review with all participating personnel.</td>
-                  <td>Roles, communication path, escalation path and rollback reviewed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">UPS-ROOM / UPS-A</td>
+                  <td data-label="Action" data-role="main">Conduct pre-job review with all participating personnel.</td>
+                  <td data-label="Verification">Roles, communication path, escalation path and rollback reviewed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>UPS-A</td>
-                  <td>Verify UPS system operating state, load level and redundancy status.</td>
-                  <td>System stable with acceptable redundancy margin before work begins.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">UPS-A</td>
+                  <td data-label="Action" data-role="main">Verify UPS system operating state, load level and redundancy status.</td>
+                  <td data-label="Verification">System stable with acceptable redundancy margin before work begins.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>BMS / EPMS</td>
-                  <td>Verify monitoring visibility and active alarm monitoring.</td>
-                  <td>UPS alarms, events and environmental monitoring operational.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">BMS / EPMS</td>
+                  <td data-label="Action" data-role="main">Verify monitoring visibility and active alarm monitoring.</td>
+                  <td data-label="Verification">UPS alarms, events and environmental monitoring operational.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>4</td>
-                  <td>UPS-A / MODULE-03</td>
-                  <td>Identify the correct UPS module scheduled for replacement.</td>
-                  <td>Asset tag and serial reference confirmed against approved work scope.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
+                  <td data-label="Action" data-role="main">Identify the correct UPS module scheduled for replacement.</td>
+                  <td data-label="Verification">Asset tag and serial reference confirmed against approved work scope.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>5</td>
-                  <td>UPS-A</td>
-                  <td>Confirm UPS load can tolerate temporary redundancy reduction if applicable.</td>
-                  <td>Operations Lead authorizes progression to replacement phase.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">UPS-A</td>
+                  <td data-label="Action" data-role="main">Confirm UPS load can tolerate temporary redundancy reduction if applicable.</td>
+                  <td data-label="Verification">Operations Lead authorizes progression to replacement phase.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>6</td>
-                  <td>UPS-A / MODULE-03</td>
-                  <td>Place affected module into approved maintenance or isolation state according to manufacturer procedure.</td>
-                  <td>No unexpected alarm, load transfer or instability observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
+                  <td data-label="Action" data-role="main">Place affected module into approved maintenance or isolation state according to manufacturer procedure.</td>
+                  <td data-label="Verification">No unexpected alarm, load transfer or instability observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>7</td>
-                  <td>UPS-A / MODULE-03</td>
-                  <td>Remove the designated UPS module using approved handling procedure.</td>
-                  <td>Module removed without visible damage or operational impact.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
+                  <td data-label="Action" data-role="main">Remove the designated UPS module using approved handling procedure.</td>
+                  <td data-label="Verification">Module removed without visible damage or operational impact.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>8</td>
-                  <td>UPS-A / MODULE-03</td>
-                  <td>Install replacement module and confirm correct seating and connection.</td>
-                  <td>Module physically secured and installation verified.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
+                  <td data-label="Action" data-role="main">Install replacement module and confirm correct seating and connection.</td>
+                  <td data-label="Verification">Module physically secured and installation verified.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>9</td>
-                  <td>UPS-A</td>
-                  <td>Return module to approved operational state according to manufacturer procedure.</td>
-                  <td>Module recognized correctly and synchronization normal.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">UPS-A</td>
+                  <td data-label="Action" data-role="main">Return module to approved operational state according to manufacturer procedure.</td>
+                  <td data-label="Verification">Module recognized correctly and synchronization normal.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>10</td>
-                  <td>BMS / EPMS</td>
-                  <td>Review alarms, events and UPS operating status after replacement.</td>
-                  <td>No unresolved alarm or abnormal operating condition present.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">BMS / EPMS</td>
+                  <td data-label="Action" data-role="main">Review alarms, events and UPS operating status after replacement.</td>
+                  <td data-label="Verification">No unresolved alarm or abnormal operating condition present.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>11</td>
-                  <td>UPS-A</td>
-                  <td>Confirm UPS redundancy restored to approved operational level.</td>
-                  <td>Operations Lead confirms stable post-maintenance condition.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Room/Tag">UPS-A</td>
+                  <td data-label="Action" data-role="main">Confirm UPS redundancy restored to approved operational level.</td>
+                  <td data-label="Verification">Operations Lead confirms stable post-maintenance condition.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
 
                 <tr>
-                  <td>12</td>
-                  <td>CMMS / CHANGE RECORD</td>
-                  <td>Update maintenance records, module serial references and change documentation.</td>
-                  <td>Documentation completed and maintenance activity formally recorded.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
+                  <td data-label="Action" data-role="main">Update maintenance records, module serial references and change documentation.</td>
+                  <td data-label="Verification">Documentation completed and maintenance activity formally recorded.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

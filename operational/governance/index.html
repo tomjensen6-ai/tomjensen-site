@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Governance | Tom Jensen" />
@@ -131,29 +131,29 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>SOP</td>
-                  <td>Repeatability, clarity, safe normal operation</td>
-                  <td>Operations lead / system owner</td>
+                  <td data-label="Document Type" data-role="main">SOP</td>
+                  <td data-label="Typical Approval Focus">Repeatability, clarity, safe normal operation</td>
+                  <td data-label="Example Authority">Operations lead / system owner</td>
                 </tr>
                 <tr>
-                  <td>MOP</td>
-                  <td>Planned work, change risk, rollback and impact</td>
-                  <td>Change authority / technical authority / operations lead</td>
+                  <td data-label="Document Type" data-role="main">MOP</td>
+                  <td data-label="Typical Approval Focus">Planned work, change risk, rollback and impact</td>
+                  <td data-label="Example Authority">Change authority / technical authority / operations lead</td>
                 </tr>
                 <tr>
-                  <td>EOP</td>
-                  <td>Emergency response, escalation, safety and incident control</td>
-                  <td>Operations manager / safety authority / facility responsible</td>
+                  <td data-label="Document Type" data-role="main">EOP</td>
+                  <td data-label="Typical Approval Focus">Emergency response, escalation, safety and incident control</td>
+                  <td data-label="Example Authority">Operations manager / safety authority / facility responsible</td>
                 </tr>
                 <tr>
-                  <td>Risk Assessment</td>
-                  <td>Hazards, controls, residual risk and acceptance</td>
-                  <td>Risk owner / responsible manager</td>
+                  <td data-label="Document Type" data-role="main">Risk Assessment</td>
+                  <td data-label="Typical Approval Focus">Hazards, controls, residual risk and acceptance</td>
+                  <td data-label="Example Authority">Risk owner / responsible manager</td>
                 </tr>
                 <tr>
-                  <td>Governance Standard</td>
-                  <td>Policy, lifecycle control and organizational alignment</td>
-                  <td>Site leadership / document control authority</td>
+                  <td data-label="Document Type" data-role="main">Governance Standard</td>
+                  <td data-label="Typical Approval Focus">Policy, lifecycle control and organizational alignment</td>
+                  <td data-label="Example Authority">Site leadership / document control authority</td>
                 </tr>
               </tbody>
             </table>
@@ -197,32 +197,32 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>0.1</td>
-                  <td>Draft</td>
-                  <td>Initial draft for review</td>
-                  <td>Document owner</td>
-                  <td>Not approved</td>
+                  <td data-label="Revision" data-role="lead">0.1</td>
+                  <td data-label="Date">Draft</td>
+                  <td data-label="Change Summary" data-role="main">Initial draft for review</td>
+                  <td data-label="Prepared By">Document owner</td>
+                  <td data-label="Approved By">Not approved</td>
                 </tr>
                 <tr>
-                  <td>1.0</td>
-                  <td>Approved date</td>
-                  <td>First approved issue</td>
-                  <td>Document owner</td>
-                  <td>Approver</td>
+                  <td data-label="Revision" data-role="lead">1.0</td>
+                  <td data-label="Date">Approved date</td>
+                  <td data-label="Change Summary" data-role="main">First approved issue</td>
+                  <td data-label="Prepared By">Document owner</td>
+                  <td data-label="Approved By">Approver</td>
                 </tr>
                 <tr>
-                  <td>1.1</td>
-                  <td>Revision date</td>
-                  <td>Minor update or clarification</td>
-                  <td>Document owner</td>
-                  <td>Approver if required</td>
+                  <td data-label="Revision" data-role="lead">1.1</td>
+                  <td data-label="Date">Revision date</td>
+                  <td data-label="Change Summary" data-role="main">Minor update or clarification</td>
+                  <td data-label="Prepared By">Document owner</td>
+                  <td data-label="Approved By">Approver if required</td>
                 </tr>
                 <tr>
-                  <td>2.0</td>
-                  <td>Major revision date</td>
-                  <td>Major technical or operational change</td>
-                  <td>Document owner</td>
-                  <td>Formal approval required</td>
+                  <td data-label="Revision" data-role="lead">2.0</td>
+                  <td data-label="Date">Major revision date</td>
+                  <td data-label="Change Summary" data-role="main">Major technical or operational change</td>
+                  <td data-label="Prepared By">Document owner</td>
+                  <td data-label="Approved By">Formal approval required</td>
                 </tr>
               </tbody>
             </table>
@@ -264,24 +264,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Critical</td>
-                  <td>At least annually, or after relevant incident/change</td>
-                  <td>Power, cooling, life-safety, emergency response</td>
+                  <td data-label="Document Criticality" data-role="main">Critical</td>
+                  <td data-label="Typical Review Cycle">At least annually, or after relevant incident/change</td>
+                  <td data-label="Review Trigger Examples">Power, cooling, life-safety, emergency response</td>
                 </tr>
                 <tr>
-                  <td>High</td>
-                  <td>Annually or according to site governance</td>
-                  <td>Planned maintenance, access control, key operational routines</td>
+                  <td data-label="Document Criticality" data-role="main">High</td>
+                  <td data-label="Typical Review Cycle">Annually or according to site governance</td>
+                  <td data-label="Review Trigger Examples">Planned maintenance, access control, key operational routines</td>
                 </tr>
                 <tr>
-                  <td>Medium</td>
-                  <td>Every 1–2 years or after system change</td>
-                  <td>Inspection routines, supporting processes</td>
+                  <td data-label="Document Criticality" data-role="main">Medium</td>
+                  <td data-label="Typical Review Cycle">Every 1–2 years or after system change</td>
+                  <td data-label="Review Trigger Examples">Inspection routines, supporting processes</td>
                 </tr>
                 <tr>
-                  <td>Low</td>
-                  <td>Every 2–3 years or when information changes</td>
-                  <td>Reference material and low-risk guidance</td>
+                  <td data-label="Document Criticality" data-role="main">Low</td>
+                  <td data-label="Typical Review Cycle">Every 2–3 years or when information changes</td>
+                  <td data-label="Review Trigger Examples">Reference material and low-risk guidance</td>
                 </tr>
               </tbody>
             </table>

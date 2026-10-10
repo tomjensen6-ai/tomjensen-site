@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="EOP Example — Utility Power Loss Response | Tom Jensen" />
@@ -135,39 +135,39 @@
 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Life Safety</td>
-                  <td>Protect personnel and confirm no immediate safety hazard exists.</td>
+                  <td data-label="Priority" data-role="lead">1</td>
+                  <td data-label="Focus Area" data-role="main">Life Safety</td>
+                  <td data-label="Objective">Protect personnel and confirm no immediate safety hazard exists.</td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>Operational Overview</td>
-                  <td>Determine current infrastructure state and affected systems.</td>
+                  <td data-label="Priority" data-role="lead">2</td>
+                  <td data-label="Focus Area" data-role="main">Operational Overview</td>
+                  <td data-label="Objective">Determine current infrastructure state and affected systems.</td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>Emergency Power</td>
-                  <td>Confirm generator, UPS and transfer system behavior.</td>
+                  <td data-label="Priority" data-role="lead">3</td>
+                  <td data-label="Focus Area" data-role="main">Emergency Power</td>
+                  <td data-label="Objective">Confirm generator, UPS and transfer system behavior.</td>
                 </tr>
 
                 <tr>
-                  <td>4</td>
-                  <td>Impact Control</td>
-                  <td>Limit escalation, instability or secondary failures.</td>
+                  <td data-label="Priority" data-role="lead">4</td>
+                  <td data-label="Focus Area" data-role="main">Impact Control</td>
+                  <td data-label="Objective">Limit escalation, instability or secondary failures.</td>
                 </tr>
 
                 <tr>
-                  <td>5</td>
-                  <td>Communication</td>
-                  <td>Inform responsible stakeholders and maintain updates.</td>
+                  <td data-label="Priority" data-role="lead">5</td>
+                  <td data-label="Focus Area" data-role="main">Communication</td>
+                  <td data-label="Objective">Inform responsible stakeholders and maintain updates.</td>
                 </tr>
 
                 <tr>
-                  <td>6</td>
-                  <td>Incident Logging</td>
-                  <td>Maintain timeline and record key observations/actions.</td>
+                  <td data-label="Priority" data-role="lead">6</td>
+                  <td data-label="Focus Area" data-role="main">Incident Logging</td>
+                  <td data-label="Objective">Maintain timeline and record key observations/actions.</td>
                 </tr>
               </tbody>
             </table>
@@ -190,83 +190,83 @@
               <tbody>
 
                 <tr>
-                  <td>1</td>
-                  <td>OPS-BRIDGE</td>
-                  <td>Declare operational incident and assign response lead.</td>
-                  <td>Single responsible coordinator established.</td>
-                  <td>Operations Lead</td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Area/Tag">OPS-BRIDGE</td>
+                  <td data-label="Action" data-role="main">Declare operational incident and assign response lead.</td>
+                  <td data-label="Verification">Single responsible coordinator established.</td>
+                  <td data-label="Owner">Operations Lead</td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>FACILITY</td>
-                  <td>Confirm personnel safety and identify any immediate hazard.</td>
-                  <td>No active life-safety emergency identified.</td>
-                  <td>Operations / Security</td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Area/Tag">FACILITY</td>
+                  <td data-label="Action" data-role="main">Confirm personnel safety and identify any immediate hazard.</td>
+                  <td data-label="Verification">No active life-safety emergency identified.</td>
+                  <td data-label="Owner">Operations / Security</td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>BMS / EPMS / DCIM</td>
-                  <td>Review active alarms, event logs and current infrastructure state.</td>
-                  <td>Affected systems and current operating mode identified.</td>
-                  <td>Operations</td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Area/Tag">BMS / EPMS / DCIM</td>
+                  <td data-label="Action" data-role="main">Review active alarms, event logs and current infrastructure state.</td>
+                  <td data-label="Verification">Affected systems and current operating mode identified.</td>
+                  <td data-label="Owner">Operations</td>
                 </tr>
 
                 <tr>
-                  <td>4</td>
-                  <td>UPS-A / UPS-B</td>
-                  <td>Verify UPS operating condition and battery status.</td>
-                  <td>UPS systems supporting load as expected.</td>
-                  <td>Power Specialist</td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Area/Tag">UPS-A / UPS-B</td>
+                  <td data-label="Action" data-role="main">Verify UPS operating condition and battery status.</td>
+                  <td data-label="Verification">UPS systems supporting load as expected.</td>
+                  <td data-label="Owner">Power Specialist</td>
                 </tr>
 
                 <tr>
-                  <td>5</td>
-                  <td>GEN-001 / GEN-002</td>
-                  <td>Verify generator startup, stabilization and load acceptance.</td>
-                  <td>Generators operating normally or issue escalated immediately.</td>
-                  <td>Generator Specialist</td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Area/Tag">GEN-001 / GEN-002</td>
+                  <td data-label="Action" data-role="main">Verify generator startup, stabilization and load acceptance.</td>
+                  <td data-label="Verification">Generators operating normally or issue escalated immediately.</td>
+                  <td data-label="Owner">Generator Specialist</td>
                 </tr>
 
                 <tr>
-                  <td>6</td>
-                  <td>ATS / SWITCHGEAR</td>
-                  <td>Confirm transfer equipment state and power-path condition.</td>
-                  <td>Power path status understood and recorded.</td>
-                  <td>Electrical Responsible Person</td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Area/Tag">ATS / SWITCHGEAR</td>
+                  <td data-label="Action" data-role="main">Confirm transfer equipment state and power-path condition.</td>
+                  <td data-label="Verification">Power path status understood and recorded.</td>
+                  <td data-label="Owner">Electrical Responsible Person</td>
                 </tr>
 
                 <tr>
-                  <td>7</td>
-                  <td>DATAHALL / TECH AREAS</td>
-                  <td>Verify cooling systems, monitoring systems and critical operational areas remain stable.</td>
-                  <td>No secondary infrastructure failure observed.</td>
-                  <td>Facility Operations</td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Area/Tag">DATAHALL / TECH AREAS</td>
+                  <td data-label="Action" data-role="main">Verify cooling systems, monitoring systems and critical operational areas remain stable.</td>
+                  <td data-label="Verification">No secondary infrastructure failure observed.</td>
+                  <td data-label="Owner">Facility Operations</td>
                 </tr>
 
                 <tr>
-                  <td>8</td>
-                  <td>COMMUNICATION</td>
-                  <td>Notify required stakeholders according to incident communication plan.</td>
-                  <td>Stakeholder notification completed and logged.</td>
-                  <td>Incident Lead</td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Area/Tag">COMMUNICATION</td>
+                  <td data-label="Action" data-role="main">Notify required stakeholders according to incident communication plan.</td>
+                  <td data-label="Verification">Stakeholder notification completed and logged.</td>
+                  <td data-label="Owner">Incident Lead</td>
                 </tr>
 
                 <tr>
-                  <td>9</td>
-                  <td>INCIDENT LOG</td>
-                  <td>Start or maintain incident timeline and event log.</td>
-                  <td>Actions, alarms and decisions continuously recorded.</td>
-                  <td>Assigned Recorder</td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Area/Tag">INCIDENT LOG</td>
+                  <td data-label="Action" data-role="main">Start or maintain incident timeline and event log.</td>
+                  <td data-label="Verification">Actions, alarms and decisions continuously recorded.</td>
+                  <td data-label="Owner">Assigned Recorder</td>
                 </tr>
 
                 <tr>
-                  <td>10</td>
-                  <td>OPS-BRIDGE</td>
-                  <td>Establish next update interval and escalation threshold.</td>
-                  <td>Response cadence agreed and communicated.</td>
-                  <td>Incident Lead</td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Area/Tag">OPS-BRIDGE</td>
+                  <td data-label="Action" data-role="main">Establish next update interval and escalation threshold.</td>
+                  <td data-label="Verification">Response cadence agreed and communicated.</td>
+                  <td data-label="Owner">Incident Lead</td>
                 </tr>
 
               </tbody>

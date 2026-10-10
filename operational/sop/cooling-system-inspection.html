@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="SOP Example — Cooling System Visual Inspection | Tom Jensen" />
@@ -123,20 +123,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Technician</td>
-                  <td>Perform visual inspection, record observations and report exceptions.</td>
+                  <td data-label="Role" data-role="main">Operations Technician</td>
+                  <td data-label="Responsibility">Perform visual inspection, record observations and report exceptions.</td>
                 </tr>
                 <tr>
-                  <td>Shift Lead / Facility Responsible</td>
-                  <td>Review abnormal findings, confirm follow-up actions and escalate if required.</td>
+                  <td data-label="Role" data-role="main">Shift Lead / Facility Responsible</td>
+                  <td data-label="Responsibility">Review abnormal findings, confirm follow-up actions and escalate if required.</td>
                 </tr>
                 <tr>
-                  <td>HVAC Vendor / Specialist</td>
-                  <td>Investigate and correct technical faults outside normal operator scope.</td>
+                  <td data-label="Role" data-role="main">HVAC Vendor / Specialist</td>
+                  <td data-label="Responsibility">Investigate and correct technical faults outside normal operator scope.</td>
                 </tr>
                 <tr>
-                  <td>Operations Manager</td>
-                  <td>Ensure inspection frequency, documentation quality and governance are maintained.</td>
+                  <td data-label="Role" data-role="main">Operations Manager</td>
+                  <td data-label="Responsibility">Ensure inspection frequency, documentation quality and governance are maintained.</td>
                 </tr>
               </tbody>
             </table>
@@ -158,84 +158,84 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>DATAHALL / CLG-ZONE</td>
-                  <td>Confirm the inspection area is accessible and free from obvious obstruction.</td>
-                  <td>Access route, service clearance and emergency paths are clear.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
+                  <td data-label="Action" data-role="main">Confirm the inspection area is accessible and free from obvious obstruction.</td>
+                  <td data-label="Verification">Access route, service clearance and emergency paths are clear.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>BMS / MONITORING</td>
-                  <td>Review current room temperature, humidity and cooling-related alarms where monitoring is available.</td>
-                  <td>Values are within site-defined operating limits or exceptions are recorded.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">BMS / MONITORING</td>
+                  <td data-label="Action" data-role="main">Review current room temperature, humidity and cooling-related alarms where monitoring is available.</td>
+                  <td data-label="Verification">Values are within site-defined operating limits or exceptions are recorded.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>CRAC/CRAH-001</td>
-                  <td>Inspect local cooling unit display or status indication.</td>
-                  <td>No active alarm, shutdown state or abnormal local indication is present.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
+                  <td data-label="Action" data-role="main">Inspect local cooling unit display or status indication.</td>
+                  <td data-label="Verification">No active alarm, shutdown state or abnormal local indication is present.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>CRAC/CRAH-001</td>
-                  <td>Check visible airflow path around the unit, intake and discharge areas.</td>
-                  <td>No blocked air path, misplaced material or visible airflow obstruction observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
+                  <td data-label="Action" data-role="main">Check visible airflow path around the unit, intake and discharge areas.</td>
+                  <td data-label="Verification">No blocked air path, misplaced material or visible airflow obstruction observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>5</td>
-                  <td>DATAHALL</td>
-                  <td>Walk the cold aisle, hot aisle or defined technical area and observe temperature consistency, airflow and unusual conditions.</td>
-                  <td>No obvious hot spot, abnormal airflow pattern or local thermal issue observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">DATAHALL</td>
+                  <td data-label="Action" data-role="main">Walk the cold aisle, hot aisle or defined technical area and observe temperature consistency, airflow and unusual conditions.</td>
+                  <td data-label="Verification">No obvious hot spot, abnormal airflow pattern or local thermal issue observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>6</td>
-                  <td>PIPE / DRAIN</td>
-                  <td>Inspect visible chilled-water, condensate or drain areas where accessible.</td>
-                  <td>No visible leak, blocked drain, standing water or condensation issue observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">PIPE / DRAIN</td>
+                  <td data-label="Action" data-role="main">Inspect visible chilled-water, condensate or drain areas where accessible.</td>
+                  <td data-label="Verification">No visible leak, blocked drain, standing water or condensation issue observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>7</td>
-                  <td>FILTER / GRILLE</td>
-                  <td>Check accessible filter, grille or intake area visually where permitted by site practice.</td>
-                  <td>No visible heavy dust build-up, damage or obstruction observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">FILTER / GRILLE</td>
+                  <td data-label="Action" data-role="main">Check accessible filter, grille or intake area visually where permitted by site practice.</td>
+                  <td data-label="Verification">No visible heavy dust build-up, damage or obstruction observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>8</td>
-                  <td>FLOOR / CEILING</td>
-                  <td>Inspect raised floor tiles, ceiling areas or containment boundaries where relevant.</td>
-                  <td>No displaced tile, damaged containment, open bypass path or visible air leakage concern observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">FLOOR / CEILING</td>
+                  <td data-label="Action" data-role="main">Inspect raised floor tiles, ceiling areas or containment boundaries where relevant.</td>
+                  <td data-label="Verification">No displaced tile, damaged containment, open bypass path or visible air leakage concern observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>9</td>
-                  <td>CRAC/CRAH-001</td>
-                  <td>Listen and observe for abnormal vibration, unusual noise or irregular operation.</td>
-                  <td>No abnormal sound, vibration or visible mechanical issue observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
+                  <td data-label="Action" data-role="main">Listen and observe for abnormal vibration, unusual noise or irregular operation.</td>
+                  <td data-label="Verification">No abnormal sound, vibration or visible mechanical issue observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>10</td>
-                  <td>CMMS / LOG</td>
-                  <td>Record inspection result, environmental status and any abnormal observation.</td>
-                  <td>Inspection record completed and exceptions escalated where required.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">CMMS / LOG</td>
+                  <td data-label="Action" data-role="main">Record inspection result, environmental status and any abnormal observation.</td>
+                  <td data-label="Verification">Inspection record completed and exceptions escalated where required.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

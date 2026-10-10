@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="SOP Example — Generator Weekly Inspection | Tom Jensen" />
@@ -119,20 +119,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Technician</td>
-                  <td>Perform inspection, record findings and report exceptions.</td>
+                  <td data-label="Role" data-role="main">Operations Technician</td>
+                  <td data-label="Responsibility">Perform inspection, record findings and report exceptions.</td>
                 </tr>
                 <tr>
-                  <td>Shift Lead / Facility Responsible</td>
-                  <td>Review exceptions, confirm required follow-up and escalate if needed.</td>
+                  <td data-label="Role" data-role="main">Shift Lead / Facility Responsible</td>
+                  <td data-label="Responsibility">Review exceptions, confirm required follow-up and escalate if needed.</td>
                 </tr>
                 <tr>
-                  <td>Maintenance Vendor / Specialist</td>
-                  <td>Investigate and correct technical faults outside normal operator scope.</td>
+                  <td data-label="Role" data-role="main">Maintenance Vendor / Specialist</td>
+                  <td data-label="Responsibility">Investigate and correct technical faults outside normal operator scope.</td>
                 </tr>
                 <tr>
-                  <td>Operations Manager</td>
-                  <td>Ensure inspection frequency, records and governance are maintained.</td>
+                  <td data-label="Role" data-role="main">Operations Manager</td>
+                  <td data-label="Responsibility">Ensure inspection frequency, records and governance are maintained.</td>
                 </tr>
               </tbody>
             </table>
@@ -154,84 +154,84 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>GEN-ROOM / GEN-001</td>
-                  <td>Confirm the generator area is accessible, clean and free from obstruction.</td>
-                  <td>Access route, working space and emergency exits are clear.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">GEN-ROOM / GEN-001</td>
+                  <td data-label="Action" data-role="main">Confirm the generator area is accessible, clean and free from obstruction.</td>
+                  <td data-label="Verification">Access route, working space and emergency exits are clear.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>GEN-001</td>
-                  <td>Inspect generator enclosure or room for visible damage, water ingress, unusual smell or signs of leakage.</td>
-                  <td>No visible damage, fluid leak, fuel smell or abnormal condition observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">GEN-001</td>
+                  <td data-label="Action" data-role="main">Inspect generator enclosure or room for visible damage, water ingress, unusual smell or signs of leakage.</td>
+                  <td data-label="Verification">No visible damage, fluid leak, fuel smell or abnormal condition observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>GEN-001 / LOCAL PANEL</td>
-                  <td>Check local controller status and confirm generator is in the approved automatic/standby mode.</td>
-                  <td>No active alarm, warning or disabled automatic start condition present.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">GEN-001 / LOCAL PANEL</td>
+                  <td data-label="Action" data-role="main">Check local controller status and confirm generator is in the approved automatic/standby mode.</td>
+                  <td data-label="Verification">No active alarm, warning or disabled automatic start condition present.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>FUEL SYSTEM</td>
-                  <td>Check visible fuel level indication and inspect accessible fuel lines, valves and containment areas.</td>
-                  <td>Fuel level within site-defined minimum and no visible fuel leak observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">FUEL SYSTEM</td>
+                  <td data-label="Action" data-role="main">Check visible fuel level indication and inspect accessible fuel lines, valves and containment areas.</td>
+                  <td data-label="Verification">Fuel level within site-defined minimum and no visible fuel leak observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>5</td>
-                  <td>ENGINE / COOLING</td>
-                  <td>Check visible coolant level indication, radiator area, hoses and ventilation path where accessible.</td>
-                  <td>Cooling system appears normal and ventilation path is unobstructed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">ENGINE / COOLING</td>
+                  <td data-label="Action" data-role="main">Check visible coolant level indication, radiator area, hoses and ventilation path where accessible.</td>
+                  <td data-label="Verification">Cooling system appears normal and ventilation path is unobstructed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>6</td>
-                  <td>ENGINE / LUBRICATION</td>
-                  <td>Check visible oil level indication or local status indication according to site practice.</td>
-                  <td>Oil condition/status appears within approved operating range.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">ENGINE / LUBRICATION</td>
+                  <td data-label="Action" data-role="main">Check visible oil level indication or local status indication according to site practice.</td>
+                  <td data-label="Verification">Oil condition/status appears within approved operating range.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>7</td>
-                  <td>BATTERY / CHARGER</td>
-                  <td>Inspect starting batteries, charger status and visible terminals for abnormal condition.</td>
-                  <td>Charger normal, no visible corrosion, swelling, leakage or loose connection observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">BATTERY / CHARGER</td>
+                  <td data-label="Action" data-role="main">Inspect starting batteries, charger status and visible terminals for abnormal condition.</td>
+                  <td data-label="Verification">Charger normal, no visible corrosion, swelling, leakage or loose connection observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>8</td>
-                  <td>ATS / MONITORING</td>
-                  <td>Verify generator and transfer system status in monitoring or BMS/CMMS where available.</td>
-                  <td>Status matches local inspection and no unresolved alarm is present.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">ATS / MONITORING</td>
+                  <td data-label="Action" data-role="main">Verify generator and transfer system status in monitoring or BMS/CMMS where available.</td>
+                  <td data-label="Verification">Status matches local inspection and no unresolved alarm is present.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>9</td>
-                  <td>GEN-001</td>
-                  <td>Record runtime hours, visible alarms, fuel level/status and inspection findings.</td>
-                  <td>Inspection record completed in logbook or CMMS.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">GEN-001</td>
+                  <td data-label="Action" data-role="main">Record runtime hours, visible alarms, fuel level/status and inspection findings.</td>
+                  <td data-label="Verification">Inspection record completed in logbook or CMMS.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>10</td>
-                  <td>GEN-001</td>
-                  <td>Report any exception, abnormal condition or missing inspection access to responsible role.</td>
-                  <td>Exception recorded and follow-up owner assigned.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">GEN-001</td>
+                  <td data-label="Action" data-role="main">Report any exception, abnormal condition or missing inspection access to responsible role.</td>
+                  <td data-label="Verification">Exception recorded and follow-up owner assigned.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

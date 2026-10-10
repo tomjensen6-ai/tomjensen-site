@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
 
   <link rel="icon" type="image/png" href="../../images/favicon.png" />
 </head>
@@ -101,20 +101,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Operations Lead</td>
-                  <td>Approve execution and supervise operational activity.</td>
+                  <td data-label="Role" data-role="main">Operations Lead</td>
+                  <td data-label="Responsibility">Approve execution and supervise operational activity.</td>
                 </tr>
                 <tr>
-                  <td>Authorized Technician</td>
-                  <td>Perform approved switching or operational actions.</td>
+                  <td data-label="Role" data-role="main">Authorized Technician</td>
+                  <td data-label="Responsibility">Perform approved switching or operational actions.</td>
                 </tr>
                 <tr>
-                  <td>Verifier</td>
-                  <td>Independently confirm each critical step before and after execution.</td>
+                  <td data-label="Role" data-role="main">Verifier</td>
+                  <td data-label="Responsibility">Independently confirm each critical step before and after execution.</td>
                 </tr>
                 <tr>
-                  <td>Control Room / Monitoring Function</td>
-                  <td>Monitor alarms, load state and operational stability.</td>
+                  <td data-label="Role" data-role="main">Control Room / Monitoring Function</td>
+                  <td data-label="Responsibility">Monitor alarms, load state and operational stability.</td>
                 </tr>
               </tbody>
             </table>
@@ -136,68 +136,68 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                  <td>Verify UPS is operating in normal online mode with no active critical alarms.</td>
-                  <td>Load percentage, bypass availability and alarm state confirmed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td data-label="Action" data-role="main">Verify UPS is operating in normal online mode with no active critical alarms.</td>
+                  <td data-label="Verification">Load percentage, bypass availability and alarm state confirmed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
-                  <td>Confirm maintenance bypass path is available, correctly identified and ready for controlled operation.</td>
-                  <td>Asset tag and bypass source verified by operator and verifier.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">ER-2 / SITE1-B1-ER2-MBP-001-01</td>
+                  <td data-label="Action" data-role="main">Confirm maintenance bypass path is available, correctly identified and ready for controlled operation.</td>
+                  <td data-label="Verification">Asset tag and bypass source verified by operator and verifier.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>NOC / SITE1-B1-NOC-MON-001-01</td>
-                  <td>Notify monitoring function before switching activity begins.</td>
-                  <td>Monitoring team confirms awareness and active observation.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">NOC / SITE1-B1-NOC-MON-001-01</td>
+                  <td data-label="Action" data-role="main">Notify monitoring function before switching activity begins.</td>
+                  <td data-label="Verification">Monitoring team confirms awareness and active observation.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                  <td>Transfer load to bypass according to approved manufacturer and site procedure.</td>
-                  <td>Load remains stable and supported without downstream interruption.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td data-label="Action" data-role="main">Transfer load to bypass according to approved manufacturer and site procedure.</td>
+                  <td data-label="Verification">Load remains stable and supported without downstream interruption.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>5</td>
-                  <td>ER-2 / SITE1-B1-ER2-MBP-001-01</td>
-                  <td>Engage maintenance bypass according to approved switching sequence.</td>
-                  <td>Bypass state confirmed locally and through monitoring system.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">ER-2 / SITE1-B1-ER2-MBP-001-01</td>
+                  <td data-label="Action" data-role="main">Engage maintenance bypass according to approved switching sequence.</td>
+                  <td data-label="Verification">Bypass state confirmed locally and through monitoring system.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>6</td>
-                  <td>ER-2 / SITE1-B1-ER2-UPS-001-01</td>
-                  <td>Confirm UPS is isolated for maintenance where applicable.</td>
-                  <td>Isolation state confirmed before maintenance work begins.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">ER-2 / SITE1-B1-ER2-UPS-001-01</td>
+                  <td data-label="Action" data-role="main">Confirm UPS is isolated for maintenance where applicable.</td>
+                  <td data-label="Verification">Isolation state confirmed before maintenance work begins.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>7</td>
-                  <td>NOC / SITE1-B1-NOC-MON-001-01</td>
-                  <td>Confirm monitoring systems show stable operating state.</td>
-                  <td>No downstream critical alarms or customer-impacting events observed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">NOC / SITE1-B1-NOC-MON-001-01</td>
+                  <td data-label="Action" data-role="main">Confirm monitoring systems show stable operating state.</td>
+                  <td data-label="Verification">No downstream critical alarms or customer-impacting events observed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>8</td>
-                  <td>ER-2 / Operations Lead</td>
-                  <td>Confirm maintenance activity may begin.</td>
-                  <td>Operations Lead gives approval to proceed.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">ER-2 / Operations Lead</td>
+                  <td data-label="Action" data-role="main">Confirm maintenance activity may begin.</td>
+                  <td data-label="Verification">Operations Lead gives approval to proceed.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

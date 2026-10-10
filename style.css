@@ -2581,3 +2581,108 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .advisory-article .operational-card p {
   margin-bottom: 0;
 }
+
+/* Gold callout boxes: no extra space under the last paragraph */
+.principle-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Library tables on phones: each row becomes a block.
+   Lead cell (step / priority / marker) first as a small label, then the main
+   cell in bold, then the other columns as "Label: value" lines.
+   Labels come from data-label on each td. */
+@media (max-width: 700px) {
+  .responsive-table,
+  .principle-table-wrap {
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .responsive-table table,
+  .principle-table-wrap table,
+  .responsive-table table:has(th:nth-child(4)) {
+    min-width: 0;
+  }
+
+  .responsive-table table,
+  .responsive-table tbody,
+  .principle-table-wrap table,
+  .principle-table-wrap tbody {
+    display: block;
+  }
+
+  /* Header row hidden visually, kept for screen readers */
+  .responsive-table thead,
+  .principle-table-wrap thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .responsive-table tr,
+  .principle-table-wrap tr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+  }
+
+  .responsive-table td,
+  .principle-table-wrap td {
+    display: block;
+    padding: 0;
+    border: 0;
+    line-height: 1.5;
+  }
+
+  .responsive-table td:empty,
+  .principle-table-wrap td:empty {
+    display: none;
+  }
+
+  .responsive-table td[data-label]::before,
+  .principle-table-wrap td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .responsive-table td[data-role="lead"],
+  .principle-table-wrap td[data-role="lead"] {
+    order: -2;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+
+  .responsive-table td[data-role="lead"]::before,
+  .principle-table-wrap td[data-role="lead"]::before {
+    content: attr(data-label) " ";
+    font-weight: 700;
+    color: var(--gold-text);
+  }
+
+  .responsive-table td[data-role="main"],
+  .principle-table-wrap td[data-role="main"] {
+    order: -1;
+    margin-bottom: 0.15rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .responsive-table td[data-role="main"]::before,
+  .principle-table-wrap td[data-role="main"]::before {
+    content: none;
+  }
+}

@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Frameworks | Tom Jensen" />
@@ -108,28 +108,28 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Critical</td>
-                  <td>Failure may directly affect life safety, critical load, major service continuity or facility operation.</td>
-                  <td>Utility power, UPS, generators, main cooling, fire systems, core monitoring</td>
-                  <td>Strict approval, tested procedures, defined escalation, frequent review</td>
+                  <td data-label="Level" data-role="main">Critical</td>
+                  <td data-label="Description">Failure may directly affect life safety, critical load, major service continuity or facility operation.</td>
+                  <td data-label="Typical Examples">Utility power, UPS, generators, main cooling, fire systems, core monitoring</td>
+                  <td data-label="Control Expectation">Strict approval, tested procedures, defined escalation, frequent review</td>
                 </tr>
                 <tr>
-                  <td>High</td>
-                  <td>Failure may reduce redundancy, capacity, security or operational resilience.</td>
-                  <td>Secondary cooling units, transfer equipment, access systems, major support systems</td>
-                  <td>Controlled procedures, risk review, documented ownership</td>
+                  <td data-label="Level" data-role="main">High</td>
+                  <td data-label="Description">Failure may reduce redundancy, capacity, security or operational resilience.</td>
+                  <td data-label="Typical Examples">Secondary cooling units, transfer equipment, access systems, major support systems</td>
+                  <td data-label="Control Expectation">Controlled procedures, risk review, documented ownership</td>
                 </tr>
                 <tr>
-                  <td>Medium</td>
-                  <td>Failure may affect local operations, maintenance efficiency or support functions.</td>
-                  <td>Local sensors, non-critical panels, supporting documentation, local room systems</td>
-                  <td>Standard procedures and periodic review</td>
+                  <td data-label="Level" data-role="main">Medium</td>
+                  <td data-label="Description">Failure may affect local operations, maintenance efficiency or support functions.</td>
+                  <td data-label="Typical Examples">Local sensors, non-critical panels, supporting documentation, local room systems</td>
+                  <td data-label="Control Expectation">Standard procedures and periodic review</td>
                 </tr>
                 <tr>
-                  <td>Low</td>
-                  <td>Failure has limited operational impact and does not affect critical services directly.</td>
-                  <td>Non-critical accessories, administrative support items</td>
-                  <td>Basic documentation and owner awareness</td>
+                  <td data-label="Level" data-role="main">Low</td>
+                  <td data-label="Description">Failure has limited operational impact and does not affect critical services directly.</td>
+                  <td data-label="Typical Examples">Non-critical accessories, administrative support items</td>
+                  <td data-label="Control Expectation">Basic documentation and owner awareness</td>
                 </tr>
               </tbody>
             </table>
@@ -166,24 +166,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Level 1 — Local Handling</td>
-                  <td>Known minor issue, no service impact, no safety concern, clear procedure exists.</td>
-                  <td>Handle locally, record action, monitor for recurrence.</td>
+                  <td data-label="Escalation Level" data-role="main">Level 1 — Local Handling</td>
+                  <td data-label="Typical Condition">Known minor issue, no service impact, no safety concern, clear procedure exists.</td>
+                  <td data-label="Expected Response">Handle locally, record action, monitor for recurrence.</td>
                 </tr>
                 <tr>
-                  <td>Level 2 — Operational Attention</td>
-                  <td>Reduced redundancy, repeated alarms, unclear cause or local operational impact.</td>
-                  <td>Notify operations lead, increase monitoring, assign owner.</td>
+                  <td data-label="Escalation Level" data-role="main">Level 2 — Operational Attention</td>
+                  <td data-label="Typical Condition">Reduced redundancy, repeated alarms, unclear cause or local operational impact.</td>
+                  <td data-label="Expected Response">Notify operations lead, increase monitoring, assign owner.</td>
                 </tr>
                 <tr>
-                  <td>Level 3 — Incident Control</td>
-                  <td>Critical system affected, environmental/power risk, customer impact possible, or operating state uncertain.</td>
-                  <td>Activate incident coordination, stakeholder communication and technical escalation.</td>
+                  <td data-label="Escalation Level" data-role="main">Level 3 — Incident Control</td>
+                  <td data-label="Typical Condition">Critical system affected, environmental/power risk, customer impact possible, or operating state uncertain.</td>
+                  <td data-label="Expected Response">Activate incident coordination, stakeholder communication and technical escalation.</td>
                 </tr>
                 <tr>
-                  <td>Level 4 — Emergency / Crisis</td>
-                  <td>Life-safety concern, major service impact, uncontrolled failure or multiple critical systems affected.</td>
-                  <td>Activate emergency response, management escalation and external support as required.</td>
+                  <td data-label="Escalation Level" data-role="main">Level 4 — Emergency / Crisis</td>
+                  <td data-label="Typical Condition">Life-safety concern, major service impact, uncontrolled failure or multiple critical systems affected.</td>
+                  <td data-label="Expected Response">Activate emergency response, management escalation and external support as required.</td>
                 </tr>
               </tbody>
             </table>
@@ -208,24 +208,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Minor</td>
-                  <td>No expected impact to critical systems, no redundancy loss and simple rollback.</td>
-                  <td>Local approval, standard SOP, normal logging.</td>
+                  <td data-label="Severity" data-role="main">Minor</td>
+                  <td data-label="Description">No expected impact to critical systems, no redundancy loss and simple rollback.</td>
+                  <td data-label="Typical Control Level">Local approval, standard SOP, normal logging.</td>
                 </tr>
                 <tr>
-                  <td>Standard</td>
-                  <td>Planned work with limited operational exposure and known procedure.</td>
-                  <td>Approved MOP or work instruction, defined verification.</td>
+                  <td data-label="Severity" data-role="main">Standard</td>
+                  <td data-label="Description">Planned work with limited operational exposure and known procedure.</td>
+                  <td data-label="Typical Control Level">Approved MOP or work instruction, defined verification.</td>
                 </tr>
                 <tr>
-                  <td>Major</td>
-                  <td>Redundancy reduction, critical system involvement, customer visibility or complex coordination.</td>
-                  <td>Formal change approval, MOP, rollback plan, stakeholder notification.</td>
+                  <td data-label="Severity" data-role="main">Major</td>
+                  <td data-label="Description">Redundancy reduction, critical system involvement, customer visibility or complex coordination.</td>
+                  <td data-label="Typical Control Level">Formal change approval, MOP, rollback plan, stakeholder notification.</td>
                 </tr>
                 <tr>
-                  <td>Emergency Change</td>
-                  <td>Urgent action required to restore, stabilize or protect operations.</td>
-                  <td>Emergency approval path, incident log, post-event review.</td>
+                  <td data-label="Severity" data-role="main">Emergency Change</td>
+                  <td data-label="Description">Urgent action required to restore, stabilize or protect operations.</td>
+                  <td data-label="Typical Control Level">Emergency approval path, incident log, post-event review.</td>
                 </tr>
               </tbody>
             </table>
@@ -285,29 +285,29 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Policy / Governance Standard</td>
-                  <td>Defines authority, principles, ownership and mandatory controls.</td>
+                  <td data-label="Level" data-role="lead">1</td>
+                  <td data-label="Document Type" data-role="main">Policy / Governance Standard</td>
+                  <td data-label="Purpose">Defines authority, principles, ownership and mandatory controls.</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>Framework / Standard</td>
-                  <td>Defines models for classification, escalation, risk and documentation structure.</td>
+                  <td data-label="Level" data-role="lead">2</td>
+                  <td data-label="Document Type" data-role="main">Framework / Standard</td>
+                  <td data-label="Purpose">Defines models for classification, escalation, risk and documentation structure.</td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>SOP / MOP / EOP</td>
-                  <td>Defines operational execution, planned work or emergency response structure.</td>
+                  <td data-label="Level" data-role="lead">3</td>
+                  <td data-label="Document Type" data-role="main">SOP / MOP / EOP</td>
+                  <td data-label="Purpose">Defines operational execution, planned work or emergency response structure.</td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>Work Instruction / Checklist</td>
-                  <td>Defines detailed task-level steps or verification points.</td>
+                  <td data-label="Level" data-role="lead">4</td>
+                  <td data-label="Document Type" data-role="main">Work Instruction / Checklist</td>
+                  <td data-label="Purpose">Defines detailed task-level steps or verification points.</td>
                 </tr>
                 <tr>
-                  <td>5</td>
-                  <td>Records / Logs</td>
-                  <td>Provides evidence of execution, review, incident response or maintenance history.</td>
+                  <td data-label="Level" data-role="lead">5</td>
+                  <td data-label="Document Type" data-role="main">Records / Logs</td>
+                  <td data-label="Purpose">Provides evidence of execution, review, incident response or maintenance history.</td>
                 </tr>
               </tbody>
             </table>
@@ -332,24 +332,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Routine inspection of stable system</td>
-                  <td>Low to Medium</td>
-                  <td>SOP or checklist</td>
+                  <td data-label="Condition" data-role="main">Routine inspection of stable system</td>
+                  <td data-label="Typical Classification">Low to Medium</td>
+                  <td data-label="Expected Control">SOP or checklist</td>
                 </tr>
                 <tr>
-                  <td>Planned work affecting redundancy</td>
-                  <td>High</td>
-                  <td>MOP, approval, rollback, monitoring</td>
+                  <td data-label="Condition" data-role="main">Planned work affecting redundancy</td>
+                  <td data-label="Typical Classification">High</td>
+                  <td data-label="Expected Control">MOP, approval, rollback, monitoring</td>
                 </tr>
                 <tr>
-                  <td>Unplanned loss of critical infrastructure</td>
-                  <td>Critical</td>
-                  <td>EOP, incident lead, escalation, communication</td>
+                  <td data-label="Condition" data-role="main">Unplanned loss of critical infrastructure</td>
+                  <td data-label="Typical Classification">Critical</td>
+                  <td data-label="Expected Control">EOP, incident lead, escalation, communication</td>
                 </tr>
                 <tr>
-                  <td>Emergency correction during active incident</td>
-                  <td>Critical / Emergency Change</td>
-                  <td>Emergency authority, incident log, post-event review</td>
+                  <td data-label="Condition" data-role="main">Emergency correction during active incident</td>
+                  <td data-label="Typical Classification">Critical / Emergency Change</td>
+                  <td data-label="Expected Control">Emergency authority, incident log, post-event review</td>
                 </tr>
               </tbody>
             </table>

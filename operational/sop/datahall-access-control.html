@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="SOP Example — Data Hall Access Control | Tom Jensen" />
@@ -119,24 +119,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Access Requester</td>
-                  <td>Provide reason for access, required time window and personnel details.</td>
+                  <td data-label="Role" data-role="main">Access Requester</td>
+                  <td data-label="Responsibility">Provide reason for access, required time window and personnel details.</td>
                 </tr>
                 <tr>
-                  <td>Security / Reception</td>
-                  <td>Verify identity, access approval and entry/exit registration.</td>
+                  <td data-label="Role" data-role="main">Security / Reception</td>
+                  <td data-label="Responsibility">Verify identity, access approval and entry/exit registration.</td>
                 </tr>
                 <tr>
-                  <td>Escort / Host</td>
-                  <td>Remain responsible for escorted persons and ensure site rules are followed.</td>
+                  <td data-label="Role" data-role="main">Escort / Host</td>
+                  <td data-label="Responsibility">Remain responsible for escorted persons and ensure site rules are followed.</td>
                 </tr>
                 <tr>
-                  <td>Operations Technician</td>
-                  <td>Confirm operational conditions allow access and monitor activity where required.</td>
+                  <td data-label="Role" data-role="main">Operations Technician</td>
+                  <td data-label="Responsibility">Confirm operational conditions allow access and monitor activity where required.</td>
                 </tr>
                 <tr>
-                  <td>Facility Responsible</td>
-                  <td>Approve exceptions, restrictions or elevated access requirements.</td>
+                  <td data-label="Role" data-role="main">Facility Responsible</td>
+                  <td data-label="Responsibility">Approve exceptions, restrictions or elevated access requirements.</td>
                 </tr>
               </tbody>
             </table>
@@ -158,84 +158,84 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>ACCESS-REQ</td>
-                  <td>Confirm approved access request, reason for visit and requested area.</td>
-                  <td>Request matches approved scope and time window.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">1</td>
+                  <td data-label="Room/Tag">ACCESS-REQ</td>
+                  <td data-label="Action" data-role="main">Confirm approved access request, reason for visit and requested area.</td>
+                  <td data-label="Verification">Request matches approved scope and time window.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>SEC-DESK</td>
-                  <td>Verify identity of all persons requesting access.</td>
-                  <td>Identity confirmed according to site access procedure.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">2</td>
+                  <td data-label="Room/Tag">SEC-DESK</td>
+                  <td data-label="Action" data-role="main">Verify identity of all persons requesting access.</td>
+                  <td data-label="Verification">Identity confirmed according to site access procedure.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>SEC-DESK</td>
-                  <td>Issue visitor badge, temporary credential or access card as applicable.</td>
-                  <td>Credential type matches approved access level and expiry period.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">3</td>
+                  <td data-label="Room/Tag">SEC-DESK</td>
+                  <td data-label="Action" data-role="main">Issue visitor badge, temporary credential or access card as applicable.</td>
+                  <td data-label="Verification">Credential type matches approved access level and expiry period.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>DATAHALL-AREA</td>
-                  <td>Confirm whether escort is required and assign responsible host if applicable.</td>
-                  <td>Escort responsibility accepted before entry.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">4</td>
+                  <td data-label="Room/Tag">DATAHALL-AREA</td>
+                  <td data-label="Action" data-role="main">Confirm whether escort is required and assign responsible host if applicable.</td>
+                  <td data-label="Verification">Escort responsibility accepted before entry.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>5</td>
-                  <td>OPS-DESK</td>
-                  <td>Check for active incidents, alarms, maintenance restrictions or operational reasons to delay access.</td>
-                  <td>No restriction preventing access, or exception approved by responsible role.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">5</td>
+                  <td data-label="Room/Tag">OPS-DESK</td>
+                  <td data-label="Action" data-role="main">Check for active incidents, alarms, maintenance restrictions or operational reasons to delay access.</td>
+                  <td data-label="Verification">No restriction preventing access, or exception approved by responsible role.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>6</td>
-                  <td>DATAHALL-ENTRY</td>
-                  <td>Remind visitor or contractor of site rules before entry, including no unapproved photography, no unauthorized work and no tailgating.</td>
-                  <td>Rules acknowledged before access is granted.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">6</td>
+                  <td data-label="Room/Tag">DATAHALL-ENTRY</td>
+                  <td data-label="Action" data-role="main">Remind visitor or contractor of site rules before entry, including no unapproved photography, no unauthorized work and no tailgating.</td>
+                  <td data-label="Verification">Rules acknowledged before access is granted.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>7</td>
-                  <td>DATAHALL-ENTRY</td>
-                  <td>Grant access through approved door or access point only.</td>
-                  <td>Entry registered in access control system or visitor log.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Room/Tag">DATAHALL-ENTRY</td>
+                  <td data-label="Action" data-role="main">Grant access through approved door or access point only.</td>
+                  <td data-label="Verification">Entry registered in access control system or visitor log.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>8</td>
-                  <td>DATAHALL</td>
-                  <td>Monitor activity according to access type, work scope and escort requirements.</td>
-                  <td>Persons remain within approved area and activity scope.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Room/Tag">DATAHALL</td>
+                  <td data-label="Action" data-role="main">Monitor activity according to access type, work scope and escort requirements.</td>
+                  <td data-label="Verification">Persons remain within approved area and activity scope.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>9</td>
-                  <td>DATAHALL-EXIT</td>
-                  <td>Confirm exit from controlled area when visit or work is complete.</td>
-                  <td>Exit registered and all escorted persons accounted for.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Room/Tag">DATAHALL-EXIT</td>
+                  <td data-label="Action" data-role="main">Confirm exit from controlled area when visit or work is complete.</td>
+                  <td data-label="Verification">Exit registered and all escorted persons accounted for.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
                 <tr>
-                  <td>10</td>
-                  <td>SEC-DESK</td>
-                  <td>Return visitor badge, temporary credential or access card.</td>
-                  <td>Temporary credential returned, disabled or expired according to site procedure.</td>
-                  <td></td>
-                  <td></td>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Room/Tag">SEC-DESK</td>
+                  <td data-label="Action" data-role="main">Return visitor badge, temporary credential or access card.</td>
+                  <td data-label="Verification">Temporary credential returned, disabled or expired according to site procedure.</td>
+                  <td data-label="Sign-1"></td>
+                  <td data-label="Sign-2"></td>
                 </tr>
               </tbody>
             </table>

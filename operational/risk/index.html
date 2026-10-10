@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=7" />
+  <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Risk Assessment | Tom Jensen" />
@@ -245,29 +245,29 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1. Identify</td>
-                  <td>What can go wrong?</td>
-                  <td>Clear risk description</td>
+                  <td data-label="Phase" data-role="lead">1. Identify</td>
+                  <td data-label="Question" data-role="main">What can go wrong?</td>
+                  <td data-label="Output">Clear risk description</td>
                 </tr>
                 <tr>
-                  <td>2. Assess</td>
-                  <td>How likely is it, and how serious would it be?</td>
-                  <td>Probability, impact and initial risk score</td>
+                  <td data-label="Phase" data-role="lead">2. Assess</td>
+                  <td data-label="Question" data-role="main">How likely is it, and how serious would it be?</td>
+                  <td data-label="Output">Probability, impact and initial risk score</td>
                 </tr>
                 <tr>
-                  <td>3. Mitigate</td>
-                  <td>What controls reduce the risk?</td>
-                  <td>Defined mitigation tasks</td>
+                  <td data-label="Phase" data-role="lead">3. Mitigate</td>
+                  <td data-label="Question" data-role="main">What controls reduce the risk?</td>
+                  <td data-label="Output">Defined mitigation tasks</td>
                 </tr>
                 <tr>
-                  <td>4. Reassess</td>
-                  <td>What risk remains after mitigation?</td>
-                  <td>Residual probability, impact and risk score</td>
+                  <td data-label="Phase" data-role="lead">4. Reassess</td>
+                  <td data-label="Question" data-role="main">What risk remains after mitigation?</td>
+                  <td data-label="Output">Residual probability, impact and risk score</td>
                 </tr>
                 <tr>
-                  <td>5. Own</td>
-                  <td>Who is responsible, and by when?</td>
-                  <td>Named owner and completion date</td>
+                  <td data-label="Phase" data-role="lead">5. Own</td>
+                  <td data-label="Question" data-role="main">Who is responsible, and by when?</td>
+                  <td data-label="Output">Named owner and completion date</td>
                 </tr>
               </tbody>
             </table>
@@ -308,29 +308,29 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>1</strong></td>
-                  <td>Rare / unlikely under normal conditions</td>
-                  <td>Minor local effect, no critical operational impact</td>
+                  <td data-label="Score" data-role="lead"><strong>1</strong></td>
+                  <td data-label="Probability / Sannsynlighet" data-role="main">Rare / unlikely under normal conditions</td>
+                  <td data-label="Impact">Minor local effect, no critical operational impact</td>
                 </tr>
                 <tr>
-                  <td><strong>2</strong></td>
-                  <td>Possible, but not expected</td>
-                  <td>Limited disturbance or local operational inconvenience</td>
+                  <td data-label="Score" data-role="lead"><strong>2</strong></td>
+                  <td data-label="Probability / Sannsynlighet" data-role="main">Possible, but not expected</td>
+                  <td data-label="Impact">Limited disturbance or local operational inconvenience</td>
                 </tr>
                 <tr>
-                  <td><strong>3</strong></td>
-                  <td>Possible during the activity or condition</td>
-                  <td>Operational impact, reduced redundancy or service concern</td>
+                  <td data-label="Score" data-role="lead"><strong>3</strong></td>
+                  <td data-label="Probability / Sannsynlighet" data-role="main">Possible during the activity or condition</td>
+                  <td data-label="Impact">Operational impact, reduced redundancy or service concern</td>
                 </tr>
                 <tr>
-                  <td><strong>4</strong></td>
-                  <td>Likely if controls are not applied</td>
-                  <td>Major operational impact or serious degradation</td>
+                  <td data-label="Score" data-role="lead"><strong>4</strong></td>
+                  <td data-label="Probability / Sannsynlighet" data-role="main">Likely if controls are not applied</td>
+                  <td data-label="Impact">Major operational impact or serious degradation</td>
                 </tr>
                 <tr>
-                  <td><strong>5</strong></td>
-                  <td>Very likely or already developing</td>
-                  <td>Critical impact, safety concern or major service loss</td>
+                  <td data-label="Score" data-role="lead"><strong>5</strong></td>
+                  <td data-label="Probability / Sannsynlighet" data-role="main">Very likely or already developing</td>
+                  <td data-label="Impact">Critical impact, safety concern or major service loss</td>
                 </tr>
               </tbody>
             </table>
@@ -355,28 +355,28 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1–4</td>
-                  <td><strong>Low</strong></td>
-                  <td><span style="color:#2e7d32;"><strong>● Green</strong></span></td>
-                  <td>Proceed with normal controls and monitoring.</td>
+                  <td data-label="Score" data-role="lead">1–4</td>
+                  <td data-label="Level" data-role="main"><strong>Low</strong></td>
+                  <td data-label="Visual Marker"><span style="color:#2e7d32;"><strong>● Green</strong></span></td>
+                  <td data-label="Typical Action">Proceed with normal controls and monitoring.</td>
                 </tr>
                 <tr>
-                  <td>5–9</td>
-                  <td><strong>Medium</strong></td>
-                  <td><span style="color:#b26a00;"><strong>● Amber</strong></span></td>
-                  <td>Proceed only with defined controls and clear ownership.</td>
+                  <td data-label="Score" data-role="lead">5–9</td>
+                  <td data-label="Level" data-role="main"><strong>Medium</strong></td>
+                  <td data-label="Visual Marker"><span style="color:#b26a00;"><strong>● Amber</strong></span></td>
+                  <td data-label="Typical Action">Proceed only with defined controls and clear ownership.</td>
                 </tr>
                 <tr>
-                  <td>10–16</td>
-                  <td><strong>High</strong></td>
-                  <td><span style="color:#c62828;"><strong>● Red</strong></span></td>
-                  <td>Requires mitigation, approval and escalation awareness.</td>
+                  <td data-label="Score" data-role="lead">10–16</td>
+                  <td data-label="Level" data-role="main"><strong>High</strong></td>
+                  <td data-label="Visual Marker"><span style="color:#c62828;"><strong>● Red</strong></span></td>
+                  <td data-label="Typical Action">Requires mitigation, approval and escalation awareness.</td>
                 </tr>
                 <tr>
-                  <td>17–25</td>
-                  <td><strong>Critical</strong></td>
-                  <td><span style="color:#7b1b1b;"><strong>● Dark Red</strong></span></td>
-                  <td>Do not proceed without senior approval and risk reduction.</td>
+                  <td data-label="Score" data-role="lead">17–25</td>
+                  <td data-label="Level" data-role="main"><strong>Critical</strong></td>
+                  <td data-label="Visual Marker"><span style="color:#7b1b1b;"><strong>● Dark Red</strong></span></td>
+                  <td data-label="Typical Action">Do not proceed without senior approval and risk reduction.</td>
                 </tr>
               </tbody>
             </table>
@@ -545,34 +545,34 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>■</td>
-                  <td>Actual conditions do not match the approved plan</td>
-                  <td>Stop, reassess and confirm whether the plan remains valid.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Actual conditions do not match the approved plan</td>
+                  <td data-label="Required Response">Stop, reassess and confirm whether the plan remains valid.</td>
                 </tr>
                 <tr>
-                  <td>■</td>
-                  <td>Redundancy becomes uncertain</td>
-                  <td>Stop work and escalate to operational authority.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Redundancy becomes uncertain</td>
+                  <td data-label="Required Response">Stop work and escalate to operational authority.</td>
                 </tr>
                 <tr>
-                  <td>■</td>
-                  <td>Critical alarm appears unexpectedly</td>
-                  <td>Stabilize, investigate and record the condition.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Critical alarm appears unexpectedly</td>
+                  <td data-label="Required Response">Stabilize, investigate and record the condition.</td>
                 </tr>
                 <tr>
-                  <td>■</td>
-                  <td>Asset identity or system state cannot be confirmed</td>
-                  <td>Do not proceed until correct asset and state are verified.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Asset identity or system state cannot be confirmed</td>
+                  <td data-label="Required Response">Do not proceed until correct asset and state are verified.</td>
                 </tr>
                 <tr>
-                  <td>■</td>
-                  <td>Rollback path is no longer available</td>
-                  <td>Stop progression and reassess operational exposure.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Rollback path is no longer available</td>
+                  <td data-label="Required Response">Stop progression and reassess operational exposure.</td>
                 </tr>
                 <tr>
-                  <td>■</td>
-                  <td>Residual risk is higher than accepted</td>
-                  <td>Escalate for approval, additional mitigation or cancellation.</td>
+                  <td data-label="Marker" data-role="lead">■</td>
+                  <td data-label="Stop Condition" data-role="main">Residual risk is higher than accepted</td>
+                  <td data-label="Required Response">Escalate for approval, additional mitigation or cancellation.</td>
                 </tr>
               </tbody>
             </table>
@@ -602,20 +602,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Risk Owner</strong></td>
-                  <td>Accountable for accepting, reducing or escalating the risk.</td>
+                  <td data-label="Role" data-role="main"><strong>Risk Owner</strong></td>
+                  <td data-label="Responsibility">Accountable for accepting, reducing or escalating the risk.</td>
                 </tr>
                 <tr>
-                  <td><strong>Action Owner</strong></td>
-                  <td>Responsible for completing a defined mitigation task.</td>
+                  <td data-label="Role" data-role="main"><strong>Action Owner</strong></td>
+                  <td data-label="Responsibility">Responsible for completing a defined mitigation task.</td>
                 </tr>
                 <tr>
-                  <td><strong>Technical Reviewer</strong></td>
-                  <td>Confirms that the proposed controls are technically valid.</td>
+                  <td data-label="Role" data-role="main"><strong>Technical Reviewer</strong></td>
+                  <td data-label="Responsibility">Confirms that the proposed controls are technically valid.</td>
                 </tr>
                 <tr>
-                  <td><strong>Operational Approver</strong></td>
-                  <td>Confirms that the remaining risk is acceptable for execution.</td>
+                  <td data-label="Role" data-role="main"><strong>Operational Approver</strong></td>
+                  <td data-label="Responsibility">Confirms that the remaining risk is acceptable for execution.</td>
                 </tr>
               </tbody>
             </table>
@@ -645,28 +645,28 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Power exposure</td>
-                  <td>Reduced UPS or generator redundancy</td>
+                  <td data-label="Exposure Type" data-role="main">Power exposure</td>
+                  <td data-label="Example">Reduced UPS or generator redundancy</td>
                 </tr>
                 <tr>
-                  <td>Cooling exposure</td>
-                  <td>Reduced cooling capacity or uncertain thermal margin</td>
+                  <td data-label="Exposure Type" data-role="main">Cooling exposure</td>
+                  <td data-label="Example">Reduced cooling capacity or uncertain thermal margin</td>
                 </tr>
                 <tr>
-                  <td>Monitoring exposure</td>
-                  <td>Temporary loss of alarm visibility or sensor reliability</td>
+                  <td data-label="Exposure Type" data-role="main">Monitoring exposure</td>
+                  <td data-label="Example">Temporary loss of alarm visibility or sensor reliability</td>
                 </tr>
                 <tr>
-                  <td>Access exposure</td>
-                  <td>Restricted access routes, open panels or active work zones</td>
+                  <td data-label="Exposure Type" data-role="main">Access exposure</td>
+                  <td data-label="Example">Restricted access routes, open panels or active work zones</td>
                 </tr>
                 <tr>
-                  <td>Recovery exposure</td>
-                  <td>Delayed rollback capability or unclear return-to-normal path</td>
+                  <td data-label="Exposure Type" data-role="main">Recovery exposure</td>
+                  <td data-label="Example">Delayed rollback capability or unclear return-to-normal path</td>
                 </tr>
                 <tr>
-                  <td>Human exposure</td>
-                  <td>Increased dependency on coordination, handover or manual action</td>
+                  <td data-label="Exposure Type" data-role="main">Human exposure</td>
+                  <td data-label="Example">Increased dependency on coordination, handover or manual action</td>
                 </tr>
               </tbody>
             </table>
