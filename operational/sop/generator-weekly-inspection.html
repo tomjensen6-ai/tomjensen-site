@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SOP Example — Generator Weekly Inspection | Tom Jensen</title>
-  <meta name="description" content="Public-facing SOP example for weekly generator inspection in critical infrastructure environments." />
+  <title>SOP Example: Generator Weekly Inspection | Tom Jensen</title>
+  <meta name="description" content="An example procedure for the weekly walk-round of a standby generator: what to check, what to record and what to do when something is wrong." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="SOP Example — Generator Weekly Inspection | Tom Jensen" />
-  <meta property="og:description" content="A structured public-facing SOP example for generator weekly inspection, verification and operational documentation." />
+  <meta property="og:title" content="SOP Example: Generator Weekly Inspection | Tom Jensen" />
+  <meta property="og:description" content="How I would do the weekly generator inspection: the checks that catch a generator that won't start, safety in the room, and what to do with findings." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/sop/generator-weekly-inspection.html" />
   <meta property="og:type" content="website" />
@@ -44,19 +44,20 @@
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / SOP Example</p>
 
-          <h1>Generator Weekly Inspection Procedure</h1>
+          <h1>Generator Weekly Inspection</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled weekly inspection procedure for
-            standby generator systems supporting critical infrastructure.
+            How I would do the weekly walk-round of a standby generator. It takes
+            a short time, and it catches the simple things that stop a generator
+            from starting when the grid fails.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real inspection must follow the
+            manufacturer's instructions, the site design and local safety rules.
           </p>
         </aside>
       </div>
@@ -68,294 +69,336 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> SOP-GEN-002</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled weekly inspection process for standby generator
-            systems to verify general readiness, visible condition, alarm status
-            and supporting infrastructure before an emergency start is required.
-          </p>
-
-          <h2>2. Scope</h2>
-
-          <p>
-            Applies to routine weekly visual and operational readiness checks of
-            standby generator systems, generator rooms or external generator
-            enclosures, associated local controls, starting systems, fuel systems
-            and visible supporting infrastructure.
+            A standby generator spends almost all its life waiting. It runs only
+            for tests and maintenance, but it must always be ready to start. The
+            weekly inspection checks that it is: in automatic, no alarms, fuel in
+            the tank, engine warm, batteries charged, air path clear.
           </p>
 
           <p>
-            This example does not replace manufacturer requirements, statutory
-            inspection requirements, local electrical regulations, site-specific
-            procedures or the requirements of the authority having jurisdiction.
+            It does not replace running the generator. A generator can look fine
+            and still fail to start or take load. Only a test run shows that, so
+            most sites also run their generators on a regular schedule.
           </p>
 
-          <h2>3. Preconditions</h2>
+          <h2>2. The real risk</h2>
+
+          <p>
+            A generator can be left in a state where it won't start on its own:
+            switch in manual or off, emergency stop pressed, a breaker open, or
+            the battery charger off. This often happens after maintenance, and
+            nothing looks wrong from the outside. Two things help. Test-run the
+            generator after every maintenance before you call it ready. And make
+            every switch that can stop an automatic start raise an alarm in
+            monitoring. The weekly walk-round is the third check.
+          </p>
+
+          <p>
+            Small faults also grow. Starting batteries are the part most likely to
+            fail over a generator's life, so many sites replace them on a fixed
+            cycle instead of waiting for a failure. A failed engine heater leaves
+            the engine cold and slow to start. A slow fuel leak. Water in the tank
+            bund. A blocked air intake.
+          </p>
+
+          <p>
+            A generator that isn't ready to start is lost redundancy, even when
+            the grid is fine. Treat it that way.
+          </p>
+
+          <p>
+            The risk to you: a standby generator can start at any moment, without
+            warning, if the grid fails or someone starts a test. Stay clear of
+            fans, belts and the exhaust. Wear hearing protection in the room. Keep
+            your hands away from moving parts, even when the engine stands still.
+          </p>
+
+          <h2>3. Before you start</h2>
 
           <ul class="checklist">
-            <li>☐ Inspection is part of an approved routine maintenance schedule</li>
-            <li>☐ Generator area is accessible and safe to enter</li>
-            <li>☐ Required PPE and site access permissions are available</li>
-            <li>☐ No active emergency event is in progress</li>
-            <li>☐ Monitoring system is available for alarm verification</li>
-            <li>☐ Latest maintenance log or CMMS record is available</li>
+            <li>☐ The inspection is on the schedule, and the Shift lead knows you are going</li>
+            <li>☐ No work or test going on with the generators or the power system</li>
+            <li>☐ Access to the generator room; on high-voltage sites, documented access for that room</li>
+            <li>☐ Hearing protection, gloves and a torch</li>
+            <li>☐ Last week's record at hand, so you can compare</li>
+            <li>☐ Monitoring available, so you can compare what it shows with what you see</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Task</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Technician</td>
-                  <td data-label="Responsibility">Perform inspection, record findings and report exceptions.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Task">Does the inspection, records the findings, reports anything abnormal at once.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Shift Lead / Facility Responsible</td>
-                  <td data-label="Responsibility">Review exceptions, confirm required follow-up and escalate if needed.</td>
+                  <td data-label="Role" data-role="main">Shift lead</td>
+                  <td data-label="Task">Reviews findings, decides what is urgent, calls the vendor if needed.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Maintenance Vendor / Specialist</td>
-                  <td data-label="Responsibility">Investigate and correct technical faults outside normal operator scope.</td>
+                  <td data-label="Role" data-role="main">Facility manager</td>
+                  <td data-label="Task">Owns the schedule and the records. Follows up open findings.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Manager</td>
-                  <td data-label="Responsibility">Ensure inspection frequency, records and governance are maintained.</td>
+                  <td data-label="Role" data-role="main">Generator specialist (vendor)</td>
+                  <td data-label="Task">Fixes faults outside the operator's scope.</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Task">Knows who is in the generator area.</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: the walk-round waits until someone is. Check the generator status in monitoring if you can, and record that the inspection was missed.</li>
+            <li>One person: fine for the visual check on a low-voltage generator, if the site's safety rules allow it, there are clear instructions at the generator (signs, a QR code to the checklist) and the round is signed off. Tell the Shift lead or Security when you go in and when you come out. The room is loud, so you may not hear a radio. Do nothing beyond looking and reading gauges.</li>
+            <li>Two or more: needed for anything beyond the visual check, such as opening covers or work on batteries.</li>
+            <li>High and medium voltage: where generators run above 1000 V AC, always two people, and only people with documented access to the room. Operators and security are not always among them. Plan the weekly round so it is done by people who are allowed in.</li>
+            <li>Security: knows who is in the generator area and for how long.</li>
+          </ul>
+
+          <h2>5. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">GEN-ROOM / GEN-001</td>
-                  <td data-label="Action" data-role="main">Confirm the generator area is accessible, clean and free from obstruction.</td>
-                  <td data-label="Verification">Access route, working space and emergency exits are clear.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Tell the Shift lead you are starting. Look at the generator in monitoring first.</td>
+                  <td data-label="Check">Status and alarms noted before you go in.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">GEN-001</td>
-                  <td data-label="Action" data-role="main">Inspect generator enclosure or room for visible damage, water ingress, unusual smell or signs of leakage.</td>
-                  <td data-label="Verification">No visible damage, fluid leak, fuel smell or abnormal condition observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Walk the route to the generator room or enclosure.</td>
+                  <td data-label="Check">Route, doors and exits clear. Nothing stored in the room.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">GEN-001 / LOCAL PANEL</td>
-                  <td data-label="Action" data-role="main">Check local controller status and confirm generator is in the approved automatic/standby mode.</td>
-                  <td data-label="Verification">No active alarm, warning or disabled automatic start condition present.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Look over the room or enclosure.</td>
+                  <td data-label="Check">No water coming in, no leaks under the engine, no fuel smell, no damage.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">FUEL SYSTEM</td>
-                  <td data-label="Action" data-role="main">Check visible fuel level indication and inspect accessible fuel lines, valves and containment areas.</td>
-                  <td data-label="Verification">Fuel level within site-defined minimum and no visible fuel leak observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the controller panel.</td>
+                  <td data-label="Check">In automatic. No alarms or warnings. Emergency stop released.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">ENGINE / COOLING</td>
-                  <td data-label="Action" data-role="main">Check visible coolant level indication, radiator area, hoses and ventilation path where accessible.</td>
-                  <td data-label="Verification">Cooling system appears normal and ventilation path is unobstructed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Look at the generator breaker and any isolators. Look only.</td>
+                  <td data-label="Check">In their normal position.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">ENGINE / LUBRICATION</td>
-                  <td data-label="Action" data-role="main">Check visible oil level indication or local status indication according to site practice.</td>
-                  <td data-label="Verification">Oil condition/status appears within approved operating range.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the engine heater.</td>
+                  <td data-label="Check">Heater on. Coolant temperature in the normal range for standby.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">BATTERY / CHARGER</td>
-                  <td data-label="Action" data-role="main">Inspect starting batteries, charger status and visible terminals for abnormal condition.</td>
-                  <td data-label="Verification">Charger normal, no visible corrosion, swelling, leakage or loose connection observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check coolant and oil on sight glasses or gauges. Use the dipstick only where the site's instructions allow it.</td>
+                  <td data-label="Check">Levels within the marks. Oil not milky.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">ATS / MONITORING</td>
-                  <td data-label="Action" data-role="main">Verify generator and transfer system status in monitoring or BMS/CMMS where available.</td>
-                  <td data-label="Verification">Status matches local inspection and no unresolved alarm is present.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the starting batteries and charger.</td>
+                  <td data-label="Check">Charger on, no alarm. No corrosion, swelling or leaks. Voltage noted. Battery age within the site's replacement cycle.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">GEN-001</td>
-                  <td data-label="Action" data-role="main">Record runtime hours, visible alarms, fuel level/status and inspection findings.</td>
-                  <td data-label="Verification">Inspection record completed in logbook or CMMS.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the fuel: tank levels, transfer pumps, visible lines and valves, the bund.</td>
+                  <td data-label="Check">Level above the site minimum. Pumps in automatic. Valves in their normal position. No leaks. Bund dry.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">GEN-001</td>
-                  <td data-label="Action" data-role="main">Report any exception, abnormal condition or missing inspection access to responsible role.</td>
-                  <td data-label="Verification">Exception recorded and follow-up owner assigned.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the air intake, louvres and exhaust.</td>
+                  <td data-label="Check">Louvres or dampers in automatic and free to open. Intake clear. No soot or damage on the exhaust.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Action" data-role="main">Compare what you see with monitoring.</td>
+                  <td data-label="Check">Local readings match monitoring.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> before you leave, look at the controller panel once more.</td>
+                  <td data-label="Check">In automatic. No alarms. Emergency stop released. Breaker in its normal position.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Action" data-role="main">Record running hours, fuel level, battery voltage, coolant temperature and findings. Compare with last week.</td>
+                  <td data-label="Check">Record complete. Changes since last week noted. Running hours that went up with no test or outage are a finding.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">14</td>
+                  <td data-label="Action" data-role="main">Report findings. Anything that could stop the generator starting goes to the Shift lead at once, by phone, not only in the log.</td>
+                  <td data-label="Check">Each finding has an owner.</td>
+                  <td data-label="Owner">Operator on duty, Shift lead</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
-
-          <p>
-            Weekly generator inspection is normally a low-impact operational
-            activity, but it supports a high-criticality function. Missed defects
-            may remain hidden until the generator is required during a utility
-            failure or transfer event.
-          </p>
-
-          <ul>
-            <li>Do not change operating mode unless authorized by the site procedure.</li>
-            <li>Do not reset alarms without understanding and recording the cause.</li>
-            <li>Do not open energized panels unless qualified and authorized.</li>
-            <li>Report fuel, oil, coolant, battery or exhaust abnormalities immediately.</li>
-            <li>Keep access routes and ventilation paths clear.</li>
-          </ul>
-
-          <h2>7. Rollback / Exception Handling</h2>
-
-          <p>
-            This inspection should not normally alter the generator operating
-            state. If an unintended change occurs, restore the system to the
-            approved standby condition only if qualified and authorized to do so.
-          </p>
-
-          <p>
-            If the generator cannot be confirmed available, or if automatic start
-            readiness is uncertain, escalate immediately according to the site
-            escalation process and record the condition as an operational exception.
-          </p>
-
-          <h2>8. Post Verification</h2>
-
-          <ul class="checklist">
-            <li>☐ Generator remains in approved standby/automatic mode</li>
-            <li>☐ No unresolved alarms or abnormal local indications remain unreported</li>
-            <li>☐ Fuel, coolant, oil and battery status checked according to site practice</li>
-            <li>☐ Generator room or enclosure left secure and accessible</li>
-            <li>☐ Inspection record updated in logbook, CMMS or approved system</li>
-            <li>☐ Exceptions escalated and follow-up ownership assigned</li>
-          </ul>
-
-          <h2>9. Operational Notes</h2>
-
-          <p>
-            A weekly inspection should be treated as an early-warning control,
-            not as a substitute for periodic functional testing, load testing,
-            manufacturer service, fuel quality management or statutory inspection
-            requirements.
-          </p>
-
-          <p>
-            Emergency and standby power systems are commonly governed by local
-            regulations, manufacturer instructions and standards such as NFPA 110
-            where applicable. NFPA 110 covers installation, maintenance, operation
-            and testing requirements for emergency power supply systems, and its
-            purpose is maximum system reliability.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> SOP Example</div>
-            <div><strong>Category:</strong> Emergency Power / Standby Generation</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
           <div class="principle-callout">
             <p>
-              <strong>Key principles:</strong> controlled inspection, visible
-              readiness, accurate records, exception escalation and verified
-              standby state.
+              <strong>Note:</strong> What counts as normal (coolant temperature,
+              battery voltage, fuel minimum) comes from the manufacturer and the
+              site design. Put the numbers in the site's own checklist so nobody
+              has to guess.
             </p>
           </div>
+
+          <h2>6. If you find something wrong</h2>
+
+          <p>
+            <strong>If anything suggests the generator might not start, say so at
+            once. Treat it as not available until someone qualified says
+            otherwise.</strong>
+          </p>
+
+          <p>
+            Not in automatic, emergency stop pressed, or breaker open: don't just
+            put it back. Someone may be working on it. Tell the Shift lead, who
+            finds out why and decides who returns it to automatic. Record it
+            either way.
+          </p>
+
+          <p>
+            Active alarm: record it and don't reset it without knowing the cause.
+            If it could affect starting, the Shift lead calls the vendor.
+          </p>
+
+          <p>
+            Generator not available: this is lost redundancy, and it is escalated.
+            The Shift lead tells the Facility manager and the On-call person, stops
+            planned work that relies on the generators, and postpones any power
+            tests.
+          </p>
+
+          <p>
+            Fuel leak or strong fuel smell: no sparks or open flame. Close the
+            valve if it is safe to do so, contain the spill with the spill kit, and
+            call the Shift lead. If the leak is large or there is a fire risk,
+            leave and raise the alarm. See
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+          </p>
+
+          <p>
+            The generator starts while you are in the room: step back from moving
+            parts, leave calmly, and call the Shift lead. A start you didn't expect
+            may mean the grid has failed. See
+            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the site's own
+            plan.
+          </p>
+
+          <h2>7. After the inspection</h2>
+
+          <ul class="checklist">
+            <li>☐ Generator in automatic, no new alarms</li>
+            <li>☐ Room or enclosure closed and secured, route clear</li>
+            <li>☐ Record complete and compared with last week</li>
+            <li>☐ Findings reported, each with an owner</li>
+            <li>☐ Shift lead told you are out of the generator area</li>
+          </ul>
+
+          <h2>8. Rules and standards</h2>
+
+          <p>
+            What is required varies by country and by site. In the US, NFPA 110
+            (Standard for Emergency and Standby Power Systems) requires a weekly
+            inspection and a monthly run under load for emergency and legally
+            required systems (Level 1 and Level 2). Many data center generators
+            are optional standby, so there NFPA 110 is often used as good practice
+            rather than as a legal requirement. In Norway, no rule sets a weekly
+            check; the schedule follows the manufacturer's recommendations.
+            Elsewhere, check local rules and the insurer's requirements. Rules for
+            safe access and electrical work still apply: EN 50110-1 in Europe, FSE
+            in Norway, the Electricity at Work Regulations 1989 in the UK and
+            NFPA 70E in the US.
+          </p>
 
         </article>
 
         <aside class="advisory-sidebar">
-          <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Generator readiness</li>
-              <li>Visible condition</li>
-              <li>Fuel and fluid status</li>
-              <li>Battery and charger status</li>
-              <li>Alarm verification</li>
-              <li>Inspection records</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">SOP Examples</a></li>
-            </ul>
-          </div>
 
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>GEN-001 — Standby generator</li>
-              <li>GEN-ROOM — Generator room</li>
-              <li>ATS-001 — Automatic transfer switch</li>
-              <li>BAT-001 — Starting battery set</li>
-              <li>FUEL-001 — Fuel system reference</li>
+              <li>SITE1-B1-GR1-GEN-001-01: Standby generator</li>
+              <li>SITE1-B1-GR1-BAT-001-01: Starting batteries and charger</li>
+              <li>SITE1-B1-000-FUEL-001-01: Fuel tank (room code 000 = outdoor)</li>
+              <li>SITE1-B1-ER1-ATS-001-01: Automatic transfer switch</li>
             </ul>
           </div>
 
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live generator procedures
-              must be reviewed against manufacturer instructions, site design,
-              local regulations and responsible operational authority.
-            </p>
-          </div>
         </aside>
       </div>
     </section>
