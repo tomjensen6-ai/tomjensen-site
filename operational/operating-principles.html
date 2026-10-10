@@ -4,14 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Operating Principles — Tom Jensen</title>
-  <meta name="description" content="Operating principles for reliable infrastructure, documentation, risk control, ownership and maintainable technical operations." />
+  <title>Operating Principles | Tom Jensen</title>
+  <meta name="description" content="The five rules I work by in data center operations, and what each one means in daily work." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../style.css?v=9" />
+  <link rel="icon" href="../images/favicon.png" />
 
-  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <meta property="og:title" content="Operating Principles | Tom Jensen" />
+  <meta property="og:description" content="Five rules for running critical infrastructure: reliability before complexity, clear ownership, staying calm under pressure, documentation that gets used, and keeping it maintainable." />
+  <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
+  <meta property="og:url" content="https://tomjensen.no/operational/operating-principles.html" />
+  <meta property="og:type" content="website" />
 </head>
 
 <body>
@@ -33,257 +38,260 @@
     </div>
   </header>
 
-  <main class="container operational-page">
+  <main>
+    <section class="advisory-note-hero">
+      <div class="container advisory-note-layout">
+        <div class="advisory-note-main">
+          <p class="eyebrow">Operational Library / Principles</p>
 
-    <section class="page-hero">
-      <p class="eyebrow">Operating Principles</p>
-      <h1>Practical principles for reliable operations.</h1>
-      <p class="lead">
-        These principles describe how I approach operational responsibility in technical environments where reliability,
-        clarity and disciplined follow-up matter. They are not slogans. They are working rules shaped by real infrastructure
-        operations, maintenance planning, documentation control, incident handling and long-term system ownership.
-      </p>
-    </section>
+          <h1>Operating Principles</h1>
 
-    <section class="content-section">
-      <h2>Purpose</h2>
-      <p>
-        In critical and business-important infrastructure, good operations are rarely created by one tool, one document or
-        one decision. They are built through repeatable habits: clear ownership, controlled change, useful documentation,
-        risk-based judgement and systems that people can actually maintain over time.
-      </p>
-
-      <p>
-        The principles below are written for operational environments such as data centres, technical facilities, IT
-        infrastructure, building systems and other asset-heavy services. They align with recognised management-system
-        thinking: risk should be structured and integrated into decision-making, assets should be managed across their life
-        cycle, continuity should be planned before disruption occurs, and change should be controlled to reduce service
-        impact.
-      </p>
-    </section>
-
-    <section class="principle-detail">
-      <div class="principle-number">01</div>
-      <div class="principle-body">
-        <h2>Reliability before complexity.</h2>
-
-        <p>
-          A solution is not better because it is more advanced. It is better when it improves reliability without creating
-          unnecessary operational burden. In real operations, complexity has a cost: more dependencies, more failure modes,
-          more training needs, more documentation and more ways for people to misunderstand the system under pressure.
-        </p>
-
-        <p>
-          The preferred solution should be understandable, supportable and appropriate for the risk it controls. Automation,
-          monitoring and advanced tooling can be valuable, but only when they strengthen operational control rather than
-          hide weak process design.
-        </p>
-
-        <div class="operational-box">
-          <h3>Operational application</h3>
-          <ul>
-            <li>Choose designs that reduce avoidable dependencies.</li>
-            <li>Verify that staff can operate the solution during abnormal conditions.</li>
-            <li>Keep fallback methods available where failure consequences are significant.</li>
-            <li>Review whether added technology reduces risk or merely moves it somewhere less visible.</li>
-          </ul>
+          <p class="advisory-note-lead">
+            Five rules I work by, and what each one means in daily work. You will
+            find them in every procedure in this library.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="principle-detail">
-      <div class="principle-number">02</div>
-      <div class="principle-body">
-        <h2>Clear ownership and accountability.</h2>
+    <section class="advisory-note-content">
+      <div class="container advisory-content-grid">
+        <article class="advisory-article">
 
-        <p>
-          Reliable infrastructure depends on knowing who owns decisions, systems, documentation and follow-up. When
-          ownership is unclear, small issues stay unresolved, temporary fixes become permanent, and responsibility is often
-          discovered too late — during an incident, audit or failed maintenance window.
-        </p>
+          <section class="principle-detail">
+            <div class="principle-number">01</div>
+            <div class="principle-body">
+              <h2>Reliability before complexity</h2>
 
-        <p>
-          Accountability does not mean blaming individuals. It means that every important system, action and decision path
-          has a clear owner, a known escalation route and visible follow-up. Good ownership makes operations calmer because
-          people know who decides, who verifies and who must be informed.
-        </p>
+              <p>
+                A more advanced solution is only better if it makes the site more
+                reliable. Every extra part adds something: another dependency,
+                another way to fail, more training, more documents, and more for a
+                tired person to misunderstand at 3 a.m.
+              </p>
 
-        <div class="operational-box">
-          <h3>Operational application</h3>
-          <ul>
-            <li>Assign named ownership for systems, procedures and recurring controls.</li>
-            <li>Use clear approval roles for planned work and operational changes.</li>
-            <li>Separate who performs a task from who verifies critical steps.</li>
-            <li>Track open actions until they are closed, not merely discussed.</li>
-          </ul>
-        </div>
+              <p>
+                I prefer solutions people can understand and run. Automation and
+                monitoring help when they give better control. They hurt when they
+                hide a weak process.
+              </p>
+
+              <div class="operational-box">
+                <h3>In practice</h3>
+                <ul>
+                  <li>Remove dependencies you don't need.</li>
+                  <li>Check that staff can run it when something is wrong, not only on a normal day.</li>
+                  <li>Keep a manual way to operate anything whose failure would hurt.</li>
+                  <li>Ask whether new technology removes a risk or just moves it out of sight.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="principle-detail">
+            <div class="principle-number">02</div>
+            <div class="principle-body">
+              <h2>Clear ownership</h2>
+
+              <p>
+                When nobody owns something, small problems stay open, temporary
+                fixes become permanent, and you find out who was responsible during
+                an incident or an audit.
+              </p>
+
+              <p>
+                Every system, procedure and open action needs a named owner, a known
+                way to escalate, and someone who follows up. Good ownership has
+                nothing to do with blame. It makes operations calmer, because people
+                know who decides, who checks and who must be told.
+              </p>
+
+              <div class="operational-box">
+                <h3>In practice</h3>
+                <ul>
+                  <li>Name an owner for every system, procedure and recurring check.</li>
+                  <li>Make approval roles for planned work clear.</li>
+                  <li>Let a second person verify critical steps.</li>
+                  <li>Track open actions until they are closed, not just discussed.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="principle-detail">
+            <div class="principle-number">03</div>
+            <div class="principle-body">
+              <h2>Stay calm under pressure</h2>
+
+              <p>
+                Pressure comes with the job. The aim is to keep it from turning into
+                chaos, and that work happens before the incident: procedures,
+                training, escalation rules and an agreed way to talk.
+              </p>
+
+              <p>
+                When something goes wrong, people need a few simple questions they
+                already know. What is the state now? What is the immediate risk? Who
+                leads? What must not be touched? What is the next safe step?
+              </p>
+
+              <div class="operational-box">
+                <h3>In practice</h3>
+                <ul>
+                  <li>Keep emergency procedures short, direct and built around roles.</li>
+                  <li>Agree escalation limits before anything happens.</li>
+                  <li>Keep updates factual: status, risk, action, owner, time.</li>
+                  <li>Drill situations where people must stop, check and decide.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="principle-detail">
+            <div class="principle-number">04</div>
+            <div class="principle-body">
+              <h2>Documentation that gets used</h2>
+
+              <p>
+                A document only has value if it helps someone do the job safely and
+                the same way each time. An outdated, vague or hard-to-find document
+                can be worse than none, because people trust it.
+              </p>
+
+              <p>
+                SOPs, MOPs, EOPs, risk assessments and asset registers should point
+                to each other. The aim is to keep what the team knows and make the
+                right action repeatable. Paperwork for its own sake helps nobody.
+              </p>
+
+              <div class="operational-box">
+                <h3>In practice</h3>
+                <ul>
+                  <li>Give every document an owner, a version, an approval date and a review date.</li>
+                  <li>Write procedures for the actual task, step by step.</li>
+                  <li>Include what must be true before you start, the risks, the checks and the way back.</li>
+                  <li>Archive documents that are no longer valid.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="principle-detail">
+            <div class="principle-number">05</div>
+            <div class="principle-body">
+              <h2>Keep it maintainable</h2>
+
+              <p>
+                A system isn't finished when it is installed. It has to be run,
+                patched, tested, inspected, renewed and one day replaced. If it can't
+                be maintained properly, it gets less reliable every year, however
+                good the design was.
+              </p>
+
+              <p>
+                The best choice is often the one trained people can keep stable for
+                years: spare parts, vendor access, service routines, monitoring, test
+                schedules, and people who know how it works.
+              </p>
+
+              <div class="operational-box">
+                <h3>In practice</h3>
+                <ul>
+                  <li>Look at lifetime cost and support before choosing technology.</li>
+                  <li>Keep maintenance visible in plans and budgets.</li>
+                  <li>Document dependencies, settings, access and how to recover.</li>
+                  <li>Check that the team still knows how to run it safely.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <h2>How they connect</h2>
+
+          <p>
+            The principles depend on each other. Unclear ownership weakens
+            reliability. Documents lose value when nobody maintains them. Technology
+            gets risky when only one person understands it. Incidents get harder when
+            change history, asset information and escalation paths are missing.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>What should be clear</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td data-label="Area" data-role="main">Assets</td>
+                  <td data-label="What should be clear">What exists, where it is, who owns it, and how it is maintained.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Area" data-role="main">Procedures</td>
+                  <td data-label="What should be clear">How normal, planned and emergency work is done and checked.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Area" data-role="main">Risk</td>
+                  <td data-label="What should be clear">What can fail, what happens then, and what controls are in place.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Area" data-role="main">Change</td>
+                  <td data-label="What should be clear">What is changing, who approved it, who is involved, and the way back.</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Area" data-role="main">Continuity</td>
+                  <td data-label="What should be clear">How the service is protected or restored when something fails.</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Where these ideas come from</h2>
+
+          <p>
+            The same ideas run through the common management standards: ISO 31000
+            for risk management, ISO 55001 for asset management and ISO 22301 for
+            business continuity. This page doesn't follow any of them to the letter,
+            but they are good further reading.
+          </p>
+
+          <p>
+            These are general rules. They don't replace site rules, law, safety
+            regulations, manufacturer instructions or a proper risk assessment.
+          </p>
+
+        </article>
+
+        <aside class="advisory-sidebar">
+
+          <div class="sidebar-box">
+            <h3>In the Library</h3>
+            <ul>
+              <li><a href="sop/index.html" class="text-link">SOP examples</a></li>
+              <li><a href="mop/index.html" class="text-link">MOP examples</a></li>
+              <li><a href="eop/index.html" class="text-link">EOP examples</a></li>
+              <li><a href="templates/index.html" class="text-link">Templates</a></li>
+              <li><a href="governance/index.html" class="text-link">Governance</a></li>
+            </ul>
+          </div>
+
+        </aside>
       </div>
     </section>
-
-    <section class="principle-detail">
-      <div class="principle-number">03</div>
-      <div class="principle-body">
-        <h2>Calm operational decision-making.</h2>
-
-        <p>
-          Pressure is part of operations. The goal is not to remove pressure completely, but to prevent pressure from
-          becoming disorder. Calm decision-making is created before the incident: through preparation, training, clear
-          procedures, escalation rules, communication discipline and realistic risk assessment.
-        </p>
-
-        <p>
-          During abnormal situations, people need simple structure. What is the current state? What is the immediate risk?
-          Who is leading? What must not be touched? What is the next safe action? These questions should be familiar before
-          the first alarm arrives.
-        </p>
-
-        <div class="operational-box">
-          <h3>Operational application</h3>
-          <ul>
-            <li>Use emergency procedures that are short, direct and role-based.</li>
-            <li>Define escalation thresholds before incidents occur.</li>
-            <li>Keep communication factual: status, risk, action, owner and time.</li>
-            <li>Practise scenarios where people must stop, verify and decide under pressure.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="principle-detail">
-      <div class="principle-number">04</div>
-      <div class="principle-body">
-        <h2>Documentation should support operations.</h2>
-
-        <p>
-          Documentation is only valuable if it helps people operate safely, consistently and correctly. A document that is
-          outdated, too vague, too long, hidden in the wrong location or written for appearance rather than use can create
-          false confidence.
-        </p>
-
-        <p>
-          Good operational documentation should be current, controlled and usable at the moment it is needed. SOPs, EOPs,
-          MOPs, risk assessments, asset registers and ownership matrices should connect to each other rather than exist as
-          isolated files. The purpose is not to produce paperwork. The purpose is to preserve operational knowledge and make
-          correct action repeatable.
-        </p>
-
-        <div class="operational-box">
-          <h3>Operational application</h3>
-          <ul>
-            <li>Use document control: owner, version, approval date and review cycle.</li>
-            <li>Write procedures around real tasks, not generic descriptions.</li>
-            <li>Include prerequisites, risks, verification points and rollback steps.</li>
-            <li>Remove or archive documents that are no longer valid.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="principle-detail">
-      <div class="principle-number">05</div>
-      <div class="principle-body">
-        <h2>Technology must remain maintainable.</h2>
-
-        <p>
-          A technical system is not finished when it is installed. It must be operated, patched, tested, inspected, renewed,
-          documented and eventually replaced. Maintainability is therefore not a nice extra feature. It is part of the risk
-          profile of the system.
-        </p>
-
-        <p>
-          The best solution is often the one that trained people can keep safe and stable over time. That includes spare
-          parts, vendor access, service procedures, monitoring, test routines, lifecycle planning and knowledge transfer.
-          If a system cannot be maintained properly, its reliability will decline even if the original design was strong.
-        </p>
-
-        <div class="operational-box">
-          <h3>Operational application</h3>
-          <ul>
-            <li>Consider lifecycle cost and supportability before selecting technology.</li>
-            <li>Keep maintenance requirements visible in planning and budgeting.</li>
-            <li>Document dependencies, settings, access needs and recovery methods.</li>
-            <li>Review whether the organisation still has the competence to operate the system safely.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2>How these principles connect</h2>
-
-      <p>
-        These principles work together. Reliability is weakened when ownership is unclear. Documentation loses value when
-        it is not maintained. Technology becomes risky when only one person understands it. Incident response becomes harder
-        when change history, asset information and escalation paths are incomplete.
-      </p>
-
-      <p>
-        A mature operational environment does not rely on memory, heroics or informal knowledge. It creates a structure
-        where normal work, planned work and emergency response are all understandable, traceable and reviewable.
-      </p>
-
-      <div class="principle-table-wrap">
-        <table class="principle-table">
-          <thead>
-            <tr>
-              <th>Operational area</th>
-              <th>What good practice should make clear</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Operational area" data-role="main">Assets</td>
-              <td data-label="What good practice should make clear">What exists, where it is, who owns it, and how it is maintained.</td>
-            </tr>
-            <tr>
-              <td data-label="Operational area" data-role="main">Procedures</td>
-              <td data-label="What good practice should make clear">How routine, planned and emergency tasks are performed and verified.</td>
-            </tr>
-            <tr>
-              <td data-label="Operational area" data-role="main">Risk</td>
-              <td data-label="What good practice should make clear">What can fail, what the consequence is, and what controls are in place.</td>
-            </tr>
-            <tr>
-              <td data-label="Operational area" data-role="main">Change</td>
-              <td data-label="What good practice should make clear">What is changing, why it is approved, who is involved, and how rollback is handled.</td>
-            </tr>
-            <tr>
-              <td data-label="Operational area" data-role="main">Continuity</td>
-              <td data-label="What good practice should make clear">How service is protected, restored or safely reduced during disruption.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2>Related operational examples</h2>
-
-      <p>
-        The principles above are reflected in the operational documentation examples and templates in this library.
-      </p>
-
-      <div class="related-links">
-        <a href="/operational/sop/">SOP examples</a>
-        <a href="/operational/eop/">EOP examples</a>
-        <a href="/operational/mop/">MOP examples</a>
-        <a href="/operational/templates/">Templates</a>
-        <a href="/operational/governance/">Governance examples</a>
-      </div>
-    </section>
-
-    <section class="content-section disclaimer-note">
-      <h2>Use and limitation</h2>
-
-      <p>
-        These principles are general professional guidance. They do not replace site-specific engineering review, legal
-        obligations, safety regulations, manufacturer instructions, formal risk assessment or approved company procedures.
-        In critical environments, final procedures and decisions should always be adapted to the actual system, competence
-        level, contractual responsibility and regulatory context.
-      </p>
-    </section>
-
   </main>
+
+  <div class="container page-back">
+    <a class="footer-link" href="index.html"><span aria-hidden="true">←</span> Back to operational library</a>
+  </div>
 
   <footer class="site-footer" id="contact">
     <div class="container footer-grid footer-grid--two">
