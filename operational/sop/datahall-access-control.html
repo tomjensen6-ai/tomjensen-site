@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SOP Example — Data Hall Access Control | Tom Jensen</title>
-  <meta name="description" content="Public-facing SOP example for controlled data hall access in critical infrastructure and data center environments." />
+  <title>SOP Example: Data Hall Access Control | Tom Jensen</title>
+  <meta name="description" content="An example procedure for letting people into a data hall: approval, identity, escort, the rules inside, and a checked exit." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=8" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="SOP Example — Data Hall Access Control | Tom Jensen" />
-  <meta property="og:description" content="A structured public-facing SOP example for data hall access control, verification, visitor escort and operational governance." />
+  <meta property="og:title" content="SOP Example: Data Hall Access Control | Tom Jensen" />
+  <meta property="og:description" content="How I would control data hall access: who may enter, the difference between access and work approval, escort rules, and what to do when it goes wrong." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/sop/datahall-access-control.html" />
   <meta property="og:type" content="website" />
@@ -44,20 +44,20 @@
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / SOP Example</p>
 
-          <h1>Data Hall Access Control Procedure</h1>
+          <h1>Data Hall Access Control</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled access procedure for data hall
-            environments where security, human factors and operational awareness
-            are part of reliable infrastructure operation.
+            How I would handle access to a data hall. Most of the risk comes from
+            people who are allowed in, not from strangers: the wrong rack, the
+            wrong cable, work nobody approved.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real procedure must follow the
+            site's security policy, customer contracts and local rules.
           </p>
         </aside>
       </div>
@@ -69,297 +69,306 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> SOP-SEC-003</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled process for granting, verifying and documenting
-            access to a data hall or critical technical area, while reducing the
-            risk of unauthorized access, operational disruption or unsafe activity.
+            Every person who enters a data hall can affect the equipment in it.
+            This procedure checks who goes in, why, where they may go and what
+            they may do, and that everyone comes out again with the room as they
+            found it.
           </p>
 
-          <h2>2. Scope</h2>
+          <h2>2. The real risk</h2>
 
           <p>
-            Applies to personnel, visitors, vendors and contractors requiring
-            access to data halls, technical rooms or other controlled operational
-            areas within a critical infrastructure environment.
+            Strangers are the obvious risk, and the access system handles most of
+            that. The bigger risk is approved people doing the wrong thing. A
+            vendor pulls a cable in the wrong rack. A contractor starts work that
+            was never approved. A visitor props a door open or leaves a floor tile
+            up, and airflow and security suffer.
           </p>
 
           <p>
-            This example does not replace site security policy, customer-specific
-            access agreements, legal requirements, local procedures or the
-            instructions of the responsible security authority.
+            Packaging is a common one. Customers and vendors often carry boxes
+            straight into the hall. Cardboard brings dust and fire load into the
+            room, so unpacking happens outside the hall. Watch for it on every
+            visit.
           </p>
 
-          <h2>3. Preconditions</h2>
+          <p>
+            A door held open for a colleague lets in someone nobody checked.
+          </p>
+
+          <p>
+            <strong>Access approval lets someone into the room. Any work on
+            equipment also needs a work approval, such as an approved change or
+            work order. Without one, they may look, but not touch.</strong>
+          </p>
+
+          <h2>3. Before the visit</h2>
 
           <ul class="checklist">
-            <li>☐ Access request has been submitted and approved</li>
-            <li>☐ Identity has been verified according to site procedure</li>
-            <li>☐ Visitor or contractor has a valid business reason for access</li>
-            <li>☐ Required escort has been assigned where applicable</li>
-            <li>☐ Required induction, safety briefing or site rules have been completed</li>
-            <li>☐ No active incident or restriction prevents access to the area</li>
+            <li>☐ Access request approved: who, why, which room, which rack or cage, when</li>
+            <li>☐ Work approval in place if any work will be done</li>
+            <li>☐ Escort decided: needed or not, and who</li>
+            <li>☐ Visitor has done the site induction, or will get the briefing at entry</li>
+            <li>☐ No incident, test or maintenance in the room that should stop the visit</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Task</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Access Requester</td>
-                  <td data-label="Responsibility">Provide reason for access, required time window and personnel details.</td>
+                  <td data-label="Role" data-role="main">Requester (customer or vendor contact)</td>
+                  <td data-label="Task">Asks for access in advance: names, reason, room, time.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Security / Reception</td>
-                  <td data-label="Responsibility">Verify identity, access approval and entry/exit registration.</td>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Task">Checks identity and approval, issues and collects badges, logs entry and exit, watches doors and cameras.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Escort / Host</td>
-                  <td data-label="Responsibility">Remain responsible for escorted persons and ensure site rules are followed.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Task">Confirms nothing in the room should stop the visit. Tells the escort if conditions change.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Technician</td>
-                  <td data-label="Responsibility">Confirm operational conditions allow access and monitor activity where required.</td>
+                  <td data-label="Role" data-role="main">Escort</td>
+                  <td data-label="Task">Stays with the visitor, makes sure the rules are followed, checks the area at exit.</td>
                 </tr>
+
                 <tr>
-                  <td data-label="Role" data-role="main">Facility Responsible</td>
-                  <td data-label="Responsibility">Approve exceptions, restrictions or elevated access requirements.</td>
+                  <td data-label="Role" data-role="main">Shift lead</td>
+                  <td data-label="Task">Approves exceptions, decides on visits during incidents or maintenance.</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Role" data-role="main">Facility manager</td>
+                  <td data-label="Task">Owns the access policy and reviews the logs.</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> Whether a visitor needs an escort depends on
+              two things: the site's security level and the work. On high-security
+              sites, everyone is escorted all the time. Elsewhere, a trained vendor
+              may enter alone for a simple task, but for work on critical equipment
+              an operations person stays with them. Write the rules in the site's
+              access policy.
+            </p>
+          </div>
+
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: no visits. Emergency access by a vendor follows the site's own process, agreed in advance with the On-call person.</li>
+            <li>One person: alarms are watched all the time, whatever else happens. Whether that person can also escort is decided case by case. If the vendor is there to fix the alarm in that room, going with them may be the right call, as long as alarms are still seen. Otherwise a visit that needs an escort waits.</li>
+            <li>Two or more: one person escorts, the other stays on alarms and the phone.</li>
+            <li>Security: checks identity, issues badges and watches door alarms and cameras. Where Security is on site, they can escort if the site allows it.</li>
+          </ul>
+
+          <h2>5. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">ACCESS-REQ</td>
-                  <td data-label="Action" data-role="main">Confirm approved access request, reason for visit and requested area.</td>
-                  <td data-label="Verification">Request matches approved scope and time window.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the request: who, why, which room and rack, when. If work is planned, find the work approval.</td>
+                  <td data-label="Check">Request approved and matches the visit. Work approval found if needed.</td>
+                  <td data-label="Owner">Security</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">SEC-DESK</td>
-                  <td data-label="Action" data-role="main">Verify identity of all persons requesting access.</td>
-                  <td data-label="Verification">Identity confirmed according to site access procedure.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Ask the Operator on duty if anything in the room should stop the visit.</td>
+                  <td data-label="Check">No incident, test or maintenance there, or the Shift lead approves.</td>
+                  <td data-label="Owner">Security, Operator on duty</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">SEC-DESK</td>
-                  <td data-label="Action" data-role="main">Issue visitor badge, temporary credential or access card as applicable.</td>
-                  <td data-label="Verification">Credential type matches approved access level and expiry period.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check identity against the request.</td>
+                  <td data-label="Check">Photo ID matches the named person.</td>
+                  <td data-label="Owner">Security</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">DATAHALL-AREA</td>
-                  <td data-label="Action" data-role="main">Confirm whether escort is required and assign responsible host if applicable.</td>
-                  <td data-label="Verification">Escort responsibility accepted before entry.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Issue a badge or card for the approved rooms and time only.</td>
+                  <td data-label="Check">Card opens only the approved doors, and expires with the visit.</td>
+                  <td data-label="Owner">Security</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">OPS-DESK</td>
-                  <td data-label="Action" data-role="main">Check for active incidents, alarms, maintenance restrictions or operational reasons to delay access.</td>
-                  <td data-label="Verification">No restriction preventing access, or exception approved by responsible role.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Name the escort if one is needed.</td>
+                  <td data-label="Check">Escort present before entry.</td>
+                  <td data-label="Owner">Shift lead</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">DATAHALL-ENTRY</td>
-                  <td data-label="Action" data-role="main">Remind visitor or contractor of site rules before entry, including no unapproved photography, no unauthorized work and no tailgating.</td>
-                  <td data-label="Verification">Rules acknowledged before access is granted.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Brief the visitor: one person per badge swipe, doors closed, no photos unless approved, no work beyond the approval, no packaging in the hall, where the exit is, and what the fire alarm (and gas-extinguishing alarm, where the hall has one) sounds like.</td>
+                  <td data-label="Check">Visitor confirms the rules.</td>
+                  <td data-label="Owner">Escort or Security</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">DATAHALL-ENTRY</td>
-                  <td data-label="Action" data-role="main">Grant access through approved door or access point only.</td>
-                  <td data-label="Verification">Entry registered in access control system or visitor log.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> no entry until steps 1–6 are done.</td>
+                  <td data-label="Check">All checks done.</td>
+                  <td data-label="Owner">Security</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">DATAHALL</td>
-                  <td data-label="Action" data-role="main">Monitor activity according to access type, work scope and escort requirements.</td>
-                  <td data-label="Verification">Persons remain within approved area and activity scope.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Enter through the approved door.</td>
+                  <td data-label="Check">Each person's entry logged.</td>
+                  <td data-label="Owner">Escort</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">DATAHALL-EXIT</td>
-                  <td data-label="Action" data-role="main">Confirm exit from controlled area when visit or work is complete.</td>
-                  <td data-label="Verification">Exit registered and all escorted persons accounted for.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Stay with the visitor during the visit.</td>
+                  <td data-label="Check">Work only on approved equipment. No packaging brought in. Doors closed. Floor tiles in place.</td>
+                  <td data-label="Owner">Escort</td>
                 </tr>
+
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">SEC-DESK</td>
-                  <td data-label="Action" data-role="main">Return visitor badge, temporary credential or access card.</td>
-                  <td data-label="Verification">Temporary credential returned, disabled or expired according to site procedure.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the area before leaving.</td>
+                  <td data-label="Check">Doors closed, tiles in place, nothing left behind, no packaging.</td>
+                  <td data-label="Owner">Escort</td>
                 </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Action" data-role="main">Log the exit.</td>
+                  <td data-label="Check">Everyone who went in has come out.</td>
+                  <td data-label="Owner">Security</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Action" data-role="main">Collect the badge, or disable the temporary card.</td>
+                  <td data-label="Check">Badge returned or card disabled.</td>
+                  <td data-label="Owner">Security</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Action" data-role="main">Record anything unusual.</td>
+                  <td data-label="Check">Each finding recorded, with an owner.</td>
+                  <td data-label="Owner">Security, Shift lead</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
+          <h2>6. If it goes wrong</h2>
 
           <p>
-            Data hall access is a human-factor control as much as a security
-            control. Incorrect access handling can expose critical equipment,
-            customer systems, cabling, power paths, cooling paths or sensitive
-            operational information.
-          </p>
-
-          <ul>
-            <li>Do not allow tailgating or shared credentials.</li>
-            <li>Do not grant access outside approved scope without authorization.</li>
-            <li>Do not allow unescorted access where escort is required.</li>
-            <li>Do not allow work activity under an access approval only if a separate work approval is required.</li>
-            <li>Report suspicious behavior, badge misuse or access anomalies immediately.</li>
-            <li>Stop access if operational conditions change during the visit.</li>
-          </ul>
-
-          <h2>7. Rollback / Exception Handling</h2>
-
-          <p>
-            If access was granted incorrectly, immediately remove the person from
-            the controlled area if safe to do so, notify the responsible security
-            or facility role, and record the event according to site procedure.
+            Someone tailgates, or there is a person in the hall you don't
+            recognize: don't confront them if it feels unsafe. Call Security.
+            Security identifies them and escorts them out. Record it, and check
+            what they had access to.
           </p>
 
           <p>
-            If an incident, alarm or operational restriction begins during access,
-            the escort or operations representative should pause the activity,
-            account for all personnel and follow the site escalation process.
+            A visitor works outside the approval or on the wrong equipment: stop
+            the work at once, calmly. Call the Shift lead. Check the equipment and
+            alarms before anything else is touched.
           </p>
 
-          <h2>8. Post Verification</h2>
+          <p>
+            An alarm or incident starts during the visit: pause the visit. The
+            escort brings the visitors out of the hall or to a safe place, and
+            Security uses the log to check everyone is accounted for.
+          </p>
+
+          <p>
+            Fire alarm, or gas-extinguishing alarm where the hall has one: leave
+            at once by the nearest exit. The escort counts their visitors at the
+            assembly point. See
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+          </p>
+
+          <p>
+            Lost badge: disable it at once and record it.
+          </p>
+
+          <p>
+            Access given by mistake: get the person out safely, disable the card,
+            tell the Shift lead and record it. Check what they did while inside.
+          </p>
+
+          <h2>7. After the visit</h2>
 
           <ul class="checklist">
-            <li>☐ All visitors, vendors or contractors have exited the controlled area</li>
-            <li>☐ Temporary credentials have been returned, disabled or expired</li>
-            <li>☐ Access log or visitor register has been completed</li>
-            <li>☐ Any exceptions or access anomalies have been recorded</li>
-            <li>☐ Escort confirms no unauthorized activity occurred</li>
-            <li>☐ Operations confirms no visible operational impact from the visit</li>
+            <li>☐ Everyone out, and the count matches the entry log</li>
+            <li>☐ Badges returned or cards disabled</li>
+            <li>☐ Area checked: doors closed, tiles in place, no packaging</li>
+            <li>☐ Anything unusual recorded and reported</li>
           </ul>
 
-          <h2>9. Operational Notes</h2>
+          <h2>8. Rules and standards</h2>
 
           <p>
-            Access control should be treated as part of operational reliability,
-            not only physical security. A person entering a data hall can affect
-            airflow, cabling, equipment access, customer systems, housekeeping,
-            emergency response routes and change control boundaries.
+            ISO/IEC 27001 includes controls for physical access to secure areas.
+            EN 50600-2-5 covers security systems for data centers. Customer
+            contracts often add their own rules for their space. If the site
+            stores visitor logs or camera footage, these are personal data; in
+            Europe GDPR applies, so keep only what is needed, for no longer than
+            needed.
           </p>
-
-          <p>
-            Formal information-security standards such as ISO/IEC 27001 include
-            controls for physical security, access control and protection of
-            information assets. Site procedures should align with the responsible
-            organization’s security management system where such a system exists.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> SOP Example</div>
-            <div><strong>Category:</strong> Security / Controlled Area Access</div>
-            <div><strong>Criticality:</strong> Medium to High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> verified identity, approved scope,
-              escort control, access logging, human-factor awareness and clear
-              exception escalation.
-            </p>
-          </div>
 
         </article>
 
         <aside class="advisory-sidebar">
-          <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Identity verification</li>
-              <li>Approved access scope</li>
-              <li>Escort responsibility</li>
-              <li>Human-factor control</li>
-              <li>Access logging</li>
-              <li>Exception escalation</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">SOP Examples</a></li>
-            </ul>
-          </div>
 
           <div class="sidebar-box">
             <h3>Example Area References</h3>
             <ul>
-              <li>SEC-DESK — Security / reception point</li>
-              <li>OPS-DESK — Operations desk</li>
-              <li>DATAHALL-ENTRY — Controlled entry point</li>
-              <li>DATAHALL — Controlled technical area</li>
-              <li>ACCESS-REQ — Access request reference</li>
+              <li>SITE1-B1-DH1: Data hall 1</li>
+              <li>SITE1-B1-RC1: Reception and security desk</li>
+              <li>SITE1-B1-LB1: Loading bay and unpacking area</li>
             </ul>
           </div>
 
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live access procedures must
-              be aligned with site security policy, legal requirements, customer
-              commitments and responsible operational authority.
-            </p>
-          </div>
         </aside>
       </div>
     </section>
