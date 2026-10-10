@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SOP Example — Cooling System Visual Inspection | Tom Jensen</title>
-  <meta name="description" content="Public-facing SOP example for visual inspection of cooling systems in critical infrastructure and data center environments." />
+  <title>SOP Example: Cooling System Inspection | Tom Jensen</title>
+  <meta name="description" content="An example procedure for the routine inspection of data hall cooling: unit status, standby readiness, inlet temperatures, air paths, water and what to do with findings." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="SOP Example — Cooling System Visual Inspection | Tom Jensen" />
-  <meta property="og:description" content="A structured public-facing SOP example for cooling system visual inspection, environmental verification and operational documentation." />
+  <meta property="og:title" content="SOP Example: Cooling System Inspection | Tom Jensen" />
+  <meta property="og:description" content="How I would inspect data hall cooling: the checks that catch a unit that isn’t ready, temperatures where they matter, air paths and leaks." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/sop/cooling-system-inspection.html" />
   <meta property="og:type" content="website" />
@@ -44,20 +44,20 @@
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / SOP Example</p>
 
-          <h1>Cooling System Visual Inspection Procedure</h1>
+          <h1>Cooling System Inspection</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled visual inspection procedure for
-            cooling systems supporting technical rooms, data halls and other
-            critical infrastructure environments.
+            How I would do the routine walk-round of data hall cooling. It catches
+            the quiet problems: a standby unit that isn’t ready, a growing hot spot,
+            a drain that has started to leak.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real inspection must follow the
+            site design, the manufacturer’s instructions and local safety rules.
           </p>
         </aside>
       </div>
@@ -69,298 +69,306 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> SOP-CLG-004</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled visual inspection process for cooling systems to
-            verify general readiness, environmental stability, visible condition,
-            alarm status and potential early warning signs before they develop
-            into operational incidents.
-          </p>
-
-          <h2>2. Scope</h2>
-
-          <p>
-            Applies to routine visual inspection of cooling equipment and related
-            operational areas, including data halls, technical rooms, CRAC/CRAH
-            units, fan systems, chilled-water or direct-expansion cooling equipment,
-            visible pipework, drainage points, air paths and local control panels
-            where applicable.
+            The inspection checks that the cooling can still do its job, with the
+            redundancy the design expects: units in automatic, standby units ready,
+            temperatures within limits at the IT equipment, air going where it
+            should, and no water where it shouldn’t be.
           </p>
 
           <p>
-            This example does not replace manufacturer instructions, specialist
-            HVAC maintenance requirements, local safety rules, refrigerant-handling
-            regulations, electrical safety rules or site-specific operating
-            procedures.
+            It does not replace maintenance. Filters, coils, belts, valves and
+            refrigerant circuits are serviced on their own schedule by people
+            trained for it.
           </p>
 
-          <h2>3. Preconditions</h2>
+          <h2>2. The real risk</h2>
+
+          <p>
+            One high risk is losing redundancy without noticing. A standby unit is
+            switched off after service. A unit is left in local mode, so the
+            control system can’t start it. A unit runs with an alarm nobody has
+            acted on. Nothing looks wrong until a running unit fails and the
+            standby doesn’t take over.
+          </p>
+
+          <p>
+            Airflow is another. Missing blanking panels, open floor tiles, unsealed
+            cable openings and propped containment doors let cold air bypass the
+            equipment. The units work harder and hot spots appear, even with enough
+            cooling installed.
+          </p>
+
+          <p>
+            Water is a third. Condensate drains block, pumps fail, and pipe joints
+            weep. Water under a raised floor can reach power cables before anyone
+            sees it.
+          </p>
+
+          <p>
+            The risk to you: fans can start without warning, panels and units can
+            be live, and open floor tiles are a fall hazard. Never put your hands
+            inside a unit, and don’t lift floor tiles on your own.
+          </p>
+
+          <h2>3. Before you start</h2>
 
           <ul class="checklist">
-            <li>☐ Inspection is part of an approved operational routine</li>
-            <li>☐ Area is accessible and safe to enter</li>
-            <li>☐ Required PPE and site access permissions are available</li>
-            <li>☐ Monitoring system or environmental dashboard is available where applicable</li>
-            <li>☐ No active emergency condition prevents routine inspection</li>
-            <li>☐ Latest maintenance log or CMMS record is available if needed</li>
+            <li>☐ The inspection is on the schedule, and the Shift lead knows you are going</li>
+            <li>☐ No work going on with the cooling units or pipework in the area</li>
+            <li>☐ Access to the data halls and technical rooms on the route</li>
+            <li>☐ A torch, and a handheld thermometer if the site allows one</li>
+            <li>☐ Last time’s record at hand, so you can compare</li>
+            <li>☐ Monitoring available, so you can compare what it shows with what you see</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Task</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Technician</td>
-                  <td data-label="Responsibility">Perform visual inspection, record observations and report exceptions.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Task">Does the inspection, records the findings, reports anything abnormal at once.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Shift Lead / Facility Responsible</td>
-                  <td data-label="Responsibility">Review abnormal findings, confirm follow-up actions and escalate if required.</td>
+                  <td data-label="Role" data-role="main">Shift lead</td>
+                  <td data-label="Task">Reviews findings, decides what is urgent, calls the vendor if needed.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">HVAC Vendor / Specialist</td>
-                  <td data-label="Responsibility">Investigate and correct technical faults outside normal operator scope.</td>
+                  <td data-label="Role" data-role="main">Facility manager</td>
+                  <td data-label="Task">Owns the schedule and the records. Follows up open findings.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Manager</td>
-                  <td data-label="Responsibility">Ensure inspection frequency, documentation quality and governance are maintained.</td>
+                  <td data-label="Role" data-role="main">Cooling specialist (vendor)</td>
+                  <td data-label="Task">Fixes faults outside the operator’s scope. Only certified technicians work on refrigerant circuits.</td>
+                </tr>
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Task">Knows who is in the data halls.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: the walk-round waits until someone is. Check temperatures and unit status in monitoring if you can, and record that the inspection was missed.</li>
+            <li>One person: fine for the visual check, if the site’s rules allow it. On large sites the round is often split between several people, each with their own area. Tell the Shift lead or Security when you start and when you finish. Do nothing beyond looking, reading displays and taking temperatures.</li>
+            <li>Two or more: needed for anything beyond the visual check, such as lifting floor tiles or opening unit panels.</li>
+            <li>Security: knows who is in the data halls and for how long.</li>
+          </ul>
+
+          <h2>5. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Confirm the inspection area is accessible and free from obvious obstruction.</td>
-                  <td data-label="Verification">Access route, service clearance and emergency paths are clear.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Tell the Shift lead you are starting. Look at monitoring first: room temperatures, humidity, alarms, and which units are running and which are on standby.</td>
+                  <td data-label="Check">Status noted before you go in.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">BMS / MONITORING</td>
-                  <td data-label="Action" data-role="main">Review current room temperature, humidity and cooling-related alarms where monitoring is available.</td>
-                  <td data-label="Verification">Values are within site-defined operating limits or exceptions are recorded.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Walk the route through the data halls and technical rooms.</td>
+                  <td data-label="Check">Exits and service clearances clear. Nothing stored in front of units.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
-                  <td data-label="Action" data-role="main">Inspect local cooling unit display or status indication.</td>
-                  <td data-label="Verification">No active alarm, shutdown state or abnormal local indication is present.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check each cooling unit’s display.</td>
+                  <td data-label="Check">In automatic, not local or manual. No alarms. Running or on standby as monitoring shows.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
-                  <td data-label="Action" data-role="main">Check visible airflow path around the unit, intake and discharge areas.</td>
-                  <td data-label="Verification">No blocked air path, misplaced material or visible airflow obstruction observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the standby units.</td>
+                  <td data-label="Check">In automatic, no alarm, ready to start. A standby unit that is switched off is lost redundancy.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">DATAHALL</td>
-                  <td data-label="Action" data-role="main">Walk the cold aisle, hot aisle or defined technical area and observe temperature consistency, airflow and unusual conditions.</td>
-                  <td data-label="Verification">No obvious hot spot, abnormal airflow pattern or local thermal issue observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Look at the air intake and discharge of each unit.</td>
+                  <td data-label="Check">Nothing blocking them.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">PIPE / DRAIN</td>
-                  <td data-label="Action" data-role="main">Inspect visible chilled-water, condensate or drain areas where accessible.</td>
-                  <td data-label="Verification">No visible leak, blocked drain, standing water or condensation issue observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Walk the cold aisles. Read the inlet temperatures at the front of the racks, from the rack sensors or a handheld thermometer.</td>
+                  <td data-label="Check">Within the site’s limits. No rack noticeably warmer than its neighbors.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">FILTER / GRILLE</td>
-                  <td data-label="Action" data-role="main">Check accessible filter, grille or intake area visually where permitted by site practice.</td>
-                  <td data-label="Verification">No visible heavy dust build-up, damage or obstruction observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the containment and air paths.</td>
+                  <td data-label="Check">Containment doors closed. Floor tiles in place, perforated tiles only where planned. Blanking panels in place, cable openings sealed. Gaps in customer racks are recorded and reported to the customer.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">FLOOR / CEILING</td>
-                  <td data-label="Action" data-role="main">Inspect raised floor tiles, ceiling areas or containment boundaries where relevant.</td>
-                  <td data-label="Verification">No displaced tile, damaged containment, open bypass path or visible air leakage concern observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check visible pipework, valves, drains and condensate pumps, and the leak detection cable.</td>
+                  <td data-label="Check">No leaks, drips or standing water. Drains clear. No pump alarm. Leak detection cable in place and undamaged.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-001</td>
-                  <td data-label="Action" data-role="main">Listen and observe for abnormal vibration, unusual noise or irregular operation.</td>
-                  <td data-label="Verification">No abnormal sound, vibration or visible mechanical issue observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Look at filters and grilles where site practice allows. Read the filter pressure indicator if one is fitted.</td>
+                  <td data-label="Check">No heavy dust or damage. Indicator in its normal range.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">CMMS / LOG</td>
-                  <td data-label="Action" data-role="main">Record inspection result, environmental status and any abnormal observation.</td>
-                  <td data-label="Verification">Inspection record completed and exceptions escalated where required.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Listen to each unit.</td>
+                  <td data-label="Check">No unusual noise, vibration or rattling.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Action" data-role="main">Compare what you see with monitoring.</td>
+                  <td data-label="Check">Local displays and readings match monitoring.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">12</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> before you leave, check that everything is as you found it.</td>
+                  <td data-label="Check">Units in automatic. No alarms caused by the round. Containment doors closed. Floor tiles in place.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Action" data-role="main">Record temperatures, humidity, which units run and which are on standby, and your findings. Compare with last time.</td>
+                  <td data-label="Check">Record complete. Changes since last time noted.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">14</td>
+                  <td data-label="Action" data-role="main">Report findings. Anything that reduces cooling capacity or redundancy goes to the Shift lead at once, by phone, not only in the log.</td>
+                  <td data-label="Check">Each finding has an owner.</td>
+                  <td data-label="Owner">Operator on duty, Shift lead</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
-
-          <p>
-            Cooling inspection is normally a low-impact operational activity, but
-            cooling systems support a high-criticality function. Small changes in
-            airflow, drainage, filtration, room loading or unit status can reduce
-            thermal margin and increase operational risk.
-          </p>
-
-          <ul>
-            <li>Do not change cooling setpoints unless authorized by site procedure.</li>
-            <li>Do not reset alarms without understanding and recording the cause.</li>
-            <li>Do not open energized or restricted panels unless qualified and authorized.</li>
-            <li>Do not move containment, floor tiles or air-management components without approval.</li>
-            <li>Report water, condensation, unusual noise, vibration or thermal anomalies immediately.</li>
-            <li>Follow site rules for refrigerant, electrical and mechanical safety.</li>
-          </ul>
-
-          <h2>7. Rollback / Exception Handling</h2>
-
-          <p>
-            This inspection should not normally alter the cooling system operating
-            state. If an unintended change occurs, stop the inspection activity,
-            notify the responsible role and restore the approved state only if
-            qualified and authorized to do so.
-          </p>
-
-          <p>
-            If room temperature, humidity, leakage, airflow or equipment status
-            indicates reduced cooling capacity, escalate according to the site
-            incident or abnormal-condition process.
-          </p>
-
-          <h2>8. Post Verification</h2>
-
-          <ul class="checklist">
-            <li>☐ Cooling equipment remains in approved operating mode</li>
-            <li>☐ No unresolved alarm or abnormal indication remains unreported</li>
-            <li>☐ Airflow paths and access routes are clear</li>
-            <li>☐ No visible leak, condensation or drainage concern remains unreported</li>
-            <li>☐ Environmental readings reviewed where monitoring is available</li>
-            <li>☐ Inspection record updated in logbook, CMMS or approved system</li>
-            <li>☐ Exceptions escalated and follow-up ownership assigned</li>
-          </ul>
-
-          <h2>9. Operational Notes</h2>
-
-          <p>
-            Visual inspection supports early detection, but it is not a substitute
-            for preventive maintenance, specialist HVAC service, calibration,
-            water treatment, refrigerant management, filter replacement or
-            manufacturer-recommended maintenance.
-          </p>
-
-          <p>
-            Data center environmental management should be aligned with the
-            facility design, IT equipment requirements, monitoring strategy and
-            applicable guidance such as ASHRAE TC 9.9 thermal guidance for data
-            processing environments.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> SOP Example</div>
-            <div><strong>Category:</strong> Mechanical / Cooling Systems</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
           <div class="principle-callout">
             <p>
-              <strong>Key principles:</strong> visible condition, environmental
-              stability, airflow awareness, leak detection, alarm verification
-              and clear exception escalation.
+              <strong>Note:</strong> What counts as normal (temperature limits,
+              humidity range, which units run and which wait) comes from the site
+              design and the cooling control strategy. Put the numbers in the
+              site’s own checklist so nobody has to guess.
             </p>
           </div>
+
+          <h2>6. If you find something wrong</h2>
+
+          <p>
+            <strong>If anything suggests the site has less cooling or less
+            redundancy than it should, say so at once.</strong>
+          </p>
+
+          <p>
+            A unit in local or manual mode, switched off, or a standby unit not
+            ready: don’t just put it back. Someone may be working on it. Tell the
+            Shift lead, who finds out why and decides who returns it to automatic.
+            Until then it is lost redundancy, and it is escalated.
+          </p>
+
+          <p>
+            Active alarm: record it and don’t reset it without knowing the cause.
+            The Shift lead calls the vendor if it affects capacity.
+          </p>
+
+          <p>
+            Temperatures above the site’s limit, or a clear hot spot: call the
+            Shift lead at once. Check whether a unit has stopped. If cooling
+            capacity is lost, follow
+            <a href="../eop/cooling-failure.html">Cooling Failure Response (EOP-CLG-002)</a>.
+          </p>
+
+          <p>
+            Missing blanking panels or open gaps in a customer rack: record it and
+            tell the customer. The site’s rules usually require blanking panels,
+            and fitting them is normally the customer’s cost. Operations often fits
+            them in the end, once it is agreed with the customer.
+          </p>
+
+          <p>
+            Water, a leak or standing water: keep away from electrical equipment in
+            the wet area. Find the source only if it is safe to do so, and call the
+            Shift lead. Follow
+            <a href="../eop/water-leak-response.html">Water Leak Response (EOP-WTR-003)</a>.
+          </p>
+
+          <p>
+            Refrigerant: oil stains on pipe joints or a hissing sound. Don’t touch
+            anything and call the Shift lead. Only a certified technician works on
+            the circuit.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the site’s own
+            plan.
+          </p>
+
+          <h2>7. After the inspection</h2>
+
+          <ul class="checklist">
+            <li>☐ All units in automatic, no new alarms</li>
+            <li>☐ Containment doors closed, floor tiles in place, route clear</li>
+            <li>☐ Record complete and compared with last time</li>
+            <li>☐ Findings reported, each with an owner</li>
+            <li>☐ Shift lead told the round is finished</li>
+          </ul>
+
+          <h2>8. Rules and standards</h2>
+
+          <p>
+            ASHRAE TC 9.9 publishes the thermal guidelines most data centers use.
+            For most IT equipment, the recommended inlet temperature is
+            18–27&nbsp;°C. EN 50600-2-3 covers environmental control in data
+            centers. In Europe, the F-gas Regulation means only certified people
+            may work on refrigerant circuits. The site’s design and the
+            manufacturer’s instructions set the actual limits and service
+            intervals.
+          </p>
 
         </article>
 
         <aside class="advisory-sidebar">
           <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Cooling readiness</li>
-              <li>Environmental status</li>
-              <li>Airflow paths</li>
-              <li>Leak and drainage checks</li>
-              <li>Alarm verification</li>
-              <li>Inspection records</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">SOP Examples</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>CRAC/CRAH-001 — Cooling unit</li>
-              <li>CLG-ZONE — Cooling zone</li>
-              <li>BMS — Building management system</li>
-              <li>PIPE / DRAIN — Visible pipe and drain areas</li>
-              <li>DATAHALL — Controlled technical area</li>
+              <li>SITE1-B1-DH1-CRAH-001-01: Cooling unit (CRAH) in data hall 1</li>
+              <li>SITE1-B1-DH1-CRAH-002-01: Standby cooling unit</li>
+              <li>SITE1-B1-DH1-CDP-001-01: Condensate pump</li>
+              <li>SITE1-B1-DH1-LDS-001-01: Leak detection cable</li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live cooling procedures must
-              be reviewed against site design, manufacturer instructions, local
-              safety rules and responsible operational authority.
-            </p>
           </div>
         </aside>
       </div>
