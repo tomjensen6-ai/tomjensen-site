@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MOP Example — CRAC/CRAH Planned Maintenance | Tom Jensen</title>
-  <meta name="description" content="Public-facing MOP example for planned CRAC/CRAH cooling maintenance in critical infrastructure and data center environments." />
+  <title>MOP Example: CRAC/CRAH Planned Maintenance | Tom Jensen</title>
+  <meta name="description" content="An example method of procedure for taking a data hall cooling unit out for maintenance and back: capacity check, automatic takeover, hold points and a careful return to service." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="MOP Example — CRAC/CRAH Planned Maintenance | Tom Jensen" />
-  <meta property="og:description" content="A structured Method of Procedure example for planned cooling maintenance, environmental monitoring, thermal risk control and return-to-service verification." />
+  <meta property="og:title" content="MOP Example: CRAC/CRAH Planned Maintenance | Tom Jensen" />
+  <meta property="og:description" content="How I would run planned maintenance on a CRAC or CRAH unit: what to check before it comes out, what to watch while it’s out, and how to bring it back without surprises." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/mop/cooling-maintenance.html" />
   <meta property="og:type" content="website" />
@@ -47,17 +47,17 @@
           <h1>CRAC/CRAH Planned Maintenance</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled Method of Procedure for planned
-            maintenance on computer-room cooling equipment while managing
-            environmental risk to critical technical spaces.
+            How I would take a cooling unit out of service for maintenance and
+            bring it back. The work itself belongs to the specialist. Operations
+            owns the room while the unit is out, and the moment it goes back.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. Real maintenance must follow the
+            manufacturer’s procedure, the site design and local safety rules.
           </p>
         </aside>
       </div>
@@ -69,384 +69,352 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> MOP-CLG-003</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled process for planned maintenance on a CRAC or CRAH
-            unit while maintaining environmental stability, protecting critical
-            loads and verifying that the cooling system is returned to an approved
-            operating state after maintenance.
+            Take one cooling unit out of service for planned maintenance while the
+            rest of the cooling carries the room, then return it to service in
+            automatic, with the room as it was before.
           </p>
 
-          <h2>2. Scope</h2>
+          <h2>2. The real risk</h2>
 
           <p>
-            Applies to planned maintenance activities involving computer-room air
-            conditioning or computer-room air handling equipment supporting data
-            halls, technical rooms or other critical infrastructure areas.
+            While the unit is out, the room has less cooling and usually no
+            redundancy left. If another unit fails during the work, temperatures
+            start to rise, and the time you have depends on the load and how far
+            the room is from its limits.
           </p>
 
           <p>
-            This example does not replace manufacturer instructions, specialist
-            HVAC procedures, refrigerant-handling requirements, electrical safety
-            rules, water treatment requirements, local regulations or site-specific
-            operational procedures.
+            Redundancy is designed per room or per area, depending on the
+            building. In a colo with several rooms, it is per room. Either way,
+            check that the units that are left can reach the area around the
+            stopped unit, not only that the total is enough. Otherwise a hot spot
+            can appear next to it.
           </p>
 
-          <h2>3. Preconditions</h2>
+          <p>
+            Returning the unit to service is the second danger. Units are left in
+            local mode, chilled water valves are left closed, alarms are left
+            suppressed, and a standby unit started by hand is left running instead
+            of back on standby. Each one looks fine on the day and removes
+            redundancy for weeks.
+          </p>
+
+          <p>
+            Before the unit comes out, know how long it takes to put it back. That
+            time decides how fast you can react if something else fails.
+          </p>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> On chilled-water units (CRAH), the work may
+              need the water valves closed. On direct-expansion units (CRAC), only
+              a certified technician works on the refrigerant circuit.
+            </p>
+          </div>
+
+          <h2>3. Before the work</h2>
 
           <ul class="checklist">
-            <li>☐ Approved maintenance window confirmed</li>
-            <li>☐ Formal change approval completed</li>
-            <li>☐ Affected cooling zone and supported room identified</li>
-            <li>☐ Current room temperature and humidity reviewed</li>
-            <li>☐ Redundant cooling capacity verified available where applicable</li>
-            <li>☐ No active cooling, leak or environmental alarm affecting the work area</li>
-            <li>☐ Required tools, parts, filters and consumables available before work starts</li>
-            <li>☐ HVAC vendor or qualified personnel confirmed onsite or available</li>
-            <li>☐ Monitoring and escalation channels active</li>
-            <li>☐ Rollback and stop conditions reviewed before execution</li>
+            <li>☐ Change approved, with a time window and the exact unit named</li>
+            <li>☐ No other work going on that reduces cooling or power redundancy</li>
+            <li>☐ The remaining units can carry the current load, including the area around the unit that comes out</li>
+            <li>☐ The standby unit is in automatic, without alarms, and ready to start on its own</li>
+            <li>☐ Room temperatures stable and well inside the site’s limits; no cooling, leak or humidity alarms</li>
+            <li>☐ Parts, filters and tools on site before the unit is stopped</li>
+            <li>☐ The time needed to return the unit to service is known</li>
+            <li>☐ Stop conditions agreed: the temperature limit, and what happens if another unit fails</li>
+            <li>☐ Vendor and Electrical responsible person confirmed for the window</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Task</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Lead</td>
-                  <td data-label="Responsibility">Coordinate maintenance activity, confirm readiness and approve progression between phases.</td>
+                  <td data-label="Role" data-role="main">Work lead (named in the plan; often the Shift lead or Facility manager)</td>
+                  <td data-label="Task">Runs the briefing, gives the go at each hold point, calls stop.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">HVAC Vendor / Specialist</td>
-                  <td data-label="Responsibility">Perform technical maintenance according to manufacturer and approved site requirements.</td>
+                  <td data-label="Role" data-role="main">Cooling specialist (vendor)</td>
+                  <td data-label="Task">Does the maintenance, following the manufacturer’s procedure.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Facility Operations</td>
-                  <td data-label="Responsibility">Monitor room conditions, alarms, airflow paths and operational impact.</td>
+                  <td data-label="Role" data-role="main">Electrical responsible person</td>
+                  <td data-label="Task">Isolates the unit, locks and tags it, and removes the lock after the work.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Change Manager</td>
-                  <td data-label="Responsibility">Ensure approvals, notifications, records and closeout documentation are completed.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Task">Watches temperatures, alarms and unit status during the whole window. Logs the readings.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
-                  <td data-label="Responsibility">Confirm electrical isolation or safety control requirements where applicable.</td>
+                  <td data-label="Role" data-role="main">Change manager</td>
+                  <td data-label="Task">Approvals, notifications and records.</td>
+                </tr>
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Task">Lets the vendor in, and knows who is in the data hall.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: never run this work. Someone from operations is on site for the whole window.</li>
+            <li>One person: usually fine when the vendor does the work and one operator watches the room, if the site’s rules allow it. That operator does nothing else during the window.</li>
+            <li>Two or more: needed for breaker switching or other high-risk work, which includes the electrical isolation, or when the room is close to its limits.</li>
+            <li>Security: told in advance, lets the vendor in, and knows who is in the data hall.</li>
+          </ul>
+
+          <h2>5. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
-
               <tbody>
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Conduct pre-job briefing with operations and maintenance personnel.</td>
-                  <td data-label="Verification">Roles, communication path, stop authority and rollback approach confirmed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Brief everyone: the unit, the sequence, the stop conditions, and how long it takes to return the unit to service.</td>
+                  <td data-label="Check">Everyone can say their own task and who calls stop.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">CHANGE RECORD</td>
-                  <td data-label="Action" data-role="main">Confirm approved maintenance window, affected unit and scope of work.</td>
-                  <td data-label="Verification">Work scope matches approved change and site maintenance plan.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Confirm the change is approved and nothing else is reducing redundancy.</td>
+                  <td data-label="Check">No other work on cooling or power.</td>
+                  <td data-label="Owner">Work lead, Change manager</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">BMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review current temperature, humidity and cooling-related alarms for the affected zone.</td>
-                  <td data-label="Verification">Environmental conditions are stable and within site-defined operating limits.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Note the starting point in monitoring: inlet temperatures in the area, humidity, alarms, which units run and which wait.</td>
+                  <td data-label="Check">Baseline recorded.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Verify available cooling redundancy or alternative capacity before removing unit from service.</td>
-                  <td data-label="Verification">Operations Lead confirms sufficient cooling capacity for the maintenance window.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the standby unit. Normally it starts on its own when the unit stops. Starting it by hand first is a decision for each case.</td>
+                  <td data-label="Check">In automatic, no alarms, ready to start.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
-                  <td data-label="Action" data-role="main">Identify the exact cooling unit scheduled for maintenance.</td>
-                  <td data-label="Verification">Asset tag and location confirmed against approved work scope.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Identify the unit at the unit itself.</td>
+                  <td data-label="Check">Tag matches the work approval. Checked by two people.</td>
+                  <td data-label="Owner">Work lead, Cooling specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Check airflow paths, containment boundaries and access route before work begins.</td>
-                  <td data-label="Verification">No blocked airflow path, displaced containment or access restriction observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> go only when steps 1–5 are done and temperatures are stable.</td>
+                  <td data-label="Check">Work lead gives the go.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
-                  <td data-label="Action" data-role="main">Place affected unit into approved maintenance state according to site and manufacturer procedure.</td>
-                  <td data-label="Verification">Unit state confirmed and no unexpected alarm or environmental impact observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Stop the unit and put it in its maintenance state, following the manufacturer’s procedure.</td>
+                  <td data-label="Check">Unit stopped. Status shown correctly in monitoring.</td>
+                  <td data-label="Owner">Cooling specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">BMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Monitor room temperature and humidity after unit is removed from normal service.</td>
-                  <td data-label="Verification">Environmental trend remains stable during the defined observation period.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch the cooling take over.</td>
+                  <td data-label="Check">The standby unit starts as the control system is designed to. Temperatures stay stable.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
-                  <td data-label="Action" data-role="main">Perform planned maintenance task according to approved technical procedure.</td>
-                  <td data-label="Verification">Maintenance completed by qualified personnel with no unresolved abnormal condition.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Isolate the unit electrically, then lock and tag it. On chilled-water units, close the water valves only if the work needs it.</td>
+                  <td data-label="Check">Isolation confirmed. Lock and tag in place. Valve positions recorded.</td>
+                  <td data-label="Owner">Electrical responsible person, Cooling specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">PIPE / DRAIN / FILTER</td>
-                  <td data-label="Action" data-role="main">Inspect visible drain, filter, airflow and accessible connection areas after maintenance.</td>
-                  <td data-label="Verification">No visible leak, blockage, loose panel, abnormal vibration or obstruction observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Suppress alarms for this unit only, and log it.</td>
+                  <td data-label="Check">Only this unit’s alarms suppressed. Logged with time.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">11</td>
-                  <td data-label="Room/Tag">CRAC/CRAH-003</td>
-                  <td data-label="Action" data-role="main">Return cooling unit to approved operating mode according to site and manufacturer procedure.</td>
-                  <td data-label="Verification">Unit starts or returns to service normally with expected status indication.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch temperatures for the agreed time before the work starts.</td>
+                  <td data-label="Check">Stable and within limits.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">12</td>
-                  <td data-label="Room/Tag">BMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review post-maintenance alarms, environmental trends and unit status.</td>
-                  <td data-label="Verification">No unresolved alarm, abnormal temperature trend or humidity concern remains.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Do the maintenance. Read temperatures at the agreed interval.</td>
+                  <td data-label="Check">Work done as planned. Readings logged.</td>
+                  <td data-label="Owner">Cooling specialist, Operator on duty</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">13</td>
-                  <td data-label="Room/Tag">DATAHALL / CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Confirm airflow paths, containment and work area are restored after maintenance.</td>
-                  <td data-label="Verification">Work area clean, access restored and no material left in airflow paths.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> before the unit goes back, check the work is finished.</td>
+                  <td data-label="Check">Panels closed. Tools and materials out. Valves in their normal position. No leaks.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">14</td>
-                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
-                  <td data-label="Action" data-role="main">Update maintenance record, observations, replaced parts and exceptions.</td>
-                  <td data-label="Verification">CMMS or approved record updated and change ready for closeout.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Remove the lock and tag, restore power, and return the unit to service, following the manufacturer’s procedure.</td>
+                  <td data-label="Check">Unit running.</td>
+                  <td data-label="Owner">Electrical responsible person, Cooling specialist</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">15</td>
+                  <td data-label="Action" data-role="main">Watch the unit run.</td>
+                  <td data-label="Check">It behaves as intended: no alarms, air flowing, no leaks, condensate draining, no unusual noise.</td>
+                  <td data-label="Owner">Cooling specialist, Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">16</td>
+                  <td data-label="Action" data-role="main">Remove the alarm suppression for this unit.</td>
+                  <td data-label="Check">Alarms active again. Monitoring shows the unit normal.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">17</td>
+                  <td data-label="Action" data-role="main">Return the standby unit to standby, if it was started by hand.</td>
+                  <td data-label="Check">Standby unit in automatic and ready.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">18</td>
+                  <td data-label="Action" data-role="main">Watch temperatures for the agreed time.</td>
+                  <td data-label="Check">Back to the baseline from step 3.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">19</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> before closing, check the room is as it was.</td>
+                  <td data-label="Check">Unit in automatic, not local. Standby ready. No alarms suppressed. Containment doors closed, floor tiles in place, nothing in the air paths.</td>
+                  <td data-label="Owner">Work lead</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">20</td>
+                  <td data-label="Action" data-role="main">Record the work, parts, readings and findings, and close the change.</td>
+                  <td data-label="Check">Record complete.</td>
+                  <td data-label="Owner">Work lead, Change manager</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
-
-          <p>
-            Planned cooling maintenance can reduce local cooling capacity and
-            thermal margin. The operational risk depends on current IT load,
-            environmental conditions, cooling redundancy, room airflow management
-            and the duration of the maintenance activity.
-          </p>
-
-          <ul>
-            <li>Reduced cooling redundancy during maintenance</li>
-            <li>Temperature rise in the affected cooling zone</li>
-            <li>Humidity deviation or condensation risk if conditions are not controlled</li>
-            <li>Blocked airflow caused by tools, panels, filters or temporary work materials</li>
-            <li>Water leak, condensate drain issue or visible pipework concern</li>
-            <li>Unexpected alarm or failure to return the unit to normal operation</li>
-            <li>Human error caused by unclear scope, wrong unit identification or poor communication</li>
-          </ul>
-
           <div class="principle-callout">
             <p>
-              <strong>Operational rule:</strong> Stop the activity if environmental
-              conditions trend outside site-defined limits, if redundant cooling
-              becomes uncertain, or if the system response differs from the
-              approved plan.
+              <strong>Note:</strong> The observation times in steps 11 and 18, and
+              the temperature limits, are set for each case and building, from
+              experience. Put them in the plan so nobody has to guess on the day.
             </p>
           </div>
 
-          <h2>7. Rollback Procedure</h2>
+          <h2>6. If it goes wrong</h2>
 
           <p>
-            Rollback should restore environmental stability and return the cooling
-            system to a known approved state. The exact rollback steps must follow
-            manufacturer instructions and site-specific operating procedures.
+            <strong>Anyone can call stop. The aim is to keep the room within its
+            limits, not to finish the work.</strong>
           </p>
-
-          <ul>
-            <li>Stop maintenance progression</li>
-            <li>Return the affected unit to service if technically safe and approved</li>
-            <li>Increase monitoring of the affected cooling zone</li>
-            <li>Escalate to HVAC specialist and operations leadership</li>
-            <li>Deploy approved compensating cooling measures if available and authorized</li>
-            <li>Notify stakeholders if environmental risk or maintenance duration changes</li>
-            <li>Record abnormal findings and assign corrective action ownership</li>
-          </ul>
 
           <p>
-            If the affected room cannot be maintained within approved operating
-            limits, the condition should be managed as an abnormal or degraded
-            operating state according to site governance.
+            The standby unit doesn’t start on its own when the unit stops: don’t
+            start the work. Return the unit to service and find out why. The same
+            fault would leave the room without its spare at night, when nobody is
+            there to start a unit by hand.
           </p>
 
-          <h2>8. Post Verification</h2>
+          <p>
+            Temperatures climb toward the limit, or another unit fails: stop the
+            work. If the unit can be returned safely within the known time, return
+            it. If not, follow
+            <a href="../eop/cooling-failure.html">Cooling Failure Response (EOP-CLG-002)</a>.
+          </p>
+
+          <p>
+            A leak during the work: close the valves if it is safe to do so, keep
+            away from electrical equipment in the wet area, and call the Shift
+            lead. Follow
+            <a href="../eop/water-leak-response.html">Water Leak Response (EOP-WTR-003)</a>.
+          </p>
+
+          <p>
+            The unit won’t return to service: keep the standby unit running. The
+            vendor finds the fault, and the Shift lead decides whether the window
+            is extended. Until the unit is back, the room has lost redundancy, and
+            it is escalated.
+          </p>
+
+          <p>
+            The unit returns but doesn’t behave as intended (alarms, weak cooling,
+            leaks, unusual noise): take it out of service again, keep the standby
+            unit running, and handle it as a unit that won’t return.
+          </p>
+
+          <p>
+            The wrong unit was stopped: restart it at once if it is safe, stop the
+            work, and check temperatures before anything else.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the site’s own
+            plan.
+          </p>
+
+          <h2>7. After the work</h2>
 
           <ul class="checklist">
-            <li>☐ Cooling unit returned to approved operating state</li>
-            <li>☐ No unresolved cooling, leak or environmental alarm remains</li>
-            <li>☐ Temperature and humidity trends stable after maintenance</li>
-            <li>☐ Airflow paths and containment restored</li>
-            <li>☐ Work area clean and access paths clear</li>
-            <li>☐ Maintenance record updated in CMMS or approved system</li>
-            <li>☐ Replaced parts, filters or findings recorded where applicable</li>
-            <li>☐ Exceptions escalated and corrective actions assigned</li>
-            <li>☐ Stakeholders informed of completion status</li>
+            <li>☐ Unit in automatic and running or on standby as designed</li>
+            <li>☐ Standby unit back on standby and ready</li>
+            <li>☐ Lock and tag removed, valves in their normal position</li>
+            <li>☐ No alarms suppressed</li>
+            <li>☐ Temperatures back to the baseline</li>
+            <li>☐ Containment and floor tiles in place, area clean</li>
+            <li>☐ Work, parts and findings recorded, change closed</li>
           </ul>
 
-          <h2>9. Operational Notes</h2>
+          <h2>8. Rules and standards</h2>
 
           <p>
-            Cooling maintenance should be treated as an operational risk activity,
-            not only as a mechanical service task. Removing a cooling unit from
-            normal service can affect thermal margin, airflow distribution and
-            room resilience.
+            ASHRAE TC 9.9 recommends an inlet temperature of 18–27&nbsp;°C for most
+            IT equipment. In Europe, the F-gas Regulation means only certified
+            people may work on refrigerant circuits. Electrical isolation with lock
+            and tag is standard practice and follows the local rules: EN 50110-1 in
+            Europe, FSE in Norway, the Electricity at Work Regulations 1989 in the
+            UK and NFPA 70E in the US. The manufacturer’s instructions set the
+            maintenance tasks and the start and stop sequence.
           </p>
-
-          <p>
-            Real maintenance plans should be aligned with facility design,
-            manufacturer requirements, IT equipment environmental requirements,
-            maintenance history, monitoring strategy and applicable guidance such
-            as ASHRAE TC 9.9 thermal guidance for data processing environments.
-          </p>
-
-          <p>
-            A strong MOP should define the approved sequence, required tools and
-            parts, communication path, stop conditions and return-to-service
-            verification before work begins. This reduces delay, confusion and
-            human-error risk during the maintenance window.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> MOP Example</div>
-            <div><strong>Category:</strong> Mechanical / Cooling Infrastructure</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> approved maintenance window,
-              cooling redundancy awareness, environmental monitoring, stop
-              conditions, rollback readiness and verified return to service.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
-
-          <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Thermal risk control</li>
-              <li>Cooling redundancy</li>
-              <li>Environmental monitoring</li>
-              <li>Airflow management</li>
-              <li>Leak and drainage awareness</li>
-              <li>Return-to-service verification</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">MOP Examples</a></li>
-            </ul>
-          </div>
-
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>CRAC/CRAH-003 — Cooling unit</li>
-              <li>CLG-ZONE — Affected cooling zone</li>
-              <li>BMS / DCIM — Monitoring systems</li>
-              <li>PIPE / DRAIN / FILTER — Inspection areas</li>
-              <li>DATAHALL — Supported technical space</li>
-              <li>CHANGE RECORD — Approved work activity</li>
+              <li>SITE1-B1-DH1-CRAH-003-01: Cooling unit under maintenance</li>
+              <li>SITE1-B1-DH1-CRAH-002-01: Standby cooling unit</li>
+              <li>SITE1-B1-DH1-LDS-001-01: Leak detection cable</li>
             </ul>
           </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live cooling maintenance
-              procedures must be reviewed against manufacturer instructions,
-              facility design, safety requirements, environmental limits and
-              responsible operational authority.
-            </p>
-          </div>
-
         </aside>
       </div>
     </section>
