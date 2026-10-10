@@ -64,6 +64,16 @@
   --line:           #E0D7C4;
   --line-soft:      #ECE5D5;
 
+  /* Risk levels: each text colour passes WCAG AA on the creams, paper and its own -bg */
+  --risk-low:          #2A6E2E;
+  --risk-low-bg:       #DDEBD9;
+  --risk-medium:       #8A5300;
+  --risk-medium-bg:    #F6E2AE;
+  --risk-high:         #B42323;
+  --risk-high-bg:      #F7D9D4;
+  --risk-critical:     #7B1B1B;
+  --risk-critical-bg:  #EBC4C1;
+
   /* Type */
   --serif:  'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --sans:   'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -2057,173 +2067,221 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 }
 
 /* =========================================================
-   Operational Risk Assessment Cards
-   Used on /operational/risk/
+   Risk assessment: level badges, worked-example cards, 5x5 matrix
+   Used on /operational/risk/. Colours come from the --risk-* tokens.
+   The level is always written as a word; colour only supports it.
    ========================================================= */
 
-.risk-register {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+/* Level badge and matrix cell colours */
+.risk-badge.low,
+.risk-cell.low {
+  color: var(--risk-low);
+  background: var(--risk-low-bg);
 }
 
-.risk-item {
-  border: 1px solid rgba(25, 35, 55, 0.10);
-  border-radius: 16px;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.52);
-  box-shadow: 0 14px 34px rgba(25, 35, 55, 0.05);
+.risk-badge.medium,
+.risk-cell.medium {
+  color: var(--risk-medium);
+  background: var(--risk-medium-bg);
 }
 
-.risk-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(25, 35, 55, 0.09);
+.risk-badge.high,
+.risk-cell.high {
+  color: var(--risk-high);
+  background: var(--risk-high-bg);
 }
 
-.risk-number {
-  display: inline-block;
-  margin-bottom: 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.risk-header h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  line-height: 1.25;
-  color: var(--ink);
+.risk-badge.critical,
+.risk-cell.critical {
+  color: var(--risk-critical);
+  background: var(--risk-critical-bg);
 }
 
 .risk-badge {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  padding: 0.55rem 0.95rem;
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 800;
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.4;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.risk-badge.low {
-  background: rgba(46, 125, 50, 0.12);
-  color: #2e7d32;
+/* Worked examples: one card per risk */
+.risk-register {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
 }
 
-.risk-badge.medium {
-  background: rgba(178, 106, 0, 0.13);
-  color: #b26a00;
+.risk-item {
+  container-type: inline-size;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
 }
 
-.risk-badge.high {
-  background: rgba(198, 40, 40, 0.12);
-  color: #c62828;
+.risk-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-.risk-badge.critical {
-  background: rgba(123, 27, 27, 0.14);
-  color: #7b1b1b;
+.risk-number {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-text);
 }
 
+.advisory-article .risk-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Keep document IDs (MOP-UPS-001) on one line */
+.risk-header h3 a {
+  white-space: nowrap;
+}
+
+/* Before controls / Controls / After controls: one row when the card is wide enough */
 .risk-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+@container (min-width: 34rem) {
+  .risk-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  }
 }
 
 .risk-box {
-  background: rgba(255, 255, 255, 0.66);
-  border: 1px solid rgba(25, 35, 55, 0.08);
-  border-radius: 13px;
-  padding: 1.2rem;
+  padding: 1rem 1.1rem;
+  background: var(--cream-light);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
 }
 
-.risk-box h4 {
-  margin: 0 0 0.9rem;
+.advisory-article .risk-box h4 {
+  margin: 0 0 0.6rem;
   font-family: var(--sans);
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
 }
 
-.risk-box p {
-  margin: 0 0 0.55rem;
-  color: var(--ink-soft);
+.risk-box .risk-badge {
+  margin-bottom: 0.6rem;
+}
+
+.advisory-article .risk-box p {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
   line-height: 1.55;
 }
 
-.risk-box p:last-child {
+.advisory-article .risk-item > :last-child,
+.advisory-article .risk-box > :last-child {
   margin-bottom: 0;
 }
 
-.risk-box ul {
-  margin: 0;
-  padding-left: 1.1rem;
-  list-style: disc;
+/* 5x5 matrix: keeps its grid on phones and scrolls sideways in its own box */
+.risk-matrix {
+  margin: 1.25rem 0 1.5rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
 }
 
-.risk-box li {
-  margin-bottom: 0.45rem;
-  color: var(--ink-soft);
-  line-height: 1.5;
+.risk-matrix table {
+  width: 100%;
+  min-width: 19rem;
+  border-collapse: separate;
+  border-spacing: 2px;
 }
 
-.risk-box li:last-child {
-  margin-bottom: 0;
+.risk-matrix th {
+  padding: 0.3rem 0.4rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-.risk-score {
-  margin-top: 1rem;
-  font-size: 1.08rem;
-  font-weight: 800;
+.risk-matrix .risk-axis {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-text);
 }
 
-.risk-score.low {
-  color: #2e7d32;
+/* Consequence label runs up the left side */
+.risk-matrix .risk-axis--rows {
+  width: 1.1rem;
+  padding: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
 }
 
-.risk-score.medium {
-  color: #b26a00;
+.risk-matrix tbody th {
+  width: 1rem;
+  padding: 0 0.3rem 0 0;
 }
 
-.risk-score.high {
-  color: #c62828;
-}
-
-.risk-score.critical {
-  color: #7b1b1b;
-}
-
-.compact-table th,
-.compact-table td {
+.risk-cell {
+  padding: 0.4rem 0.3rem;
+  border-radius: 4px;
   vertical-align: top;
+  line-height: 1.25;
 }
 
-@media (max-width: 720px) {
-  .risk-item {
-    padding: 1.35rem;
+.risk-cell-score {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.risk-cell-level {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+@media (min-width: 701px) {
+  .risk-matrix {
+    padding: 0.75rem;
   }
 
-  .risk-header {
-    flex-direction: column;
-    gap: 1rem;
+  .risk-matrix table {
+    border-spacing: 3px;
   }
 
-  .risk-badge {
-    align-self: flex-start;
+  .risk-cell {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .risk-cell-score {
+    font-size: 1.05rem;
+  }
+
+  .risk-cell-level {
+    font-size: 0.78rem;
   }
 }
 

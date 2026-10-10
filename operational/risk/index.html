@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=9" />
+  <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Risk Assessment | Tom Jensen" />
@@ -18,147 +18,6 @@
   <meta property="og:url" content="https://tomjensen.no/operational/risk/" />
   <meta property="og:type" content="website" />
 
-  <style>
-    .risk-register {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .risk-item {
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      padding: 2rem;
-      background: rgba(255,255,255,0.5);
-    }
-
-    .risk-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 1.75rem;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      padding-bottom: 1.25rem;
-    }
-
-    .risk-number {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.65;
-      margin-bottom: 0.45rem;
-    }
-
-    .risk-header h3 {
-      margin: 0;
-      font-size: 1.25rem;
-      line-height: 1.35;
-    }
-
-    .risk-badge {
-      white-space: nowrap;
-      padding: 0.55rem 0.95rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .risk-badge.high {
-      background: rgba(198,40,40,0.12);
-      color: #c62828;
-    }
-
-    .risk-badge.medium {
-      background: rgba(178,106,0,0.12);
-      color: #b26a00;
-    }
-
-    .risk-badge.low {
-      background: rgba(46,125,50,0.12);
-      color: #2e7d32;
-    }
-
-    .risk-badge.critical {
-      background: rgba(123,27,27,0.14);
-      color: #7b1b1b;
-    }
-
-    .risk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .risk-box {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 13px;
-      padding: 1.2rem;
-    }
-
-    .risk-box h4 {
-      margin-top: 0;
-      margin-bottom: 0.9rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    .risk-box p {
-      margin: 0 0 0.55rem 0;
-    }
-
-    .risk-box ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .risk-box li {
-      margin-bottom: 0.45rem;
-    }
-
-    .risk-score {
-      margin-top: 1rem;
-      font-weight: 700;
-      font-size: 1.08rem;
-    }
-
-    .risk-score.high {
-      color: #c62828;
-    }
-
-    .risk-score.medium {
-      color: #b26a00;
-    }
-
-    .risk-score.low {
-      color: #2e7d32;
-    }
-
-    .risk-score.critical {
-      color: #7b1b1b;
-    }
-
-    .compact-table td,
-    .compact-table th {
-      vertical-align: top;
-    }
-
-    @media (max-width: 720px) {
-      .risk-header {
-        flex-direction: column;
-      }
-
-      .risk-badge {
-        align-self: flex-start;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -357,25 +216,25 @@
                 <tr>
                   <td data-label="Score" data-role="lead">1–4</td>
                   <td data-label="Level" data-role="main"><strong>Low</strong></td>
-                  <td data-label="Visual Marker"><span style="color:#2e7d32;"><strong>● Green</strong></span></td>
+                  <td data-label="Visual Marker"><span class="risk-badge low">Low</span></td>
                   <td data-label="Typical Action">Proceed with normal controls and monitoring.</td>
                 </tr>
                 <tr>
                   <td data-label="Score" data-role="lead">5–9</td>
                   <td data-label="Level" data-role="main"><strong>Medium</strong></td>
-                  <td data-label="Visual Marker"><span style="color:#b26a00;"><strong>● Amber</strong></span></td>
+                  <td data-label="Visual Marker"><span class="risk-badge medium">Medium</span></td>
                   <td data-label="Typical Action">Proceed only with defined controls and clear ownership.</td>
                 </tr>
                 <tr>
                   <td data-label="Score" data-role="lead">10–16</td>
                   <td data-label="Level" data-role="main"><strong>High</strong></td>
-                  <td data-label="Visual Marker"><span style="color:#c62828;"><strong>● Red</strong></span></td>
+                  <td data-label="Visual Marker"><span class="risk-badge high">High</span></td>
                   <td data-label="Typical Action">Requires mitigation, approval and escalation awareness.</td>
                 </tr>
                 <tr>
                   <td data-label="Score" data-role="lead">17–25</td>
                   <td data-label="Level" data-role="main"><strong>Critical</strong></td>
-                  <td data-label="Visual Marker"><span style="color:#7b1b1b;"><strong>● Dark Red</strong></span></td>
+                  <td data-label="Visual Marker"><span class="risk-badge critical">Critical</span></td>
                   <td data-label="Typical Action">Do not proceed without senior approval and risk reduction.</td>
                 </tr>
               </tbody>
@@ -408,7 +267,8 @@
                   <h4>Initial Assessment</h4>
                   <p><strong>Probability:</strong> 3</p>
                   <p><strong>Impact:</strong> 4</p>
-                  <div class="risk-score high">● 12 / High</div>
+                  <p><strong>Score:</strong> 12</p>
+                  <span class="risk-badge high">High</span>
                 </div>
 
                 <div class="risk-box">
@@ -426,7 +286,8 @@
                   <h4>Residual Risk</h4>
                   <p><strong>Probability:</strong> 2</p>
                   <p><strong>Impact:</strong> 4</p>
-                  <div class="risk-score medium">● 8 / Medium</div>
+                  <p><strong>Score:</strong> 8</p>
+                  <span class="risk-badge medium">Medium</span>
                 </div>
 
                 <div class="risk-box">
@@ -452,7 +313,8 @@
                   <h4>Initial Assessment</h4>
                   <p><strong>Probability:</strong> 3</p>
                   <p><strong>Impact:</strong> 4</p>
-                  <div class="risk-score high">● 12 / High</div>
+                  <p><strong>Score:</strong> 12</p>
+                  <span class="risk-badge high">High</span>
                 </div>
 
                 <div class="risk-box">
@@ -470,7 +332,8 @@
                   <h4>Residual Risk</h4>
                   <p><strong>Probability:</strong> 2</p>
                   <p><strong>Impact:</strong> 3</p>
-                  <div class="risk-score medium">● 6 / Medium</div>
+                  <p><strong>Score:</strong> 6</p>
+                  <span class="risk-badge medium">Medium</span>
                 </div>
 
                 <div class="risk-box">
@@ -496,7 +359,8 @@
                   <h4>Initial Assessment</h4>
                   <p><strong>Probability:</strong> 2</p>
                   <p><strong>Impact:</strong> 5</p>
-                  <div class="risk-score high">● 10 / High</div>
+                  <p><strong>Score:</strong> 10</p>
+                  <span class="risk-badge high">High</span>
                 </div>
 
                 <div class="risk-box">
@@ -513,7 +377,8 @@
                   <h4>Residual Risk</h4>
                   <p><strong>Probability:</strong> 1</p>
                   <p><strong>Impact:</strong> 5</p>
-                  <div class="risk-score medium">● 5 / Medium</div>
+                  <p><strong>Score:</strong> 5</p>
+                  <span class="risk-badge medium">Medium</span>
                 </div>
 
                 <div class="risk-box">
