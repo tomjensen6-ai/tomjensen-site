@@ -68,7 +68,7 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> EOP-FIR-004</div>
-            <div><strong>Revision:</strong> 1.1</div>
+            <div><strong>Revision:</strong> 1.2</div>
             <div><strong>Status:</strong> Example</div>
             <div><strong>Activation:</strong> Fire alarm, pre-alarm or smoke report</div>
           </div>
@@ -122,7 +122,24 @@
             <li>Treat battery rooms as high risk. UPS batteries, especially lithium-ion, can re-ignite and give off toxic gas.</li>
           </ul>
 
-          <h2>5. First steps</h2>
+          <h2>5. Staffing on site</h2>
+
+          <p>
+            Staffing differs between sites. Some have no one on site at night,
+            some one person, some two or more. Two people at night is recommended
+            for exactly this kind of situation, but it depends on cost and
+            customer requirements. Whatever the staffing, personal safety comes
+            first.
+          </p>
+
+          <ul>
+            <li><strong>No one on site:</strong> the alarm goes to the alarm centre and the fire service. The on-call person is called out and meets the fire service. No one enters before the fire service has checked the area.</li>
+            <li><strong>One person on site:</strong> do steps 1 to 3 first. Check only from outside the room: panel, BMS, cameras, the door. Do not go in. You lead until someone takes over. Call in the on-call person and meet the fire service.</li>
+            <li><strong>Two or more on site:</strong> two people can check the area together, if the site plan allows it. If there are more, one stays at the panel, leads and meets the fire service.</li>
+            <li><strong>Security on site:</strong> many sites have security staff around the clock. They often handle evacuation, the headcount, the gate for the fire service and keys. Agree in advance who does what.</li>
+          </ul>
+
+          <h2>6. First steps</h2>
 
           <div class="responsive-table">
             <table>
@@ -160,41 +177,48 @@
 
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Action" data-role="main">Name one incident lead.</td>
+                  <td data-label="Action" data-role="main">The incident lead named in the site's fire plan takes charge. If you are alone, you lead until someone takes over.</td>
                   <td data-label="Check">Everyone knows who is in charge.</td>
-                  <td data-label="Owner">Shift lead</td>
+                  <td data-label="Owner">Incident lead from the fire plan</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Action" data-role="main">If the site plan allows it and it is safe, two people check the area. Follow the safety rules above.</td>
-                  <td data-label="Check">Findings reported to the incident lead.</td>
-                  <td data-label="Owner">Two authorised people</td>
+                  <td data-label="Action" data-role="main">Count people at the assembly point against the list of everyone on site: staff, contractors and visitors.</td>
+                  <td data-label="Check">Everyone accounted for, or missing people reported to the incident lead at once.</td>
+                  <td data-label="Owner">Security at night. In the daytime, a person the shift lead appoints.</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Action" data-role="main">Send someone to meet the fire service at the arrival point with the zone, keys or access cards, and known hazards: suppression, batteries, high voltage.</td>
+                  <td data-label="Action" data-role="main">Check the area as section 5 describes for your staffing. Follow the safety rules.</td>
+                  <td data-label="Check">Findings reported to the incident lead.</td>
+                  <td data-label="Owner">Operator(s) on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Action" data-role="main">Meet the fire service at the arrival point. Tell them first whether everyone is out. Then give the zone, keys or access cards, and known hazards: suppression, batteries, high voltage.</td>
                   <td data-label="Check">Fire service briefed on arrival.</td>
                   <td data-label="Owner">Assigned person</td>
                 </tr>
 
                 <tr>
-                  <td data-label="Step" data-role="lead">7</td>
+                  <td data-label="Step" data-role="lead">8</td>
                   <td data-label="Action" data-role="main">Check power, cooling and IT impact in BMS/DCIM. Make no changes unless the incident lead and the fire service agree.</td>
                   <td data-label="Check">Impact known and logged.</td>
                   <td data-label="Owner">Facility operations</td>
                 </tr>
 
                 <tr>
-                  <td data-label="Step" data-role="lead">8</td>
+                  <td data-label="Step" data-role="lead">9</td>
                   <td data-label="Action" data-role="main">Start the incident log: times, alarms, decisions, who was told.</td>
                   <td data-label="Check">Log running.</td>
                   <td data-label="Owner">Assigned recorder</td>
                 </tr>
 
                 <tr>
-                  <td data-label="Step" data-role="lead">9</td>
+                  <td data-label="Step" data-role="lead">10</td>
                   <td data-label="Action" data-role="main">Inform stakeholders as the communication plan says. Set the time for the next update.</td>
                   <td data-label="Check">Updates sent and logged.</td>
                   <td data-label="Owner">Incident lead</td>
@@ -206,13 +230,28 @@
 
           <div class="principle-callout">
             <p>
-              <strong>Note:</strong> Some sites have a short check time before the
-              alarm goes to the alarm centre automatically. Use it only as the
-              site plan describes. If there is any sign of fire, call 110 at once.
+              <strong>Headcount:</strong> The list of everyone on site must be
+              ready before an alarm, not made during one. Keep it printed, or on a
+              device that works without the building network, taken from access
+              control and the visitor log. In large buildings an exact count is
+              hard, so the list matters even more. If anyone is missing, tell the
+              fire service at once.
             </p>
           </div>
 
-          <h2>6. Escalate at once if</h2>
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> Some sites use a short check time before the
+              alarm goes to the alarm centre, mainly for early warning detection
+              such as aspirating smoke detection. It only works if there are
+              enough people on site to check in time. Where the risk is high, it
+              is often better to send the alarm straight away and accept some
+              false call-outs. If false alarms happen often, find and fix the
+              cause. If there is any sign of fire, call 110 at once.
+            </p>
+          </div>
+
+          <h2>7. Escalate at once if</h2>
 
           <ul>
             <li>You find smoke, fire, heat or a burning smell</li>
@@ -224,7 +263,7 @@
             <li>Power or cooling is affected</li>
           </ul>
 
-          <h2>7. Updates</h2>
+          <h2>8. Updates</h2>
 
           <p>
             One person leads. If possible, someone else handles communication.
@@ -235,7 +274,7 @@
             we know — impact — next update.
           </p>
 
-          <h2>8. Back to normal</h2>
+          <h2>9. Back to normal</h2>
 
           <p>
             Only when the fire service, if it came, has handed the site back, and:
@@ -244,17 +283,18 @@
           <ul>
             <li>the cause is found, or the alarm is confirmed false and explained</li>
             <li>the panel and detectors are back to normal; detectors exposed to smoke are cleaned or replaced</li>
-            <li>after a discharge, the room is ventilated and cleared, and the suppression system is refilled and re-armed by the service company. Until then, follow the site's rule for running without suppression.</li>
+            <li>after a discharge, the room is ventilated and cleared, and the suppression system is refilled and re-armed by the service company. Until then, keep detection working, put out extra portable extinguishers in addition to the fixed ones, and follow the site's rule for running without suppression.</li>
             <li>power and cooling are checked</li>
             <li>the incident report is written, with what we learned</li>
           </ul>
 
-          <h2>9. Related procedures</h2>
+          <h2>10. Related procedures</h2>
 
           <ul>
             <li>Evacuation plan (site-specific)</li>
             <li>Fire plan and fire instructions (site-specific)</li>
             <li>Suppression system procedure (site-specific)</li>
+            <li>Visitor and contractor registration (site-specific)</li>
             <li><a href="utility-power-loss.html">Utility Power Loss</a> (EOP)</li>
             <li><a href="cooling-failure.html">Cooling Failure</a> (EOP)</li>
           </ul>
