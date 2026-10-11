@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MOP Example — UPS Module Replacement | Tom Jensen</title>
-  <meta name="description" content="Public-facing MOP example for controlled UPS module replacement in critical infrastructure environments." />
+  <title>MOP Example: UPS Module Replacement | Tom Jensen</title>
+  <meta name="description" content="An example method of procedure for replacing a power module in a modular UPS: load check, the right module, hold points and a careful return to normal." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="MOP Example — UPS Module Replacement | Tom Jensen" />
-  <meta property="og:description" content="A structured public-facing Method of Procedure example for UPS module replacement, approvals, rollback planning and operational risk control." />
+  <meta property="og:title" content="MOP Example: UPS Module Replacement | Tom Jensen" />
+  <meta property="og:description" content="How I would replace a power module in a modular UPS: what to check before the module comes out, what to watch while it’s out, and how to close the work with redundancy back." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/mop/ups-module-replacement.html" />
   <meta property="og:type" content="website" />
@@ -44,20 +44,21 @@
         <div class="advisory-note-main">
           <p class="eyebrow">Operational Library / MOP Example</p>
 
-          <h1>UPS Module Replacement Procedure</h1>
+          <h1>UPS Module Replacement</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of a controlled Method of Procedure (MOP)
-            for planned replacement of a UPS power module in a critical
-            infrastructure environment.
+            How I would replace a power module in a modular UPS. The vendor does
+            the work on the module. Operations owns the UPS, the load and the
+            decision to go on at each hold point.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing operational documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real procedure must follow the
+            manufacturer’s instructions, the site’s electrical safety rules and
+            its own change process.
           </p>
         </aside>
       </div>
@@ -68,355 +69,311 @@
         <article class="advisory-article">
 
           <div class="metadata-table">
-            <div><strong>Document ID:</strong> MOP-UPS-001</div>
+            <div><strong>Document ID:</strong> MOP-UPS-004</div>
             <div><strong>Revision:</strong> 1.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Approval:</strong> Demonstration only</div>
+            <div><strong>Approval:</strong> Example only</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Define a controlled process for planned replacement of a UPS power
-            module while minimizing operational risk to protected critical loads
-            and maintaining visibility of system redundancy and operating state.
+            Replace one power module in a modular UPS while the load stays on the
+            UPS, then return the UPS to normal operation with its redundancy back.
           </p>
 
-          <h2>2. Scope</h2>
+          <h2>2. The real risk</h2>
 
           <p>
-            Applies to planned replacement activities involving modular UPS
-            systems supporting critical infrastructure environments such as
-            data centers, technical facilities or other continuously operated
-            systems.
+            This work usually starts with an alarm. One module has shut down, and the others have taken its load. Nothing is down, and it is easy to treat it as a routine part swap. It isn’t. The UPS has already lost a module’s worth of redundancy, and it stays that way until the new module is in and working.
           </p>
 
           <p>
-            This example does not replace manufacturer instructions, electrical
-            safety procedures, lockout/tagout requirements, local regulations,
-            commissioning procedures or site-specific operational controls.
+            If the modules that are left can’t carry the load, the UPS transfers to static bypass. The load then runs on mains with no UPS protection. A mains disturbance during that time reaches the IT equipment directly.
           </p>
 
-          <h2>3. Preconditions</h2>
+          <p>
+            Taking the wrong module offline is the second danger. It removes a working module from a UPS that is already short of one. That can be enough to send the UPS to bypass.
+          </p>
+
+          <p>
+            The new module can be a risk of its own. The frame accepts it and checks it automatically, but that only tells you it fits. If the module carries a firmware version that has never run on this site, you are testing it on a live load. Ask the vendor which version it has before it goes in.
+          </p>
+
+          <p>
+            The person doing the work faces real hazards too. Modules are heavy, often too heavy for one person. Capacitors inside can hold charge after the module comes out. The DC side stays live as long as batteries are connected, and there is an arc flash risk at the slot.
+          </p>
+
+          <p>
+            A planned swap, for example after a service notice from the manufacturer, follows the same steps. The difference is that you start with full redundancy and can choose the time.
+          </p>
+
+          <div class="principle-callout">
+            <p>
+              <strong>Note:</strong> Many modular UPSs allow a module to be
+              replaced while the UPS carries the load. Some designs, or some
+              faults, need the UPS in maintenance bypass first. The manufacturer’s
+              procedure decides. If bypass is needed, follow
+              <a href="ups-maintenance-bypass.html">UPS Maintenance Bypass (MOP-UPS-001)</a>
+              and treat the load as unprotected for the whole window.
+            </p>
+          </div>
+
+          <h2>3. Before you start</h2>
 
           <ul class="checklist">
-            <li>☐ Approved maintenance window confirmed</li>
-            <li>☐ Formal change approval completed</li>
-            <li>☐ Stakeholders informed according to communication plan</li>
-            <li>☐ UPS operating normally with no unresolved critical alarms</li>
-            <li>☐ Required redundancy verified available</li>
-            <li>☐ Spare module verified compatible and available onsite</li>
-            <li>☐ Vendor and operational responsibilities confirmed</li>
-            <li>☐ Rollback plan reviewed and understood</li>
-            <li>☐ Monitoring systems operational</li>
-            <li>☐ Required PPE and electrical safety controls available</li>
+            <li>☐ Change approved and window agreed</li>
+            <li>☐ Fault logs read: which module, what failed, any other alarms</li>
+            <li>☐ Load checked against what the remaining modules can carry, with margin</li>
+            <li>☐ The other supply path (B side) normal, with no work planned on it</li>
+            <li>☐ Replacement module on site: right part number, undamaged</li>
+            <li>☐ Firmware version of the new module known and compared with the modules in the frame</li>
+            <li>☐ Manufacturer’s procedure on site and read</li>
+            <li>☐ Lifting aid on site if the module needs one</li>
+            <li>☐ PPE for the work and the arc flash risk at the UPS</li>
+            <li>☐ Alarms and thresholds for the UPS visible in BMS/EPMS</li>
+            <li>☐ Way back agreed: what happens if the new module won’t come online</li>
           </ul>
 
-          <h2>4. Responsibilities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Responsibility</th>
+                  <th>Does</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Role" data-role="main">Operations Lead</td>
-                  <td data-label="Responsibility">Coordinate activity, verify operational readiness and approve progression between phases.</td>
+                  <td data-label="Role" data-role="main">Work lead (named in the plan)</td>
+                  <td data-label="Does">Runs the work, holds the briefing, decides at each hold point. Can be one of the two operations people below.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">UPS Vendor / Specialist</td>
-                  <td data-label="Responsibility">Perform module replacement according to approved technical procedure.</td>
+                  <td data-label="Role" data-role="main">UPS vendor specialist</td>
+                  <td data-label="Does">Takes the module offline, replaces it and brings the new one online, following the manufacturer’s procedure. Works under the vendor’s own electrical authorization.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Facility Operations</td>
-                  <td data-label="Responsibility">Monitor alarms, environmental conditions and infrastructure impact.</td>
+                  <td data-label="Role" data-role="main">Operator on duty, at the UPS</td>
+                  <td data-label="Does">Stays with the vendor. Reads the UPS display and confirms the module and each step.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Change Manager</td>
-                  <td data-label="Responsibility">Ensure approvals, communication and documentation requirements are completed.</td>
+                  <td data-label="Role" data-role="main">Second person on BMS (Operator on duty or Shift lead)</td>
+                  <td data-label="Does">Watches alarms and thresholds in BMS/EPMS for the UPS, the room and the other supply path. Reports any change at once.</td>
                 </tr>
                 <tr>
-                  <td data-label="Role" data-role="main">Electrical Responsible Person</td>
-                  <td data-label="Responsibility">Confirm electrical safety controls and work authorization requirements.</td>
+                  <td data-label="Role" data-role="main">Shift lead</td>
+                  <td data-label="Does">Decides if the work stops or the window is extended. Escalates.</td>
+                </tr>
+                <tr>
+                  <td data-label="Role" data-role="main">Change manager</td>
+                  <td data-label="Does">Owns the change record and closes it.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>5. Execution Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: the work does not start. A failed module found remotely is reported to the On-call person, who decides how fast the replacement must happen.</li>
+            <li>One person from operations on site: the work does not start. One person can’t stay with the vendor and watch BMS at the same time.</li>
+            <li>Two or more from operations on site: one stays with the vendor at the UPS. The other watches BMS and is free to act if something changes.</li>
+            <li>Security: escorts the vendor and checks that access is approved. Access approval does not approve the work.</li>
+          </ul>
+
+          <h2>5. Steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Room/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
-                  <th>Sign-1</th>
-                  <th>Sign-2</th>
+                  <th>Check</th>
+                  <th>Owner</th>
                 </tr>
               </thead>
-
               <tbody>
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Room/Tag">UPS-ROOM / UPS-A</td>
-                  <td data-label="Action" data-role="main">Conduct pre-job review with all participating personnel.</td>
-                  <td data-label="Verification">Roles, communication path, escalation path and rollback reviewed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Hold the briefing: the work, roles, hold points, stop rule and way back.</td>
+                  <td data-label="Check">Everyone knows who can stop the work.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Room/Tag">UPS-A</td>
-                  <td data-label="Action" data-role="main">Verify UPS system operating state, load level and redundancy status.</td>
-                  <td data-label="Verification">System stable with acceptable redundancy margin before work begins.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the UPS: on inverter, alarms, load per module, battery state.</td>
+                  <td data-label="Check">Load can be carried by the remaining modules with margin.</td>
+                  <td data-label="Owner">Operator on duty, at the UPS</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Room/Tag">BMS / EPMS</td>
-                  <td data-label="Action" data-role="main">Verify monitoring visibility and active alarm monitoring.</td>
-                  <td data-label="Verification">UPS alarms, events and environmental monitoring operational.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the other supply path in BMS.</td>
+                  <td data-label="Check">B side normal, no work on it.</td>
+                  <td data-label="Owner">Second person on BMS</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
-                  <td data-label="Action" data-role="main">Identify the correct UPS module scheduled for replacement.</td>
-                  <td data-label="Verification">Asset tag and serial reference confirmed against approved work scope.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Identify the module to replace: module tag, slot number and serial against the fault log and work order. Mark it.</td>
+                  <td data-label="Check">Vendor and Operator on duty agree it is the right module.</td>
+                  <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Room/Tag">UPS-A</td>
-                  <td data-label="Action" data-role="main">Confirm UPS load can tolerate temporary redundancy reduction if applicable.</td>
-                  <td data-label="Verification">Operations Lead authorizes progression to replacement phase.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the load, the other path and the right module before anything is taken offline.</td>
+                  <td data-label="Check">Go given before step 6.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
-                  <td data-label="Action" data-role="main">Place affected module into approved maintenance or isolation state according to manufacturer procedure.</td>
-                  <td data-label="Verification">No unexpected alarm, load transfer or instability observed.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Take the module offline, following the manufacturer’s procedure.</td>
+                  <td data-label="Check">Remaining modules share the load. UPS stays on inverter, no transfer to bypass.</td>
+                  <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
-                  <td data-label="Action" data-role="main">Remove the designated UPS module using approved handling procedure.</td>
-                  <td data-label="Verification">Module removed without visible damage or operational impact.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Wait the time the manufacturer sets, then remove the module. Use the lifting aid.</td>
+                  <td data-label="Check">Slot left safe as the manufacturer requires.</td>
+                  <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Room/Tag">UPS-A / MODULE-03</td>
-                  <td data-label="Action" data-role="main">Install replacement module and confirm correct seating and connection.</td>
-                  <td data-label="Verification">Module physically secured and installation verified.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Check the new module: part number, serial, damage and firmware version.</td>
+                  <td data-label="Check">Firmware matches the frame, or a newer version is approved by the vendor for this frame and accepted by the Work lead.</td>
+                  <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Room/Tag">UPS-A</td>
-                  <td data-label="Action" data-role="main">Return module to approved operational state according to manufacturer procedure.</td>
-                  <td data-label="Verification">Module recognized correctly and synchronization normal.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the new module and its firmware before it goes in.</td>
+                  <td data-label="Check">Go given before step 10.</td>
+                  <td data-label="Owner">Work lead</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">10</td>
-                  <td data-label="Room/Tag">BMS / EPMS</td>
-                  <td data-label="Action" data-role="main">Review alarms, events and UPS operating status after replacement.</td>
-                  <td data-label="Verification">No unresolved alarm or abnormal operating condition present.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Insert the new module, secure it and bring it online, following the manufacturer’s procedure.</td>
+                  <td data-label="Check">Module recognized and sharing the load. No new alarms.</td>
+                  <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">11</td>
-                  <td data-label="Room/Tag">UPS-A</td>
-                  <td data-label="Action" data-role="main">Confirm UPS redundancy restored to approved operational level.</td>
-                  <td data-label="Verification">Operations Lead confirms stable post-maintenance condition.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Watch the UPS for the time set in the plan.</td>
+                  <td data-label="Check">Even load sharing, normal temperatures, no alarms or thresholds crossed.</td>
+                  <td data-label="Owner">Second person on BMS</td>
                 </tr>
-
                 <tr>
                   <td data-label="Step" data-role="lead">12</td>
-                  <td data-label="Room/Tag">CMMS / CHANGE RECORD</td>
-                  <td data-label="Action" data-role="main">Update maintenance records, module serial references and change documentation.</td>
-                  <td data-label="Verification">Documentation completed and maintenance activity formally recorded.</td>
-                  <td data-label="Sign-1"></td>
-                  <td data-label="Sign-2"></td>
+                  <td data-label="Action" data-role="main">Confirm the UPS is back to normal: on inverter, all modules online, redundancy restored, BMS shows the right state.</td>
+                  <td data-label="Check">Matches the state before the fault.</td>
+                  <td data-label="Owner">Operator on duty, at the UPS</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">13</td>
+                  <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the UPS is back to normal before the work is closed.</td>
+                  <td data-label="Check">Go given to close the work.</td>
+                  <td data-label="Owner">Work lead</td>
+                </tr>
+                <tr>
+                  <td data-label="Step" data-role="lead">14</td>
+                  <td data-label="Action" data-role="main">Put the module tag on the new module. Record the fault, the work and both serial numbers against the module tags. Tag the faulty module for return.</td>
+                  <td data-label="Check">Records complete, change closed.</td>
+                  <td data-label="Owner">Change manager</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>6. Risk Considerations</h2>
-
-          <p>
-            UPS module replacement is a planned activity involving temporary
-            operational exposure. The level of risk depends on system design,
-            redundancy configuration, current loading conditions and the ability
-            of the remaining infrastructure to tolerate component loss.
-          </p>
-
-          <ul>
-            <li>Loss of redundancy may increase operational exposure during maintenance.</li>
-            <li>Incorrect module identification can affect the wrong UPS path.</li>
-            <li>Unexpected alarms or synchronization issues may occur during isolation or reintegration.</li>
-            <li>Human error during maintenance activities can affect protected loads.</li>
-            <li>Improper handling may damage replacement modules or connectors.</li>
-            <li>All electrical safety controls must follow approved site and legal requirements.</li>
-          </ul>
-
           <div class="principle-callout">
             <p>
-              <strong>Operational rule:</strong> Stop the activity immediately if
-              system behavior differs from the expected operating state or if
-              redundancy becomes uncertain.
+              <strong>Note:</strong> Module weight, wait times, how a module is
+              taken offline and whether the empty slot needs a cover all vary
+              between manufacturers and models. The manufacturer’s procedure
+              decides each one. When each module has its own tag, you can follow
+              its faults and service history, which matters when one module is
+              newer than the rest.
             </p>
           </div>
 
-          <h2>7. Rollback Procedure</h2>
+          <h2>6. If it goes wrong</h2>
 
           <p>
-            If the replacement module cannot be returned to stable operation,
-            stop progression and evaluate rollback options before continuing.
+            <strong>If the UPS transfers to bypass, or anyone is unsure about the
+            load, stop. Take nothing else offline.</strong>
           </p>
-
-          <ul>
-            <li>Reinstall original module if technically safe and approved</li>
-            <li>Return UPS to previously verified operating state</li>
-            <li>Escalate unresolved alarms immediately</li>
-            <li>Delay additional maintenance activity until stability is confirmed</li>
-            <li>Update stakeholders regarding operational risk or reduced redundancy</li>
-          </ul>
 
           <p>
-            Rollback decisions should be made by the responsible operational and
-            technical authority according to site governance requirements.
+            The UPS goes to bypass during the work: the load is on mains without protection. Stop the work. The vendor and the Shift lead decide how to get the UPS back on inverter. The Shift lead escalates while the load is on bypass.
           </p>
 
-          <h2>8. Post Verification</h2>
+          <p>
+            Mains fails during the work: follow
+            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>.
+          </p>
+
+          <p>
+            The load is lost on this path: the other path carries the IT equipment that has dual supplies. Equipment with a single supply goes down. The Shift lead escalates at once and follows the site’s own plan for informing customers.
+          </p>
+
+          <p>
+            The new module won’t come online or shows a fault: take it out again. The UPS runs with reduced redundancy, as it did before the work. This stays escalated until a working module is in. Only put the old module back if it was removed for a planned swap and is known to work.
+          </p>
+
+          <p>
+            The new module comes online but behaves differently from the others (uneven load sharing, alarms, high temperature): take it offline again and handle it as a module that won’t come online.
+          </p>
+
+          <p>
+            The wrong module was taken offline: bring it back online at once if the manufacturer’s procedure allows it. Stop the work and check the UPS state before anything else.
+          </p>
+
+          <p>
+            Smoke, a burning smell or a fire alarm: follow
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the site’s own plan.
+          </p>
+
+          <h2>7. After the work</h2>
 
           <ul class="checklist">
-            <li>☐ Replacement module operating normally</li>
-            <li>☐ UPS redundancy restored to approved level</li>
-            <li>☐ No unresolved alarm or event condition remains</li>
-            <li>☐ Monitoring and alarm visibility confirmed</li>
-            <li>☐ CMMS and maintenance records updated</li>
-            <li>☐ Stakeholders informed of completion status</li>
-            <li>☐ Work area left clean and secure</li>
+            <li>☐ UPS on inverter, all modules online</li>
+            <li>☐ Redundancy back to the design level</li>
+            <li>☐ No alarms active or suppressed</li>
+            <li>☐ BMS/EPMS shows the right state</li>
+            <li>☐ New module tagged, firmware version recorded</li>
+            <li>☐ Faulty module tagged and packed for return</li>
+            <li>☐ Serial numbers updated in the maintenance system</li>
+            <li>☐ Area clean, covers and doors closed</li>
+            <li>☐ Change closed</li>
           </ul>
 
-          <h2>9. Operational Notes</h2>
+          <h2>8. Rules and standards</h2>
 
           <p>
-            Planned UPS maintenance should be treated as a controlled operational
-            event, not only a technical activity. Communication, verification,
-            escalation readiness and rollback planning are part of the procedure,
-            not separate administrative tasks.
+            The IEC 62040 series covers UPS systems: part 1 for safety, part 3 for
+            performance. Work on and near electrical installations follows the
+            local rules: EN 50110-1 in Europe, FSE in Norway, the Electricity at
+            Work Regulations 1989 in the UK and NFPA 70E in the US. The
+            manufacturer’s instructions set how a module is taken out, replaced
+            and brought back.
           </p>
-
-          <p>
-            Real UPS maintenance procedures must always follow manufacturer
-            instructions, electrical safety regulations, site operational
-            governance and the approved maintenance strategy for the facility.
-          </p>
-
-          <p>
-            Modular UPS systems are commonly designed to support maintainability
-            and redundancy, but maintenance activities can still reduce resilience
-            temporarily if not planned and controlled carefully.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> MOP Example</div>
-            <div><strong>Category:</strong> Electrical / UPS Infrastructure</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> planned execution, verification,
-              redundancy awareness, rollback readiness, controlled communication
-              and formal signoff.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
-
-          <div class="sidebar-box">
-            <h3>Procedure Focus</h3>
-            <ul>
-              <li>Planned maintenance</li>
-              <li>Operational approvals</li>
-              <li>Redundancy awareness</li>
-              <li>Rollback planning</li>
-              <li>Alarm monitoring</li>
-              <li>Controlled execution</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="./" class="text-link">MOP Examples</a></li>
-            </ul>
-          </div>
-
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>UPS-A — UPS system</li>
-              <li>MODULE-03 — UPS power module</li>
-              <li>BMS / EPMS — Monitoring systems</li>
-              <li>UPS-ROOM — Electrical room</li>
-              <li>CHANGE RECORD — Approved maintenance activity</li>
+              <li>SITE1-B1-ER2-UPS-001-01: UPS with the failed module</li>
+              <li>SITE1-B1-ER2-UPS-001-01-M03: Power module under replacement (module 3 in that UPS)</li>
+              <li>SITE1-B1-ER3-UPS-002-01: UPS on the other supply path</li>
             </ul>
           </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Live UPS maintenance
-              procedures must be reviewed against manufacturer instructions,
-              electrical safety requirements, site design and responsible
-              operational authority.
-            </p>
-          </div>
-
         </aside>
       </div>
     </section>
