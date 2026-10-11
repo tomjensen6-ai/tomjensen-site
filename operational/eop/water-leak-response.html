@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EOP Example — Water Leak Response | Tom Jensen</title>
-  <meta name="description" content="Public-facing Emergency Operating Procedure example for water leak response in critical infrastructure and data center environments." />
+  <title>EOP Example: Water Leak Response | Tom Jensen</title>
+  <meta name="description" content="An example emergency procedure for a water leak in a data center: people first, find the source, stop the water and know what closing a valve does to cooling." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="EOP Example — Water Leak Response | Tom Jensen" />
-  <meta property="og:description" content="Structured emergency response example for water leak incidents, infrastructure protection, escalation, containment and operational control." />
+  <meta property="og:title" content="EOP Example: Water Leak Response | Tom Jensen" />
+  <meta property="og:description" content="How I would respond to a water leak in a data hall or technical room: stay out of water near power, find where it comes from, stop it, and get the room dry and safe again." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/eop/water-leak-response.html" />
   <meta property="og:type" content="website" />
@@ -47,16 +47,17 @@
           <h1>Water Leak Response</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of an Emergency Operating Procedure for water
-            leak incidents affecting critical infrastructure environments.
+            An example emergency procedure for water where it shouldn’t
+            be. People first, then find the source, then stop the water
+            without stopping the cooling by mistake.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing emergency response documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real procedure must follow the
+            site’s design, its emergency plan and local rules.
           </p>
         </aside>
       </div>
@@ -68,124 +69,141 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> EOP-WTR-003</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Activation:</strong> Water Leak / Water Detection</div>
+            <div><strong>Activation:</strong> Leak alarm or water found</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Provide a structured response framework for water leak or water
-            detection incidents affecting critical infrastructure operations,
-            with focus on personnel safety, leak containment, infrastructure
-            protection, operational overview, escalation and incident control.
+            What to do when a leak alarm goes off or water is found: keep
+            people safe, find the source, stop the water, and protect the
+            equipment and the cooling.
           </p>
 
-          <h2>2. Scope</h2>
+          <h2>2. The real risk</h2>
 
           <p>
-            Applies to abnormal conditions involving water leaks, condensate
-            leaks, pipe failures, cooling-water incidents, roof ingress,
-            drainage overflow or water detection alarms affecting technical
-            rooms, data halls or supporting infrastructure spaces.
+            Water and electricity are the first danger, and it is a danger
+            to people. Don’t step into water near energized equipment, and
+            don’t touch wet equipment.
           </p>
 
           <p>
-            This example does not replace plumbing repair procedures,
-            electrical safety procedures, fire procedures, manufacturer
-            instructions, local regulations or site-specific emergency plans.
+            The leak alarm tells you where the water arrived, not where it
+            came from. Under a raised floor or along cable trays, water
+            can travel a long way before anyone sees it. Follow it back to
+            the source.
           </p>
-
-          <h2>3. Activation Criteria</h2>
 
           <p>
-            This EOP may be activated when one or more of the following conditions
-            are observed:
+            In a data hall, the water usually comes from the cooling.
+            Condensate is the most common source: drains that block, pans
+            that overflow, and cold pipes that sweat. Chilled water pipes,
+            valves and coils come next. Closing a valve stops the leak,
+            but it can also stop cooling to every unit on that circuit.
+            Know which units you lose before you close it. If you lose
+            more than the room can spare, it is now a cooling failure too.
           </p>
+
+          <p>
+            Water can also come from outside the cooling: the roof, the
+            facade, a drain that backs up, or pipes from rooms above.
+            These are harder to stop, because the valve may not be yours.
+          </p>
+
+          <p>
+            Most leaks can be prevented. Keep the chilled water on the
+            cold side at a temperature that doesn’t make pipes and coils
+            sweat, and keep the pipes insulated. Don’t bring a pressurized
+            water feed into a data hall for a portable humidifier. Keep
+            full control of the roof: regular checks, planned maintenance,
+            and ideally a slight slope so water doesn’t stand.
+          </p>
+
+          <p>
+            To find the water under a raised floor, you often have to lift
+            tiles. Each open tile changes the airflow. Lift what you need,
+            and put tiles back as soon as you can.
+          </p>
+
+          <h2>3. When to use it</h2>
 
           <ul>
-            <li>Visible water leak in a technical or operational area</li>
-            <li>Water detection alarm activation</li>
-            <li>Condensation or moisture affecting critical infrastructure</li>
-            <li>Pipe, valve or hose failure</li>
-            <li>Cooling-water leak affecting operational rooms</li>
-            <li>Roof ingress or external water intrusion</li>
-            <li>Drain blockage or overflow condition</li>
-            <li>Water located near energized equipment or critical systems</li>
+            <li>Leak detection alarm</li>
+            <li>Water seen on the floor, under the floor, in a ceiling or on equipment</li>
+            <li>Condensate drain or pump alarm with water outside the unit</li>
+            <li>Water coming in from the roof, facade or rooms above</li>
+            <li>Unexplained damp or drips near electrical equipment</li>
           </ul>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Emergency principle:</strong> Protect personnel first,
-              then stop spread, then stabilize infrastructure impact.
-            </p>
-          </div>
-
-          <h2>4. Immediate Response Priorities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
-                  <th>Priority</th>
-                  <th>Focus Area</th>
-                  <th>Objective</th>
+                  <th>Role</th>
+                  <th>Does</th>
                 </tr>
               </thead>
-
               <tbody>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">1</td>
-                  <td data-label="Focus Area" data-role="main">Life Safety</td>
-                  <td data-label="Objective">Identify electrical, slip or structural hazards.</td>
+                  <td data-label="Role" data-role="main">Shift lead (incident lead)</td>
+                  <td data-label="Does">Leads the response, decides on escalation and informs others.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">2</td>
-                  <td data-label="Focus Area" data-role="main">Leak Identification</td>
-                  <td data-label="Objective">Determine source, location and active spread.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Does">Checks the alarm, finds the water, closes the isolation valve, keeps people away from wet equipment.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">3</td>
-                  <td data-label="Focus Area" data-role="main">Containment</td>
-                  <td data-label="Objective">Limit water spread and protect critical infrastructure.</td>
+                  <td data-label="Role" data-role="main">On-call person</td>
+                  <td data-label="Does">Comes to site or supports by phone when called.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">4</td>
-                  <td data-label="Focus Area" data-role="main">Operational Overview</td>
-                  <td data-label="Objective">Determine affected systems and current operational risk.</td>
+                  <td data-label="Role" data-role="main">Electrical responsible person</td>
+                  <td data-label="Does">Decides whether power in a wet area is isolated, and when wet equipment may be energized again.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">5</td>
-                  <td data-label="Focus Area" data-role="main">Communication</td>
-                  <td data-label="Objective">Notify responsible stakeholders and escalation paths.</td>
+                  <td data-label="Role" data-role="main">Vendor specialist (cooling or plumbing)</td>
+                  <td data-label="Does">Finds and repairs the leak.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">6</td>
-                  <td data-label="Focus Area" data-role="main">Incident Logging</td>
-                  <td data-label="Objective">Maintain timeline and operational record.</td>
+                  <td data-label="Role" data-role="main">Facility manager</td>
+                  <td data-label="Does">Informed when water reaches equipment or the source is outside the site’s control.</td>
                 </tr>
-
+                <tr>
+                  <td data-label="Role" data-role="main">Recorder</td>
+                  <td data-label="Does">Keeps the timeline: alarms, actions and decisions.</td>
+                </tr>
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Does">Lets vendors in quickly and keeps people out of wet areas.</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>5. Initial Response Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: the alarm goes to the On-call person, who checks remotely and comes to site.</li>
+            <li>One person on site: the Operator on duty is usually the first responder. Find the water and stop it if it is safe, and call the Shift lead or On-call person at once. Don’t go into water near energized equipment alone. A major leak is more than one person can handle, so call for help early.</li>
+            <li>Two or more on site: one watches BMS and the cooling. The others find and stop the water.</li>
+          </ul>
+
+          <h2>5. First steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Area/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
+                  <th>Check</th>
                   <th>Owner</th>
                 </tr>
               </thead>
@@ -194,271 +212,185 @@
 
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Declare operational incident and assign response lead.</td>
-                  <td data-label="Verification">Single responsible coordinator established.</td>
-                  <td data-label="Owner">Operations Lead</td>
+                  <td data-label="Action" data-role="main">Check people: anyone in the wet area, near wet equipment, or under a sagging ceiling.</td>
+                  <td data-label="Check">People safe and away from the water, or help called.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Area/Tag">AFFECTED AREA</td>
-                  <td data-label="Action" data-role="main">Confirm personnel safety and identify immediate hazards.</td>
-                  <td data-label="Verification">No uncontrolled electrical or personnel hazard remains.</td>
-                  <td data-label="Owner">Operations / Security</td>
+                  <td data-label="Action" data-role="main">Read the leak alarm in BMS or the leak detection panel: which zone and where on the cable.</td>
+                  <td data-label="Check">Location of the alarm known.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Area/Tag">WATER-DETECTION / ROOM</td>
-                  <td data-label="Action" data-role="main">Identify visible leak source, leak path and affected area.</td>
-                  <td data-label="Verification">Leak location and spread direction understood.</td>
-                  <td data-label="Owner">Facility Operations</td>
+                  <td data-label="Action" data-role="main">Go and look. Stay out of water near energized equipment.</td>
+                  <td data-label="Check">Water found, and how much.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Area/Tag">CRITICAL INFRASTRUCTURE</td>
-                  <td data-label="Action" data-role="main">Determine whether water threatens energized equipment or critical systems.</td>
-                  <td data-label="Verification">Current infrastructure risk level identified.</td>
-                  <td data-label="Owner">Electrical Responsible Person</td>
+                  <td data-label="Action" data-role="main">Call the Shift lead.</td>
+                  <td data-label="Check">Shift lead informed.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Area/Tag">CONTAINMENT</td>
-                  <td data-label="Action" data-role="main">Deploy approved containment measures if safe and available.</td>
-                  <td data-label="Verification">Water spread reduced or controlled where possible.</td>
-                  <td data-label="Owner">Facility Operations</td>
+                  <td data-label="Action" data-role="main">Follow the water back to the source. Lift floor tiles only where needed.</td>
+                  <td data-label="Check">Source found, or search area narrowed.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Area/Tag">BMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review alarms and affected environmental or cooling systems.</td>
-                  <td data-label="Verification">Secondary infrastructure impact identified.</td>
-                  <td data-label="Owner">Operations</td>
+                  <td data-label="Action" data-role="main">Before closing a valve, check which cooling units it feeds.</td>
+                  <td data-label="Check">Effect on cooling known.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Area/Tag">COMMUNICATION</td>
-                  <td data-label="Action" data-role="main">Notify required stakeholders according to incident communication plan.</td>
-                  <td data-label="Verification">Stakeholder notification completed and logged.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Stop the water: close the isolation valve if it is safe.</td>
+                  <td data-label="Check">Water no longer spreading.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Area/Tag">INCIDENT LOG</td>
-                  <td data-label="Action" data-role="main">Start or maintain incident timeline and operational log.</td>
-                  <td data-label="Verification">Observations, actions and escalation decisions continuously recorded.</td>
-                  <td data-label="Owner">Assigned Recorder</td>
+                  <td data-label="Action" data-role="main">Keep water away from power: absorbent material or barriers, never by hand on energized equipment.</td>
+                  <td data-label="Check">Water contained.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Establish monitoring interval and escalation threshold.</td>
-                  <td data-label="Verification">Response cadence agreed and communicated.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Call the vendor.</td>
+                  <td data-label="Check">Vendor on the way.</td>
+                  <td data-label="Owner">Shift lead</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">10</td>
+                  <td data-label="Action" data-role="main">Watch cooling and temperatures in BMS while valves are closed.</td>
+                  <td data-label="Check">Temperatures stable.</td>
+                  <td data-label="Owner">Operator on duty</td>
+                </tr>
+
+                <tr>
+                  <td data-label="Step" data-role="lead">11</td>
+                  <td data-label="Action" data-role="main">Start the timeline.</td>
+                  <td data-label="Check">Alarms, actions and decisions recorded.</td>
+                  <td data-label="Owner">Recorder</td>
                 </tr>
 
               </tbody>
             </table>
           </div>
 
-          <h2>6. Containment and Stabilization</h2>
-
-          <p>
-            Containment actions should focus on limiting infrastructure exposure
-            while maintaining personnel safety and operational control.
-          </p>
-
-          <ul>
-            <li>Protect energized equipment from direct water exposure</li>
-            <li>Prevent water migration into additional technical areas</li>
-            <li>Protect floor openings, cable penetrations and airflow paths</li>
-            <li>Use only approved containment materials and methods</li>
-            <li>Maintain safe access and evacuation routes</li>
-            <li>Escalate immediately if leak source cannot be identified</li>
-          </ul>
-
-          <p>
-            Any isolation of water systems, cooling systems or electrical systems
-            should follow approved site procedures and authorized decision-making.
-          </p>
-
           <div class="principle-callout">
             <p>
-              <strong>Control rule:</strong> Avoid uncontrolled intervention near
-              energized equipment. Escalate uncertainty early.
+              <strong>Note:</strong> Where the isolation valves sit and
+              what each one feeds vary between sites. Everyone on duty
+              should know where they are and have practiced closing them
+              before they are needed.
             </p>
           </div>
 
-          <h2>7. Escalation Triggers</h2>
+          <h2>6. If it gets worse</h2>
 
           <p>
-            Immediate escalation is required if one or more of the following
-            conditions occur:
+            <strong>If water reaches energized equipment, keep everyone
+            away and call the Electrical responsible person. Nobody
+            touches it until they decide.</strong>
           </p>
+
+          <p>
+            Water still threatens energized equipment: the Electrical
+            responsible person has it powered down. This is rare. Critical panels should have their own protection
+            against leaks. When it is needed, people come first, then the
+            installation.
+          </p>
+
+          <p>
+            Closing the valve stops cooling to more units than the room can spare: follow
+            <a href="cooling-failure.html">Cooling Failure Response (EOP-CLG-002)</a>.
+          </p>
+
+          <p>
+            The source can’t be found or stopped: keep searching, contain
+            what you can, and the Shift lead escalates to the Facility
+            manager.
+          </p>
+
+          <p>
+            The ceiling sags or the structure looks damaged: keep people
+            out of the area and escalate.
+          </p>
+
+          <p>
+            A sprinkler head has gone off, or there is smoke: follow
+            <a href="fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+          </p>
+
+          <p>
+            Power is lost in the area: follow
+            <a href="utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the
+            site’s own plan.
+          </p>
+
+          <h2>7. Back to normal</h2>
 
           <ul>
-            <li>Water reaches energized equipment or power infrastructure</li>
-            <li>Leak source cannot be identified or controlled</li>
-            <li>Cooling infrastructure becomes affected</li>
-            <li>Water spreads into critical technical areas</li>
-            <li>Structural damage or ceiling instability is suspected</li>
-            <li>Environmental monitoring becomes unavailable</li>
-            <li>Additional leaks or alarm points appear</li>
-            <li>Personnel safety becomes uncertain</li>
+            <li>Leak repaired, valves in their normal position</li>
+            <li>Cooling back to normal, temperatures at the baseline</li>
+            <li>Area dry, under the floor and in cable trays too</li>
+            <li>Wet equipment checked before it is energized again</li>
+            <li>Leak detection cable dried and tested with water</li>
+            <li>Floor tiles back, containment in place</li>
+            <li>Timeline complete, cause found or a plan to find it</li>
+            <li>Review held: what failed, what worked, what changes</li>
           </ul>
 
-          <h2>8. Communication Structure</h2>
-
-          <p>
-            Water incidents should be communicated using clear factual updates
-            focused on:
-          </p>
+          <h2>8. Related procedures</h2>
 
           <ul>
-            <li>Current leak status</li>
-            <li>Affected areas</li>
-            <li>Infrastructure risk level</li>
-            <li>Containment progress</li>
-            <li>Escalation actions</li>
-            <li>Expected next update</li>
+            <li><a href="cooling-failure.html">Cooling Failure Response (EOP-CLG-002)</a></li>
+            <li><a href="../sop/cooling-system-inspection.html">Cooling System Inspection (SOP-CLG-004)</a></li>
+            <li><a href="../mop/cooling-maintenance.html">CRAC/CRAH Planned Maintenance (MOP-CLG-003)</a></li>
+            <li><a href="utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a></li>
+            <li><a href="fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a></li>
           </ul>
 
-          <p>
-            Example update structure:
-          </p>
-
-          <div class="code-like-box">
-            Time → Leak Location → Current Spread →
-            Infrastructure Impact → Containment Status →
-            Risk Level → Next Update
-          </div>
-
-          <h2>9. Recovery and Return to Normal</h2>
+          <h2>9. Rules and standards</h2>
 
           <p>
-            Recovery should focus on restoring a known safe and stable operating
-            condition before closing the incident.
+            Work on and near electrical installations, including deciding
+            whether to isolate a wet area, follows the local rules: EN
+            50110-1 in Europe, FSE in Norway, the Electricity at Work
+            Regulations 1989 in the UK and NFPA 70E in the US. Repairs to
+            cooling pipework follow the manufacturer’s instructions and,
+            for refrigerant circuits in Europe, the F-gas Regulation.
           </p>
-
-          <ul>
-            <li>Verify leak source isolated or repaired</li>
-            <li>Verify no remaining active water spread</li>
-            <li>Inspect affected infrastructure for residual risk</li>
-            <li>Confirm cooling, power and monitoring systems stable</li>
-            <li>Review environmental alarms and moisture conditions</li>
-            <li>Remove temporary containment only after approval</li>
-            <li>Complete incident documentation and operational review</li>
-          </ul>
-
-          <h2>10. Related Procedures</h2>
-
-          <ul>
-            <li>Cooling Failure Response (EOP)</li>
-            <li>Cooling System Visual Inspection Procedure (SOP)</li>
-            <li>CRAC/CRAH Planned Maintenance (MOP)</li>
-            <li>Utility Power Loss Response (EOP)</li>
-            <li>Site Water Isolation Procedure (Site-Specific)</li>
-          </ul>
-
-          <h2>11. Operational Notes</h2>
-
-          <p>
-            Water incidents in technical facilities are often deceptive. Small
-            leaks can migrate through cable routes, floor penetrations, ceilings,
-            containment systems and hidden infrastructure paths before becoming
-            fully visible.
-          </p>
-
-          <p>
-            Strong response depends on maintaining overview, escalating early and
-            preventing secondary infrastructure impact while avoiding unsafe
-            improvisation.
-          </p>
-
-          <p>
-            Real emergency response procedures must align with facility design,
-            electrical safety requirements, environmental controls, local
-            regulations and approved operational governance.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> EOP Example</div>
-            <div><strong>Category:</strong> Water / Environmental Incident Response</div>
-            <div><strong>Criticality:</strong> High</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> protect personnel, identify the
-              leak source, contain spread, protect infrastructure, escalate early
-              and maintain a structured incident timeline.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
 
           <div class="sidebar-box">
-            <h3>EOP Focus</h3>
-            <ul>
-              <li>Leak containment</li>
-              <li>Infrastructure protection</li>
-              <li>Electrical hazard awareness</li>
-              <li>Operational stabilization</li>
-              <li>Environmental control</li>
-              <li>Incident communication</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
-              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>WATER-DETECTION — Leak detection zone</li>
-              <li>CLG-ZONE — Cooling infrastructure area</li>
-              <li>BMS / DCIM — Monitoring systems</li>
-              <li>DATAHALL — Critical technical area</li>
-              <li>OPS-BRIDGE — Incident coordination point</li>
+              <li>SITE1-B1-DH1-LDS-001-01: Leak detection cable in alarm</li>
+              <li>SITE1-B1-DH1-VLV-001-01: Isolation valve on the leaking circuit</li>
+              <li>SITE1-B1-DH1-CRAH-003-01: Cooling unit on the leaking circuit</li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Emergency Reminder</h3>
-            <p>
-              Water incidents often become more dangerous when personnel rush
-              toward the leak source without first evaluating electrical and
-              infrastructure risk.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Real emergency response
-              procedures must be reviewed and approved according to the facility
-              design, safety requirements and responsible operational authority.
-            </p>
           </div>
 
         </aside>
