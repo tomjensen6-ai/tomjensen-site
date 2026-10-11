@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EOP Example — Cooling Failure Response | Tom Jensen</title>
-  <meta name="description" content="Public-facing Emergency Operating Procedure example for cooling failure response in critical infrastructure and data center environments." />
+  <title>EOP Example: Cooling Failure Response | Tom Jensen</title>
+  <meta name="description" content="An example emergency procedure for loss of cooling in a data hall: how fast the room heats, what to check first, when to escalate and how to get back to normal." />
 
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="icon" href="../../images/favicon.png" />
 
-  <meta property="og:title" content="EOP Example — Cooling Failure Response | Tom Jensen" />
-  <meta property="og:description" content="Structured emergency response example for cooling degradation, thermal risk management, escalation, environmental monitoring and incident control." />
+  <meta property="og:title" content="EOP Example: Cooling Failure Response | Tom Jensen" />
+  <meta property="og:description" content="How I would respond when cooling fails in a data hall: people first, then the cooling state, then the clock: how long until the room reaches its limit." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/eop/cooling-failure.html" />
   <meta property="og:type" content="website" />
@@ -47,17 +47,17 @@
           <h1>Cooling Failure Response</h1>
 
           <p class="advisory-note-lead">
-            A simplified example of an Emergency Operating Procedure for cooling
-            degradation or cooling-system failure affecting critical technical
-            environments.
+            An example emergency procedure for when cooling is lost or
+            temperatures start to rise. People first, then the cooling state,
+            then the clock.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Classification</span>
           <p>
-            Example public-facing emergency response documentation structure.
-            Simplified and generalized.
+            An example I wrote for this site. A real procedure must follow the
+            site’s design, its emergency plan and local rules.
           </p>
         </aside>
       </div>
@@ -69,126 +69,122 @@
 
           <div class="metadata-table">
             <div><strong>Document ID:</strong> EOP-CLG-002</div>
-            <div><strong>Revision:</strong> 1.0</div>
+            <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
-            <div><strong>Activation:</strong> Cooling Degradation / Failure</div>
+            <div><strong>Activation:</strong> Loss of cooling or rising temperatures</div>
           </div>
 
           <h2>1. Purpose</h2>
 
           <p>
-            Provide a structured response framework for cooling-system degradation
-            or failure events affecting critical infrastructure operations, with
-            focus on environmental stability, operational overview, thermal risk
-            control, communication and escalation.
+            What to do when cooling fails or temperatures rise without a known
+            reason: keep people safe, find out what has stopped, and know how long
+            the room has before it reaches its limit.
           </p>
 
-          <h2>2. Scope</h2>
+          <h2>2. The real risk</h2>
 
           <p>
-            Applies to abnormal environmental or cooling-system conditions
-            affecting technical rooms, data halls or supporting infrastructure,
-            including CRAC/CRAH systems, chilled-water systems, DX systems,
-            airflow containment, environmental monitoring and related cooling
-            infrastructure.
+            Cooling failures come in two sizes. One unit stops, the standby unit takes over, and the room loses its redundancy but not its temperature. Or several units or the chiller plant stop, and the temperature starts to climb at once.
           </p>
 
           <p>
-            This example does not replace HVAC repair procedures, manufacturer
-            instructions, refrigerant-handling requirements, electrical safety
-            rules, fire procedures, local regulations or site-specific emergency
-            response plans.
+            In the second case, the clock decides everything. How fast the room heats depends on the load and how much air and water is still moving. In a dense room it can be minutes before IT equipment starts to throttle or shut down. Know your room’s numbers before it happens.
           </p>
-
-          <h2>3. Activation Criteria</h2>
 
           <p>
-            This EOP may be activated when one or more of the following conditions
-            are observed:
+            The room average can fool you. One area can overheat while the total looks fine, if the units that are left can’t push enough air there. Check each area, not only the room.
           </p>
+
+          <p>
+            A power blip is a common cause. Chillers that stop can take several minutes to restart, and the room heats while you wait. Some designs bridge the gap with cold water storage tanks. UPS on the pumps and on the chiller controls also shortens the restart. Test the restart and tune it, so the gap is as short as it can be.
+          </p>
+
+          <p>
+            Other causes are a pump or chiller fault, a control fault, a unit left in local mode after maintenance, and a leak that forces valves closed.
+          </p>
+
+          <p>
+            In a modern data hall with high load, open doors and portable coolers won’t hold the temperature for long. Portable units can help in small rooms with low load, such as network rooms. In a data hall, what protects you is redundancy that is built in and tested often. If cooling can’t be restored in time, a controlled shutdown of IT equipment is the only way left to save it.
+          </p>
+
+          <p>
+            The people responding face hazards too. Hot aisles get very hot fast. A refrigerant leak can push out the air in a closed plant room, so know the alarm levels before you go in. A leak puts water near electrical equipment.
+          </p>
+
+          <h2>3. When to use it</h2>
 
           <ul>
-            <li>Unexpected temperature increase in a critical technical area</li>
-            <li>Loss of one or more cooling units affecting operational margin</li>
-            <li>Environmental alarms outside approved operating thresholds</li>
-            <li>Unexpected airflow loss or containment failure</li>
-            <li>Cooling water leak or condensate issue affecting operations</li>
-            <li>Loss of cooling redundancy</li>
-            <li>Thermal instability with unknown root cause</li>
-            <li>Cooling infrastructure alarms affecting critical rooms</li>
+            <li>Temperature rising in a data hall or technical room without a known reason</li>
+            <li>One or more cooling units stopped or in alarm</li>
+            <li>Standby unit did not start</li>
+            <li>Chilled water plant in alarm: chiller, pump or flow</li>
+            <li>Cooling stopped after a power interruption</li>
+            <li>Temperature or humidity alarms from IT equipment or customers</li>
           </ul>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Emergency principle:</strong> Maintain thermal control and
-              operational overview before attempting detailed fault resolution.
-            </p>
-          </div>
-
-          <h2>4. Immediate Response Priorities</h2>
+          <h2>4. Who does what</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
-                  <th>Priority</th>
-                  <th>Focus Area</th>
-                  <th>Objective</th>
+                  <th>Role</th>
+                  <th>Does</th>
                 </tr>
               </thead>
-
               <tbody>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">1</td>
-                  <td data-label="Focus Area" data-role="main">Life Safety</td>
-                  <td data-label="Objective">Confirm no immediate hazard to personnel exists.</td>
+                  <td data-label="Role" data-role="main">Shift lead (incident lead)</td>
+                  <td data-label="Does">Leads the response, decides on escalation and informs others.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">2</td>
-                  <td data-label="Focus Area" data-role="main">Environmental Overview</td>
-                  <td data-label="Objective">Determine affected rooms, thermal trend and cooling status.</td>
+                  <td data-label="Role" data-role="main">Operator on duty</td>
+                  <td data-label="Does">First checks in BMS and on site. Makes the adjustments they are authorized to make. Watches temperatures and trends.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">3</td>
-                  <td data-label="Focus Area" data-role="main">Cooling Stability</td>
-                  <td data-label="Objective">Preserve remaining cooling capacity and airflow control.</td>
+                  <td data-label="Role" data-role="main">On-call person</td>
+                  <td data-label="Does">Comes to site or supports by phone when called.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">4</td>
-                  <td data-label="Focus Area" data-role="main">Impact Control</td>
-                  <td data-label="Objective">Reduce risk of secondary infrastructure impact.</td>
+                  <td data-label="Role" data-role="main">Cooling vendor specialist</td>
+                  <td data-label="Does">Finds and fixes the fault in the cooling equipment.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">5</td>
-                  <td data-label="Focus Area" data-role="main">Communication</td>
-                  <td data-label="Objective">Inform responsible stakeholders and maintain updates.</td>
+                  <td data-label="Role" data-role="main">Facility manager</td>
+                  <td data-label="Does">Informed when the room loses redundancy or a limit is close.</td>
                 </tr>
-
                 <tr>
-                  <td data-label="Priority" data-role="lead">6</td>
-                  <td data-label="Focus Area" data-role="main">Incident Logging</td>
-                  <td data-label="Objective">Maintain timeline and operational record.</td>
+                  <td data-label="Role" data-role="main">Recorder</td>
+                  <td data-label="Does">Keeps the timeline: alarms, temperatures, actions and decisions.</td>
                 </tr>
-
+                <tr>
+                  <td data-label="Role" data-role="main">Security</td>
+                  <td data-label="Does">Lets the vendor in quickly and keeps access to the room to those who need it.</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>5. Initial Response Procedure</h2>
+          <p>
+            Staffing:
+          </p>
+
+          <ul>
+            <li>No one on site: the alarm goes to the On-call person, who checks remotely, calls the vendor and comes to site.</li>
+            <li>One person on site: the Operator on duty does the first checks and the adjustments they are authorized to make, and calls the Shift lead or On-call person and the vendor at once. A cooling fault usually has more tasks than one person can handle, so call for help early.</li>
+            <li>Two or more on site: one stays in BMS and watches the trend. The others check the rooms, the plant room and the cooling equipment.</li>
+          </ul>
+
+          <h2>5. First steps</h2>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
                   <th>Step</th>
-                  <th>Area/Tag</th>
                   <th>Action</th>
-                  <th>Verification</th>
+                  <th>Check</th>
                   <th>Owner</th>
                 </tr>
               </thead>
@@ -197,269 +193,165 @@
 
                 <tr>
                   <td data-label="Step" data-role="lead">1</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Declare operational incident and assign response lead.</td>
-                  <td data-label="Verification">Single responsible coordinator established.</td>
-                  <td data-label="Owner">Operations Lead</td>
+                  <td data-label="Action" data-role="main">Check people: anyone in a hot aisle, plant room or near water.</td>
+                  <td data-label="Check">People safe, or help called.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">2</td>
-                  <td data-label="Area/Tag">DATAHALL / TECH AREA</td>
-                  <td data-label="Action" data-role="main">Confirm personnel safety and identify any immediate hazard.</td>
-                  <td data-label="Verification">No active life-safety emergency identified.</td>
-                  <td data-label="Owner">Operations / Security</td>
+                  <td data-label="Action" data-role="main">Read the cooling state in BMS: which units run, which stopped, standby units, chilled water supply.</td>
+                  <td data-label="Check">What has stopped is known.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">3</td>
-                  <td data-label="Area/Tag">BMS / DCIM</td>
-                  <td data-label="Action" data-role="main">Review environmental alarms, room temperatures and cooling-system status.</td>
-                  <td data-label="Verification">Affected cooling zones and thermal trend identified.</td>
-                  <td data-label="Owner">Facility Operations</td>
+                  <td data-label="Action" data-role="main">Check temperatures per area and the trend.</td>
+                  <td data-label="Check">Hottest area and how fast it rises is known.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">4</td>
-                  <td data-label="Area/Tag">CRAC/CRAH / CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Identify affected cooling equipment and determine current operating state.</td>
-                  <td data-label="Verification">Failed, degraded or unavailable cooling components identified.</td>
-                  <td data-label="Owner">HVAC Specialist</td>
+                  <td data-label="Action" data-role="main">Call the Shift lead and the cooling vendor.</td>
+                  <td data-label="Check">Both informed, vendor on the way.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">5</td>
-                  <td data-label="Area/Tag">DATAHALL</td>
-                  <td data-label="Action" data-role="main">Verify airflow paths, containment integrity and visible room conditions.</td>
-                  <td data-label="Verification">No obvious blockage, displaced containment or uncontrolled airflow issue observed.</td>
-                  <td data-label="Owner">Facility Operations</td>
+                  <td data-label="Action" data-role="main">Check that standby units started. Start them by hand if they didn’t and you are authorized to.</td>
+                  <td data-label="Check">All available units running.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">6</td>
-                  <td data-label="Area/Tag">CLG-ZONE</td>
-                  <td data-label="Action" data-role="main">Determine remaining cooling redundancy and environmental margin.</td>
-                  <td data-label="Verification">Current operational risk level understood and communicated.</td>
-                  <td data-label="Owner">Operations Lead</td>
+                  <td data-label="Action" data-role="main">Check the room: doors closed, containment in place, floor tiles in place, no blocked air paths.</td>
+                  <td data-label="Check">Air goes where it should.</td>
+                  <td data-label="Owner">Operator on duty</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">7</td>
-                  <td data-label="Area/Tag">COMMUNICATION</td>
-                  <td data-label="Action" data-role="main">Notify required stakeholders according to incident communication plan.</td>
-                  <td data-label="Verification">Stakeholder communication completed and logged.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Estimate the time to the room’s limit at the current trend.</td>
+                  <td data-label="Check">Time known and told to the Shift lead.</td>
+                  <td data-label="Owner">Shift lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">8</td>
-                  <td data-label="Area/Tag">INCIDENT LOG</td>
-                  <td data-label="Action" data-role="main">Start or maintain incident timeline and operational log.</td>
-                  <td data-label="Verification">Observations, alarms, actions and decisions continuously recorded.</td>
-                  <td data-label="Owner">Assigned Recorder</td>
+                  <td data-label="Action" data-role="main">Decide the update interval and who is informed.</td>
+                  <td data-label="Check">Interval set, first update sent.</td>
+                  <td data-label="Owner">Shift lead</td>
                 </tr>
 
                 <tr>
                   <td data-label="Step" data-role="lead">9</td>
-                  <td data-label="Area/Tag">OPS-BRIDGE</td>
-                  <td data-label="Action" data-role="main">Establish environmental review interval and escalation threshold.</td>
-                  <td data-label="Verification">Response cadence agreed and communicated.</td>
-                  <td data-label="Owner">Incident Lead</td>
+                  <td data-label="Action" data-role="main">Start the timeline.</td>
+                  <td data-label="Check">Alarms, temperatures, actions and decisions recorded.</td>
+                  <td data-label="Owner">Recorder</td>
                 </tr>
 
               </tbody>
             </table>
           </div>
 
-          <h2>6. Stabilization Measures</h2>
-
-          <p>
-            Stabilization actions should focus on maintaining acceptable thermal
-            conditions while avoiding uncontrolled changes to the environment.
-          </p>
-
-          <ul>
-            <li>Preserve remaining cooling capacity</li>
-            <li>Minimize unnecessary room access or airflow disturbance</li>
-            <li>Protect containment integrity where applicable</li>
-            <li>Increase monitoring frequency during unstable conditions</li>
-            <li>Escalate early if thermal margin decreases</li>
-            <li>Coordinate technical troubleshooting through the incident lead</li>
-          </ul>
-
-          <p>
-            Any compensating action involving cooling setpoints, airflow paths,
-            electrical isolation or infrastructure configuration should follow
-            approved site procedures and authorized decision-making.
-          </p>
-
           <div class="principle-callout">
             <p>
-              <strong>Control rule:</strong> Avoid uncontrolled environmental
-              changes during a cooling incident. Stability is often more valuable
-              than aggressive adjustment.
+              <strong>Note:</strong> What counts as the room’s limit varies. It is
+              set by the site design and what has been agreed with customers.
+              ASHRAE TC 9.9 gives a recommended inlet range of 18&#8288;–&#8288;27&nbsp;°C for
+              most IT equipment, and wider allowable ranges.
             </p>
           </div>
 
-          <h2>7. Escalation Triggers</h2>
+          <h2>6. If it gets worse</h2>
 
           <p>
-            Immediate escalation is required if one or more of the following
-            conditions occur:
+            <strong>If the temperature keeps rising and the cause isn’t fixed
+            within the time you have, escalate. Don’t wait for the limit.</strong>
           </p>
+
+          <p>
+            More units fail, or the trend gets steeper: the Shift lead escalates to the Facility manager and informs customers following the site’s own plan.
+          </p>
+
+          <p>
+            Water on the floor or a leak alarm: follow
+            <a href="water-leak-response.html">Water Leak Response (EOP-WTR-003)</a>.
+          </p>
+
+          <p>
+            Cooling stopped because power was lost: follow
+            <a href="utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>.
+            Power comes first. Cooling restarts when the power path is stable.
+          </p>
+
+          <p>
+            Fire alarm, smoke or a burning smell: follow
+            <a href="fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+            Cooling stays on. Dampers may close and change the air paths, so watch
+            the temperatures.
+          </p>
+
+          <p>
+            Monitoring lost: check temperatures in the room by hand, and treat the trend as rising until you know.
+          </p>
+
+          <p>
+            Cooling can’t be restored before the limit: a controlled shutdown of IT equipment is the last resort. It is decided with the customers, following the site’s own plan, and done before equipment shuts itself down.
+          </p>
+
+          <p>
+            Someone is hurt: people first. Call for help and follow the site’s own plan.
+          </p>
+
+          <h2>7. Back to normal</h2>
 
           <ul>
-            <li>Temperature continues increasing despite stabilization efforts</li>
-            <li>Additional cooling units fail or become unavailable</li>
-            <li>Environmental conditions exceed approved operating limits</li>
-            <li>Water leak or condensate issue threatens equipment areas</li>
-            <li>Monitoring visibility is lost or becomes unreliable</li>
-            <li>IT equipment alarms or thermal shutdown events begin</li>
-            <li>Power systems, UPS systems or network infrastructure become affected</li>
-            <li>Room conditions can no longer be predicted with confidence</li>
+            <li>All units in automatic, running or on standby as designed</li>
+            <li>Standby units back on standby</li>
+            <li>Temperatures stable at the baseline for the time set by the site</li>
+            <li>No alarms active or suppressed</li>
+            <li>Containment and floor tiles in place</li>
+            <li>Timeline complete, cause found or a plan to find it</li>
+            <li>Review held: what failed, what worked, what changes</li>
           </ul>
 
-          <h2>8. Communication Structure</h2>
-
-          <p>
-            Cooling incidents should be communicated using clear operational
-            status updates based on measured conditions and observed trends.
-          </p>
+          <h2>8. Related procedures</h2>
 
           <ul>
-            <li>Use factual environmental data where available</li>
-            <li>Avoid assumptions about root cause until confirmed</li>
-            <li>Separate technical troubleshooting from stakeholder communication</li>
-            <li>Maintain regular update intervals during unstable conditions</li>
-            <li>Record all major environmental changes and escalation decisions</li>
+            <li><a href="../sop/cooling-system-inspection.html">Cooling System Inspection (SOP-CLG-004)</a></li>
+            <li><a href="../mop/cooling-maintenance.html">CRAC/CRAH Planned Maintenance (MOP-CLG-003)</a></li>
+            <li><a href="water-leak-response.html">Water Leak Response (EOP-WTR-003)</a></li>
+            <li><a href="utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a></li>
+            <li><a href="fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a></li>
           </ul>
 
-          <p>
-            Example update structure:
-          </p>
-
-          <div class="code-like-box">
-            Time → Current Temperature / Trend → Affected Area →
-            Current Cooling Status → Risk Level → Next Update
-          </div>
-
-          <h2>9. Recovery and Return to Normal</h2>
+          <h2>9. Rules and standards</h2>
 
           <p>
-            Recovery should focus on restoring a known stable environmental state,
-            not only restarting failed equipment.
+            ASHRAE TC 9.9 sets the thermal guidelines most data centers use for IT
+            inlet temperatures. In Europe, the F-gas Regulation means only
+            certified people may work on refrigerant circuits. Electrical work
+            during the response follows the local rules: EN 50110-1 in Europe, FSE
+            in Norway, the Electricity at Work Regulations 1989 in the UK and NFPA
+            70E in the US.
           </p>
-
-          <ul>
-            <li>Verify cooling systems returned to approved operating condition</li>
-            <li>Review environmental trend stability before incident closure</li>
-            <li>Verify airflow and containment integrity restored</li>
-            <li>Confirm no unresolved alarm or degraded condition remains</li>
-            <li>Review monitoring visibility and sensor status</li>
-            <li>Complete incident documentation and operational review</li>
-          </ul>
-
-          <h2>10. Related Procedures</h2>
-
-          <ul>
-            <li>Cooling System Visual Inspection Procedure (SOP)</li>
-            <li>CRAC/CRAH Planned Maintenance (MOP)</li>
-            <li>Water Leak Response (EOP)</li>
-            <li>Utility Power Loss Response (EOP)</li>
-            <li>Site HVAC Repair Procedure (Site-Specific)</li>
-          </ul>
-
-          <h2>11. Operational Notes</h2>
-
-          <p>
-            Cooling incidents often evolve gradually compared to electrical
-            failures. Early detection, environmental awareness and controlled
-            escalation are therefore extremely important.
-          </p>
-
-          <p>
-            Thermal conditions should be evaluated using measured trends,
-            infrastructure awareness and operational judgment — not isolated
-            alarm points alone.
-          </p>
-
-          <p>
-            Real emergency response procedures must align with facility design,
-            environmental requirements, manufacturer instructions, local safety
-            rules, monitoring strategy and approved operational governance.
-          </p>
-
-          <div class="metadata-table">
-            <div><strong>Type:</strong> EOP Example</div>
-            <div><strong>Category:</strong> Cooling / Environmental Incident Response</div>
-            <div><strong>Criticality:</strong> Critical</div>
-            <div><strong>Status:</strong> Public example — not for direct production use</div>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Key principles:</strong> maintain environmental overview,
-              protect thermal margin, preserve cooling stability, escalate early
-              and maintain disciplined communication throughout the incident.
-            </p>
-          </div>
-
 
         </article>
 
         <aside class="advisory-sidebar">
 
           <div class="sidebar-box">
-            <h3>EOP Focus</h3>
-            <ul>
-              <li>Thermal risk management</li>
-              <li>Cooling-system awareness</li>
-              <li>Environmental monitoring</li>
-              <li>Operational stabilization</li>
-              <li>Escalation discipline</li>
-              <li>Incident communication</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
-            <ul>
-              <li><a href="../sop/" class="text-link">SOP Examples</a></li>
-              <li><a href="../mop/" class="text-link">MOP Examples</a></li>
-              <li><a href="../templates/" class="text-link">Templates</a></li>
-              <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
-              <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>CRAC/CRAH — Cooling units</li>
-              <li>CLG-ZONE — Cooling zone</li>
-              <li>BMS / DCIM — Monitoring systems</li>
-              <li>DATAHALL — Critical technical area</li>
-              <li>OPS-BRIDGE — Incident coordination point</li>
+              <li>SITE1-B1-DH1-CRAH-003-01: Cooling unit in alarm</li>
+              <li>SITE1-B1-DH1-CRAH-002-01: Standby cooling unit</li>
+              <li>SITE1-B1-000-CHL-001-01: Chiller</li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Emergency Reminder</h3>
-            <p>
-              Cooling incidents are often manageable early. Loss of overview and
-              delayed escalation usually increase operational risk more than the
-              initial failure itself.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a simplified example document. Real emergency response
-              procedures must be reviewed and approved according to the facility
-              design, operational limits and responsible authority.
-            </p>
           </div>
 
         </aside>
