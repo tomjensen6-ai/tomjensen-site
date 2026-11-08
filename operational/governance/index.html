@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Operational Governance | Tom Jensen</title>
-  <meta name="description" content="Operational governance principles for document ownership, approval models, revision control, classification, review cycles and operational authority." />
+  <meta name="description" content="How controlled data center procedures are owned, approved, revised, reviewed, classified and retired." />
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -13,7 +13,7 @@
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Governance | Tom Jensen" />
-  <meta property="og:description" content="Operational governance principles for controlled procedures, approval models, revision control, classification and operational authority." />
+  <meta property="og:description" content="How controlled data center procedures are owned, approved, revised, reviewed, classified and retired." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/governance/" />
   <meta property="og:type" content="website" />
@@ -47,16 +47,15 @@
           <h1>Operational Governance</h1>
 
           <p class="advisory-note-lead">
-            Operational documentation only works when ownership, approval,
-            revision control, classification and authority are clear.
+            A procedure only helps if people can trust it: current, approved and owned.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Purpose</span>
           <p>
-            To show how controlled documents can be governed across their full
-            lifecycle, from draft to approval, review, revision and retirement.
+            How controlled documents move from draft to approval, review, change
+            and retirement.
           </p>
         </aside>
       </div>
@@ -69,118 +68,95 @@
           <h2>Why governance matters</h2>
 
           <p>
-            A procedure is not reliable simply because it exists. It must be
-            current, approved, owned, available to the right people and aligned
-            with the real operating environment.
+            An old procedure is dangerous because people trust it.
           </p>
 
           <p>
-            Poor document governance creates operational risk. Teams may follow
-            outdated instructions, use unclear authority paths, miss required
-            approvals or execute work without understanding the current asset,
-            system or risk state.
+            The failures are simple. Someone follows an old revision. Nobody
+            knows who can approve a change. The equipment was replaced, but the
+            procedure wasn't.
           </p>
 
           <p>
-            Good governance turns documentation into an operational control
-            system. It defines who owns the document, who may approve it, how
-            changes are reviewed, when it must be updated and when it should no
-            longer be used.
+            Governance answers four questions for every document: who owns it,
+            who approves it, which revision is valid, and when it is reviewed next.
           </p>
 
           <h2>Document ownership</h2>
 
           <p>
-            Every controlled operational document should have a named owner or
-            owning function. Ownership should not be vague. A document without
-            ownership will eventually become outdated.
+            Every document has a named owner. A role is fine, but it has to be
+            one role. A document nobody owns goes out of date.
           </p>
 
           <ul>
-            <li><strong>Document Owner:</strong> accountable for accuracy, review and lifecycle control.</li>
-            <li><strong>Technical Reviewer:</strong> confirms technical content and site relevance.</li>
-            <li><strong>Operational Reviewer:</strong> confirms usability, execution logic and operational risk.</li>
-            <li><strong>Approver:</strong> authorizes the document for controlled use.</li>
-            <li><strong>Users:</strong> follow the approved version and report errors or improvement needs.</li>
+            <li><strong>Document owner:</strong> keeps it correct, starts the review and logs changes.</li>
+            <li><strong>Reviewer:</strong> checks the technical content and that the steps work on site.</li>
+            <li><strong>Approver:</strong> releases it for use.</li>
+            <li><strong>Users:</strong> follow the approved revision and report what is wrong or missing.</li>
           </ul>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Governance rule:</strong> If nobody owns the document,
-              nobody owns keeping it correct.
-            </p>
-          </div>
-
-          <h2>Approval model</h2>
+          <h2>Approval</h2>
 
           <p>
-            Approval should match the risk level of the document. A low-risk
-            inspection checklist may need local operational approval. A procedure
-            affecting critical power, cooling, life safety or customer service
-            may require technical, operational and management approval.
+            The operations team approves its own documents. A document for work
+            with High or Critical risk also needs approval from the Facility manager.
           </p>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
-                  <th>Document Type</th>
-                  <th>Typical Approval Focus</th>
-                  <th>Example Authority</th>
+                  <th>Document</th>
+                  <th>What the approver checks</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Document Type" data-role="main">SOP</td>
-                  <td data-label="Typical Approval Focus">Repeatability, clarity, safe normal operation</td>
-                  <td data-label="Example Authority">Operations lead / system owner</td>
+                  <td data-label="Document" data-role="main">SOP</td>
+                  <td data-label="What the approver checks">The routine is clear, safe and can be repeated</td>
                 </tr>
                 <tr>
-                  <td data-label="Document Type" data-role="main">MOP</td>
-                  <td data-label="Typical Approval Focus">Planned work, change risk, rollback and impact</td>
-                  <td data-label="Example Authority">Change authority / technical authority / operations lead</td>
+                  <td data-label="Document" data-role="main">MOP</td>
+                  <td data-label="What the approver checks">Risk, customer impact, hold points and rollback</td>
                 </tr>
                 <tr>
-                  <td data-label="Document Type" data-role="main">EOP</td>
-                  <td data-label="Typical Approval Focus">Emergency response, escalation, safety and incident control</td>
-                  <td data-label="Example Authority">Operations manager / safety authority / facility responsible</td>
+                  <td data-label="Document" data-role="main">EOP</td>
+                  <td data-label="What the approver checks">Safety, escalation and the first actions</td>
                 </tr>
                 <tr>
-                  <td data-label="Document Type" data-role="main">Risk Assessment</td>
-                  <td data-label="Typical Approval Focus">Hazards, controls, residual risk and acceptance</td>
-                  <td data-label="Example Authority">Risk owner / responsible manager</td>
-                </tr>
-                <tr>
-                  <td data-label="Document Type" data-role="main">Governance Standard</td>
-                  <td data-label="Typical Approval Focus">Policy, lifecycle control and organizational alignment</td>
-                  <td data-label="Example Authority">Site leadership / document control authority</td>
+                  <td data-label="Document" data-role="main">Risk assessment</td>
+                  <td data-label="What the approver checks">Hazards, controls and the risk left after controls</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Revision control</h2>
+          <h2>Revisions</h2>
 
           <p>
-            Revision control makes it clear which version is approved and what
-            changed. This is especially important when procedures are printed,
-            downloaded, stored locally or used during maintenance and emergency
-            events.
+            A minor change is a typo, a phone number or a clearer word. The owner
+            fixes it and logs it in the revision table inside the document.
           </p>
 
           <p>
-            A controlled document should normally include:
+            A major change is new steps, new equipment, changed roles or changed
+            risk. It goes through review and approval again, like a new document.
+          </p>
+
+          <p>
+            Every controlled document shows:
           </p>
 
           <ul>
             <li>Document ID</li>
             <li>Title</li>
-            <li>Revision number</li>
+            <li>Revision</li>
             <li>Status</li>
             <li>Owner</li>
             <li>Approval date</li>
-            <li>Review date</li>
-            <li>Change summary</li>
+            <li>Next review date</li>
+            <li>Revision log</li>
             <li>Classification</li>
           </ul>
 
@@ -189,225 +165,156 @@
               <thead>
                 <tr>
                   <th>Revision</th>
-                  <th>Date</th>
-                  <th>Change Summary</th>
-                  <th>Prepared By</th>
-                  <th>Approved By</th>
+                  <th>Change</th>
+                  <th>By</th>
+                  <th>Approval</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Revision" data-role="lead">0.1</td>
-                  <td data-label="Date">Draft</td>
-                  <td data-label="Change Summary" data-role="main">Initial draft for review</td>
-                  <td data-label="Prepared By">Document owner</td>
-                  <td data-label="Approved By">Not approved</td>
-                </tr>
-                <tr>
                   <td data-label="Revision" data-role="lead">1.0</td>
-                  <td data-label="Date">Approved date</td>
-                  <td data-label="Change Summary" data-role="main">First approved issue</td>
-                  <td data-label="Prepared By">Document owner</td>
-                  <td data-label="Approved By">Approver</td>
+                  <td data-label="Change" data-role="main">First approved issue</td>
+                  <td data-label="By">Document owner</td>
+                  <td data-label="Approval">Approver</td>
                 </tr>
                 <tr>
                   <td data-label="Revision" data-role="lead">1.1</td>
-                  <td data-label="Date">Revision date</td>
-                  <td data-label="Change Summary" data-role="main">Minor update or clarification</td>
-                  <td data-label="Prepared By">Document owner</td>
-                  <td data-label="Approved By">Approver if required</td>
+                  <td data-label="Change" data-role="main">Phone number updated</td>
+                  <td data-label="By">Document owner</td>
+                  <td data-label="Approval">Logged, no new approval</td>
                 </tr>
                 <tr>
                   <td data-label="Revision" data-role="lead">2.0</td>
-                  <td data-label="Date">Major revision date</td>
-                  <td data-label="Change Summary" data-role="main">Major technical or operational change</td>
-                  <td data-label="Prepared By">Document owner</td>
-                  <td data-label="Approved By">Formal approval required</td>
+                  <td data-label="Change" data-role="main">New steps after UPS replacement</td>
+                  <td data-label="By">Document owner</td>
+                  <td data-label="Approval">Approver, after full review</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Document status</h2>
-
           <p>
-            Document status should be visible. Personnel should not need to guess
-            whether a procedure is a draft, approved instruction or retired
-            historical record.
+            Document IDs are never reused. A retired document leaves a gap in the
+            numbers, so an old reference never points to the wrong procedure.
           </p>
 
+          <h2>Document status</h2>
+
           <ul>
-            <li><strong>Draft:</strong> under development, not approved for live use.</li>
-            <li><strong>For Review:</strong> ready for technical or operational review.</li>
-            <li><strong>Approved:</strong> released for controlled use.</li>
-            <li><strong>Under Revision:</strong> approved version may still exist, but changes are being prepared.</li>
-            <li><strong>Retired:</strong> no longer valid for operational use.</li>
-            <li><strong>Superseded:</strong> replaced by a newer approved document.</li>
+            <li><strong>Draft:</strong> being written. Not for use.</li>
+            <li><strong>For review:</strong> with the reviewers.</li>
+            <li><strong>Approved:</strong> in use.</li>
+            <li><strong>Retired:</strong> no longer valid. If it was replaced, the log names the new document.</li>
           </ul>
+
+          <p>
+            The approved revision stays in use while the next one is being written.
+          </p>
+
+          <div class="code-like-box">
+            Draft → Review → Approval → In use → Yearly review → Revision or retirement
+          </div>
 
           <h2>Review cycle</h2>
 
           <p>
-            Review frequency should match document risk and rate of change.
-            Critical procedures should be reviewed more frequently than low-risk
-            reference documents.
+            Every SOP, MOP and EOP is reviewed once a year. An EOP is also
+            reviewed after it has been used.
           </p>
 
-          <div class="responsive-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Document Criticality</th>
-                  <th>Typical Review Cycle</th>
-                  <th>Review Trigger Examples</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Document Criticality" data-role="main">Critical</td>
-                  <td data-label="Typical Review Cycle">At least annually, or after relevant incident/change</td>
-                  <td data-label="Review Trigger Examples">Power, cooling, life-safety, emergency response</td>
-                </tr>
-                <tr>
-                  <td data-label="Document Criticality" data-role="main">High</td>
-                  <td data-label="Typical Review Cycle">Annually or according to site governance</td>
-                  <td data-label="Review Trigger Examples">Planned maintenance, access control, key operational routines</td>
-                </tr>
-                <tr>
-                  <td data-label="Document Criticality" data-role="main">Medium</td>
-                  <td data-label="Typical Review Cycle">Every 1–2 years or after system change</td>
-                  <td data-label="Review Trigger Examples">Inspection routines, supporting processes</td>
-                </tr>
-                <tr>
-                  <td data-label="Document Criticality" data-role="main">Low</td>
-                  <td data-label="Typical Review Cycle">Every 2–3 years or when information changes</td>
-                  <td data-label="Review Trigger Examples">Reference material and low-risk guidance</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <p>
+            Other things start a review early: replaced equipment, a changed
+            layout, an incident or near miss, an audit finding, or users who keep
+            asking the same question.
+          </p>
+
+          <h2>Printed copies</h2>
 
           <p>
-            Review should also be triggered by incidents, near misses, equipment
-            replacement, site changes, regulatory updates, audit findings,
-            repeated user confusion or changes to operating model.
+            Emergency procedures must work when screens don't. They are printed
+            and kept where they are used, for example in the control room.
+          </p>
+
+          <p>
+            A printed copy is marked “Uncontrolled when printed”. One person swaps
+            the printed copies when a new revision is approved and removes the old ones.
           </p>
 
           <h2>Classification</h2>
 
           <p>
-            Operational documents should be classified so users understand how
-            they may be handled, shared and stored.
+            Each document has a label, so people know who can see it and where it
+            can be stored.
           </p>
 
           <ul>
-            <li><strong>Public Example:</strong> generalized demonstration material suitable for public sharing.</li>
-            <li><strong>Internal:</strong> ordinary internal operational material.</li>
-            <li><strong>Restricted:</strong> sensitive operational detail, asset information or access-related content.</li>
-            <li><strong>Confidential:</strong> high-sensitivity content requiring strict access control.</li>
-            <li><strong>Emergency Use:</strong> document intended for use during abnormal or emergency conditions.</li>
+            <li><strong>Public:</strong> can be shared outside the organization.</li>
+            <li><strong>Internal:</strong> for staff and contractors working on site.</li>
+            <li><strong>Restricted:</strong> asset details, layouts or access information.</li>
+            <li><strong>Confidential:</strong> the most sensitive content, shared only with named people.</li>
           </ul>
 
           <p>
-            Classification should reflect actual risk. Over-classification makes
-            documents hard to use. Under-classification can expose sensitive
-            operational information.
+            A label set too high makes a document hard to reach. A label set too
+            low exposes the site.
           </p>
 
-          <h2>Operational authority</h2>
+          <h2>Authority</h2>
 
           <p>
-            Operational authority defines who may make decisions during normal
-            operation, planned work and emergency conditions.
-          </p>
-
-          <p>
-            In mature environments, authority should be clear before work starts.
-            During incidents, the team should know who is leading the response,
-            who may stop work, who may approve rollback, and who communicates
-            with stakeholders.
+            Decide who decides before work starts, not during a change window or
+            an incident.
           </p>
 
           <ul>
-            <li><strong>Stop Authority:</strong> the right and responsibility to stop unsafe or uncontrolled work.</li>
-            <li><strong>Change Authority:</strong> the role or group approving planned operational changes.</li>
-            <li><strong>Technical Authority:</strong> the competent role confirming technical correctness.</li>
-            <li><strong>Incident Lead:</strong> the role coordinating abnormal or emergency response.</li>
-            <li><strong>Business Owner:</strong> the role accepting operational or service-impact risk.</li>
+            <li><strong>Anyone on site:</strong> can stop unsafe work they see.</li>
+            <li><strong>Incident lead:</strong> leads the response during an incident.</li>
+            <li><strong>Change manager:</strong> approves planned changes.</li>
+            <li><strong>Facility manager:</strong> approves documents and work with High or Critical risk.</li>
           </ul>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Operational rule:</strong> The person coordinating an
-              incident should not also be overloaded with every technical task.
-              Control, communication and overview must be protected.
-            </p>
-          </div>
-
-          <h2>Governance workflow</h2>
-
           <p>
-            A practical governance workflow should be simple enough to follow,
-            but controlled enough to prevent outdated or unapproved documents
-            from being used in critical operations.
+            Stopped work does not just carry on. Before it starts again, everyone
+            involved reads the instructions through again and signs off.
           </p>
 
-          <div class="code-like-box">
-            Draft → Review → Approval → Controlled Use → Review → Revision or Retirement
-          </div>
-
           <p>
-            For planned work, the related operational workflow may look like:
+            The Incident lead runs the response, not the tools. Technical tasks go
+            to others, so someone keeps the overview and handles communication.
           </p>
 
-          <div class="code-like-box">
-            Request → Risk Review → Approval → Execution → Verification → Closeout
-          </div>
-
-          <h2>Minimum governance checks</h2>
+          <h2>Before approval</h2>
 
           <p>
-            Before a document is approved for controlled use, it should pass a
-            basic governance check.
+            Before a document is approved, check that:
           </p>
 
           <ul>
-            <li>Is the document owner identified?</li>
-            <li>Is the document type clear: SOP, MOP, EOP, WI, RA or governance document?</li>
-            <li>Is the scope defined?</li>
-            <li>Are asset references and locations clear?</li>
-            <li>Are responsibilities assigned?</li>
-            <li>Are stop conditions or escalation rules included where needed?</li>
-            <li>Is rollback or recovery addressed where relevant?</li>
-            <li>Has the document been reviewed by competent personnel?</li>
-            <li>Is the approved version clearly identifiable?</li>
-            <li>Is the next review date defined?</li>
+            <li>The owner is named</li>
+            <li>The type is clear: SOP, MOP, EOP or risk assessment</li>
+            <li>The scope is clear</li>
+            <li>Assets and locations are named with tags</li>
+            <li>Roles are assigned</li>
+            <li>Stop conditions and escalation are included where needed</li>
+            <li>Rollback or recovery is included where relevant</li>
+            <li>Someone who knows the system has reviewed it</li>
+            <li>Revision and status are visible</li>
+            <li>The next review date is set</li>
           </ul>
 
-          <h2>Public examples and limitations</h2>
+          <h2>Rules and standards</h2>
 
           <p>
-            This page describes general operational governance principles. Real
-            governance models must be aligned with the responsible organization’s
-            legal obligations, operating model, safety requirements, customer
-            commitments, information-security controls and management system.
+            ISO 9001 and ISO/IEC 27001 both cover document control in clause 7.5,
+            documented information. Documents must be identified, reviewed and
+            approved before use, kept under version control, and available where
+            and when they are needed. Local law and the site's own management
+            system come on top.
           </p>
 
         </article>
 
         <aside class="advisory-sidebar">
-          <div class="sidebar-box">
-            <h3>Governance Focus</h3>
-            <ul>
-              <li>Approval model</li>
-              <li>Document ownership</li>
-              <li>Revision control</li>
-              <li>Review cycle</li>
-              <li>Classification</li>
-              <li>Operational authority</li>
-            </ul>
-          </div>
-
           <div class="sidebar-box">
             <h3>Related Areas</h3>
             <ul>
@@ -419,30 +326,6 @@
               <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
               <li><a href="../risk/" class="text-link">Risk Assessment</a></li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Core Rule</h3>
-            <p>
-              A document is not controlled unless the approved version, owner,
-              status and review responsibility are clear.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Authority Reminder</h3>
-            <p>
-              Authority should be defined before work starts, not discovered
-              during a change window or incident.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a generalized governance example. Live governance models
-              must be reviewed and approved by the responsible organization.
-            </p>
           </div>
         </aside>
       </div>
