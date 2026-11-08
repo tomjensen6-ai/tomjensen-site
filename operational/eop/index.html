@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>EOP Examples — Emergency Operating Procedures | Tom Jensen</title>
-  <meta name="description" content="Public-facing Emergency Operating Procedure examples for incident identification, control, communication, escalation and reporting in critical infrastructure environments." />
+  <meta name="description" content="EOP examples for the first minutes and hours of an emergency in a data center: power loss, cooling failure, water leak and fire alarm." />
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -13,7 +13,7 @@
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="EOP Examples — Emergency Operating Procedures | Tom Jensen" />
-  <meta property="og:description" content="Structured EOP examples for abnormal events, incident control, escalation, communication and reporting in critical infrastructure operations." />
+  <meta property="og:description" content="EOP examples for the first minutes and hours of an emergency in a data center: power loss, cooling failure, water leak and fire alarm." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/eop/" />
   <meta property="og:type" content="website" />
@@ -47,19 +47,14 @@
           <h1>Emergency Operating Procedure Examples</h1>
 
           <p class="advisory-note-lead">
-            Emergency Operating Procedures are used during abnormal, degraded or
-            emergency conditions where the first priority is to identify the
-            situation, establish control, protect people and assets, communicate
-            clearly and report the incident accurately.
+            Examples for the first minutes and hours of an emergency: power, cooling, water and fire.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Purpose</span>
           <p>
-            To demonstrate how emergency response documentation can support calm
-            control, escalation, communication and incident reporting without
-            becoming a detailed technical repair manual.
+            Get control first. The repair comes later, under its own procedure.
           </p>
         </aside>
       </div>
@@ -69,226 +64,83 @@
       <div class="container advisory-content-grid">
         <article class="advisory-article">
 
-          <h2>What an EOP is used for</h2>
+          <h2>What an EOP is for</h2>
 
           <p>
-            An Emergency Operating Procedure is used when normal conditions are
-            no longer confirmed. It provides a structured response path for the
-            first phase of an abnormal event: recognition, safety, overview,
-            control, communication and escalation.
+            An EOP is for when the site is no longer in a known, normal state. It covers the first part: keep people safe, find out what is affected, stop it getting worse, call the right people and log what happens.
           </p>
 
           <p>
-            In this operational model, an EOP is not primarily a technical work
-            instruction. It should not try to contain every repair step for every
-            possible failure. Instead, it should help the responsible team gain
-            control of the situation and decide which approved procedure, vendor,
-            escalation path or authority is required next.
+            An EOP is not a repair manual. The repair follows its own MOP or the vendor’s procedure.
           </p>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Working principle:</strong> Identify → Make safe →
-              Establish overview → Control impact → Inform → Escalate →
-              Record → Recover.
-            </p>
-          </div>
-
-          <h2>What an EOP should contain</h2>
-
-          <ul>
-            <li>Clear trigger conditions for when the EOP is activated</li>
-            <li>Immediate safety and life-safety considerations</li>
-            <li>Initial incident classification or severity level</li>
-            <li>Roles, communication path and decision authority</li>
-            <li>Required overview: alarms, affected systems, impact and current status</li>
-            <li>Initial containment or stabilization actions</li>
-            <li>Escalation criteria and external support requirements</li>
-            <li>Links to relevant SOPs, MOPs, vendor procedures or emergency services</li>
-            <li>Communication and stakeholder update requirements</li>
-            <li>Incident log, timeline and final report requirements</li>
-          </ul>
-
-          <h2>What an EOP should not become</h2>
 
           <p>
-            A weak EOP often tries to become a complete repair manual. That can
-            create confusion during an incident. Emergency documentation should
-            be short enough to use under pressure and clear enough to support
-            disciplined decision-making.
+            One person leads and keeps the overview. Others do the checks, the calls and the log. Log the time of every step: the log is where the review afterwards starts.
           </p>
 
-          <ul>
-            <li>It should not replace detailed SOPs or MOPs.</li>
-            <li>It should not contain unsafe technical instructions outside approved competence.</li>
-            <li>It should not assume one exact fault cause too early.</li>
-            <li>It should not delay escalation while personnel search for details.</li>
-            <li>It should not hide reporting and communication requirements.</li>
-          </ul>
-
-          <h2>EOP relationship to SOP and MOP</h2>
-
-          <p>
-            During an emergency, the EOP acts as the control layer. If a specific
-            technical action is required, the EOP should point to the approved SOP,
-            MOP, vendor instruction or site-specific emergency procedure.
-          </p>
-
-          <ul>
-            <li>
-              <strong>EOP:</strong> controls the abnormal event and response structure.
-            </li>
-            <li>
-              <strong>SOP:</strong> supports known repeatable operational tasks if required.
-            </li>
-            <li>
-              <strong>MOP:</strong> supports planned or approved controlled interventions.
-            </li>
-            <li>
-              <strong>Vendor / specialist procedure:</strong> supports technical repair or recovery where competence and authorization are required.
-            </li>
-          </ul>
-
-          <h2>Example EOP documents</h2>
+          <h2>Examples</h2>
 
           <div class="operational-card-grid">
+
             <a class="operational-card" href="utility-power-loss.html">
-              <span>EOP</span>
+              <span>EOP-PWR-001</span>
               <h3>Utility Power Loss</h3>
               <p>
-                What to do in the first hours after the utility supply is lost.
-                People first, then battery, cooling and fuel.
+                What to do in the first hours after the utility supply is lost. People first, then battery, cooling and fuel.
               </p>
             </a>
 
             <a class="operational-card" href="cooling-failure.html">
-              <span>EOP</span>
+              <span>EOP-CLG-002</span>
               <h3>Cooling Failure Response</h3>
               <p>
-                Emergency response structure for cooling degradation, thermal
-                impact control, escalation and communication.
+                When cooling is lost or temperatures start to rise. People first, then the cooling state, then the clock.
               </p>
             </a>
 
             <a class="operational-card" href="water-leak-response.html">
-              <span>EOP</span>
+              <span>EOP-WTR-003</span>
               <h3>Water Leak Response</h3>
               <p>
-                Response structure for water detection, local containment,
-                asset protection, escalation and incident reporting.
+                Water where it shouldn’t be. Find the source and stop the water without stopping the cooling by mistake.
               </p>
             </a>
 
             <a class="operational-card" href="fire-alarm-response.html">
-              <span>EOP</span>
+              <span>EOP-FIR-004</span>
               <h3>Fire Alarm Response</h3>
               <p>
-                What to do in the first minutes after a fire alarm. People first,
-                then the source.
+                What to do in the first minutes after a fire alarm. People first, then the source.
               </p>
             </a>
+
           </div>
 
-          <h2>Incident control model</h2>
+          <h2>How the examples are built</h2>
 
           <p>
-            A strong emergency response model should avoid uncontrolled parallel
-            action. One responsible role should maintain overview while others
-            perform defined checks, communicate status and support stabilization.
+            The newer EOPs here follow the same pattern: when to use it, who does what, the first steps, when to escalate, and how to get back to normal. Every one starts with people first.
           </p>
 
           <p>
-            This does not need to be overly bureaucratic. Even a small operations
-            team benefits from clear roles: who leads, who checks the technical
-            status, who communicates, who records the timeline and who decides
-            when the situation is stable.
-          </p>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Control rule:</strong> During an incident, the team must
-              know who is leading the response, what is affected, what is still
-              unknown and when the next update is due.
-            </p>
-          </div>
-
-          <h2>Incident logging and reporting</h2>
-
-          <p>
-            Emergency response documentation should create a usable incident
-            record. The incident log should capture time, observed condition,
-            action taken, person responsible, communication sent, escalation made
-            and final status.
-          </p>
-
-          <p>
-            This record supports post-incident review, corrective actions,
-            customer communication, management review, insurance requirements,
-            audit evidence and continuous improvement.
-          </p>
-
-          <h2>Public examples and limitations</h2>
-
-          <p>
-            The EOP examples in this library are simplified and generalized.
-            They are intended to demonstrate emergency documentation structure,
-            not to replace local emergency plans, legal requirements, authority
-            instructions, site procedures, life-safety systems, vendor procedures
-            or professional emergency response.
+            The <a href="../templates/EOP_Template_v2.docx" download>blank EOP template</a> (Word) uses the same pattern.
           </p>
 
         </article>
 
         <aside class="advisory-sidebar">
           <div class="sidebar-box">
-            <h3>EOP Focus</h3>
-            <ul>
-              <li>Incident identification</li>
-              <li>Safety and stabilization</li>
-              <li>Operational overview</li>
-              <li>Impact control</li>
-              <li>Escalation</li>
-              <li>Communication</li>
-              <li>Incident reporting</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Related Areas</h3>
+            <h3>Related areas</h3>
             <ul>
               <li><a href="../sop/" class="text-link">SOP Examples</a></li>
               <li><a href="../mop/" class="text-link">MOP Examples</a></li>
               <li><a href="../templates/" class="text-link">Templates</a></li>
               <li><a href="../governance/" class="text-link">Governance</a></li>
-              <li><a href="../standards/" class="text-link">Standards & Structure</a></li>
+              <li><a href="../frameworks/" class="text-link">Frameworks</a></li>
+              <li><a href="../standards/" class="text-link">Standards &amp; Structure</a></li>
               <li><a href="../asset-identification/" class="text-link">Asset Identification</a></li>
               <li><a href="../risk/" class="text-link">Risk Assessment</a></li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Activation Question</h3>
-            <p>
-              Is the facility still in a known normal operating state? If not,
-              an EOP or incident response path may be required.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Emergency Control Layer</h3>
-            <p>
-              The EOP should help the team establish overview, control impact,
-              inform the right people and document the incident before detailed
-              recovery work continues.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              These examples are not live emergency procedures. Real EOPs must be
-              reviewed and approved by the responsible organization before use.
-            </p>
           </div>
         </aside>
       </div>
