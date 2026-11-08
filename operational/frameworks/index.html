@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Operational Frameworks | Tom Jensen</title>
-  <meta name="description" content="Operational framework examples for criticality models, escalation, change severity, lifecycle control and documentation hierarchy." />
+  <meta name="description" content="How data center operations decide criticality, escalation and change types, and how the documents fit together." />
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -13,7 +13,7 @@
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Operational Frameworks | Tom Jensen" />
-  <meta property="og:description" content="Practical operational frameworks for criticality, escalation, change severity, lifecycle control and documentation hierarchy." />
+  <meta property="og:description" content="How data center operations decide criticality, escalation and change types, and how the documents fit together." />
   <meta property="og:image" content="https://tomjensen.no/images/og-image.png" />
   <meta property="og:url" content="https://tomjensen.no/operational/frameworks/" />
   <meta property="og:type" content="website" />
@@ -47,17 +47,16 @@
           <h1>Operational Frameworks</h1>
 
           <p class="advisory-note-lead">
-            Practical control models for criticality, escalation, change severity,
-            lifecycle control and documentation hierarchy in critical infrastructure
-            operations.
+            Simple models for deciding how important a system is, who gets
+            called, and how much control a change needs.
           </p>
         </div>
 
         <aside class="advisory-note-card">
           <span class="note-label">Purpose</span>
           <p>
-            To show how operational decisions can be made more consistent through
-            simple, visible and governed frameworks.
+            How criticality, escalation and change types make decisions the same
+            on every shift.
           </p>
         </aside>
       </div>
@@ -70,30 +69,26 @@
           <h2>Why frameworks matter</h2>
 
           <p>
-            Operational procedures describe what to do. Frameworks help decide
-            how important something is, who must be involved, how quickly it must
-            be escalated and what level of control is required.
+            Procedures say what to do. Frameworks decide how serious something
+            is, who must be involved and how fast.
           </p>
 
           <p>
-            In critical environments, inconsistent judgment can create risk. A
-            structured framework helps teams classify work, prioritize incidents,
-            assign authority and maintain documentation discipline.
+            Without them, the answer depends on who is on shift. One person
+            escalates early, another waits. The same job gets a full MOP one week
+            and a quick fix the next.
+          </p>
+
+          <h2>1. Criticality</h2>
+
+          <p>
+            Criticality is how bad it is if an asset fails. It is not the same as
+            risk. Risk also counts how likely the failure is: see
+            <a href="../risk/">Risk Assessment</a>.
           </p>
 
           <p>
-            The frameworks below are generalized examples. Real organizations
-            should adapt them to their facility design, legal requirements,
-            service commitments, customer obligations and operating model.
-          </p>
-
-          <h2>1. Criticality model</h2>
-
-          <p>
-            A criticality model helps classify systems, assets and procedures by
-            their operational importance. The purpose is not to make every system
-            “critical,” but to identify where failure would create the greatest
-            operational impact.
+            Base it on what a failure would do, not on what the equipment cost.
           </p>
 
           <div class="responsive-table">
@@ -101,177 +96,45 @@
               <thead>
                 <tr>
                   <th>Level</th>
-                  <th>Description</th>
-                  <th>Typical Examples</th>
-                  <th>Control Expectation</th>
+                  <th>If it fails</th>
+                  <th>Examples</th>
+                  <th>Control</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td data-label="Level" data-role="main">Critical</td>
-                  <td data-label="Description">Failure may directly affect life safety, critical load, major service continuity or facility operation.</td>
-                  <td data-label="Typical Examples">Utility power, UPS, generators, main cooling, fire systems, core monitoring</td>
-                  <td data-label="Control Expectation">Strict approval, tested procedures, defined escalation, frequent review</td>
+                  <td data-label="If it fails">People are at risk, or the critical load is lost or exposed</td>
+                  <td data-label="Examples">Utility supply, transfer switches, UPS, generators, main cooling, fire systems</td>
+                  <td data-label="Control">Tested procedures, approval, set escalation, yearly review</td>
                 </tr>
                 <tr>
                   <td data-label="Level" data-role="main">High</td>
-                  <td data-label="Description">Failure may reduce redundancy, capacity, security or operational resilience.</td>
-                  <td data-label="Typical Examples">Secondary cooling units, transfer equipment, access systems, major support systems</td>
-                  <td data-label="Control Expectation">Controlled procedures, risk review, documented ownership</td>
+                  <td data-label="If it fails">Redundancy, capacity or security is reduced</td>
+                  <td data-label="Examples">A redundant cooling unit, access control, leak detection</td>
+                  <td data-label="Control">Approved procedures, a risk review, a named owner</td>
                 </tr>
                 <tr>
                   <td data-label="Level" data-role="main">Medium</td>
-                  <td data-label="Description">Failure may affect local operations, maintenance efficiency or support functions.</td>
-                  <td data-label="Typical Examples">Local sensors, non-critical panels, supporting documentation, local room systems</td>
-                  <td data-label="Control Expectation">Standard procedures and periodic review</td>
+                  <td data-label="If it fails">Local work or support functions are affected</td>
+                  <td data-label="Examples">Local sensors, non-critical panels, room lighting</td>
+                  <td data-label="Control">Standard procedures, periodic review</td>
                 </tr>
                 <tr>
                   <td data-label="Level" data-role="main">Low</td>
-                  <td data-label="Description">Failure has limited operational impact and does not affect critical services directly.</td>
-                  <td data-label="Typical Examples">Non-critical accessories, administrative support items</td>
-                  <td data-label="Control Expectation">Basic documentation and owner awareness</td>
+                  <td data-label="If it fails">Little effect on operations</td>
+                  <td data-label="Examples">Accessories, office equipment</td>
+                  <td data-label="Control">Basic documentation, a named owner</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div class="principle-callout">
-            <p>
-              <strong>Working principle:</strong> Criticality should be based on
-              operational impact, not equipment cost alone.
-            </p>
-          </div>
-
-          <h2>2. Escalation model</h2>
+          <h2>2. Escalation</h2>
 
           <p>
-            Escalation defines when an issue must move from local handling to
-            wider operational, technical or management attention.
-          </p>
-
-          <p>
-            Escalation should be based on impact, uncertainty, time pressure,
-            safety and loss of redundancy. A team should not wait for full failure
-            before escalating if the operating state is unclear.
-          </p>
-
-          <div class="responsive-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Escalation Level</th>
-                  <th>Typical Condition</th>
-                  <th>Expected Response</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Escalation Level" data-role="main">Level 1 — Local Handling</td>
-                  <td data-label="Typical Condition">Known minor issue, no service impact, no safety concern, clear procedure exists.</td>
-                  <td data-label="Expected Response">Handle locally, record action, monitor for recurrence.</td>
-                </tr>
-                <tr>
-                  <td data-label="Escalation Level" data-role="main">Level 2 — Operational Attention</td>
-                  <td data-label="Typical Condition">Reduced redundancy, repeated alarms, unclear cause or local operational impact.</td>
-                  <td data-label="Expected Response">Notify operations lead, increase monitoring, assign owner.</td>
-                </tr>
-                <tr>
-                  <td data-label="Escalation Level" data-role="main">Level 3 — Incident Control</td>
-                  <td data-label="Typical Condition">Critical system affected, environmental/power risk, customer impact possible, or operating state uncertain.</td>
-                  <td data-label="Expected Response">Activate incident coordination, stakeholder communication and technical escalation.</td>
-                </tr>
-                <tr>
-                  <td data-label="Escalation Level" data-role="main">Level 4 — Emergency / Crisis</td>
-                  <td data-label="Typical Condition">Life-safety concern, major service impact, uncontrolled failure or multiple critical systems affected.</td>
-                  <td data-label="Expected Response">Activate emergency response, management escalation and external support as required.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2>3. Change severity model</h2>
-
-          <p>
-            Planned work should be classified by potential impact, not by how
-            routine it feels. A familiar task can still be high risk if it affects
-            redundancy, critical load or recovery options.
-          </p>
-
-          <div class="responsive-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Severity</th>
-                  <th>Description</th>
-                  <th>Typical Control Level</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Severity" data-role="main">Minor</td>
-                  <td data-label="Description">No expected impact to critical systems, no redundancy loss and simple rollback.</td>
-                  <td data-label="Typical Control Level">Local approval, standard SOP, normal logging.</td>
-                </tr>
-                <tr>
-                  <td data-label="Severity" data-role="main">Standard</td>
-                  <td data-label="Description">Planned work with limited operational exposure and known procedure.</td>
-                  <td data-label="Typical Control Level">Approved MOP or work instruction, defined verification.</td>
-                </tr>
-                <tr>
-                  <td data-label="Severity" data-role="main">Major</td>
-                  <td data-label="Description">Redundancy reduction, critical system involvement, customer visibility or complex coordination.</td>
-                  <td data-label="Typical Control Level">Formal change approval, MOP, rollback plan, stakeholder notification.</td>
-                </tr>
-                <tr>
-                  <td data-label="Severity" data-role="main">Emergency Change</td>
-                  <td data-label="Description">Urgent action required to restore, stabilize or protect operations.</td>
-                  <td data-label="Typical Control Level">Emergency approval path, incident log, post-event review.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="principle-callout">
-            <p>
-              <strong>Change rule:</strong> If rollback is unclear, the change is
-              not ready for controlled execution.
-            </p>
-          </div>
-
-          <h2>4. Lifecycle control model</h2>
-
-          <p>
-            Operational documents should be managed throughout their lifecycle.
-            A document may start as a draft, become approved, later require
-            revision, and eventually be retired or superseded.
-          </p>
-
-          <div class="code-like-box">
-            Draft → Review → Approval → Controlled Use → Review → Revision or Retirement
-          </div>
-
-          <p>
-            Lifecycle control helps prevent outdated procedures from remaining
-            in use after equipment, risks, responsibilities or operating
-            conditions have changed.
-          </p>
-
-          <ul>
-            <li><strong>Draft:</strong> document is being developed and is not approved for live use.</li>
-            <li><strong>Review:</strong> technical and operational reviewers check content.</li>
-            <li><strong>Approval:</strong> authorized role releases the document for controlled use.</li>
-            <li><strong>Controlled Use:</strong> approved document is available to the right users.</li>
-            <li><strong>Periodic Review:</strong> document is checked against current reality.</li>
-            <li><strong>Revision:</strong> document is updated due to change, incident or improvement.</li>
-            <li><strong>Retirement:</strong> obsolete document is removed from active use.</li>
-          </ul>
-
-          <h2>5. Documentation hierarchy</h2>
-
-          <p>
-            Documentation hierarchy helps users understand which document governs
-            which activity. A policy or governance standard should not contain
-            every operational step, and an SOP should not override site governance.
+            Escalate on impact, safety, lost redundancy and uncertainty. Don't
+            wait for a full failure if you don't know what state the site is in.
           </p>
 
           <div class="responsive-table">
@@ -279,141 +142,147 @@
               <thead>
                 <tr>
                   <th>Level</th>
-                  <th>Document Type</th>
-                  <th>Purpose</th>
+                  <th>When</th>
+                  <th>Who</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Level" data-role="lead">1</td>
-                  <td data-label="Document Type" data-role="main">Policy / Governance Standard</td>
-                  <td data-label="Purpose">Defines authority, principles, ownership and mandatory controls.</td>
+                  <td data-label="Level" data-role="main">1. Local</td>
+                  <td data-label="When">Known minor issue, no impact, no safety concern, a procedure exists</td>
+                  <td data-label="Who">Operator on duty handles it and logs it</td>
                 </tr>
                 <tr>
-                  <td data-label="Level" data-role="lead">2</td>
-                  <td data-label="Document Type" data-role="main">Framework / Standard</td>
-                  <td data-label="Purpose">Defines models for classification, escalation, risk and documentation structure.</td>
+                  <td data-label="Level" data-role="main">2. Attention</td>
+                  <td data-label="When">Redundancy reduced, repeated alarms, unclear cause</td>
+                  <td data-label="Who">Shift lead takes over, assigns an owner, increases monitoring</td>
                 </tr>
                 <tr>
-                  <td data-label="Level" data-role="lead">3</td>
-                  <td data-label="Document Type" data-role="main">SOP / MOP / EOP</td>
-                  <td data-label="Purpose">Defines operational execution, planned work or emergency response structure.</td>
+                  <td data-label="Level" data-role="main">3. Incident</td>
+                  <td data-label="When">A critical system is affected, customer impact is possible, or the state is unclear</td>
+                  <td data-label="Who">Incident lead takes over. The Facility manager or On-call person is called</td>
                 </tr>
                 <tr>
-                  <td data-label="Level" data-role="lead">4</td>
-                  <td data-label="Document Type" data-role="main">Work Instruction / Checklist</td>
-                  <td data-label="Purpose">Defines detailed task-level steps or verification points.</td>
-                </tr>
-                <tr>
-                  <td data-label="Level" data-role="lead">5</td>
-                  <td data-label="Document Type" data-role="main">Records / Logs</td>
-                  <td data-label="Purpose">Provides evidence of execution, review, incident response or maintenance history.</td>
+                  <td data-label="Level" data-role="main">4. Emergency</td>
+                  <td data-label="When">People at risk, major service impact, or several critical systems affected</td>
+                  <td data-label="Who">Emergency services first if people are at risk. Management is told</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>6. Severity and response alignment</h2>
+          <p>
+            The levels are a starting point. During an incident, the Incident lead
+            can move it up or down as the situation changes.
+          </p>
+
+          <h2>3. Change types</h2>
 
           <p>
-            A practical framework connects criticality, escalation and change
-            severity. If these models are disconnected, the organization may
-            under-control high-risk work or over-control low-risk work.
+            Classify planned work by what it can affect, not by how routine it
+            feels. A job done a hundred times is still major if it removes redundancy.
           </p>
 
           <div class="responsive-table">
             <table>
               <thead>
                 <tr>
-                  <th>Condition</th>
-                  <th>Typical Classification</th>
-                  <th>Expected Control</th>
+                  <th>Type</th>
+                  <th>When</th>
+                  <th>Control</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Condition" data-role="main">Routine inspection of stable system</td>
-                  <td data-label="Typical Classification">Low to Medium</td>
-                  <td data-label="Expected Control">SOP or checklist</td>
+                  <td data-label="Type" data-role="main">Minor</td>
+                  <td data-label="When">No effect on critical systems, no redundancy lost, simple to undo</td>
+                  <td data-label="Control">SOP, operations team approval, normal log</td>
                 </tr>
                 <tr>
-                  <td data-label="Condition" data-role="main">Planned work affecting redundancy</td>
-                  <td data-label="Typical Classification">High</td>
-                  <td data-label="Expected Control">MOP, approval, rollback, monitoring</td>
+                  <td data-label="Type" data-role="main">Normal</td>
+                  <td data-label="When">Planned work with limited exposure and a known procedure</td>
+                  <td data-label="Control">MOP, operations team approval, verification</td>
                 </tr>
                 <tr>
-                  <td data-label="Condition" data-role="main">Unplanned loss of critical infrastructure</td>
-                  <td data-label="Typical Classification">Critical</td>
-                  <td data-label="Expected Control">EOP, incident lead, escalation, communication</td>
+                  <td data-label="Type" data-role="main">Major</td>
+                  <td data-label="When">Redundancy reduced, a critical system involved, or customers affected</td>
+                  <td data-label="Control">MOP with hold points and rollback, Facility manager approval, customer notice</td>
                 </tr>
                 <tr>
-                  <td data-label="Condition" data-role="main">Emergency correction during active incident</td>
-                  <td data-label="Typical Classification">Critical / Emergency Change</td>
-                  <td data-label="Expected Control">Emergency authority, incident log, post-event review</td>
+                  <td data-label="Type" data-role="main">Emergency</td>
+                  <td data-label="When">Urgent work to restore or protect operations</td>
+                  <td data-label="Control">A manager on site or by phone approves, reached through the escalation list. Logged and reviewed afterwards</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>7. Review triggers</h2>
-
           <p>
-            Frameworks should not be static forever. They should be reviewed
-            when reality changes.
+            The types are my own, close to ITIL's standard, normal and emergency changes.
           </p>
 
-          <ul>
-            <li>Incident or near miss</li>
-            <li>Major equipment change</li>
-            <li>Change in operating model</li>
-            <li>New regulatory or client requirement</li>
-            <li>Audit finding</li>
-            <li>Repeated confusion during execution</li>
-            <li>New site, room or system added</li>
-            <li>Vendor or maintenance strategy changed</li>
-          </ul>
-
-          <h2>8. Practical minimum framework set</h2>
-
           <p>
-            A small organization does not need unnecessary bureaucracy. But even
-            a lean operational model should define the basics clearly.
+            If rollback is unclear, the change is not ready.
           </p>
 
-          <ul>
-            <li>How system criticality is classified</li>
-            <li>When issues must be escalated</li>
-            <li>How planned work is classified</li>
-            <li>Who can approve changes</li>
-            <li>Who can stop work</li>
-            <li>How documents are reviewed and retired</li>
-            <li>How incidents are recorded and closed</li>
-          </ul>
+          <div class="code-like-box">
+            Request → Risk review → Approval → Execution → Verification → Closeout
+          </div>
 
-          <h2>Public examples and limitations</h2>
+          <h2>4. Documentation hierarchy</h2>
 
           <p>
-            These framework examples are generalized. Real operational frameworks
-            must be adapted to the organization’s facility design, safety
-            requirements, customer commitments, local regulations, contractual
-            obligations, risk appetite and management system.
+            Each level governs the one below it. A policy doesn't hold every step,
+            and an SOP doesn't override the policy.
+          </p>
+
+          <div class="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Document</th>
+                  <th>What it does</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Level" data-role="lead">1</td>
+                  <td data-label="Document" data-role="main">Policy</td>
+                  <td data-label="What it does">Sets authority, ownership and the rules that must be followed</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="lead">2</td>
+                  <td data-label="Document" data-role="main">Frameworks</td>
+                  <td data-label="What it does">Models for criticality, escalation, change and risk</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="lead">3</td>
+                  <td data-label="Document" data-role="main">SOP, MOP, EOP</td>
+                  <td data-label="What it does">Routine work, planned work and emergency response</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="lead">4</td>
+                  <td data-label="Document" data-role="main">Checklists</td>
+                  <td data-label="What it does">Task-level steps and checks</td>
+                </tr>
+                <tr>
+                  <td data-label="Level" data-role="lead">5</td>
+                  <td data-label="Document" data-role="main">Records and logs</td>
+                  <td data-label="What it does">Show what was done, when and by whom</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            How documents are owned, approved, reviewed and retired is on the
+            <a href="../governance/">Governance</a> page.
           </p>
 
         </article>
 
         <aside class="advisory-sidebar">
-          <div class="sidebar-box">
-            <h3>Framework Focus</h3>
-            <ul>
-              <li>Criticality model</li>
-              <li>Escalation model</li>
-              <li>Change severity</li>
-              <li>Lifecycle control</li>
-              <li>Documentation hierarchy</li>
-              <li>Review triggers</li>
-            </ul>
-          </div>
-
           <div class="sidebar-box">
             <h3>Related Areas</h3>
             <ul>
@@ -426,30 +295,6 @@
               <li><a href="../eop/" class="text-link">EOP Examples</a></li>
               <li><a href="../risk/" class="text-link">Risk Assessment</a></li>
             </ul>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Core Rule</h3>
-            <p>
-              Frameworks should make operational decisions more consistent,
-              not create paperwork that people avoid during real work.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Decision Test</h3>
-            <p>
-              If a team cannot agree on severity, authority or escalation path,
-              the framework is either missing or not clear enough.
-            </p>
-          </div>
-
-          <div class="sidebar-box">
-            <h3>Public Example Notice</h3>
-            <p>
-              This is a generalized framework example. Live frameworks must be
-              reviewed and approved by the responsible organization.
-            </p>
           </div>
         </aside>
       </div>
