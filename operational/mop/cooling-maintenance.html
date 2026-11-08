@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=10" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example: CRAC/CRAH Planned Maintenance | Tom Jensen" />
@@ -68,7 +68,7 @@
         <article class="advisory-article">
 
           <div class="metadata-table">
-            <div><strong>Document ID:</strong> MOP-CLG-003</div>
+            <div><strong>Document ID:</strong> <span class="nowrap">MOP-CLG-003</span></div>
             <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
             <div><strong>Approval:</strong> Example only</div>
@@ -227,7 +227,7 @@
                   <td data-label="Check">Tag matches the work approval. Checked by two people.</td>
                   <td data-label="Owner">Work lead, Cooling specialist</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">6</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> go only when steps 1–5 are done and temperatures are stable.</td>
                   <td data-label="Check">Work lead gives the go.</td>
@@ -269,7 +269,7 @@
                   <td data-label="Check">Work done as planned. Readings logged.</td>
                   <td data-label="Owner">Cooling specialist, Operator on duty</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">13</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> before the unit goes back, check the work is finished.</td>
                   <td data-label="Check">Panels closed. Tools and materials out. Valves in their normal position. No leaks.</td>
@@ -305,7 +305,7 @@
                   <td data-label="Check">Back to the baseline from step 3.</td>
                   <td data-label="Owner">Operator on duty</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">19</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> before closing, check the room is as it was.</td>
                   <td data-label="Check">Unit in automatic, not local. Standby ready. No alarms suppressed. Containment doors closed, floor tiles in place, nothing in the air paths.</td>
@@ -347,14 +347,14 @@
             Temperatures climb toward the limit, or another unit fails: stop the
             work. If the unit can be returned safely within the known time, return
             it. If not, follow
-            <a href="../eop/cooling-failure.html">Cooling Failure Response (EOP-CLG-002)</a>.
+            <a href="../eop/cooling-failure.html">Cooling Failure Response (<span class="nowrap">EOP-CLG-002</span>)</a>.
           </p>
 
           <p>
             A leak during the work: close the valves if it is safe to do so, keep
             away from electrical equipment in the wet area, and call the Shift
             lead. Follow
-            <a href="../eop/water-leak-response.html">Water Leak Response (EOP-WTR-003)</a>.
+            <a href="../eop/water-leak-response.html">Water Leak Response (<span class="nowrap">EOP-WTR-003</span>)</a>.
           </p>
 
           <p>
@@ -410,9 +410,9 @@
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>SITE1-B1-DH1-CRAH-003-01: Cooling unit under maintenance</li>
-              <li>SITE1-B1-DH1-CRAH-002-01: Standby cooling unit</li>
-              <li>SITE1-B1-DH1-LDS-001-01: Leak detection cable</li>
+              <li><span class="nowrap">SITE1-B1-DH1-CRAH-003-01</span>: Cooling unit under maintenance</li>
+              <li><span class="nowrap">SITE1-B1-DH1-CRAH-002-01</span>: Standby cooling unit</li>
+              <li><span class="nowrap">SITE1-B1-DH1-LDS-001-01</span>: Leak detection cable</li>
             </ul>
           </div>
         </aside>

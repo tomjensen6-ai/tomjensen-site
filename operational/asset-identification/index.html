@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=10" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="Asset Identification | Tom Jensen" />
@@ -89,7 +89,7 @@
             examples in this library use:
           </p>
 
-          <div class="code-like-box code-like-box--tag">
+          <div class="code-like-box">
             SITE-BUILDING-ROOM-SYSTEM-ASSET-RUNNINGNO
           </div>
 
@@ -101,24 +101,24 @@
             SITE1 is the site, B1 the building, ER2 electrical room 2 and UPS the
             asset type. 001 is the system, and 01 the unit within it. Three UPS
             units working together as one system in the same room would be
-            UPS-001-01, UPS-001-02 and UPS-001-03.
+            <span class="nowrap">UPS-001-01</span>, <span class="nowrap">UPS-001-02</span> and <span class="nowrap">UPS-001-03</span>.
           </p>
 
           <p>
             A part inside a unit that is worth tracking on its own, such as a UPS
-            power module, adds a part code: SITE1-B1-ER2-UPS-001-01-M03 is module 3
+            power module, adds a part code: <span class="nowrap">SITE1-B1-ER2-UPS-001-01-M03</span> is module 3
             in UPS unit 01. The tag stays with the position. When a module is
             replaced, the new one takes the same tag, and the serial numbers show
             which module was there when.
           </p>
 
           <p>
-            A room or area on its own stops after the room code: SITE1-B1-DH1 is
+            A room or area on its own stops after the room code: <span class="nowrap">SITE1-B1-DH1</span> is
             data hall 1.
           </p>
 
           <p>
-            Outdoor equipment uses room code 000: SITE1-B1-000-FUEL-001-01 is a
+            Outdoor equipment uses room code 000: <span class="nowrap">SITE1-B1-000-FUEL-001-01</span> is a
             fuel tank outside the building.
           </p>
 
@@ -198,10 +198,10 @@
           <div class="sidebar-box">
             <h3>Example Tags</h3>
             <ul>
-              <li>SITE1-B1-ER2-UPS-001-01: UPS system 1, unit 1</li>
-              <li>SITE1-B1-GR1-GEN-001-01: Standby generator</li>
-              <li>SITE1-B1-000-FUEL-001-01: Fuel tank (outdoor)</li>
-              <li>SITE1-B1-DH1: Data hall 1</li>
+              <li><span class="nowrap">SITE1-B1-ER2-UPS-001-01</span>: UPS system 1, unit 1</li>
+              <li><span class="nowrap">SITE1-B1-GR1-GEN-001-01</span>: Standby generator</li>
+              <li><span class="nowrap">SITE1-B1-000-FUEL-001-01</span>: Fuel tank (outdoor)</li>
+              <li><span class="nowrap">SITE1-B1-DH1</span>: Data hall 1</li>
             </ul>
           </div>
 

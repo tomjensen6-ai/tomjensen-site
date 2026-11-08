@@ -2027,6 +2027,16 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   white-space: nowrap;
 }
 
+/* Flow boxes: lines break only between steps */
+.code-like-box--flow .flow-step {
+  white-space: nowrap;
+}
+
+/* Document IDs and asset tags in text: never split at the hyphen */
+.nowrap {
+  white-space: nowrap;
+}
+
 .text-link {
   display: inline-block;
   margin-top: 0.6rem;
@@ -2554,6 +2564,23 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   border-bottom: 0;
 }
 
+/* Hold point rows in step tables */
+.responsive-table tr.hold-point td {
+  background: var(--cream-light);
+}
+
+.responsive-table tr.hold-point td:first-child {
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+
+.responsive-table tr.hold-point td strong {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
 /* Operating principles page */
 .operational-page {
   padding-bottom: clamp(2rem, 4vw, 3rem);
@@ -2746,5 +2773,19 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   .responsive-table td[data-role="main"]::before,
   .principle-table-wrap td[data-role="main"]::before {
     content: none;
+  }
+
+  /* Hold point card: gold bar on the left, light cream fill */
+  .responsive-table tr.hold-point {
+    background: var(--cream-light);
+    border-left: 3px solid var(--gold);
+  }
+
+  .responsive-table tr.hold-point td:first-child {
+    box-shadow: none;
+  }
+
+  .responsive-table tr.hold-point td strong {
+    display: block;
   }
 }

@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=10" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example: Planned Utility Transfer Test | Tom Jensen" />
@@ -70,7 +70,7 @@
         <article class="advisory-article">
 
           <div class="metadata-table">
-            <div><strong>Document ID:</strong> MOP-PWR-002</div>
+            <div><strong>Document ID:</strong> <span class="nowrap">MOP-PWR-002</span></div>
             <div><strong>Revision:</strong> 2.0</div>
             <div><strong>Status:</strong> Example</div>
             <div><strong>Approval:</strong> Example only</div>
@@ -322,7 +322,7 @@
                   <td data-label="Owner">Operator on duty</td>
                 </tr>
 
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">8</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> the Test lead asks each person if they are ready.</td>
                   <td data-label="Check">Every role confirms. No go without all of them.</td>
@@ -364,7 +364,7 @@
                   <td data-label="Owner">Operator on duty</td>
                 </tr>
 
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">14</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> before returning, check that the utility side is healthy.</td>
                   <td data-label="Check">Utility voltage present and normal. Test lead gives the go.</td>
@@ -465,14 +465,14 @@
           <p>
             The grid fails for real during the test: there is no way back to
             utility. You are in a real outage now. Switch to
-            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>,
+            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (<span class="nowrap">EOP-PWR-001</span>)</a>,
             with the people already on site.
           </p>
 
           <p>
             Someone is hurt, or there is smoke or fire: people first. Stop the
             test and call for help. Follow the site's fire plan; see
-            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (<span class="nowrap">EOP-FIR-004</span>)</a>.
           </p>
 
           <p>
@@ -522,9 +522,9 @@
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>SITE1-B1-GR1-GEN-001-01 / GEN-002-01: Standby generators</li>
-              <li>SITE1-B1-ER1-ATS-001-01: Automatic transfer switch</li>
-              <li>SITE1-B1-ER2-UPS-001-01 / UPS-002-01: UPS systems</li>
+              <li><span class="nowrap">SITE1-B1-GR1-GEN-001-01</span> / <span class="nowrap">GEN-002-01</span>: Standby generators</li>
+              <li><span class="nowrap">SITE1-B1-ER1-ATS-001-01</span>: Automatic transfer switch</li>
+              <li><span class="nowrap">SITE1-B1-ER2-UPS-001-01</span> / <span class="nowrap">UPS-002-01</span>: UPS systems</li>
               <li>BMS: Building management system</li>
               <li>EPMS: Electrical power monitoring system</li>
               <li>DCIM: Data Center Infrastructure Management</li>

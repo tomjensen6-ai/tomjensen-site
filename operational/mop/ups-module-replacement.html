@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=10" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example: UPS Module Replacement | Tom Jensen" />
@@ -69,7 +69,7 @@
         <article class="advisory-article">
 
           <div class="metadata-table">
-            <div><strong>Document ID:</strong> MOP-UPS-004</div>
+            <div><strong>Document ID:</strong> <span class="nowrap">MOP-UPS-004</span></div>
             <div><strong>Revision:</strong> 1.0</div>
             <div><strong>Status:</strong> Example</div>
             <div><strong>Approval:</strong> Example only</div>
@@ -114,7 +114,7 @@
               replaced while the UPS carries the load. Some designs, or some
               faults, need the UPS in maintenance bypass first. The manufacturer’s
               procedure decides. If bypass is needed, follow
-              <a href="ups-maintenance-bypass.html">UPS Maintenance Bypass (MOP-UPS-001)</a>
+              <a href="ups-maintenance-bypass.html">UPS Maintenance Bypass (<span class="nowrap">MOP-UPS-001</span>)</a>
               and treat the load as unprotected for the whole window.
             </p>
           </div>
@@ -222,7 +222,7 @@
                   <td data-label="Check">Vendor and Operator on duty agree it is the right module.</td>
                   <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">5</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the load, the other path and the right module before anything is taken offline.</td>
                   <td data-label="Check">Go given before step 6.</td>
@@ -246,7 +246,7 @@
                   <td data-label="Check">Firmware matches the frame, or a newer version is approved by the vendor for this frame and accepted by the Work lead.</td>
                   <td data-label="Owner">UPS vendor specialist</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">9</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the new module and its firmware before it goes in.</td>
                   <td data-label="Check">Go given before step 10.</td>
@@ -270,7 +270,7 @@
                   <td data-label="Check">Matches the state before the fault.</td>
                   <td data-label="Owner">Operator on duty, at the UPS</td>
                 </tr>
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">13</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> The Work lead confirms the UPS is back to normal before the work is closed.</td>
                   <td data-label="Check">Go given to close the work.</td>
@@ -310,7 +310,7 @@
 
           <p>
             Mains fails during the work: follow
-            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (EOP-PWR-001)</a>.
+            <a href="../eop/utility-power-loss.html">Utility Power Loss Response (<span class="nowrap">EOP-PWR-001</span>)</a>.
           </p>
 
           <p>
@@ -331,7 +331,7 @@
 
           <p>
             Smoke, a burning smell or a fire alarm: follow
-            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (EOP-FIR-004)</a>.
+            <a href="../eop/fire-alarm-response.html">Fire Alarm Response (<span class="nowrap">EOP-FIR-004</span>)</a>.
           </p>
 
           <p>
@@ -369,9 +369,9 @@
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>SITE1-B1-ER2-UPS-001-01: UPS with the failed module</li>
-              <li>SITE1-B1-ER2-UPS-001-01-M03: Power module under replacement (module 3 in that UPS)</li>
-              <li>SITE1-B1-ER3-UPS-002-01: UPS on the other supply path</li>
+              <li><span class="nowrap">SITE1-B1-ER2-UPS-001-01</span>: UPS with the failed module</li>
+              <li><span class="nowrap">SITE1-B1-ER2-UPS-001-01-M03</span>: Power module under replacement (module 3 in that UPS)</li>
+              <li><span class="nowrap">SITE1-B1-ER3-UPS-002-01</span>: UPS on the other supply path</li>
             </ul>
           </div>
         </aside>

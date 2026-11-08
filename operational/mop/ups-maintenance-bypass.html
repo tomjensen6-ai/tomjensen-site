@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="../../style.css?v=10" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
   <link rel="icon" href="../../images/favicon.png" />
 
   <meta property="og:title" content="MOP Example — UPS Transfer to Maintenance Bypass | Tom Jensen" />
@@ -69,7 +69,7 @@
         <article class="advisory-article">
 
           <div class="metadata-table">
-            <div><strong>Document ID:</strong> MOP-UPS-001</div>
+            <div><strong>Document ID:</strong> <span class="nowrap">MOP-UPS-001</span></div>
             <div><strong>Revision:</strong> 2.1</div>
             <div><strong>Status:</strong> Example</div>
             <div><strong>Type:</strong> Planned change</div>
@@ -179,7 +179,7 @@
 
               <tbody>
 
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">1</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> the change lead confirms everything in section 4. Go or no-go.</td>
                   <td data-label="Check">Go recorded with time.</td>
@@ -243,7 +243,7 @@
                   <td data-label="Sign-2"></td>
                 </tr>
 
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">9</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> the change lead confirms the load is stable on bypass and work may start.</td>
                   <td data-label="Check">Go recorded with time.</td>
@@ -283,7 +283,7 @@
 
               <tbody>
 
-                <tr>
+                <tr class="hold-point">
                   <td data-label="Step" data-role="lead">1</td>
                   <td data-label="Action" data-role="main"><strong>Hold point:</strong> work finished, UPS tested by the service engineer, locks and tags removed. Go or no-go.</td>
                   <td data-label="Check">Go recorded with time.</td>
@@ -381,15 +381,15 @@
             </p>
             <p>
               Example:<br>
-              <strong>SITE1-B1-ER2-UPS-001-01</strong>
+              <strong><span class="nowrap">SITE1-B1-ER2-UPS-001-01</span></strong>
             </p>
           </div>
 
           <div class="sidebar-box">
             <h3>Example Asset References</h3>
             <ul>
-              <li>UPS-001 — UPS module</li>
-              <li>MBB-001 — Maintenance bypass breaker</li>
+              <li><span class="nowrap">UPS-001</span> — UPS module</li>
+              <li><span class="nowrap">MBB-001</span> — Maintenance bypass breaker</li>
               <li>SLD — Single-line diagram</li>
             </ul>
           </div>
